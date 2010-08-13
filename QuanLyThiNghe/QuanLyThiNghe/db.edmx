@@ -17,10 +17,10 @@
           <EntitySet Name="PhanQuyen" EntityType="QuanLyThiNghe.Store.PhanQuyen" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TaiKhoan" EntityType="QuanLyThiNghe.Store.TaiKhoan" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ThiSinh" EntityType="QuanLyThiNghe.Store.ThiSinh" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="HeThong" EntityType="QuanLyThiNghe.Store.HeThong" store:Type="Views" store:Schema="dbo" store:Name="HeThong">
+          <EntitySet Name="ThongKe" EntityType="QuanLyThiNghe.Store.ThongKe" store:Type="Views" store:Schema="dbo" store:Name="ThongKe">
             <DefiningQuery>SELECT 
-      [HeThong].[GioHeThong] AS [GioHeThong]
-      FROM [dbo].[HeThong] AS [HeThong]</DefiningQuery>
+      [ThongKe].[GioHeThong] AS [GioHeThong]
+      FROM [dbo].[ThongKe] AS [ThongKe]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_DMPhach_DMKyThi" Association="QuanLyThiNghe.Store.FK_DMPhach_DMKyThi">
             <End Role="DMKyThi" EntitySet="DMKyThi" />
@@ -163,11 +163,11 @@
           <Property Name="MaNhatKy" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="MaTaiKhoan" Type="int" />
           <Property Name="NgayThaoTac" Type="datetime" />
-          <Property Name="IP" Type="varchar" MaxLength="50" />
-          <Property Name="ComputerUser" Type="nvarchar" MaxLength="50" />
-          <Property Name="ThaoTac" Type="nvarchar" MaxLength="50" />
+          <Property Name="IP" Type="varchar" MaxLength="550" />
+          <Property Name="ComputerUser" Type="nvarchar" MaxLength="550" />
+          <Property Name="ThaoTac" Type="nvarchar" MaxLength="550" />
           <Property Name="NgayCapNhat" Type="datetime" />
-          <Property Name="NguoiCapNhat" Type="nvarchar" MaxLength="150" />
+          <Property Name="NguoiCapNhat" Type="nvarchar" MaxLength="250" />
           <Property Name="DaXoa" Type="bit" />
         </EntityType>
         <EntityType Name="PhanQuyen">
@@ -229,9 +229,9 @@
           <Property Name="DaXoa" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'ThiNghe.dbo.HeThong' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'ThiNge.dbo.ThongKe' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
-        <EntityType Name="HeThong">
+        <EntityType Name="ThongKe">
           <Key>
             <PropertyRef Name="GioHeThong" />
           </Key>
@@ -413,7 +413,7 @@
             <End Role="PhanQuyen" EntitySet="PhanQuyen" />
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
           </AssociationSet>
-          <EntitySet Name="HeThong" EntityType="QuanLyThiNghe.HeThong" /></EntityContainer>
+          <EntitySet Name="ThongKe" EntityType="QuanLyThiNghe.ThongKe" /></EntityContainer>
         <EntityType Name="Config">
           <Key>
             <PropertyRef Name="ConfigID" />
@@ -629,7 +629,7 @@
           <End Role="PhanQuyen" Type="QuanLyThiNghe.PhanQuyen" Multiplicity="0..1" />
           <End Role="TaiKhoan" Type="QuanLyThiNghe.TaiKhoan" Multiplicity="*" />
         </Association>
-        <EntityType Name="HeThong">
+        <EntityType Name="ThongKe">
           <Key>
             <PropertyRef Name="GioHeThong" /></Key>
           <Property Name="GioHeThong" Type="DateTime" Nullable="false" /></EntityType></Schema>
@@ -894,9 +894,9 @@
             </EndProperty>
             <Condition ColumnName="MaPhanQuyen" IsNull="false" />
           </AssociationSetMapping>
-          <EntitySetMapping Name="HeThong">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.HeThong)">
-              <MappingFragment StoreEntitySet="HeThong">
+          <EntitySetMapping Name="ThongKe">
+            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.ThongKe)">
+              <MappingFragment StoreEntitySet="ThongKe">
                 <ScalarProperty Name="GioHeThong" ColumnName="GioHeThong" /></MappingFragment></EntityTypeMapping></EntitySetMapping></EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -915,7 +915,7 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="db" ZoomLevel="114">
+      <Diagram Name="db" ZoomLevel="74">
         <EntityTypeShape EntityType="QuanLyThiNghe.Config" Width="1.5" PointX="2.75" PointY="1.25" Height="2.3648893229166665" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyThiNghe.DMHuyen" Width="1.5" PointX="1.5" PointY="8.875" Height="2.5571907552083317" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyThiNghe.DMKyThi" Width="1.5" PointX="0.75" PointY="4.5" Height="3.3263964843749996" IsExpanded="true" />
@@ -969,6 +969,6 @@
         <AssociationConnector Association="QuanLyThiNghe.FK_TaiKhoan_PhanQuyen" ManuallyRouted="false">
           <ConnectorPoint PointX="7.25" PointY="12.220896809895834" />
           <ConnectorPoint PointX="8" PointY="12.220896809895834" /></AssociationConnector>
-        <EntityTypeShape EntityType="QuanLyThiNghe.HeThong" Width="1.5" PointX="5.375" PointY="0.75" Height="1.211080729166667" /></Diagram></edmx:Diagrams>
+        <EntityTypeShape EntityType="QuanLyThiNghe.ThongKe" Width="1.5" PointX="5.375" PointY="0.75" Height="1.211080729166667" /></Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

@@ -13,6 +13,7 @@ namespace QuanLyThiNghe.Forms
     public partial class frmNhatKyDangNhap : Form
     {
         QLTN_Entities en = new QLTN_Entities();
+        public string pTenDangNhap { get; set; }
         public frmNhatKyDangNhap()
         {
             InitializeComponent();
@@ -66,7 +67,11 @@ namespace QuanLyThiNghe.Forms
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             //xóa
-            if (gridView1.SelectedRowsCount>0)
+            deleteNhatKy();
+        }
+        private void deleteNhatKy()
+        {
+            if (gridView1.SelectedRowsCount > 0)
             {
                 for (int i = 0; i < gridView1.SelectedRowsCount; i++)
                 {
@@ -74,28 +79,43 @@ namespace QuanLyThiNghe.Forms
                     string Ma1 = gridView1.GetRowCellValue(index, "MaNhatKy").ToString();
                     int Ma = int.Parse(Ma1);
                     NhatKy nk = (from t in en.NhatKy where t.MaNhatKy == Ma select t).First();
-                    nk.NgayCapNhat = (from s in en.HeThong select s).First().GioHeThong;
-                    nk.NguoiCapNhat = ((frmMain)this.ParentForm).TaiKhoanHienTai.TenDangNhap;
+                    nk.NgayCapNhat = HeThong.LayGioHeThong();
+                    nk.NguoiCapNhat = HeThong.TaiKhoanDangNhap().TenDangNhap;
                     nk.DaXoa = true;
                 }
                 en.SaveChanges();
+                XuLyForm.LuuNhatKy("Xóa nhật ký");
                 loadNhatKy();
             }
         }
-
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             loadNhatKy();
         }
-
         private void dateEdit1_EditValueChanged(object sender, EventArgs e)
         {
             loadNhatKy();
         }
-
         private void dateEdit2_EditValueChanged(object sender, EventArgs e)
         {
             loadNhatKy();
+        }
+        private void danhSáchThíSinhDựThiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (gridView1.SelectedRowsCount > 0)
+            {
+                int index = gridView1.GetSelectedRows()[0];
+                string Ma1 = gridView1.GetRowCellValue(index, "TenDangNhap").ToString();
+                TaiKhoan tk = (from t in en.TaiKhoan where t.TenDangNhap == Ma1 select t).First();
+                frmThanhVien_ThemMoi frm = new frmThanhVien_ThemMoi();
+                frm.pTaiKhoan = tk;
+                frm.ShowDialog();
+            }
+        }
+
+        private void xoáHuyệnNàyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deleteNhatKy();
         }
     }
 }
