@@ -65,11 +65,10 @@ namespace QuanLyThiNghe.Forms
                         tk.MAC = textEdit6.Text;
                         tk.TenDangNhap = textEdit2.Text;
                         tk.NguoiTao = ((frmMain)Application.OpenForms["frmMain"]).TaiKhoanHienTai.TenDangNhap;
-                        
-
                         pq.TaiKhoan.Add(tk);
                         //tk.PhanQuyen.TenQuyen = comboBoxEdit1.SelectedText;
                         en.SaveChanges();
+                        XuLyForm.LuuNhatKy("Tạo mới tài khoản " + textEdit2.Text);
                         rt = DialogResult.OK;
                         this.Close();
                     }
@@ -83,7 +82,7 @@ namespace QuanLyThiNghe.Forms
                     PhanQuyen pq = (from q in en.PhanQuyen where q.TenQuyen == quyen select q).First();
 
                     tk.NguoiCapNhat = ((frmMain)Application.OpenForms["frmMain"]).TaiKhoanHienTai.TenDangNhap;
-                    tk.NgayCapNhat = (from s in en.HeThong select s).First().GioHeThong;
+                    tk.NgayCapNhat = HeThong.LayGioHeThong();
 
                     tk.DienThoai = textEdit5.Text;
                     tk.HoVaTen = textEdit1.Text;
@@ -94,6 +93,7 @@ namespace QuanLyThiNghe.Forms
                     tk.MAC = textEdit6.Text;
                     pq.TaiKhoan.Add(tk);
                     en.SaveChanges();
+                    XuLyForm.LuuNhatKy("Chỉnh sửa thông tin tài khoản " + textEdit2.Text);
                     rt = DialogResult.OK;
                     this.Close();
                 }

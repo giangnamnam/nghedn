@@ -131,6 +131,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(100, 24);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "In danh sách";
+            this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // Menu

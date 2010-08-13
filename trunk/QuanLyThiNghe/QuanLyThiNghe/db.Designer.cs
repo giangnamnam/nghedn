@@ -21,7 +21,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_TaiKhoan_PhanQuyen", "PhanQuyen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.PhanQuyen), "TaiKhoan", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.TaiKhoan))]
 
 // Original file name:
-// Generation date: 13/08/10 10:08:42 AM
+// Generation date: 13/08/10 7:55:16 PM
 namespace QuanLyThiNghe
 {
     
@@ -221,20 +221,20 @@ namespace QuanLyThiNghe
         }
         private global::System.Data.Objects.ObjectQuery<ThiSinh> _ThiSinh;
         /// <summary>
-        /// There are no comments for HeThong in the schema.
+        /// There are no comments for ThongKe in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<HeThong> HeThong
+        public global::System.Data.Objects.ObjectQuery<ThongKe> ThongKe
         {
             get
             {
-                if ((this._HeThong == null))
+                if ((this._ThongKe == null))
                 {
-                    this._HeThong = base.CreateQuery<HeThong>("[HeThong]");
+                    this._ThongKe = base.CreateQuery<ThongKe>("[ThongKe]");
                 }
-                return this._HeThong;
+                return this._ThongKe;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<HeThong> _HeThong;
+        private global::System.Data.Objects.ObjectQuery<ThongKe> _ThongKe;
         /// <summary>
         /// There are no comments for Config in the schema.
         /// </summary>
@@ -313,11 +313,11 @@ namespace QuanLyThiNghe
             base.AddObject("ThiSinh", thiSinh);
         }
         /// <summary>
-        /// There are no comments for HeThong in the schema.
+        /// There are no comments for ThongKe in the schema.
         /// </summary>
-        public void AddToHeThong(HeThong heThong)
+        public void AddToThongKe(ThongKe thongKe)
         {
-            base.AddObject("HeThong", heThong);
+            base.AddObject("ThongKe", thongKe);
         }
     }
     /// <summary>
@@ -3443,25 +3443,25 @@ namespace QuanLyThiNghe
         }
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.HeThong in the schema.
+    /// There are no comments for QuanLyThiNghe.ThongKe in the schema.
     /// </summary>
     /// <KeyProperties>
     /// GioHeThong
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="HeThong")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="ThongKe")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class HeThong : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class ThongKe : global::System.Data.Objects.DataClasses.EntityObject
     {
         /// <summary>
-        /// Create a new HeThong object.
+        /// Create a new ThongKe object.
         /// </summary>
         /// <param name="gioHeThong">Initial value of GioHeThong.</param>
-        public static HeThong CreateHeThong(global::System.DateTime gioHeThong)
+        public static ThongKe CreateThongKe(global::System.DateTime gioHeThong)
         {
-            HeThong heThong = new HeThong();
-            heThong.GioHeThong = gioHeThong;
-            return heThong;
+            ThongKe thongKe = new ThongKe();
+            thongKe.GioHeThong = gioHeThong;
+            return thongKe;
         }
         /// <summary>
         /// There are no comments for Property GioHeThong in the schema.

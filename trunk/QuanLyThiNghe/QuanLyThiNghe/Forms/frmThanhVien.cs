@@ -48,7 +48,7 @@ namespace QuanLyThiNghe.Forms
         }
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-
+            ShowNhatKy();
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -61,7 +61,17 @@ namespace QuanLyThiNghe.Forms
 
         private void danhSáchThíSinhDựThiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ShowNhatKy();
+        }
+        private void ShowNhatKy()
+        {
+            if (gridView1.SelectedRowsCount > 0)
+            {
+                string username = gridView1.GetRowCellValue(gridView1.GetSelectedRows()[0], "TenDangNhap").ToString();
+                frmNhatKyDangNhap frm = new frmNhatKyDangNhap();
+                frm.pTenDangNhap = username;
+                frm.Show();
+            }
         }
         private void xoáHuyệnNàyToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -128,8 +138,9 @@ namespace QuanLyThiNghe.Forms
                     tk.DaXoa = true;
 
                     tk.NguoiCapNhat = ((frmMain)this.ParentForm).TaiKhoanHienTai.TenDangNhap;
-                    tk.NgayCapNhat = (from s in en.HeThong select s).First().GioHeThong;
+                    tk.NgayCapNhat = HeThong.LayGioHeThong();
                     en.SaveChanges();
+                    XuLyForm.LuuNhatKy("Xóa tài khoản " + username);
                     loadThanhVien();
                 }
             }

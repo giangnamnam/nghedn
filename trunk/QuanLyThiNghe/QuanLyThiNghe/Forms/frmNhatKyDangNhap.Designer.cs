@@ -34,7 +34,6 @@
             this.danhSáchThíSinhDựThiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.xoáHuyệnNàyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xoáCácHuyệnĐượcChọnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -90,39 +89,30 @@
             this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.danhSáchThíSinhDựThiToolStripMenuItem,
             this.toolStripSeparator1,
-            this.xoáHuyệnNàyToolStripMenuItem,
-            this.xoáCácHuyệnĐượcChọnToolStripMenuItem});
+            this.xoáHuyệnNàyToolStripMenuItem});
             this.Menu.Name = "contextMenuStrip1";
-            this.Menu.Size = new System.Drawing.Size(275, 76);
+            this.Menu.Size = new System.Drawing.Size(187, 76);
             // 
             // danhSáchThíSinhDựThiToolStripMenuItem
             // 
             this.danhSáchThíSinhDựThiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.iconlist;
             this.danhSáchThíSinhDựThiToolStripMenuItem.Name = "danhSáchThíSinhDựThiToolStripMenuItem";
-            this.danhSáchThíSinhDựThiToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.danhSáchThíSinhDựThiToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.danhSáchThíSinhDựThiToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.danhSáchThíSinhDựThiToolStripMenuItem.Text = "Chi tiết tài khoản này";
+            this.danhSáchThíSinhDựThiToolStripMenuItem.Click += new System.EventHandler(this.danhSáchThíSinhDựThiToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(271, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(183, 6);
             // 
             // xoáHuyệnNàyToolStripMenuItem
             // 
             this.xoáHuyệnNàyToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
             this.xoáHuyệnNàyToolStripMenuItem.Name = "xoáHuyệnNàyToolStripMenuItem";
-            this.xoáHuyệnNàyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
-            this.xoáHuyệnNàyToolStripMenuItem.Text = "Xoá nhật ký của tài khoản này";
-            // 
-            // xoáCácHuyệnĐượcChọnToolStripMenuItem
-            // 
-            this.xoáCácHuyệnĐượcChọnToolStripMenuItem.Name = "xoáCácHuyệnĐượcChọnToolStripMenuItem";
-            this.xoáCácHuyệnĐượcChọnToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
-                        | System.Windows.Forms.Keys.D)));
-            this.xoáCácHuyệnĐượcChọnToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
-            this.xoáCácHuyệnĐượcChọnToolStripMenuItem.Text = "Xoá tất cả nhật ký";
+            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.xoáHuyệnNàyToolStripMenuItem.Text = "Xóa nhật ký này";
+            this.xoáHuyệnNàyToolStripMenuItem.Click += new System.EventHandler(this.xoáHuyệnNàyToolStripMenuItem_Click);
             // 
             // gridView1
             // 
@@ -360,7 +350,6 @@
         private System.Windows.Forms.ToolStripMenuItem danhSáchThíSinhDựThiToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem xoáHuyệnNàyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xoáCácHuyệnĐượcChọnToolStripMenuItem;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
