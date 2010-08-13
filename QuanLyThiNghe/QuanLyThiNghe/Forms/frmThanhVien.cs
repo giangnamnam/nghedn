@@ -12,6 +12,8 @@ namespace QuanLyThiNghe.Forms
     public partial class frmThanhVien : Form
     {
         QLTN_Entities en = new QLTN_Entities();
+        public int MaPhanQuyen { get; set; }
+
         public frmThanhVien()
         {
             InitializeComponent();
@@ -72,18 +74,32 @@ namespace QuanLyThiNghe.Forms
 
         private void loadThanhVien()
         {
-            en.Refresh(System.Data.Objects.RefreshMode.ClientWins, en.TaiKhoan);
-            var TaiKhoans = en.TaiKhoan.Where(x => (x.DaXoa == null || x.DaXoa == false)).Select(tk => new { tk.TenDangNhap, tk.HoVaTen, tk.DienThoai, tk.MAC, tk.PhanQuyen.TenQuyen, tk.NguoiTao,tk.NguoiCapNhat,tk.NgayTao,tk.NgayCapNhat });//Where(t => t.DMHuyen.TenHuyen == tenhuyen).Select(t1 => new { t1.TenTruong, SoThiSinh = t1.ThiSinh.Count });
-            int st = gridView1.TopRowIndex;
-            int[] sindex = gridView1.GetSelectedRows();
-            gridControl1.DataSource = TaiKhoans;
-            gridView1.TopRowIndex = st;
-            foreach (int item in sindex)
+            if (MaPhanQuyen != 0)
             {
-                gridView1.FocusedRowHandle = item;
+                en.Refresh(System.Data.Objects.RefreshMode.ClientWins, en.TaiKhoan);
+                var TaiKhoans = en.TaiKhoan.Where(x => ((x.DaXoa == null || x.DaXoa == false) && x.PhanQuyen.MaPhanQuyen == MaPhanQuyen)).Select(tk => new { tk.TenDangNhap, tk.HoVaTen, tk.DienThoai, tk.MAC, tk.PhanQuyen.TenQuyen, tk.NguoiTao, tk.NguoiCapNhat, tk.NgayTao, tk.NgayCapNhat });//Where(t => t.DMHuyen.TenHuyen == tenhuyen).Select(t1 => new { t1.TenTruong, SoThiSinh = t1.ThiSinh.Count });
+                int st = gridView1.TopRowIndex;
+                int[] sindex = gridView1.GetSelectedRows();
+                gridControl1.DataSource = TaiKhoans;
+                gridView1.TopRowIndex = st;
+                foreach (int item in sindex)
+                {
+                    gridView1.FocusedRowHandle = item;
+                }
             }
-            
-
+            else
+            {
+                en.Refresh(System.Data.Objects.RefreshMode.ClientWins, en.TaiKhoan);
+                var TaiKhoans = en.TaiKhoan.Where(x => (x.DaXoa == null || x.DaXoa == false)).Select(tk => new { tk.TenDangNhap, tk.HoVaTen, tk.DienThoai, tk.MAC, tk.PhanQuyen.TenQuyen, tk.NguoiTao, tk.NguoiCapNhat, tk.NgayTao, tk.NgayCapNhat });//Where(t => t.DMHuyen.TenHuyen == tenhuyen).Select(t1 => new { t1.TenTruong, SoThiSinh = t1.ThiSinh.Count });
+                int st = gridView1.TopRowIndex;
+                int[] sindex = gridView1.GetSelectedRows();
+                gridControl1.DataSource = TaiKhoans;
+                gridView1.TopRowIndex = st;
+                foreach (int item in sindex)
+                {
+                    gridView1.FocusedRowHandle = item;
+                }
+            }
         }
         private void EditThanhVien()
         {
