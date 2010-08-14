@@ -70,7 +70,7 @@ namespace QuanLyThiNghe.Forms
                 string username = gridView1.GetRowCellValue(gridView1.GetSelectedRows()[0], "TenDangNhap").ToString();
                 frmNhatKyDangNhap frm = new frmNhatKyDangNhap();
                 frm.pTenDangNhap = username;
-                frm.Show();
+                frm.ShowDialog();
             }
         }
         private void xoáHuyệnNàyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -131,7 +131,11 @@ namespace QuanLyThiNghe.Forms
             if (gridView1.SelectedRowsCount > 0)
             {
                 string username = gridView1.GetRowCellValue(gridView1.GetSelectedRows()[0], "TenDangNhap").ToString();
-                if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chắc rằng muốn xóa tài khoản "+username+" ?", "Tài khoản", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+                if (username.ToLower()=="admin"|| username.ToLower() == "unknown")
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Xin lỗi, bạn không thể xóa tài khoản " + username + ".", "Tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chắc rằng muốn xóa tài khoản "+username+" ?", "Tài khoản", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
                 {
                     en.Refresh(System.Data.Objects.RefreshMode.ClientWins, en.TaiKhoan);
                     TaiKhoan tk = (from t in en.TaiKhoan where t.TenDangNhap == username select t).First();

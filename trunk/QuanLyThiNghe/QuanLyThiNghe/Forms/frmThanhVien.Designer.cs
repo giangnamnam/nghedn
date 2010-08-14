@@ -100,9 +100,9 @@
             // 
             // simpleButton4
             // 
-            this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Right;
             this.simpleButton4.Image = global::QuanLyThiNghe.Properties.Resources.iconlist;
-            this.simpleButton4.Location = new System.Drawing.Point(366, 3);
+            this.simpleButton4.Location = new System.Drawing.Point(369, 3);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(120, 24);
             this.simpleButton4.TabIndex = 6;

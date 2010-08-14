@@ -91,7 +91,7 @@
             this.toolStripSeparator1,
             this.xoáHuyệnNàyToolStripMenuItem});
             this.Menu.Name = "contextMenuStrip1";
-            this.Menu.Size = new System.Drawing.Size(187, 76);
+            this.Menu.Size = new System.Drawing.Size(187, 54);
             // 
             // danhSáchThíSinhDựThiToolStripMenuItem
             // 
@@ -327,7 +327,7 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panel1);
             this.Name = "frmNhatKyDangNhap";
-            this.Text = "Nhật ký đăng nhập";
+            this.Text = "Nhật ký";
             this.Load += new System.EventHandler(this.frmNhatKyDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             this.Menu.ResumeLayout(false);
