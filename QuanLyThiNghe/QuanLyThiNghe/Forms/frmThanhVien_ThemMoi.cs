@@ -64,7 +64,8 @@ namespace QuanLyThiNghe.Forms
                         tk.MatKhau = XuLyChuoi.MaHoa(textEdit3.Text, XuLyChuoi.KieuMaHoa.HungVQ);
                         tk.MAC = textEdit6.Text;
                         tk.TenDangNhap = textEdit2.Text;
-                        tk.NguoiTao = ((frmMain)Application.OpenForms["frmMain"]).TaiKhoanHienTai.TenDangNhap;
+                        tk.NguoiTao = HeThong.TaiKhoanDangNhap().TenDangNhap;
+                        tk.NgayTao = HeThong.LayGioHeThong();
                         pq.TaiKhoan.Add(tk);
                         //tk.PhanQuyen.TenQuyen = comboBoxEdit1.SelectedText;
                         en.SaveChanges();
@@ -81,7 +82,7 @@ namespace QuanLyThiNghe.Forms
                     string quyen = comboBoxEdit1.SelectedItem.ToString();
                     PhanQuyen pq = (from q in en.PhanQuyen where q.TenQuyen == quyen select q).First();
 
-                    tk.NguoiCapNhat = ((frmMain)Application.OpenForms["frmMain"]).TaiKhoanHienTai.TenDangNhap;
+                    tk.NguoiCapNhat = HeThong.TaiKhoanDangNhap().TenDangNhap;// ((frmMain)Application.OpenForms["frmMain"]).TaiKhoanHienTai.TenDangNhap;
                     tk.NgayCapNhat = HeThong.LayGioHeThong();
 
                     tk.DienThoai = textEdit5.Text;
