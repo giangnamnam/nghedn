@@ -96,12 +96,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmCauHinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmCauHinh.Designer.cs">
-      <DependentUpon>frmCauHinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmGioiThieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +197,12 @@
     </Compile>
     <Compile Include="Forms\frmTruong.Designer.cs">
       <DependentUpon>frmTruong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCauHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCauHinh.Designer.cs">
+      <DependentUpon>frmCauHinh.cs</DependentUpon>
     </Compile>
     <Compile Include="lib\lib.cs" />
     <Compile Include="Program.cs" />
