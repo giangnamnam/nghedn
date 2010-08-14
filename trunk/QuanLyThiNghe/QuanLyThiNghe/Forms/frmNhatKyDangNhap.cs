@@ -42,22 +42,36 @@ namespace QuanLyThiNghe.Forms
                 denNgay = DateTime.Parse(dateEdit2.DateTime.ToString("yyyy/MM/dd") + " 11:59:59 PM");
             }
 
-            if (string.IsNullOrEmpty(pTenDangNhap))
-            {
-                pTenDangNhap = "%";
-            }
+            
             
             
             try
             {
-                var NhatKys = en.NhatKy.Where(x => ((x.DaXoa == null || x.DaXoa == false) && (x.NgayThaoTac >= tuNgay) && (x.NgayThaoTac <= denNgay) && x.TaiKhoan.TenDangNhap==pTenDangNhap )).Select(tk => new { tk.TaiKhoan.TenDangNhap, tk.TaiKhoan.HoVaTen, tk.TaiKhoan.PhanQuyen.TenQuyen, tk.NgayThaoTac, tk.ThaoTac, tk.ComputerUser, tk.IP, tk.MaNhatKy });
-                int st = gridView1.TopRowIndex;
-                int[] sindex = gridView1.GetSelectedRows();
-                gridControl1.DataSource = NhatKys;
-                gridView1.TopRowIndex = st;
-                foreach (int item in sindex)
+                if (string.IsNullOrEmpty(pTenDangNhap))
                 {
-                    gridView1.FocusedRowHandle = item;
+                    var NhatKys = en.NhatKy.Where(x => ((x.DaXoa == null || x.DaXoa == false) && (x.NgayThaoTac >= tuNgay) && (x.NgayThaoTac <= denNgay))).Select(tk => new { tk.TaiKhoan.TenDangNhap, tk.TaiKhoan.HoVaTen, tk.TaiKhoan.PhanQuyen.TenQuyen, tk.NgayThaoTac, tk.ThaoTac, tk.ComputerUser, tk.IP, tk.MaNhatKy });
+                    int st = gridView1.TopRowIndex;
+                    int[] sindex = gridView1.GetSelectedRows();
+                    gridControl1.DataSource = NhatKys;
+                    gridView1.TopRowIndex = st;
+                    foreach (int item in sindex)
+                    {
+                        gridView1.FocusedRowHandle = item;
+                    }
+                }
+                else
+                {
+
+                    var NhatKys = en.NhatKy.Where(x => ((x.DaXoa == null || x.DaXoa == false) && (x.NgayThaoTac >= tuNgay) && (x.NgayThaoTac <= denNgay) && x.TaiKhoan.TenDangNhap == pTenDangNhap)).Select(tk => new { tk.TaiKhoan.TenDangNhap, tk.TaiKhoan.HoVaTen, tk.TaiKhoan.PhanQuyen.TenQuyen, tk.NgayThaoTac, tk.ThaoTac, tk.ComputerUser, tk.IP, tk.MaNhatKy });
+                    int st = gridView1.TopRowIndex;
+                    int[] sindex = gridView1.GetSelectedRows();
+                    gridControl1.DataSource = NhatKys;
+                    gridView1.TopRowIndex = st;
+                    foreach (int item in sindex)
+                    {
+                        gridView1.FocusedRowHandle = item;
+                    }
+
                 }
             }
             catch (Exception ex)
