@@ -12,3 +12,10 @@ D:\Working\DongNai\source\QuanLyThiNghe\QuanLyThiNghe_HoiDongThi\obj\Debug\QuanL
 D:\Working\DongNai\source\QuanLyThiNghe\QuanLyThiNghe_HoiDongThi\obj\Debug\QuanLyThiNghe_HoiDongThi.csproj.GenerateResource.Cache
 D:\Working\DongNai\source\QuanLyThiNghe\QuanLyThiNghe_HoiDongThi\obj\Debug\QuanLyThiNghe_HoiDongThi.exe
 D:\Working\DongNai\source\QuanLyThiNghe\QuanLyThiNghe_HoiDongThi\obj\Debug\QuanLyThiNghe_HoiDongThi.pdb
+D:\Working\DongNai\nghedn\QuanLyThiNghe\QuanLyThiNghe_HoiDongThi\bin\Debug\QuanLyThiNghe_HoiDongThi.exe
+D:\Working\DongNai\nghedn\QuanLyThiNghe\QuanLyThiNghe_HoiDongThi\bin\Debug\QuanLyThiNghe_HoiDongThi.pdb
+D:\Working\DongNai\nghedn\QuanLyThiNghe\QuanLyThiNghe_HoiDongThi\obj\Debug\ResolveAssemblyReference.cache
+D:\Working\DongNai\nghedn\QuanLyThiNghe\QuanLyThiNghe_HoiDongThi\obj\Debug\QuanLyThiNghe_HoiDongThi.Properties.Resources.resources
+D:\Working\DongNai\nghedn\QuanLyThiNghe\QuanLyThiNghe_HoiDongThi\obj\Debug\QuanLyThiNghe_HoiDongThi.csproj.GenerateResource.Cache
+D:\Working\DongNai\nghedn\QuanLyThiNghe\QuanLyThiNghe_HoiDongThi\obj\Debug\QuanLyThiNghe_HoiDongThi.exe
+D:\Working\DongNai\nghedn\QuanLyThiNghe\QuanLyThiNghe_HoiDongThi\obj\Debug\QuanLyThiNghe_HoiDongThi.pdb
