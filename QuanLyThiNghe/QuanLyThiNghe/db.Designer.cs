@@ -21,7 +21,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_TaiKhoan_PhanQuyen", "PhanQuyen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.PhanQuyen), "TaiKhoan", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.TaiKhoan))]
 
 // Original file name:
-// Generation date: 13/08/10 7:55:16 PM
+// Generation date: 14/08/10 4:09:07 PM
 namespace QuanLyThiNghe
 {
     
@@ -388,120 +388,212 @@ namespace QuanLyThiNghe
         partial void OnCheckMacChanging(global::System.Nullable<bool> value);
         partial void OnCheckMacChanged();
         /// <summary>
-        /// There are no comments for Property EnableApp1 in the schema.
+        /// There are no comments for Property ChoLoginWeb in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<bool> EnableApp1
+        public global::System.Nullable<bool> ChoLoginWeb
         {
             get
             {
-                return this._EnableApp1;
+                return this._ChoLoginWeb;
             }
             set
             {
-                this.OnEnableApp1Changing(value);
-                this.ReportPropertyChanging("EnableApp1");
-                this._EnableApp1 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("EnableApp1");
-                this.OnEnableApp1Changed();
+                this.OnChoLoginWebChanging(value);
+                this.ReportPropertyChanging("ChoLoginWeb");
+                this._ChoLoginWeb = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ChoLoginWeb");
+                this.OnChoLoginWebChanged();
             }
         }
-        private global::System.Nullable<bool> _EnableApp1;
-        partial void OnEnableApp1Changing(global::System.Nullable<bool> value);
-        partial void OnEnableApp1Changed();
+        private global::System.Nullable<bool> _ChoLoginWeb;
+        partial void OnChoLoginWebChanging(global::System.Nullable<bool> value);
+        partial void OnChoLoginWebChanged();
         /// <summary>
-        /// There are no comments for Property EnableApp2 in the schema.
+        /// There are no comments for Property HienThiThongBaoTrenWeb in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<bool> EnableApp2
+        public global::System.Nullable<bool> HienThiThongBaoTrenWeb
         {
             get
             {
-                return this._EnableApp2;
+                return this._HienThiThongBaoTrenWeb;
             }
             set
             {
-                this.OnEnableApp2Changing(value);
-                this.ReportPropertyChanging("EnableApp2");
-                this._EnableApp2 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("EnableApp2");
-                this.OnEnableApp2Changed();
+                this.OnHienThiThongBaoTrenWebChanging(value);
+                this.ReportPropertyChanging("HienThiThongBaoTrenWeb");
+                this._HienThiThongBaoTrenWeb = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("HienThiThongBaoTrenWeb");
+                this.OnHienThiThongBaoTrenWebChanged();
             }
         }
-        private global::System.Nullable<bool> _EnableApp2;
-        partial void OnEnableApp2Changing(global::System.Nullable<bool> value);
-        partial void OnEnableApp2Changed();
+        private global::System.Nullable<bool> _HienThiThongBaoTrenWeb;
+        partial void OnHienThiThongBaoTrenWebChanging(global::System.Nullable<bool> value);
+        partial void OnHienThiThongBaoTrenWebChanged();
         /// <summary>
-        /// There are no comments for Property EnableApp1Edit in the schema.
+        /// There are no comments for Property NoiDungThongBaoTrenWeb in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<bool> EnableApp1Edit
+        public string NoiDungThongBaoTrenWeb
         {
             get
             {
-                return this._EnableApp1Edit;
+                return this._NoiDungThongBaoTrenWeb;
             }
             set
             {
-                this.OnEnableApp1EditChanging(value);
-                this.ReportPropertyChanging("EnableApp1Edit");
-                this._EnableApp1Edit = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("EnableApp1Edit");
-                this.OnEnableApp1EditChanged();
+                this.OnNoiDungThongBaoTrenWebChanging(value);
+                this.ReportPropertyChanging("NoiDungThongBaoTrenWeb");
+                this._NoiDungThongBaoTrenWeb = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("NoiDungThongBaoTrenWeb");
+                this.OnNoiDungThongBaoTrenWebChanged();
             }
         }
-        private global::System.Nullable<bool> _EnableApp1Edit;
-        partial void OnEnableApp1EditChanging(global::System.Nullable<bool> value);
-        partial void OnEnableApp1EditChanged();
+        private string _NoiDungThongBaoTrenWeb;
+        partial void OnNoiDungThongBaoTrenWebChanging(string value);
+        partial void OnNoiDungThongBaoTrenWebChanged();
         /// <summary>
-        /// There are no comments for Property EnableApp1Delete in the schema.
+        /// There are no comments for Property ChoCacTruongGuiDanhSach in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<bool> EnableApp1Delete
+        public global::System.Nullable<bool> ChoCacTruongGuiDanhSach
         {
             get
             {
-                return this._EnableApp1Delete;
+                return this._ChoCacTruongGuiDanhSach;
             }
             set
             {
-                this.OnEnableApp1DeleteChanging(value);
-                this.ReportPropertyChanging("EnableApp1Delete");
-                this._EnableApp1Delete = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("EnableApp1Delete");
-                this.OnEnableApp1DeleteChanged();
+                this.OnChoCacTruongGuiDanhSachChanging(value);
+                this.ReportPropertyChanging("ChoCacTruongGuiDanhSach");
+                this._ChoCacTruongGuiDanhSach = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ChoCacTruongGuiDanhSach");
+                this.OnChoCacTruongGuiDanhSachChanged();
             }
         }
-        private global::System.Nullable<bool> _EnableApp1Delete;
-        partial void OnEnableApp1DeleteChanging(global::System.Nullable<bool> value);
-        partial void OnEnableApp1DeleteChanged();
+        private global::System.Nullable<bool> _ChoCacTruongGuiDanhSach;
+        partial void OnChoCacTruongGuiDanhSachChanging(global::System.Nullable<bool> value);
+        partial void OnChoCacTruongGuiDanhSachChanged();
         /// <summary>
-        /// There are no comments for Property ExcelFileTemplateLink in the schema.
+        /// There are no comments for Property ChoCacTruongNhanDanhSach in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string ExcelFileTemplateLink
+        public global::System.Nullable<bool> ChoCacTruongNhanDanhSach
         {
             get
             {
-                return this._ExcelFileTemplateLink;
+                return this._ChoCacTruongNhanDanhSach;
             }
             set
             {
-                this.OnExcelFileTemplateLinkChanging(value);
-                this.ReportPropertyChanging("ExcelFileTemplateLink");
-                this._ExcelFileTemplateLink = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("ExcelFileTemplateLink");
-                this.OnExcelFileTemplateLinkChanged();
+                this.OnChoCacTruongNhanDanhSachChanging(value);
+                this.ReportPropertyChanging("ChoCacTruongNhanDanhSach");
+                this._ChoCacTruongNhanDanhSach = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ChoCacTruongNhanDanhSach");
+                this.OnChoCacTruongNhanDanhSachChanged();
             }
         }
-        private string _ExcelFileTemplateLink;
-        partial void OnExcelFileTemplateLinkChanging(string value);
-        partial void OnExcelFileTemplateLinkChanged();
+        private global::System.Nullable<bool> _ChoCacTruongNhanDanhSach;
+        partial void OnChoCacTruongNhanDanhSachChanging(global::System.Nullable<bool> value);
+        partial void OnChoCacTruongNhanDanhSachChanged();
+        /// <summary>
+        /// There are no comments for Property ChoHoiDongThiNhanDanhSach in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<bool> ChoHoiDongThiNhanDanhSach
+        {
+            get
+            {
+                return this._ChoHoiDongThiNhanDanhSach;
+            }
+            set
+            {
+                this.OnChoHoiDongThiNhanDanhSachChanging(value);
+                this.ReportPropertyChanging("ChoHoiDongThiNhanDanhSach");
+                this._ChoHoiDongThiNhanDanhSach = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ChoHoiDongThiNhanDanhSach");
+                this.OnChoHoiDongThiNhanDanhSachChanged();
+            }
+        }
+        private global::System.Nullable<bool> _ChoHoiDongThiNhanDanhSach;
+        partial void OnChoHoiDongThiNhanDanhSachChanging(global::System.Nullable<bool> value);
+        partial void OnChoHoiDongThiNhanDanhSachChanged();
+        /// <summary>
+        /// There are no comments for Property ChoCacTruongNhanKetQua in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<bool> ChoCacTruongNhanKetQua
+        {
+            get
+            {
+                return this._ChoCacTruongNhanKetQua;
+            }
+            set
+            {
+                this.OnChoCacTruongNhanKetQuaChanging(value);
+                this.ReportPropertyChanging("ChoCacTruongNhanKetQua");
+                this._ChoCacTruongNhanKetQua = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ChoCacTruongNhanKetQua");
+                this.OnChoCacTruongNhanKetQuaChanged();
+            }
+        }
+        private global::System.Nullable<bool> _ChoCacTruongNhanKetQua;
+        partial void OnChoCacTruongNhanKetQuaChanging(global::System.Nullable<bool> value);
+        partial void OnChoCacTruongNhanKetQuaChanged();
+        /// <summary>
+        /// There are no comments for Property ChoHoiDongNhanKetQua in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<bool> ChoHoiDongNhanKetQua
+        {
+            get
+            {
+                return this._ChoHoiDongNhanKetQua;
+            }
+            set
+            {
+                this.OnChoHoiDongNhanKetQuaChanging(value);
+                this.ReportPropertyChanging("ChoHoiDongNhanKetQua");
+                this._ChoHoiDongNhanKetQua = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ChoHoiDongNhanKetQua");
+                this.OnChoHoiDongNhanKetQuaChanged();
+            }
+        }
+        private global::System.Nullable<bool> _ChoHoiDongNhanKetQua;
+        partial void OnChoHoiDongNhanKetQuaChanging(global::System.Nullable<bool> value);
+        partial void OnChoHoiDongNhanKetQuaChanged();
+        /// <summary>
+        /// There are no comments for Property ChoThuKyNhapDiem in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<bool> ChoThuKyNhapDiem
+        {
+            get
+            {
+                return this._ChoThuKyNhapDiem;
+            }
+            set
+            {
+                this.OnChoThuKyNhapDiemChanging(value);
+                this.ReportPropertyChanging("ChoThuKyNhapDiem");
+                this._ChoThuKyNhapDiem = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ChoThuKyNhapDiem");
+                this.OnChoThuKyNhapDiemChanged();
+            }
+        }
+        private global::System.Nullable<bool> _ChoThuKyNhapDiem;
+        partial void OnChoThuKyNhapDiemChanging(global::System.Nullable<bool> value);
+        partial void OnChoThuKyNhapDiemChanged();
     }
     /// <summary>
     /// There are no comments for QuanLyThiNghe.DMHuyen in the schema.
