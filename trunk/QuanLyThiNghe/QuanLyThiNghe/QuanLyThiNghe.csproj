@@ -156,6 +156,12 @@
     <Compile Include="Forms\frmQuyen.Designer.cs">
       <DependentUpon>frmQuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmSaoLuuPhucHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSaoLuuPhucHoi.Designer.cs">
+      <DependentUpon>frmSaoLuuPhucHoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmTaoPhongThi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmQuyen.resx">
       <DependentUpon>frmQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSaoLuuPhucHoi.resx">
+      <DependentUpon>frmSaoLuuPhucHoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTaoPhongThi.resx">
       <DependentUpon>frmTaoPhongThi.cs</DependentUpon>
