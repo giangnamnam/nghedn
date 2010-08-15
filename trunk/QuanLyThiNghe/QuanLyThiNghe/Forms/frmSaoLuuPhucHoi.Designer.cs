@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSaoLuuPhucHoi));
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.thêmHuyệnMớiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xemDanhSáchTrườngTrongHuyệnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.xóaSaoLưuNàyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.Menu.SuspendLayout();
@@ -70,6 +74,7 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl1.ContextMenuStrip = this.Menu;
             this.gridControl1.Location = new System.Drawing.Point(13, 42);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -82,7 +87,8 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn3});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsMenu.EnableColumnMenu = false;
@@ -108,12 +114,23 @@
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Ngày tạo";
+            this.gridColumn3.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn3.FieldName = "NgayTao";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
             // Menu
             // 
             this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thêmHuyệnMớiToolStripMenuItem,
             this.xemDanhSáchTrườngTrongHuyệnToolStripMenuItem,
-            this.toolStripSeparator1});
+            this.toolStripSeparator1,
+            this.xóaSaoLưuNàyToolStripMenuItem});
             this.Menu.Name = "contextMenuStrip1";
             this.Menu.Size = new System.Drawing.Size(176, 76);
             // 
@@ -138,11 +155,31 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(172, 6);
             // 
+            // xóaSaoLưuNàyToolStripMenuItem
+            // 
+            this.xóaSaoLưuNàyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xóaSaoLưuNàyToolStripMenuItem.Image")));
+            this.xóaSaoLưuNàyToolStripMenuItem.Name = "xóaSaoLưuNàyToolStripMenuItem";
+            this.xóaSaoLưuNàyToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.xóaSaoLưuNàyToolStripMenuItem.Text = "Xóa sao lưu này";
+            this.xóaSaoLưuNàyToolStripMenuItem.Click += new System.EventHandler(this.xóaSaoLưuNàyToolStripMenuItem_Click);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
+            this.simpleButton3.Location = new System.Drawing.Point(241, 12);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(117, 23);
+            this.simpleButton3.TabIndex = 3;
+            this.simpleButton3.Text = "Xóa sao lưu";
+            this.simpleButton3.ToolTip = "Xóa sao lưu dữ liệu đang được chọn";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
             // frmSaoLuuPhucHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 372);
+            this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
@@ -168,5 +205,8 @@
         private System.Windows.Forms.ToolStripMenuItem thêmHuyệnMớiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xemDanhSáchTrườngTrongHuyệnToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private System.Windows.Forms.ToolStripMenuItem xóaSaoLưuNàyToolStripMenuItem;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }

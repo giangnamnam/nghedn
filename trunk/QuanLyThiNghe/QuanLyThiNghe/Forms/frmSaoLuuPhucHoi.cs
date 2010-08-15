@@ -28,7 +28,7 @@ namespace QuanLyThiNghe.Forms
         }
         public void BackupDatabase(String databaseName, String userName, String password, String serverName, String destinationPath)
         {
-
+            string tendangnhap = HeThong.TaiKhoanDangNhap().TenDangNhap;
             Backup sqlBackup = new Backup();
             sqlBackup.Action = BackupActionType.Database;
             DateTime ht = HeThong.LayGioHeThong();//8/14/2010 9:32:24 PM
@@ -36,7 +36,7 @@ namespace QuanLyThiNghe.Forms
             sqlBackup.BackupSetName = "Archive";
 
             sqlBackup.Database = databaseName;
-            destinationPath = destinationPath + "ThiNghe" + ht.ToString("dd-MM-yyyy-HH-mm-ss") + ".bak";
+            destinationPath = destinationPath + "ThiNghe" + ht.ToString("dd-MM-yyyy-HH-mm-ss") +"("+tendangnhap+ ").bak";
             BackupDeviceItem deviceItem = new BackupDeviceItem(destinationPath, DeviceType.File);
             ServerConnection connection = new ServerConnection(serverName, userName, password);
             Server sqlServer = new Server(connection);
@@ -53,7 +53,7 @@ namespace QuanLyThiNghe.Forms
             sqlBackup.FormatMedia = false;
             sqlBackup.SqlBackup(sqlServer);
 
-            XuLyForm.LuuFile(@"C:\ThiNgheDatabaseBackupList.bin", "Backup dữ liệu (" + ht.ToString("dd/MM/yyyy HH:mm:ss") + ")|" + destinationPath+"|"+ht.ToString("MM/dd/yyyy hh:mm:ss tt"));
+            XuLyForm.LuuFile(@"C:\ThiNgheDatabaseBackupList.bin", tendangnhap+ " (backup " + ht.ToString("dd/MM/yyyy HH:mm:ss") + ")|" + destinationPath+"|"+ht.ToString("MM/dd/yyyy hh:mm:ss tt"),true);
             
         }
         public void RestoreDatabase(String databaseName, String filePath, String serverName, String userName, String password, String dataFilePath, String logFilePath)
@@ -154,8 +154,8 @@ namespace QuanLyThiNghe.Forms
                     string filepath = @"C:\ThiNgheDatabaseBackupList.bin";
                     TextReader trs = new StreamReader(filepath);
                     string NoiDung = trs.ReadToEnd();
-
-                    NoiDung = NoiDung.Replace("\r\n", "!");//.Replace("\n","!").Replace("\r","!");
+                    trs.Close();
+                    NoiDung = NoiDung.Replace("\r\n\r\n", "").Replace("\r\n", "!");//.Replace("\n","!").Replace("\r","!");
                     string[] lbk = NoiDung.Split('!');
                     DataTable tbl = new DataTable();
                     tbl.Columns.Add("Ten");
@@ -168,6 +168,10 @@ namespace QuanLyThiNghe.Forms
                         DataRow rw = tbl.NewRow();
                         rw[0] = el[0];
                         rw[1] = el[1];
+                        if (el.Length>2)
+                        {
+                            rw[2] = el[2];
+                        }
                         tbl.Rows.Add(rw);
                     }
                     gridControl1.DataSource = tbl;
@@ -198,6 +202,46 @@ namespace QuanLyThiNghe.Forms
         {
             //phục hồi
             PhucHoiDuLieu();
+        }
+
+        private void xóaSaoLưuNàyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deleteBackup();
+        }
+        private void deleteBackup()
+        {
+            if (gridView1.SelectedRowsCount > 0)
+            {
+                int index = gridView1.GetSelectedRows()[0];
+                string Ma = gridView1.GetRowCellValue(index, "Ten").ToString();
+                if (XtraMessageBox.Show("Bạn có chắc rằng muốn xóa sao lưu dữ liệu "+Ma +"?", "Phục hồi dữ liệu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    
+                    string Ma1 = gridView1.GetRowCellValue(index, "GiaTri").ToString();
+                    string filepath = @"C:\ThiNgheDatabaseBackupList.bin";
+                    TextReader trs = new StreamReader(filepath);
+                    string NoiDung = trs.ReadToEnd();
+                    trs.Close();
+                    NoiDung = NoiDung.Replace("\r\n", "!");
+                    string[] lbk = NoiDung.Split('!');
+                    string kq = "";
+                    for (int i = 0; i < lbk.Length-1; i++)
+                    {
+                        if (!lbk[i].Contains(Ma1))
+                        {
+                            kq += lbk[i] + "\r\n";
+                        }
+                    }
+                    XuLyForm.LuuFile(@"C:\ThiNgheDatabaseBackupList.bin", kq, false);
+                    XuLyForm.LuuNhatKy("Xóa sao lưu dữ liệu " + Ma1);
+                    LoadNhatKy();
+                }
+            }
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            deleteBackup();
         }
     }
 }
