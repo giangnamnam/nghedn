@@ -42,6 +42,8 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.checkEdit6 = new DevExpress.XtraEditors.CheckEdit();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).BeginInit();
@@ -56,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // checkEdit5
@@ -122,7 +125,7 @@
             // 
             this.chkHienThiThongBao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkHienThiThongBao.Location = new System.Drawing.Point(10, 75);
+            this.chkHienThiThongBao.Location = new System.Drawing.Point(10, 96);
             this.chkHienThiThongBao.Name = "chkHienThiThongBao";
             this.chkHienThiThongBao.Properties.Caption = "Hiển thị thông báo khi đăng nhập trên web";
             this.chkHienThiThongBao.Size = new System.Drawing.Size(327, 18);
@@ -132,7 +135,7 @@
             // 
             this.chkCheckMAC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkCheckMAC.Location = new System.Drawing.Point(10, 27);
+            this.chkCheckMAC.Location = new System.Drawing.Point(10, 50);
             this.chkCheckMAC.Name = "chkCheckMAC";
             this.chkCheckMAC.Properties.Caption = "Kiểm tra địa chỉ MAC khi đăng nhập";
             this.chkCheckMAC.Size = new System.Drawing.Size(327, 18);
@@ -143,9 +146,9 @@
             this.memoEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.memoEdit1.Location = new System.Drawing.Point(10, 101);
+            this.memoEdit1.Location = new System.Drawing.Point(10, 120);
             this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(327, 112);
+            this.memoEdit1.Size = new System.Drawing.Size(327, 93);
             this.memoEdit1.TabIndex = 3;
             // 
             // groupControl1
@@ -164,6 +167,8 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.labelControl1);
+            this.groupControl2.Controls.Add(this.comboBoxEdit1);
             this.groupControl2.Controls.Add(this.checkEdit6);
             this.groupControl2.Controls.Add(this.chkCheckMAC);
             this.groupControl2.Controls.Add(this.chkHienThiThongBao);
@@ -178,7 +183,7 @@
             // 
             this.checkEdit6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkEdit6.Location = new System.Drawing.Point(10, 52);
+            this.checkEdit6.Location = new System.Drawing.Point(10, 73);
             this.checkEdit6.Name = "checkEdit6";
             this.checkEdit6.Properties.Caption = "Cho phép đăng nhập vào web thi nghề";
             this.checkEdit6.Size = new System.Drawing.Size(327, 18);
@@ -193,6 +198,23 @@
             this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "Lưu các thay đổi";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Location = new System.Drawing.Point(83, 25);
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Size = new System.Drawing.Size(254, 20);
+            this.comboBoxEdit1.TabIndex = 4;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(12, 28);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(65, 13);
+            this.labelControl1.TabIndex = 5;
+            this.labelControl1.Text = "Kỳ thi hiện tại";
             // 
             // frmCauHinh
             // 
@@ -225,7 +247,9 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,6 +269,8 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
         private DevExpress.XtraEditors.CheckEdit checkEdit6;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
 
     }
 }
