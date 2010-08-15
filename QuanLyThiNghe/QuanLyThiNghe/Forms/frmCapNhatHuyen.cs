@@ -24,11 +24,6 @@ namespace QuanLyThiNghe.Forms
 
         }
 
-        public void LoadDistrictsByID(int ID)
-        {
-
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (btnSave.ToolTipTitle == "insert")
@@ -36,8 +31,8 @@ namespace QuanLyThiNghe.Forms
                 DMHuyen h = new DMHuyen();
 
                 h.DaXoa = false;
-                h.NgayCapNhat = h.NgayTao = DateTime.Now;
-                h.NguoiCapNhat = h.NguoiTao = "";
+                h.NgayCapNhat = h.NgayTao = HeThong.LayGioHeThong();
+                h.NguoiCapNhat = h.NguoiTao = HeThong.TaiKhoanDangNhap().TenDangNhap;
                 h.TenHuyen = txtDistrictName.Text;
 
                 try
@@ -47,7 +42,7 @@ namespace QuanLyThiNghe.Forms
                 }
                 catch (Exception exp)
                 {
-                    MessageBox.Show("Có lối xảy ra: " + exp.Message);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Có lối xảy ra: " + exp.Message);
                     return;
                 }
                 finally
@@ -63,8 +58,8 @@ namespace QuanLyThiNghe.Forms
                 var h = _Entities.DMHuyen.Where(d => d.MaHuyen == MaHuyen).FirstOrDefault();
 
                 h.DaXoa = false;
-                h.NgayCapNhat = DateTime.Now;
-                h.NguoiCapNhat = "";
+                h.NgayCapNhat = HeThong.LayGioHeThong();
+                h.NguoiCapNhat = HeThong.TaiKhoanDangNhap().TenDangNhap;
                 h.TenHuyen = txtDistrictName.Text;
 
                 try
@@ -73,12 +68,12 @@ namespace QuanLyThiNghe.Forms
                 }
                 catch (Exception exp)
                 {
-                    MessageBox.Show("Có lối xảy ra: " + exp.Message);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Có lối xảy ra: " + exp.Message);
                     return;
                 }
                 finally
                 {
-                    MessageBox.Show("Đã cập nhật thành công.");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Đã cập nhật thành công.");
 
                     frmHuyen f = (frmHuyen)Application.OpenForms["frmHuyen"];
                     f.LoadDistricts();

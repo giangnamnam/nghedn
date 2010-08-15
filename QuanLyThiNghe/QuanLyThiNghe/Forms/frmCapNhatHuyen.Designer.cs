@@ -84,8 +84,8 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.TextEdit txtDistrictName;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         public DevExpress.XtraEditors.SimpleButton btnSave;
+        public DevExpress.XtraEditors.TextEdit txtDistrictName;
     }
 }
