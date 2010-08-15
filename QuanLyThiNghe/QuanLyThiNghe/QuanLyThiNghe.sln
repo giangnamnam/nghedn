@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyThiNghe", "QuanLyThiNghe.csproj", "{887D9476-D189-4519-B0F5-1867FCDD6B2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyThiNghe_HoiDongThi", "..\QuanLyThiNghe_HoiDongThi\QuanLyThiNghe_HoiDongThi.csproj", "{C7C6318B-7141-4069-81C8-698FB2087C3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyThiNghe_ThuKy", "..\QuanLyThiNghe_HoiDongThi\QuanLyThiNghe_ThuKy.csproj", "{C7C6318B-7141-4069-81C8-698FB2087C3E}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ThiNghe", "..\..\ThiNghe\", "{E9CF973E-0EB5-4609-A14E-EE8C09811C7D}"
 	ProjectSection(WebsiteProperties) = preProject
