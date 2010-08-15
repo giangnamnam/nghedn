@@ -45,6 +45,7 @@ namespace QuanLyThiNghe
             {
                 string TenDangNhap = HeThong.TaiKhoanDangNhap().TenDangNhap;
                 QLTN_Entities en = new QLTN_Entities();
+                en.Refresh(System.Data.Objects.RefreshMode.ClientWins, en.TaiKhoan);
                 TaiKhoan vl = (from v in en.TaiKhoan where (v.TenDangNhap == TenDangNhap) select v).First();
                 NhatKy k = new NhatKy();
 
@@ -59,14 +60,14 @@ namespace QuanLyThiNghe
             {
             }
         }
-        public static void LuuFile(string FilePath, string NoiDung)
+        public static void LuuFile(string FilePath, string NoiDung, bool ThemDongMoi)
         {
             if (!File.Exists(@"C:\ThiNgheDatabaseBackupList.bin"))
             {
                 FileStream fs = File.Create(@"C:\ThiNgheDatabaseBackupList.bin");
                 fs.Close();
             }
-            TextWriter tw = new StreamWriter(FilePath,true);
+            TextWriter tw = new StreamWriter(FilePath, ThemDongMoi);
             tw.WriteLine(NoiDung);
             tw.Close();
         }
