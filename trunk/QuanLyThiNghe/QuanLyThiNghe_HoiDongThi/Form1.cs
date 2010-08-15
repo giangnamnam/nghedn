@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace QuanLyThiNghe_HoiDongThi
+namespace QuanLyThiNghe_ThuKy
 {
     public partial class Form1 : Form
     {

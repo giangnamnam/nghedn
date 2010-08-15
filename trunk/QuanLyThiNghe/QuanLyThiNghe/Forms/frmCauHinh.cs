@@ -23,8 +23,13 @@ namespace QuanLyThiNghe.Forms
         {
             LoadCauHinh();
         }
+        private void LoadKyThi()
+        {
+            comboBoxEdit1.Properties.Items.AddRange(en.DMKyThi.Where(h => h.DaXoa != null || h.DaXoa == false).Select(h1 => h1.TenKyThi).ToList());
+        }
         private void LoadCauHinh()
         {
+            LoadKyThi();
             en.Refresh(System.Data.Objects.RefreshMode.ClientWins, en.Config);
             Config cf = (from c in en.Config select c).First();
             chkCheckMAC.Checked = (cf.CheckMac==true? true: false);
@@ -37,6 +42,8 @@ namespace QuanLyThiNghe.Forms
             checkEdit5.Checked = (cf.ChoThuKyNhapDiem == true ? true : false);
             checkEdit6.Checked = (cf.ChoLoginWeb == true ? true : false);
             memoEdit1.Text = cf.NoiDungThongBaoTrenWeb;
+            DMKyThi kt = (from k in en.DMKyThi where k.MaKyThi == cf.KyThiHienTai select k).First();
+            comboBoxEdit1.SelectedText = kt.TenKyThi;
             btnLuu.Tag = cf.ConfigID;
         }
 
@@ -57,6 +64,22 @@ namespace QuanLyThiNghe.Forms
                 cf.ChoThuKyNhapDiem = checkEdit5.Checked;
                 cf.ChoLoginWeb = checkEdit6.Checked;
                 cf.NoiDungThongBaoTrenWeb = memoEdit1.Text;
+
+                if (comboBoxEdit1.SelectedItem != null)
+                {
+                    string kythi = comboBoxEdit1.SelectedItem.ToString();
+                    if ((from q in en.DMKyThi where q.TenKyThi == kythi select q).Count() < 1)
+                    {
+                        XtraMessageBox.Show("Vui lòng chọn kỳ thi chính xác.", "Tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    DMKyThi kt = (from k in en.DMKyThi where k.TenKyThi == kythi select k).First();
+                    cf.KyThiHienTai = kt.MaKyThi;
+                }
+
+                
+
                 en.SaveChanges();
                 XtraMessageBox.Show("Đã lưu lại cấu hình thành công.", "Cấu hình hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 XuLyForm.LuuNhatKy("Chỉnh sửa cấu hình hệ thống. ");

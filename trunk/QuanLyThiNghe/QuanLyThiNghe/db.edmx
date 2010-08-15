@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyThiNghe.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+    <Schema Namespace="QuanLyThiNghe.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityContainer Name="QuanLyThiNgheStoreContainer">
           <EntitySet Name="Config" EntityType="QuanLyThiNghe.Store.Config" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="DMHuyen" EntityType="QuanLyThiNghe.Store.DMHuyen" store:Type="Tables" Schema="dbo" />
@@ -78,6 +78,7 @@
           <Property Name="ChoCacTruongNhanKetQua" Type="bit" />
           <Property Name="ChoHoiDongNhanKetQua" Type="bit" />
           <Property Name="ChoThuKyNhapDiem" Type="bit" />
+          <Property Name="KyThiHienTai" Type="int" />
         </EntityType>
         <EntityType Name="DMHuyen">
           <Key>
@@ -361,8 +362,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyThiNghe" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
@@ -435,7 +435,7 @@
           <Property Name="ChoCacTruongNhanKetQua" Type="Boolean" />
           <Property Name="ChoHoiDongNhanKetQua" Type="Boolean" />
           <Property Name="ChoThuKyNhapDiem" Type="Boolean" />
-        </EntityType>
+          <Property Name="KyThiHienTai" Type="Int32" Nullable="true" /></EntityType>
         <EntityType Name="DMHuyen">
           <Key>
             <PropertyRef Name="MaHuyen" />
@@ -654,6 +654,7 @@
           <EntitySetMapping Name="Config">
             <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.Config)">
               <MappingFragment StoreEntitySet="Config">
+                <ScalarProperty Name="KyThiHienTai" ColumnName="KyThiHienTai" />
                 <ScalarProperty Name="ConfigID" ColumnName="ConfigID" />
                 <ScalarProperty Name="CheckMac" ColumnName="CheckMac" />
                 <ScalarProperty Name="ChoLoginWeb" ColumnName="ChoLoginWeb" />

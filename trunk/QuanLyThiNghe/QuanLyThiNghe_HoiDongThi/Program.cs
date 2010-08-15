@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace QuanLyThiNghe_HoiDongThi
+namespace QuanLyThiNghe_ThuKy
 {
     static class Program
     {

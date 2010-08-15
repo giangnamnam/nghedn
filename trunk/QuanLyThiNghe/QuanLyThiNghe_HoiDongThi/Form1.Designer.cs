@@ -1,4 +1,4 @@
-﻿namespace QuanLyThiNghe_HoiDongThi
+﻿namespace QuanLyThiNghe_ThuKy
 {
     partial class Form1
     {
