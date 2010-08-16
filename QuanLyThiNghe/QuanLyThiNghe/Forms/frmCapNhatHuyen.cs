@@ -49,7 +49,7 @@ namespace QuanLyThiNghe.Forms
                 {
                     frmHuyen f = (frmHuyen)Application.OpenForms["frmHuyen"];
                     f.LoadDistricts();
-
+                    XuLyForm.LuuNhatKy("Thêm huyện: " + h.TenHuyen);
                     txtDistrictName.Text = "";
                 }
             }
@@ -68,17 +68,27 @@ namespace QuanLyThiNghe.Forms
                 }
                 catch (Exception exp)
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Có lối xảy ra: " + exp.Message);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Có lỗi xảy ra: " + exp.Message);
                     return;
                 }
                 finally
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show("Đã cập nhật thành công.");
-
+                    XuLyForm.LuuNhatKy("Cập nhật huyện: " + h.TenHuyen);
                     frmHuyen f = (frmHuyen)Application.OpenForms["frmHuyen"];
                     f.LoadDistricts();
                 }
             }
+        }
+
+        private void txtDistrictName_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

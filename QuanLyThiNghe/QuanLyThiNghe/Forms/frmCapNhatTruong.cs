@@ -22,7 +22,7 @@ namespace QuanLyThiNghe.Forms
 
         void LoadDistricts()
         {
-            cbHuyen.Properties.Items.AddRange(_Entities.DMHuyen.Where(h => h.DaXoa == false).Select(h => h.TenHuyen).ToList());
+            cbHuyen.Properties.Items.AddRange(_Entities.DMHuyen.Where(h => h.DaXoa == false || h.DaXoa == null).Select(h => h.TenHuyen).ToList());
         }
 
         private void frmCapNhatHuyen_Load(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace QuanLyThiNghe.Forms
                 {
                     frmTruong f = (frmTruong)Application.OpenForms["frmTruong"];
                     f.LoadSchools(f.cbHuyen.SelectedText);
-
+                    XuLyForm.LuuNhatKy("Thêm trường: " + h.TenTruong);
                     txtSchoolName.Text = "";
                 }
             }
@@ -84,7 +84,7 @@ namespace QuanLyThiNghe.Forms
                 finally
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show("Đã cập nhật thành công.");
-
+                    XuLyForm.LuuNhatKy("Cập nhật trường: " + h.TenTruong);
                     frmTruong f = (frmTruong)Application.OpenForms["frmTruong"];
                     f.LoadSchools(f.cbHuyen.SelectedText);
                 }

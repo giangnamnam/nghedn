@@ -49,6 +49,7 @@
             this.txtDistrictName.Name = "txtDistrictName";
             this.txtDistrictName.Size = new System.Drawing.Size(133, 20);
             this.txtDistrictName.TabIndex = 7;
+            this.txtDistrictName.EditValueChanged += new System.EventHandler(this.txtDistrictName_EditValueChanged);
             // 
             // labelControl3
             // 
@@ -61,6 +62,7 @@
             this.labelControl3.Size = new System.Drawing.Size(76, 20);
             this.labelControl3.TabIndex = 6;
             this.labelControl3.Text = "Tên huyện:";
+            this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click);
             // 
             // frmCapNhatHuyen
             // 

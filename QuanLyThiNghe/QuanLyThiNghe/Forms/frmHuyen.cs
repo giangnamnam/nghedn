@@ -26,7 +26,7 @@ namespace QuanLyThiNghe.Forms
 
         public void LoadDistricts()
         {
-            var Huyen = _Entities.DMHuyen.Where(h => h.DaXoa == false).Select(h => new { h.TenHuyen, h.MaHuyen, h.NgayCapNhat, h.NgayTao, h.NguoiCapNhat, h.NguoiTao, SoTruong = h.DMTruong.Count }).OrderBy(h => h.TenHuyen);
+            var Huyen = _Entities.DMHuyen.Where(h => h.DaXoa == false || h.DaXoa == null).Select(h => new { h.TenHuyen, h.MaHuyen, h.NgayCapNhat, h.NgayTao, h.NguoiCapNhat, h.NguoiTao, SoTruong = h.DMTruong.Count }).OrderBy(h => h.TenHuyen);
             gvDistricts.DataSource = Huyen;
         }
 
@@ -95,7 +95,7 @@ namespace QuanLyThiNghe.Forms
             }
             catch (Exception exp)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Xoá thành công: " + exp.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Xoá không thành công: " + exp.Message);
                 return;
 
             }
