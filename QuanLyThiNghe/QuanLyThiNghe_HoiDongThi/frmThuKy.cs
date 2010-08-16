@@ -23,15 +23,40 @@ namespace QuanLyThiNghe_ThuKy
 
         private void btnNhapDiemLyThuyet_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            frmLyThuyet frm = new frmLyThuyet();
+            OpenForm(frm);
         }
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmCapNhatDuLieu frm = new frmCapNhatDuLieu();
-            frm.ShowDialog();
+            OpenForm(frm);
         }
-        
+
+        private void btnNhapDiemThucHanh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmThucHanh frm = new frmThucHanh();
+            frm.MdiParent = this;
+            OpenForm(frm);
+        }
+
+
+
+
+
+        void OpenForm(Form frm)
+        {
+            if (Application.OpenForms[frm.Name] != null)
+                Application.OpenForms[frm.Name].Activate();
+            else
+            {
+                //AddOpenWindow(frm);
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+
 
 
     }

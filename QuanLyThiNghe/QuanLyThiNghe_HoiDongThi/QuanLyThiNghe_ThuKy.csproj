@@ -59,6 +59,24 @@
     <Compile Include="frmCapNhatDuLieu.Designer.cs">
       <DependentUpon>frmCapNhatDuLieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLyThuyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLyThuyet.Designer.cs">
+      <DependentUpon>frmLyThuyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThucHanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThucHanh.Designer.cs">
+      <DependentUpon>frmThucHanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThuKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +88,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCapNhatDuLieu.resx">
       <DependentUpon>frmCapNhatDuLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLyThuyet.resx">
+      <DependentUpon>frmLyThuyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThucHanh.resx">
+      <DependentUpon>frmThucHanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThuKy.resx">
       <DependentUpon>frmThuKy.cs</DependentUpon>
