@@ -84,6 +84,7 @@
             // 
             this.radioGroup1.Location = new System.Drawing.Point(105, 87);
             this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radioGroup1.Properties.Columns = 3;
             this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "LT"),

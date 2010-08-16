@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -53,6 +53,8 @@
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEditMark = new DevExpress.XtraEditors.SimpleButton();
@@ -165,14 +167,15 @@
             this.gridColumn10,
             this.gridColumn11,
             this.gridColumn13,
-            this.gridColumn14});
+            this.gridColumn14,
+            this.gridColumn3,
+            this.gridColumn15});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupPanelText = "Danh sách huyện trong tỉnh";
             this.gridView1.GroupRowHeight = 0;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Nhấn vào đây để nhập hội đồng thi mới";
             this.gridView1.OptionsCustomization.AllowColumnMoving = false;
-            this.gridView1.OptionsCustomization.AllowColumnResizing = false;
             this.gridView1.OptionsCustomization.AllowGroup = false;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.AnimationType = DevExpress.XtraGrid.Views.Base.GridAnimationType.AnimateAllContent;
@@ -193,6 +196,7 @@
             this.gridColumn12.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn12.Caption = "Mã Phách";
+            this.gridColumn12.FieldName = "MaPhach";
             this.gridColumn12.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
@@ -205,6 +209,7 @@
             this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn5.Caption = "SBD";
+            this.gridColumn5.FieldName = "SBD";
             this.gridColumn5.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
@@ -213,6 +218,7 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Họ và chữ lót";
+            this.gridColumn1.FieldName = "Ho";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 2;
@@ -221,6 +227,7 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Tên";
+            this.gridColumn4.FieldName = "Ten";
             this.gridColumn4.MinWidth = 100;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
@@ -235,6 +242,7 @@
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.Caption = "Ngày sinh";
             this.gridColumn2.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.gridColumn2.FieldName = "NgaySinh";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowSize = false;
             this.gridColumn2.OptionsColumn.FixedWidth = true;
@@ -244,6 +252,7 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Nơi sinh";
+            this.gridColumn6.FieldName = "NoiSinh";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
@@ -251,6 +260,7 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Trường";
+            this.gridColumn7.FieldName = "DMTruong.TenTruong";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
@@ -258,6 +268,7 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Lớp";
+            this.gridColumn8.FieldName = "Lop";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 7;
@@ -265,6 +276,7 @@
             // gridColumn9
             // 
             this.gridColumn9.Caption = "Môn thi";
+            this.gridColumn9.FieldName = "DMMonThi.TenMonThi";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 10;
@@ -276,6 +288,7 @@
             this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn10.Caption = "Phòng thi";
+            this.gridColumn10.FieldName = "PhongThi";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 9;
@@ -283,6 +296,7 @@
             // gridColumn11
             // 
             this.gridColumn11.Caption = "HĐT";
+            this.gridColumn11.FieldName = "HoiDongThi.DMTruong.TenTruong";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 8;
@@ -294,6 +308,7 @@
             this.gridColumn13.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn13.Caption = "Điểm LT";
+            this.gridColumn13.FieldName = "DiemLT";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 11;
@@ -305,9 +320,26 @@
             this.gridColumn14.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn14.Caption = "Điểm TH";
+            this.gridColumn14.FieldName = "DiemTH";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 12;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Tổng điểm";
+            this.gridColumn3.FieldName = "TongDiem";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 13;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Xếp loại";
+            this.gridColumn15.FieldName = "XepLoai";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 14;
             // 
             // repositoryItemCheckEdit2
             // 
@@ -365,7 +397,7 @@
             this.cbType.MinimumSize = new System.Drawing.Size(120, 0);
             this.cbType.Name = "cbType";
             this.cbType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.DropDown, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleLeft, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, false)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.DropDown, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleLeft, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, false)});
             this.cbType.Properties.DropDownRows = 10;
             this.cbType.Properties.Items.AddRange(new object[] {
             "Thí sinh theo trường",
@@ -450,7 +482,6 @@
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnAddCandidate;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private DevExpress.XtraEditors.ComboBoxEdit cbItems;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
@@ -465,5 +496,8 @@
         private DevExpress.XtraEditors.SimpleButton btnEditMark;
         private DevExpress.XtraGrid.Columns.GridColumn cMaThiSinh;
         public DevExpress.XtraEditors.ComboBoxEdit cbType;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        public DevExpress.XtraEditors.ComboBoxEdit cbItems;
     }
 }

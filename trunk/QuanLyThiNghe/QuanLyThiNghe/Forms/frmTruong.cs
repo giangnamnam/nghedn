@@ -18,14 +18,14 @@ namespace QuanLyThiNghe.Forms
             InitializeComponent();
 
             cbHuyen.Properties.Items.Add("[...]");
-            cbHuyen.Properties.Items.AddRange(_Entities.DMHuyen.Where(t => t.DaXoa == false).Select(h => h.TenHuyen).ToList());
+            cbHuyen.Properties.Items.AddRange(_Entities.DMHuyen.Where(t => t.DaXoa == false || t.DaXoa == null).Select(h => h.TenHuyen).ToList());
 
             LoadSchools("");
         }
 
         public void LoadSchools(string TenHuyen)
         {
-            var schools = _Entities.DMTruong.Include("DMHuyen").Where(t => t.DaXoa == false).ToList();
+            var schools = _Entities.DMTruong.Include("DMHuyen").Where(t => t.DaXoa == false || t.DaXoa == null).ToList();
             TenHuyen = TenHuyen == "[...]" ? "" : TenHuyen;
 
             if (TenHuyen != "")
