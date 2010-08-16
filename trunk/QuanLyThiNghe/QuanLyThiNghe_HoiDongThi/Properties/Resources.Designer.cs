@@ -59,5 +59,19 @@ namespace QuanLyThiNghe_ThuKy.Properties {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.Drawing.Bitmap Copy_v2_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("Copy v2_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Copy_v2_256x256 {
+            get {
+                object obj = ResourceManager.GetObject("Copy v2_256x256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

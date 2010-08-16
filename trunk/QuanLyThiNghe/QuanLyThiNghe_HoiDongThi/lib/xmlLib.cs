@@ -16,13 +16,11 @@ namespace QuanLyThiNghe_ThuKy
 
         static string TaiKhoan = "1.xml"; //MaTaiKhoan ,TenDangNhap ,MatKhau ,HoVaTen ,MAC ,MaPhanQuyen
         static string NhatKy = "4.xml";//[MaNhatKy],[MaTaiKhoan],[NgayThaoTac],[IP],[ComputerUser],[ThaoTac]   luu txt
-
         static string DiemLyThuyet = "2.xml"; //MaPhach diem
         static string DiemThucHanh = "3.xml"; //sbd hoten hoidongthi phongthi
-
-        
         static string DanhSachThiLyThuyet = "5.xml";
         static string DanhSachThiThucHanh = "6.xml";
+        static string KyThiHienTai = "7.xml";
 
 
 
