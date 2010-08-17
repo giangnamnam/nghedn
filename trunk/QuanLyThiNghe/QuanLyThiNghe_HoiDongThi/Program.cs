@@ -15,7 +15,15 @@ namespace QuanLyThiNghe_ThuKy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmThuKy());
+            try
+            {
+                Application.Run(new frmThuKy());
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
     }
 }
