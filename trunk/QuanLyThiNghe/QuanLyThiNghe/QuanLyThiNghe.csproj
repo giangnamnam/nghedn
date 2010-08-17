@@ -101,11 +101,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmCapNhatHDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCapNhatHDT.Designer.cs">
+      <DependentUpon>frmCapNhatHDT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmCapNhatHuyen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmCapNhatHuyen.Designer.cs">
       <DependentUpon>frmCapNhatHuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCapNhatMonThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCapNhatMonThi.Designer.cs">
+      <DependentUpon>frmCapNhatMonThi.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmCapNhatTruong.cs">
       <SubType>Form</SubType>
@@ -124,6 +136,12 @@
     </Compile>
     <Compile Include="Forms\frmHuyen.Designer.cs">
       <DependentUpon>frmHuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInThiSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInThiSinh.Designer.cs">
+      <DependentUpon>frmInThiSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmKyThi.cs">
       <SubType>Form</SubType>
@@ -230,8 +248,14 @@
     <Compile Include="lib\lib.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmCapNhatHDT.resx">
+      <DependentUpon>frmCapNhatHDT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCapNhatHuyen.resx">
       <DependentUpon>frmCapNhatHuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCapNhatMonThi.resx">
+      <DependentUpon>frmCapNhatMonThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCapNhatTruong.resx">
       <DependentUpon>frmCapNhatTruong.cs</DependentUpon>
