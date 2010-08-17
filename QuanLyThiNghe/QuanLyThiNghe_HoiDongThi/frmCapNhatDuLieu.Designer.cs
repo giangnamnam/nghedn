@@ -28,19 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(328, 213);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "groupControl1";
             // 
             // frmCapNhatDuLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 292);
+            this.Controls.Add(this.groupControl1);
             this.Name = "frmCapNhatDuLieu";
             this.Text = "Cập nhật dữ liệu thi nghề";
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }
