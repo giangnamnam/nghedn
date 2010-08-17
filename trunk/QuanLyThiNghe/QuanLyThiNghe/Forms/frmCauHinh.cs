@@ -44,6 +44,7 @@ namespace QuanLyThiNghe.Forms
             memoEdit1.Text = cf.NoiDungThongBaoTrenWeb;
             DMKyThi kt = (from k in en.DMKyThi where k.MaKyThi == cf.KyThiHienTai select k).First();
             comboBoxEdit1.SelectedText = kt.TenKyThi;
+            chkKetThuc.Checked = kt.DaKetThuc==true ? true : false;
             btnLuu.Tag = cf.ConfigID;
         }
 
@@ -70,7 +71,7 @@ namespace QuanLyThiNghe.Forms
                     string kythi = comboBoxEdit1.SelectedItem.ToString();
                     if ((from q in en.DMKyThi where q.TenKyThi == kythi select q).Count() < 1)
                     {
-                        XtraMessageBox.Show("Vui lòng chọn kỳ thi chính xác.", "Tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        XtraMessageBox.Show("Vui lòng chọn kỳ thi chính xác.", "Cấu hình hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
@@ -89,6 +90,21 @@ namespace QuanLyThiNghe.Forms
                 XuLyForm.LuuNhatKy("Lỗi cấu hình hệ thống. "+ex.Message);
             }
             
+        }
+
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxEdit1.SelectedItem != null)
+            {
+                string kythi = comboBoxEdit1.SelectedItem.ToString();
+                if ((from q in en.DMKyThi where q.TenKyThi == kythi select q).Count() < 1)
+                {
+                    XtraMessageBox.Show("Vui lòng chọn kỳ thi chính xác.", "Cấu hình hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                DMKyThi kt = (from k in en.DMKyThi where k.TenKyThi == kythi select k).First();
+                chkKetThuc.Checked = kt.DaKetThuc == true ? true : false;
+            }
         }
 
         
