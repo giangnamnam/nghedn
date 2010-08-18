@@ -204,20 +204,21 @@ namespace QuanLyThiNghe.Forms
 
         private void cbItems_TextChanged(object sender, EventArgs e)
         {
-            if (cbItems.Text == "") return;
+            string s = cbItems.EditValue.ToString();
+            if (s == "") return;
             switch (cbType.SelectedIndex)
             {
                 case 0:
-                    LoadThiSinhTheoTruong(_Entities.DMTruong.Where(t => t.TenTruong == cbItems.Text).FirstOrDefault().MaTruong);
+                    LoadThiSinhTheoTruong(_Entities.DMTruong.Where(t => t.TenTruong == s).FirstOrDefault().MaTruong);
                     break;
                 case 1:
-                    LoadThiSinhTheoHuyen(_Entities.DMHuyen.Where(t => t.TenHuyen == cbItems.Text).FirstOrDefault().MaHuyen);
+                    LoadThiSinhTheoHuyen(_Entities.DMHuyen.Where(t => t.TenHuyen == s).FirstOrDefault().MaHuyen);
                     break;
                 case 2:
-                    LoadThiSinhTheoMonThi(_Entities.DMMonThi.Where(t => t.TenMonThi == cbItems.Text).FirstOrDefault().MaMonThi);
+                    LoadThiSinhTheoMonThi(_Entities.DMMonThi.Where(t => t.TenMonThi == s).FirstOrDefault().MaMonThi);
                     break;
                 case 3:
-                    LoadThiSinhTheoHDT(_Entities.HoiDongThi.Where(t => t.DMTruong.TenTruong == cbItems.Text).FirstOrDefault().MaHoiDong);
+                    LoadThiSinhTheoHDT(_Entities.HoiDongThi.Where(t => t.DMTruong.TenTruong == s).FirstOrDefault().MaHoiDong);
                     break;
                 default:
                     break;

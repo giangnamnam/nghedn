@@ -17,6 +17,10 @@ namespace QuanLyThiNghe.Forms
         {
             InitializeComponent();
             LoadHDT();
+
+            btnCreateRooms.Enabled = gvHDT.RowCount > 0;
+            btnPrint.Enabled = gvHDT.RowCount > 0;
+            btnDelete.Enabled = gvHDT.RowCount > 0;
         }
 
         private void frmHoiDongThi_Load(object sender, EventArgs e)
@@ -24,9 +28,9 @@ namespace QuanLyThiNghe.Forms
             
         }
 
-        void LoadHDT()
+        public void LoadHDT()
         {
-            gcHDT.DataSource = _entities.HoiDongThi.Select(h => new { h.SoLuongPhongDuTinh, h.DMTruong.TenTruong, h.MaHoiDong, h.SoThiSinhDuTinh });
+            gcHDT.DataSource = _entities.HoiDongThi.Where(h => h.DaXoa == false || h.DaXoa == null).Select(h => new { h.SoLuongPhongDuTinh, TenTruong = h.DMTruong.TenTruong, h.MaHoiDong, h.SoThiSinhDuTinh });
         }
 
         private void btnCreateRooms_Click(object sender, EventArgs e)
@@ -51,7 +55,7 @@ namespace QuanLyThiNghe.Forms
         {
             if (gvHDT.SelectedRowsCount == 0)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn các môn thi cần xoá.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn các hội đồng thi cần xoá.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -85,6 +89,20 @@ namespace QuanLyThiNghe.Forms
                 XuLyForm.LuuNhatKy("Xoá hội đồng thi: " + TenHuyens.Substring(0, TenHuyens.Length - 2));
                 LoadHDT();
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (gvHDT.SelectedRowsCount == 0)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn hội đồng thi cần cập nhật.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var MaHD = int.Parse(gvHDT.GetRowCellValue(gvHDT.GetSelectedRows()[0], "MaHoiDong").ToString());
+            frmCapNhatHDT frm = new frmCapNhatHDT();
+            frm.LoadChiTietHDT(MaHD);
+            frm.ShowDialog();
         }
     }
 }

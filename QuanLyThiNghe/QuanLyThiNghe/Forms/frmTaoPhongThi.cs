@@ -14,6 +14,7 @@ namespace QuanLyThiNghe.Forms
     public partial class frmTaoPhongThi : Form
     {
         QLTN_Entities en = new QLTN_Entities();
+        bool SoLuongThiSinhVuotGioiHan = false;
         public frmTaoPhongThi()
         {
             InitializeComponent();
@@ -29,16 +30,21 @@ namespace QuanLyThiNghe.Forms
 
         void LoadDistricts()
         {
-            cbDistricts.Properties.Items.AddRange(en.DMHuyen.Select(h => h.TenHuyen).ToList());
+            cbDistricts.Properties.Items.Clear();
+            cbDistricts.Text = "";
 
+            cbDistricts.Properties.Items.AddRange(en.ThiSinh.Where(t => (t.DaXoa == false || t.DaXoa == null)).Select(h => new { h.DMTruong.DMHuyen.TenHuyen, h.DMTruong.DMHuyen.MaHuyen }).Distinct().ToList().Select(h => h.TenHuyen).ToList());
             cbDistricts.SelectedIndex = 0;
 
-            LoadSchools(cbDistricts.EditValue.ToString());
+            //LoadSchools(cbDistricts.EditValue.ToString());
         }
 
         void LoadHDT()
         {
-            var source = en.DMTruong.Select(t=>t.TenTruong).ToList();
+            cbHDT.Properties.Items.Clear();
+            cbHDT.Text = "";
+
+            var source = en.HoiDongThi.Where(h=>h.DaXoa==false || h.DaXoa==null).Select(t=>t.DMTruong.TenTruong).ToList();
             cbHDT.Properties.Items.AddRange(source);
 
             cbHDT.SelectedIndex = 0;
@@ -48,16 +54,17 @@ namespace QuanLyThiNghe.Forms
 
         void LoadHDTDetails(string HDTName)
         {
-            var HDT = en.DMTruong.Where(h => h.TenTruong == HDTName).FirstOrDefault();
+            var HDT = en.HoiDongThi.Where(h => h.DMTruong.TenTruong == HDTName && h.DaXoa == false || h.DaXoa == null).Select(h => new { h.MaHoiDong, TenTruong = h.DMTruong.TenTruong, h.SoLuongPhongDuTinh, h.SoThiSinhDuTinh, TenHuyen = h.DMTruong.DMHuyen.TenHuyen }).FirstOrDefault();
 
             if (HDT != null)
             {
-                HDT.DMHuyenReference.Load();
-
-                lblDistrictName.Text = HDT.DMHuyen.TenHuyen;
+                lblDistrictName.Text = HDT.TenHuyen;
 
                 //lblRooms.Text = HDT.HoiDongThi.FirstOrDefault().SoLuongPhongDuTinh.HasValue ? HDT.HoiDongThi.FirstOrDefault().SoLuongPhongDuTinh.ToString() : "0";
                 lblSchoolName.Text = HDTName;
+
+                lblSoPhongDuTinh.Text = HDT.SoLuongPhongDuTinh.Value.ToString();
+                lblSoThiSinhDuTinh.Text = HDT.SoThiSinhDuTinh.Value.ToString();
 
                 //int hdtid = HDT.HoiDongThi.FirstOrDefault().MaHoiDong;
                 //var schools = en.ThiSinh.Where(ts => ts.HoiDongThi.MaHoiDong == hdtid).Select(ts1 => ts1.DMTruong).Distinct();
@@ -75,25 +82,34 @@ namespace QuanLyThiNghe.Forms
 
         void LoadSchools(string DistrictName)
         {
-            lvSchools.Items.Clear();
-            lvSchools.Groups.Clear();
+            cbTruong.Properties.Items.Clear();
+            cbTruong.Text = "";
 
-            foreach (var item in en.DMHuyen.Where(h => h.TenHuyen == DistrictName))
-            {
-                ListViewGroup lvG = new ListViewGroup(item.MaHuyen.ToString(), item.TenHuyen);
-                lvSchools.Groups.Add(lvG);
+            var source = en.ThiSinh.Where(t => (t.DaXoa == false || t.DaXoa == null) && t.DMTruong.DMHuyen.TenHuyen == DistrictName).Select(t => t.DMTruong.TenTruong).Distinct();
+            cbTruong.Properties.Items.AddRange(source.ToList());
+        }
 
-                foreach (var subitem in en.DMTruong.Where(t => t.DMHuyen.MaHuyen == item.MaHuyen))
-                {
-                    if (lvSchools2.Items.IndexOfKey(subitem.TenTruong) == -1)
-                    {
-                        lvSchools.Items.Add(subitem.TenTruong, subitem.TenTruong, 0);
-                        ListViewItem lv = lvSchools.Items[subitem.TenTruong];
-                        lv.Group = lvG;
-                        lv.ToolTipText = "abc";
-                    }
-                }
-            }
+        void LoadMonThi(string TenTruong)
+        {
+            cbMonThi.Properties.Items.Clear();
+            cbMonThi.Text = "";
+            var source = en.ThiSinh.Where(t => t.DMTruong.TenTruong == TenTruong && t.DaXoa == false || t.DaXoa == null).Select(t => t.DMMonThi.TenMonThi).Distinct();
+
+            cbMonThi.Properties.Items.AddRange(source.ToList());
+        }
+
+        void KiemTraSoLuong(string TenMonThi)
+        {
+            //var monThi = en.DMMonThi.First(m => m.TenMonThi == TenMonThi);
+            var tenTruong = cbTruong.EditValue.ToString();
+            var soTS = en.ThiSinh.Where(t => (t.DaXoa == false || t.DaXoa == null) && t.DMMonThi.TenMonThi == TenMonThi && t.DMTruong.TenTruong == tenTruong).Count();
+            lblSoThiSinh1.Text = soTS.ToString();
+
+            int tsDuTinh = int.Parse(lblSoThiSinhDuTinh.Text);
+            int tsHienTai = int.Parse(lblSoThiSinh.Text);
+            int SoThiSinhChoPhep = tsDuTinh - tsHienTai;
+
+            SoLuongThiSinhVuotGioiHan = SoThiSinhChoPhep < soTS;
         }
 
         #endregion
@@ -108,106 +124,123 @@ namespace QuanLyThiNghe.Forms
             LoadSchools(cbDistricts.EditValue.ToString());
         }
 
-
-        bool lv1_md;
-        private void lvSchool_DragDrop(object sender, DragEventArgs e)
+        private void cbTruong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string textBox1 = e.Data.GetData(DataFormats.Text).ToString();
-            string[] items = textBox1.Split(',');
+            LoadMonThi(cbTruong.EditValue.ToString());
+        }
 
-            if (!lvSchools2.Items.ContainsKey(textBox1))
+        private void cbMonThi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KiemTraSoLuong(cbMonThi.EditValue.ToString());
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (SoLuongThiSinhVuotGioiHan)
             {
-                lvSchools2.Items.Add(textBox1, textBox1, 0);
-                lvSchools.Items.RemoveByKey(textBox1);
-            }
-
-            lv1_md = false;
-        }
-
-        private void lvSchools2_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.Text))
-                e.Effect = DragDropEffects.Move;
-            else
-                e.Effect = DragDropEffects.None;
-        }
-
-        private void lvSchool_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (!lv1_md) return;
-            if (e.Button != MouseButtons.Left) return;
-
-            string str = GetItemText(lvSchools);
-            if (str == "") return;
-
-            lvSchools.DoDragDrop(str, DragDropEffects.Copy | DragDropEffects.Move);
-
-        }
-
-        public string GetItemText(ListView LVIEW)
-        {
-            int nTotalSelected = LVIEW.SelectedIndices.Count;
-            if (nTotalSelected <= 0) return "";
-            IEnumerator selCol = LVIEW.SelectedItems.GetEnumerator();
-            selCol.MoveNext();
-            ListViewItem lvi = (ListViewItem)selCol.Current;
-            string mDir = "";
-            for (int i = 0; i < lvi.SubItems.Count; i++)
-                mDir += lvi.SubItems[i].Text + ",";
-
-            mDir = mDir.Substring(0, mDir.Length - 1);
-            return mDir;
-        }
-
-        private void lvSchool_MouseDown(object sender, MouseEventArgs e)
-        {
-            lv1_md = true;
-
-            if (e.Button == MouseButtons.Left && e.Clicks == 2)
-            {
-                ListViewItem lvi = lvSchools.GetItemAt(e.X, e.Y);
-
-                lvSchools.Items.Remove(lvi);
-                lvSchools2.Items.Add(lvi);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng thí sinh của môn thi này vượt giới hạn của hội đồng thi.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
         }
 
-        private void lvSchool_MouseUp(object sender, MouseEventArgs e)
-        {
-            lv1_md = false;
-        }
+        //bool lv1_md;
+        //private void lvSchool_DragDrop(object sender, DragEventArgs e)
+        //{
+        //    string textBox1 = e.Data.GetData(DataFormats.Text).ToString();
+        //    string[] items = textBox1.Split(',');
 
-        private void lvSchools2_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Delete)
-            {
-                if (lvSchools2.SelectedItems.Count <= 0)
-                    return;
+        //    if (!lvSchools2.Items.ContainsKey(textBox1))
+        //    {
+        //        lvSchools2.Items.Add(textBox1, textBox1, 0);
+        //        lvSchools.Items.RemoveByKey(textBox1);
+        //    }
 
-                int nextindex = lvSchools2.SelectedItems[0].Index - 1;
+        //    lv1_md = false;
+        //}
 
-                int selecteditems = lvSchools2.SelectedItems.Count;
+        //private void lvSchools2_DragEnter(object sender, DragEventArgs e)
+        //{
+        //    if (e.Data.GetDataPresent(DataFormats.Text))
+        //        e.Effect = DragDropEffects.Move;
+        //    else
+        //        e.Effect = DragDropEffects.None;
+        //}
 
-                for (int i = 0; i < selecteditems; i++)
-                {
-                    lvSchools.Items.Add(lvSchools2.SelectedItems[0].Text, lvSchools2.SelectedItems[0].Text, 0);
-                    lvSchools.Items[lvSchools2.SelectedItems[0].Text].Group = lvSchools.Groups[0];
+        //private void lvSchool_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    if (!lv1_md) return;
+        //    if (e.Button != MouseButtons.Left) return;
 
-                    lvSchools2.SelectedItems[0].Remove();
-                }
+        //    string str = GetItemText(lvSchools);
+        //    if (str == "") return;
 
-                if (lvSchools2.Items.Count <= 0)
-                    return;
+        //    lvSchools.DoDragDrop(str, DragDropEffects.Copy | DragDropEffects.Move);
 
-                lvSchools2.Items[nextindex < 0 ? 0 : nextindex].Selected = true;
-            }
-        }
+        //}
 
-        private void lvSchools_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
+        //public string GetItemText(ListView LVIEW)
+        //{
+        //    int nTotalSelected = LVIEW.SelectedIndices.Count;
+        //    if (nTotalSelected <= 0) return "";
+        //    IEnumerator selCol = LVIEW.SelectedItems.GetEnumerator();
+        //    selCol.MoveNext();
+        //    ListViewItem lvi = (ListViewItem)selCol.Current;
+        //    string mDir = "";
+        //    for (int i = 0; i < lvi.SubItems.Count; i++)
+        //        mDir += lvi.SubItems[i].Text + ",";
+
+        //    mDir = mDir.Substring(0, mDir.Length - 1);
+        //    return mDir;
+        //}
+
+        //private void lvSchool_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    lv1_md = true;
+
+        //    if (e.Button == MouseButtons.Left && e.Clicks == 2)
+        //    {
+        //        ListViewItem lvi = lvSchools.GetItemAt(e.X, e.Y);
+
+        //        lvSchools.Items.Remove(lvi);
+        //        lvSchools2.Items.Add(lvi);
+        //    }
+        //}
+
+        //private void lvSchool_MouseUp(object sender, MouseEventArgs e)
+        //{
+        //    lv1_md = false;
+        //}
+
+        //private void lvSchools2_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyData == Keys.Delete)
+        //    {
+        //        if (lvSchools2.SelectedItems.Count <= 0)
+        //            return;
+
+        //        int nextindex = lvSchools2.SelectedItems[0].Index - 1;
+
+        //        int selecteditems = lvSchools2.SelectedItems.Count;
+
+        //        for (int i = 0; i < selecteditems; i++)
+        //        {
+        //            lvSchools.Items.Add(lvSchools2.SelectedItems[0].Text, lvSchools2.SelectedItems[0].Text, 0);
+        //            lvSchools.Items[lvSchools2.SelectedItems[0].Text].Group = lvSchools.Groups[0];
+
+        //            lvSchools2.SelectedItems[0].Remove();
+        //        }
+
+        //        if (lvSchools2.Items.Count <= 0)
+        //            return;
+
+        //        lvSchools2.Items[nextindex < 0 ? 0 : nextindex].Selected = true;
+        //    }
+        //}
+
+        //private void lvSchools_MouseDoubleClick(object sender, MouseEventArgs e)
+        //{
             
-        }
-
+        //}
     }
 
 

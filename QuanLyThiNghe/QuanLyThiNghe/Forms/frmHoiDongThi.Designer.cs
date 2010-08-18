@@ -36,31 +36,31 @@
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.gcHDT = new DevExpress.XtraGrid.GridControl();
-            this.gvHDT = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gvColSchoolName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gvColNumOfRooms = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.cbSchools = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.gluESchoolName = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.luESchools = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.thêmHuyệnMớiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSáchThíSinhDựThiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.xoáHuyệnNàyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gvHDT = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvColSchoolName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvColNumOfRooms = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.cbSchools = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.gluESchoolName = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.luESchools = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcHDT)).BeginInit();
+            this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvHDT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSchools)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gluESchoolName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luESchools)).BeginInit();
-            this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,13 +79,14 @@
             // 
             // btnCreateRooms
             // 
+            this.btnCreateRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCreateRooms.Image = global::QuanLyThiNghe.Properties.Resources.iconlist;
             this.btnCreateRooms.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnCreateRooms.Location = new System.Drawing.Point(459, 3);
+            this.btnCreateRooms.Location = new System.Drawing.Point(449, 3);
             this.btnCreateRooms.Name = "btnCreateRooms";
-            this.btnCreateRooms.Size = new System.Drawing.Size(150, 24);
+            this.btnCreateRooms.Size = new System.Drawing.Size(160, 24);
             this.btnCreateRooms.TabIndex = 5;
-            this.btnCreateRooms.Text = "Sắp xếp hội đồng thi";
+            this.btnCreateRooms.Text = "Xem/Sắp xếp hội đồng thi";
             this.btnCreateRooms.ToolTip = "Sắp xếp hội đồng thi.";
             this.btnCreateRooms.Click += new System.EventHandler(this.btnCreateRooms_Click);
             // 
@@ -114,9 +115,10 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.Image = global::QuanLyThiNghe.Properties.Resources.Print_16x16;
             this.btnPrint.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(612, 3);
+            this.btnPrint.Location = new System.Drawing.Point(611, 3);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 24);
             this.btnPrint.TabIndex = 0;
@@ -126,6 +128,7 @@
             // 
             // gcHDT
             // 
+            this.gcHDT.ContextMenuStrip = this.Menu;
             this.gcHDT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcHDT.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gcHDT.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
@@ -146,6 +149,56 @@
             this.gcHDT.TabIndex = 4;
             this.gcHDT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvHDT});
+            // 
+            // Menu
+            // 
+            this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thêmHuyệnMớiToolStripMenuItem,
+            this.btnEdit,
+            this.danhSáchThíSinhDựThiToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.xoáHuyệnNàyToolStripMenuItem});
+            this.Menu.Name = "contextMenuStrip1";
+            this.Menu.Size = new System.Drawing.Size(161, 120);
+            // 
+            // thêmHuyệnMớiToolStripMenuItem
+            // 
+            this.thêmHuyệnMớiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Add_16x16;
+            this.thêmHuyệnMớiToolStripMenuItem.Name = "thêmHuyệnMớiToolStripMenuItem";
+            this.thêmHuyệnMớiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.thêmHuyệnMớiToolStripMenuItem.Text = "Thêm mới";
+            this.thêmHuyệnMớiToolStripMenuItem.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::QuanLyThiNghe.Properties.Resources.Edit_16x16;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            this.btnEdit.Size = new System.Drawing.Size(160, 22);
+            this.btnEdit.Text = "Chỉnh sửa";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // danhSáchThíSinhDựThiToolStripMenuItem
+            // 
+            this.danhSáchThíSinhDựThiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.iconlist;
+            this.danhSáchThíSinhDựThiToolStripMenuItem.Name = "danhSáchThíSinhDựThiToolStripMenuItem";
+            this.danhSáchThíSinhDựThiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.danhSáchThíSinhDựThiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.danhSáchThíSinhDựThiToolStripMenuItem.Text = "Sắp xếp HĐT";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
+            // 
+            // xoáHuyệnNàyToolStripMenuItem
+            // 
+            this.xoáHuyệnNàyToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
+            this.xoáHuyệnNàyToolStripMenuItem.Name = "xoáHuyệnNàyToolStripMenuItem";
+            this.xoáHuyệnNàyToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.xoáHuyệnNàyToolStripMenuItem.Text = "Xoá";
             // 
             // gvHDT
             // 
@@ -169,11 +222,16 @@
             this.gvHDT.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gvHDT.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "gridColumn1";
+            this.gridColumn1.FieldName = "MaHoiDong";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
             // gvColSchoolName
             // 
             this.gvColSchoolName.Caption = "Hội đồng thi";
-            this.gvColSchoolName.FieldName = "DmTruong.TenTruong";
-            this.gvColSchoolName.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
+            this.gvColSchoolName.FieldName = "TenTruong";
             this.gvColSchoolName.Name = "gvColSchoolName";
             this.gvColSchoolName.OptionsColumn.AllowEdit = false;
             this.gvColSchoolName.OptionsColumn.ReadOnly = true;
@@ -197,6 +255,19 @@
             this.gvColNumOfRooms.Visible = true;
             this.gvColNumOfRooms.VisibleIndex = 1;
             this.gvColNumOfRooms.Width = 100;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.Caption = "Thí sinh(dự tính)";
+            this.gridColumn2.FieldName = "SoThiSinhDuTinh";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.Width = 133;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -246,73 +317,6 @@
             this.luESchools.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.luESchools.ValueMember = "TenTruong";
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "gridColumn1";
-            this.gridColumn1.FieldName = "MaHoiDong";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.Caption = "Thí sinh(dự tính)";
-            this.gridColumn2.FieldName = "SoThiSinhDuTinh";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 133;
-            // 
-            // Menu
-            // 
-            this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thêmHuyệnMớiToolStripMenuItem,
-            this.btnEdit,
-            this.danhSáchThíSinhDựThiToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.xoáHuyệnNàyToolStripMenuItem});
-            this.Menu.Name = "contextMenuStrip1";
-            this.Menu.Size = new System.Drawing.Size(161, 98);
-            // 
-            // thêmHuyệnMớiToolStripMenuItem
-            // 
-            this.thêmHuyệnMớiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Add_16x16;
-            this.thêmHuyệnMớiToolStripMenuItem.Name = "thêmHuyệnMớiToolStripMenuItem";
-            this.thêmHuyệnMớiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.thêmHuyệnMớiToolStripMenuItem.Text = "Thêm mới";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::QuanLyThiNghe.Properties.Resources.Edit_16x16;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.btnEdit.Size = new System.Drawing.Size(160, 22);
-            this.btnEdit.Text = "Chỉnh sửa";
-            // 
-            // danhSáchThíSinhDựThiToolStripMenuItem
-            // 
-            this.danhSáchThíSinhDựThiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.iconlist;
-            this.danhSáchThíSinhDựThiToolStripMenuItem.Name = "danhSáchThíSinhDựThiToolStripMenuItem";
-            this.danhSáchThíSinhDựThiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.danhSáchThíSinhDựThiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.danhSáchThíSinhDựThiToolStripMenuItem.Text = "Sắp xếp HĐT";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
-            // 
-            // xoáHuyệnNàyToolStripMenuItem
-            // 
-            this.xoáHuyệnNàyToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
-            this.xoáHuyệnNàyToolStripMenuItem.Name = "xoáHuyệnNàyToolStripMenuItem";
-            this.xoáHuyệnNàyToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.xoáHuyệnNàyToolStripMenuItem.Text = "Xoá";
-            // 
             // frmHoiDongThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -327,13 +331,13 @@
             this.Load += new System.EventHandler(this.frmHoiDongThi_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcHDT)).EndInit();
+            this.Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvHDT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSchools)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gluESchoolName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luESchools)).EndInit();
-            this.Menu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

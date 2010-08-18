@@ -101,6 +101,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.DropDown)});
             this.cbHuyen.Size = new System.Drawing.Size(133, 20);
             this.cbHuyen.TabIndex = 14;
+            this.cbHuyen.TextChanged += new System.EventHandler(this.cbHuyen_TextChanged);
             // 
             // txtSoPhong
             // 
