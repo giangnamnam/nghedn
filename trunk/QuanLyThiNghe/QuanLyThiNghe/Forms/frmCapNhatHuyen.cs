@@ -42,7 +42,7 @@ namespace QuanLyThiNghe.Forms
                 }
                 catch (Exception exp)
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Có lối xảy ra: " + exp.Message);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Có lỗi xảy ra: " + exp.Message);
                     return;
                 }
                 finally
