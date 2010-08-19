@@ -40,11 +40,11 @@
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.chkKetThuc = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.checkEdit6 = new DevExpress.XtraEditors.CheckEdit();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.chkKetThuc = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).BeginInit();
@@ -58,9 +58,9 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkKetThuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkKetThuc.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // checkEdit5
@@ -182,6 +182,17 @@
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Cấu hình hệ thống";
             // 
+            // chkKetThuc
+            // 
+            this.chkKetThuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkKetThuc.Location = new System.Drawing.Point(183, 2);
+            this.chkKetThuc.Name = "chkKetThuc";
+            this.chkKetThuc.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.chkKetThuc.Properties.Appearance.Options.UseForeColor = true;
+            this.chkKetThuc.Properties.Caption = "Đánh dấu kỳ thi đã kết thúc";
+            this.chkKetThuc.Size = new System.Drawing.Size(164, 19);
+            this.chkKetThuc.TabIndex = 4;
+            // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(12, 28);
@@ -220,17 +231,6 @@
             this.btnLuu.Text = "Lưu các thay đổi";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // chkKetThuc
-            // 
-            this.chkKetThuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkKetThuc.Location = new System.Drawing.Point(183, 2);
-            this.chkKetThuc.Name = "chkKetThuc";
-            this.chkKetThuc.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.chkKetThuc.Properties.Appearance.Options.UseForeColor = true;
-            this.chkKetThuc.Properties.Caption = "Đánh dấu kỳ thi đã kết thúc";
-            this.chkKetThuc.Size = new System.Drawing.Size(164, 19);
-            this.chkKetThuc.TabIndex = 4;
-            // 
             // frmCauHinh
             // 
             this.AcceptButton = this.btnLuu;
@@ -263,9 +263,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkKetThuc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkKetThuc.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
