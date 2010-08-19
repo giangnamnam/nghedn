@@ -77,10 +77,8 @@ namespace QuanLyThiNghe.Forms
 
                     DMKyThi kt = (from k in en.DMKyThi where k.TenKyThi == kythi select k).First();
                     cf.KyThiHienTai = kt.MaKyThi;
-                }
-
-                
-
+                    kt.DaKetThuc = chkKetThuc.Checked;
+                }               
                 en.SaveChanges();
                 XtraMessageBox.Show("Đã lưu lại cấu hình thành công.", "Cấu hình hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 XuLyForm.LuuNhatKy("Chỉnh sửa cấu hình hệ thống. ");
