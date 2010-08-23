@@ -3,32 +3,266 @@ using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Data.SqlClient;
 using System.IO;
 using System.Diagnostics;
 
+using System.Net;
+using System.Net.NetworkInformation;
 namespace QuanLyThiNghe_ThuKy
 {
+    public class XuLyForm
+    {
+        //public static void LuuNhatKy(string NoiDung)
+        //{
+        //    try
+        //    {
+        //        NhatKy nk = new NhatKy();
+        //        int[] TaiKhoan;
+        //        string ComputerUser = HeThong.TenMay();
+        //        string ThaoTac = NoiDung;
+        //        DateTime NgayThaoTac = DateTime.Now;
+        //        string IP = "MAC: " + HeThong.LayMAC() + "; IP:  " + HeThong.LayIP();
+        //        foreach (int item in TaiKhoan)
+        //        {
+        //            nk.ThemNhatKy(item, NgayThaoTac, IP, ComputerUser, ThaoTac, true);
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //    }
+        //}
+        public static void LuuNhatKy(int MaTaiKhoan, string NoiDung)
+        {
+            try
+            {
+                NhatKy nk = new NhatKy();
+                string ComputerUser = HeThong.TenMay();
+                string ThaoTac = NoiDung;
+                DateTime NgayThaoTac = DateTime.Now;
+                string IP = "MAC: " + HeThong.LayMAC() + "; IP:  " + HeThong.LayIP();
+                nk.ThemNhatKy(MaTaiKhoan, NgayThaoTac, IP, ComputerUser, ThaoTac, true);
+            }
+            catch (Exception)
+            {
+            }
+        }
+        public static void LuuFile(string FilePath, string NoiDung, bool ThemDongMoi)
+        {
+            if (!File.Exists(@"C:\ThiNgheDatabaseBackupList.bin"))
+            {
+                FileStream fs = File.Create(@"C:\ThiNgheDatabaseBackupList.bin");
+                fs.Close();
+            }
+            TextWriter tw = new StreamWriter(FilePath, ThemDongMoi);
+            tw.WriteLine(NoiDung);
+            tw.Close();
+        }
+    }
+    public class HeThong
+    {
+        public static DateTime LayGioHeThong()
+        {
+            return DateTime.Now;
+        }
+        public static string LayMAC()
+        {
+            string macAddresses = "";
+
+            foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                if (nic.OperationalStatus == OperationalStatus.Up)
+                {
+                    macAddresses += nic.GetPhysicalAddress().ToString();
+                    break;
+                }
+            }
+            return macAddresses;
+        }
+        public static string TenMay()
+        {
+            return Dns.GetHostName();
+        }
+        public static string LayIP()
+        {
+            IPHostEntry ipEntry = Dns.GetHostEntry(TenMay());
+            IPAddress[] addr = ipEntry.AddressList;
+            string ip = "";
+            for (int i = 0; i < addr.Length; i++)
+            {
+                ip += " (" + i.ToString() + ": " + addr[i].ToString() + ");";
+            }
+            return ip;
+        }
+    }
+
+    public class XuLyChuoi
+    {
+        public enum KieuMaHoa { MD5, SHA1, HungVQ };
+        public static string MaHoa(string ChuoiCanMaHoa, KieuMaHoa MaHoa)
+        {
+            string kq = "";
+            if (MaHoa == KieuMaHoa.MD5)
+            {
+                kq = Convert.ToBase64String(new System.Security.Cryptography.MD5CryptoServiceProvider().ComputeHash(Encoding.ASCII.GetBytes(ChuoiCanMaHoa)));
+            }
+            else if (MaHoa == KieuMaHoa.SHA1)
+            {
+                kq = Convert.ToBase64String(new System.Security.Cryptography.SHA1CryptoServiceProvider().ComputeHash(Encoding.ASCII.GetBytes(ChuoiCanMaHoa)));
+            }
+            else
+            {
+                kq = Convert.ToBase64String(new System.Security.Cryptography.MD5CryptoServiceProvider().ComputeHash(Encoding.ASCII.GetBytes(ChuoiCanMaHoa)));
+                kq = Convert.ToBase64String(new System.Security.Cryptography.SHA1CryptoServiceProvider().ComputeHash(Encoding.ASCII.GetBytes(kq)));
+            }
+            return kq;
+        }
+
+    }
+
+    public class XuLyDuLieu
+    {
+        public static void CapNhatDuLieuThiNgheVeMay()
+        {
+            DataProvider.GhiDanhSachThiSinh(ReadFromDatabase(""));
+            DataProvider.GhiHoiDongThi(ReadFromDatabase(""));
+            DataProvider.GhiKyThiHienTai(ReadFromDatabase(""));
+            DataProvider.GhiMonThi(ReadFromDatabase(""));
+            DataProvider.GhiNhatKy(ReadFromDatabase(""));
+            DataProvider.GhiTaiKhoan(ReadFromDatabase(""));
+        }
+        public static bool CapNhatDanhSachThiSinh()
+        {
+            try
+            {
+                DataProvider.GhiDanhSachThiSinh(ReadFromDatabase(""));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+        public static bool CapNhatHoiDongThi()
+        {
+            try
+            {
+                DataProvider.GhiHoiDongThi(ReadFromDatabase(""));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+        public static bool CapNhatKyThiHienTai()
+        {
+            try
+            {
+                DataProvider.GhiKyThiHienTai(ReadFromDatabase(""));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+        public static bool CapNhatMonThi()
+        {
+            try
+            {
+                DataProvider.GhiMonThi(ReadFromDatabase(""));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+        public static bool CapNhatNhatKy()
+        {
+            try
+            {
+                DataProvider.GhiNhatKy(ReadFromDatabase(""));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+        public static bool CapNhatTaiKhoan()
+        {
+            try
+            {
+                DataProvider.GhiTaiKhoan(ReadFromDatabase(""));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private static DataTable ReadFromDatabase(string Command)
+        {
+            SqlConnection con = new SqlConnection("");
+            SqlCommand com = new SqlCommand(Command, con);
+            com.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            con.Open();
+            da.Fill(ds);
+            con.Close();
+            return ds.Tables[0];
+        }
+    }
+
     public class DataProvider
     {
+
+        public bool CoTaiKhoan { get; set; }
+        public bool CoNhatKy { get; set; }
+        public bool CoHoiDong { get; set; }
+        public bool CoMonThi { get; set; }
+        public bool CoThiSinh { get; set; }
+        public bool CoKyThiHienTai { get; set; }
+
+        public DataProvider()
+        {
+            CoTaiKhoan = CheckExitsFile(TaiKhoan);
+            CoNhatKy = CheckExitsFile(NhatKy);
+            CoHoiDong = CheckExitsFile(HoiDongThi);
+            CoMonThi = CheckExitsFile(MonThi);
+            CoThiSinh = CheckExitsFile(DanhSachThiSinh);
+            CoKyThiHienTai = CheckExitsFile(KyThiHienTai);
+        }
+
+
+
+        #region var
         //static string path = AppDomain.CurrentDomain.BaseDirectory;
         private static string path = @"C:\DuLieuThiNghe\";
 
         static string TaiKhoan = "1.xml"; //MaTaiKhoan ,TenDangNhap ,MatKhau ,HoVaTen ,MAC ,MaPhanQuyen
         static string NhatKy = "4.xml";//[MaNhatKy],[MaTaiKhoan],[NgayThaoTac],[IP],[ComputerUser],[ThaoTac]   luu txt
-        static string DiemLyThuyet = "2.xml"; //MaPhach diem
-        static string DiemThucHanh = "3.xml"; //sbd hoten hoidongthi phongthi
-        static string DanhSachThiLyThuyet = "5.xml";
-        static string DanhSachThiThucHanh = "6.xml";
+        //static string DiemThi = "3.xml"; //sbd hoten hoidongthi môn thi phongthi
+        static string DanhSachThiSinh = "5.xml";
         static string KyThiHienTai = "7.xml";
+        static string HoiDongThi = "8.xml";
+        static string MonThi = "9.xml";
 
-
+        #endregion
 
         #region Public Method
         #region TaiKhoan
         public static DataTable LayTaiKhoan()
         {
             return Doc(TaiKhoan);
+        }
+        public static bool GhiTaiKhoan(DataTable dt)
+        {
+            return Ghi(dt, TaiKhoan);
         }
         #endregion
         #region NhatKy
@@ -41,26 +275,49 @@ namespace QuanLyThiNghe_ThuKy
             return Ghi(dt, NhatKy);
         }
         #endregion
-        #region DiemLyThuyet
-        public static DataTable LayDiemLyThuyet()
+        #region DanhSachThiSinh
+        public static DataTable LayDanhSachThiSinh()
         {
-            return Doc(DiemLyThuyet);
+            return Doc(DanhSachThiSinh);
         }
-        public static bool GhiDiemLyThuyet(DataTable dt)
+        public static bool GhiDanhSachThiSinh(DataTable dt)
         {
-            return Ghi(dt, DiemLyThuyet);
-        }
-        #endregion
-        #region DiemThucHanh
-        public static DataTable LayDiemThucHanh()
-        {
-            return Doc(DiemThucHanh);
-        }
-        public static bool GhiDiemThucHanh(DataTable dt)
-        {
-            return Ghi(dt, DiemThucHanh);
+            return Ghi(dt, DanhSachThiSinh);
         }
         #endregion
+        #region KyThiHienTai
+        public static DataTable LayKyThiHienTai()
+        {
+            return Doc(KyThiHienTai);
+        }
+        public static bool GhiKyThiHienTai(DataTable dt)
+        {
+            return Ghi(dt, KyThiHienTai);
+        }
+        #endregion
+        #region HoiDongThi
+        public static DataTable LayHoiDongThi()
+        {
+            return Doc(HoiDongThi);
+        }
+        public static bool GhiHoiDongThi(DataTable dt)
+        {
+            return Ghi(dt, HoiDongThi);
+        }
+        #endregion
+        #region MonThi
+        public static DataTable LayMonThi()
+        {
+            return Doc(MonThi);
+        }
+        public static bool GhiMonThi(DataTable dt)
+        {
+            return Ghi(dt, MonThi);
+        }
+        #endregion
+
+        
+
         #endregion
 
         #region Private Method
@@ -98,9 +355,13 @@ namespace QuanLyThiNghe_ThuKy
                 folder.Create();
             }
         }
+        private static bool CheckExitsFile(string spath)
+        {
+            FileInfo fi = new FileInfo(path+spath);
+            return fi.Exists;
+        }
         #endregion
     }
-
     public class XMLController
     {
         public static DataTable ReadFile(string FileName)
@@ -113,10 +374,21 @@ namespace QuanLyThiNghe_ThuKy
         }
         public static void WriteFile(DataTable dt, string FileName)
         {
-            DataSet ds = new DataSet();
-            if (dt.DataSet == null)
-                ds.Tables.Add(dt);
-            dt.DataSet.WriteXml(FileName);
+            try
+            {
+                FileInfo fi = new FileInfo(FileName);
+                fi.CopyTo(FileName + ".bak",true);
+
+                DataSet ds = new DataSet();
+                if (dt.DataSet == null)
+                    ds.Tables.Add(dt);
+                dt.DataSet.WriteXml(FileName);
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }
