@@ -19,9 +19,10 @@ namespace QuanLyThiNghe_ThuKy
             {
                 Application.Run(new frmThuKy());
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+
+                
             }
             
         }
