@@ -60,11 +60,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DongBoDuLieu.cs">
+    <Compile Include="frmDongBoDuLieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DongBoDuLieu.Designer.cs">
-      <DependentUpon>DongBoDuLieu.cs</DependentUpon>
+    <Compile Include="frmDongBoDuLieu.Designer.cs">
+      <DependentUpon>frmDongBoDuLieu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCapNhatDuLieu.cs">
       <SubType>Form</SubType>
@@ -105,8 +105,8 @@
     <Compile Include="lib\xmlLib.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DongBoDuLieu.resx">
-      <DependentUpon>DongBoDuLieu.cs</DependentUpon>
+    <EmbeddedResource Include="frmDongBoDuLieu.resx">
+      <DependentUpon>frmDongBoDuLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCapNhatDuLieu.resx">
       <DependentUpon>frmCapNhatDuLieu.cs</DependentUpon>
