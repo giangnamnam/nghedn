@@ -20,15 +20,22 @@ namespace QuanLyThiNghe_ThuKy
             {
                 TaiKhoanHienTai = frm.TaiKhoanDangNhap;
                 this.Tag = TaiKhoanHienTai;
-                tbnThuKy1.Caption = ((DataRow)TaiKhoanHienTai[0])["TenDangNhap"].ToString();
+                DataRow dr = (DataRow)TaiKhoanHienTai[0];
+                tbnThuKy1.Caption = "Thư ký 1: " + dr["TenDangNhap"].ToString() + " (" + dr["HoVaTen"].ToString() + ")";
                 if (TaiKhoanHienTai.Count > 1)
-                    btnThuKy2.Caption = ((DataRow)TaiKhoanHienTai[1])["TenDangNhap"].ToString();
+                {
+                    dr = (DataRow)TaiKhoanHienTai[1];
+                    btnThuKy2.Caption = "Thư ký 2: " + dr["TenDangNhap"].ToString() + " (" + dr["HoVaTen"].ToString() + ")";
+                }
                 else
                 {
                     btnThuKy2.Visibility = btnThuKy3.Visibility = BarItemVisibility.Never;
                 }
                 if (TaiKhoanHienTai.Count > 2)
-                    btnThuKy3.Caption = ((DataRow)TaiKhoanHienTai[2])["TenDangNhap"].ToString();
+                {
+                    dr = (DataRow)TaiKhoanHienTai[2];
+                    btnThuKy3.Caption = "Thư ký 3: " + dr["TenDangNhap"].ToString() + " (" + dr["HoVaTen"].ToString() + ")";
+                }
                 else
                 {
                     btnThuKy3.Visibility = BarItemVisibility.Never;

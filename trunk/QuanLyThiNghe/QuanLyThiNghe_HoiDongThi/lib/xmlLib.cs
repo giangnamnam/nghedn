@@ -122,20 +122,28 @@ namespace QuanLyThiNghe_ThuKy
 
     public class XuLyDuLieu
     {
+        private static string stDanhSachThiSinh = "thuky_KyThiHienTai_DanhSachThiSinh";
+        private static string stHoiDongThi = "thuky_KyThiHienTai_HoiDongThi";
+        private static string stKyThiHienTai = "thuky_KyThiHienTai";
+        private static string stMonThi = "thuky_MonThi";
+        private static string stNhatKy = "thuky_NhatKyTemplate";
+        private static string stTaiKhoan = "thuky_TaiKhoanThuKyVaAdminDangSuDung";
+        
+
         public static void CapNhatDuLieuThiNgheVeMay()
         {
-            DataProvider.GhiDanhSachThiSinh(ReadFromDatabase(""));
-            DataProvider.GhiHoiDongThi(ReadFromDatabase(""));
-            DataProvider.GhiKyThiHienTai(ReadFromDatabase(""));
-            DataProvider.GhiMonThi(ReadFromDatabase(""));
-            DataProvider.GhiNhatKy(ReadFromDatabase(""));
-            DataProvider.GhiTaiKhoan(ReadFromDatabase(""));
+            DataProvider.GhiDanhSachThiSinh(ReadFromDatabase(stDanhSachThiSinh));
+            DataProvider.GhiHoiDongThi(ReadFromDatabase(stHoiDongThi));
+            DataProvider.GhiKyThiHienTai(ReadFromDatabase(stKyThiHienTai));
+            DataProvider.GhiMonThi(ReadFromDatabase(stMonThi));
+            DataProvider.GhiNhatKy(ReadFromDatabase(stNhatKy));
+            DataProvider.GhiTaiKhoan(ReadFromDatabase(stTaiKhoan));
         }
         public static bool CapNhatDanhSachThiSinh()
         {
             try
             {
-                DataProvider.GhiDanhSachThiSinh(ReadFromDatabase(""));
+                DataProvider.GhiDanhSachThiSinh(ReadFromDatabase(stDanhSachThiSinh));
             }
             catch (Exception)
             {
@@ -147,7 +155,7 @@ namespace QuanLyThiNghe_ThuKy
         {
             try
             {
-                DataProvider.GhiHoiDongThi(ReadFromDatabase(""));
+                DataProvider.GhiHoiDongThi(ReadFromDatabase(stHoiDongThi));
             }
             catch (Exception)
             {
@@ -159,7 +167,7 @@ namespace QuanLyThiNghe_ThuKy
         {
             try
             {
-                DataProvider.GhiKyThiHienTai(ReadFromDatabase(""));
+                DataProvider.GhiKyThiHienTai(ReadFromDatabase(stKyThiHienTai));
             }
             catch (Exception)
             {
@@ -171,7 +179,7 @@ namespace QuanLyThiNghe_ThuKy
         {
             try
             {
-                DataProvider.GhiMonThi(ReadFromDatabase(""));
+                DataProvider.GhiMonThi(ReadFromDatabase(stMonThi));
             }
             catch (Exception)
             {
@@ -183,7 +191,7 @@ namespace QuanLyThiNghe_ThuKy
         {
             try
             {
-                DataProvider.GhiNhatKy(ReadFromDatabase(""));
+                DataProvider.GhiNhatKy(ReadFromDatabase(stNhatKy));
             }
             catch (Exception)
             {
@@ -195,7 +203,8 @@ namespace QuanLyThiNghe_ThuKy
         {
             try
             {
-                DataProvider.GhiTaiKhoan(ReadFromDatabase(""));
+                DataProvider.GhiTaiKhoan(ReadFromDatabase(stTaiKhoan));
+            
             }
             catch (Exception)
             {
@@ -206,7 +215,7 @@ namespace QuanLyThiNghe_ThuKy
 
         private static DataTable ReadFromDatabase(string Command)
         {
-            SqlConnection con = new SqlConnection("");
+            SqlConnection con = new SqlConnection("Data Source=designpro.vn;Initial Catalog=ThiNge;Persist Security Info=True;User ID=thinge;Password=tn123@");
             SqlCommand com = new SqlCommand(Command, con);
             com.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(com);
@@ -338,6 +347,7 @@ namespace QuanLyThiNghe_ThuKy
             try
             {
                 TaoThuMuc(path);
+
                 XMLController.WriteFile(dt, path + name);
             }
             catch (Exception ex)
@@ -367,6 +377,7 @@ namespace QuanLyThiNghe_ThuKy
         public static DataTable ReadFile(string FileName)
         {
             DataSet ds = new DataSet();
+            ds.ReadXmlSchema(FileName + "s");
             ds.ReadXml(FileName);
             if (ds.Tables.Count > 0)
                 return ds.Tables[0];
@@ -377,12 +388,18 @@ namespace QuanLyThiNghe_ThuKy
             try
             {
                 FileInfo fi = new FileInfo(FileName);
-                fi.CopyTo(FileName + ".bak",true);
-
+                if (fi.Exists)
+                {
+                    fi.CopyTo(FileName + ".bak."+DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss"), true);
+                }
                 DataSet ds = new DataSet();
                 if (dt.DataSet == null)
                     ds.Tables.Add(dt);
                 dt.DataSet.WriteXml(FileName);
+                FileInfo sch = new FileInfo(FileName + "s");
+                if (!sch.Exists)
+                    dt.DataSet.WriteXmlSchema(FileName + "s");
+                
             }
             catch (Exception ex)
             {

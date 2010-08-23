@@ -9,11 +9,16 @@ using DevExpress.XtraEditors;
 
 namespace QuanLyThiNghe_ThuKy
 {
-    public partial class DongBoDuLieu : DevExpress.XtraEditors.XtraForm
+    public partial class frmDongBoDuLieu : DevExpress.XtraEditors.XtraForm
     {
-        public DongBoDuLieu()
+        public frmDongBoDuLieu()
         {
             InitializeComponent();
+        }
+
+        private void frmDongBoDuLieu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
