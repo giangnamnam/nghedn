@@ -21,7 +21,7 @@ namespace QuanLyThiNghe_ThuKy
         }
         public ThiSinh()
         {
-            dt = DataProvider.LayTaiKhoan();
+            dt = DataProvider.LayDanhSachThiSinh();
         }
         public DataRow[] LayDanhSachThiSinhTheoPhongThi(int MaHoiDong, int MaMonThi, int PhongThi)
         {

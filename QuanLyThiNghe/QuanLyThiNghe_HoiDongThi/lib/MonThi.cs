@@ -7,7 +7,7 @@ using System.Text;
 
 namespace QuanLyThiNghe_ThuKy
 {
-    class MonThi
+   public class MonThi
     {
         DataTable dt;
         public DataTable Table
