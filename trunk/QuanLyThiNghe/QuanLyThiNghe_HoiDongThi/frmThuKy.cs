@@ -211,6 +211,12 @@ namespace QuanLyThiNghe_ThuKy
 
         }
 
+        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmDongBoDuLieu frm = new frmDongBoDuLieu();
+            frm.ShowDialog();
+        }
+
 
 
     }

@@ -15,7 +15,7 @@ namespace QuanLyThiNghe_ThuKy
             get
             {
                 if (dt == null)
-                    dt = DataProvider.LayTaiKhoan();
+                    dt = DataProvider.LayDanhSachThiSinh();
                 return dt;
             }
         }
@@ -37,5 +37,10 @@ namespace QuanLyThiNghe_ThuKy
             else
                 return null;
         }
+        public bool LuuThayDoi()
+        {
+           return DataProvider.GhiDanhSachThiSinh(dt);
+        }
+
     }
 }
