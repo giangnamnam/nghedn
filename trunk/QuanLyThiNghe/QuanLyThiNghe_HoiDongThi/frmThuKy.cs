@@ -11,6 +11,14 @@ namespace QuanLyThiNghe_ThuKy
 {
     public partial class frmThuKy : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public MonThi MT { get; set; }
+        public HoiDongThi HDT { get; set; }
+        public ThiSinh TS { get; set; }
+
+        public int MaHoiDong { get; set; }
+        public int MaMonThi { get; set; }
+        public int PhongThi { get; set; }
+
         public System.Collections.ArrayList TaiKhoanHienTai { get; set; }
         public frmThuKy()
         {
@@ -91,9 +99,117 @@ namespace QuanLyThiNghe_ThuKy
 
         private void frmThuKy_Load(object sender, EventArgs e)
         {
-            
+            MT = new MonThi();
+            HDT = new HoiDongThi();
+            TS = new ThiSinh();
+
+            LoadHoiDongThi();
         }
 
+        private void barEditItem3_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void LoadHoiDongThi()
+        {
+            repositoryItemLookUpEdit1.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenTruong"));
+            repositoryItemLookUpEdit1.DisplayMember = "TenTruong";
+            repositoryItemLookUpEdit1.ValueMember = "MaHoiDong";
+            repositoryItemLookUpEdit1.DataSource = HDT.Table;
+            le_MonThi.Enabled = false;
+            le_Phong.Enabled = false;
+
+        }
+        private void LoadMonThiTheoHoiDong(int MaHoiDong)
+        {
+            try
+            {
+                DataTable DSTStheoHD = TS.Table.Clone();
+                string expression = "(Convert(" + "MaHoiDong" + ",'System.Int32') = " + MaHoiDong + ")";
+                DataRow[] drs = TS.Table.Select(expression);
+                foreach (DataRow item in drs)
+                {
+                    DSTStheoHD.ImportRow(item);
+                }
+
+                DataTable DSMTtheoHD = DSTStheoHD.DefaultView.ToTable(true, "MaMonThi");
+                DSMTtheoHD.Columns.Add("TenMonThi");
+
+                foreach (DataRow r in MT.Table.Rows)
+                {
+                    foreach (DataRow rw in DSMTtheoHD.Rows)
+                    {
+                        if (r["MaMonThi"].ToString() == rw["MaMonThi"].ToString())
+                        {
+                            rw["TenMonThi"] = r["TenMonThi"].ToString();
+                            break;
+                        }
+                    }
+                }
+                if (repositoryItemLookUpEdit2.Columns.Count<1)
+                {
+                    repositoryItemLookUpEdit2.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenMonThi"));
+                    repositoryItemLookUpEdit2.DisplayMember = "TenMonThi";
+                    repositoryItemLookUpEdit2.ValueMember = "MaMonThi";
+                }
+                repositoryItemLookUpEdit2.DataSource = DSMTtheoHD;
+            }
+            catch (Exception ex)
+            {
+            }
+            
+        }
+        private void LoadPhongThiTheoHoiDongVaMonThi(int MaHoiDong, int MaMonThi)
+        {
+            try
+            {
+                DataTable DSTStheoHDvaMonThi = TS.Table.Clone();
+                string expression = "(Convert(" + "MaHoiDong" + ",'System.Int32') = " + MaHoiDong + ")";
+                expression += "and (Convert(" + "MaMonThi" + ",'System.Int32') = " + MaMonThi + ")";
+                DataRow[] drs = TS.Table.Select(expression);
+                foreach (DataRow item in drs)
+                {
+                    DSTStheoHDvaMonThi.ImportRow(item);
+                }
+
+                DataTable tblPhong = DSTStheoHDvaMonThi.DefaultView.ToTable(true, "PhongThi");
+                
+
+                if (repositoryItemLookUpEdit3.Columns.Count < 1)
+                {
+                    repositoryItemLookUpEdit3.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PhongThi"));
+                    repositoryItemLookUpEdit3.DisplayMember = "PhongThi";
+                    repositoryItemLookUpEdit3.ValueMember = "PhongThi";
+                }
+                repositoryItemLookUpEdit3.DataSource = tblPhong;
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void le_HoiDong_EditValueChanged(object sender, EventArgs e)
+        {
+             MaHoiDong = int.Parse(le_HoiDong.EditValue != null ? le_HoiDong.EditValue.ToString() : "0");
+             MaMonThi = 0;
+             PhongThi = 0;
+             LoadMonThiTheoHoiDong(MaHoiDong);
+             le_MonThi.Enabled = true;
+             le_Phong.Enabled = false;
+        }
+
+        private void le_MonThi_EditValueChanged(object sender, EventArgs e)
+        {
+            MaMonThi = int.Parse(le_MonThi.EditValue != null ? le_MonThi.EditValue.ToString() : "0");
+            PhongThi = 0;
+            LoadPhongThiTheoHoiDongVaMonThi(MaHoiDong,MaMonThi);
+            le_Phong.Enabled = true;
+        }
+
+        private void le_Phong_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
 
 
 

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThuKy));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -38,11 +39,8 @@
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.btnNhapDiemLyThuyet = new DevExpress.XtraBars.BarButtonItem();
             this.btnNhapDiemThucHanh = new DevExpress.XtraBars.BarButtonItem();
-            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.barEditItem3 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemComboBox3 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.tbnThuKy1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnThuKy2 = new DevExpress.XtraBars.BarButtonItem();
@@ -52,6 +50,12 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barMdiChildrenListItem1 = new DevExpress.XtraBars.BarMdiChildrenListItem();
             this.barMdiChildrenListItem2 = new DevExpress.XtraBars.BarMdiChildrenListItem();
+            this.le_HoiDong = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.le_MonThi = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.le_Phong = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemLookUpEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.BigImgs = new System.Windows.Forms.ImageList(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -65,6 +69,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,9 +101,6 @@
             this.btnNhapDiemLyThuyet,
             this.btnNhapDiemThucHanh,
             this.barButtonItem1,
-            this.barEditItem1,
-            this.barEditItem2,
-            this.barEditItem3,
             this.tbnThuKy1,
             this.btnThuKy2,
             this.btnThuKy3,
@@ -104,10 +108,13 @@
             this.barButtonItem3,
             this.barButtonItem4,
             this.barMdiChildrenListItem1,
-            this.barMdiChildrenListItem2});
+            this.barMdiChildrenListItem2,
+            this.le_HoiDong,
+            this.le_MonThi,
+            this.le_Phong});
             this.ribbon.LargeImages = this.BigImgs;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 25;
+            this.ribbon.MaxItemId = 28;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.barMdiChildrenListItem2);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -116,7 +123,10 @@
             this.repositoryItemPictureEdit1,
             this.repositoryItemComboBox1,
             this.repositoryItemComboBox2,
-            this.repositoryItemComboBox3});
+            this.repositoryItemComboBox3,
+            this.repositoryItemLookUpEdit1,
+            this.repositoryItemLookUpEdit2,
+            this.repositoryItemLookUpEdit3});
             this.ribbon.SelectedPage = this.ribbonPage1;
             this.ribbon.Size = new System.Drawing.Size(790, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
@@ -176,49 +186,32 @@
             this.btnNhapDiemThucHanh.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnNhapDiemThucHanh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapDiemThucHanh_ItemClick);
             // 
-            // barEditItem1
-            // 
-            this.barEditItem1.Caption = "Phòng";
-            this.barEditItem1.Edit = this.repositoryItemComboBox1;
-            this.barEditItem1.Id = 13;
-            this.barEditItem1.Name = "barEditItem1";
-            this.barEditItem1.Width = 227;
-            // 
             // repositoryItemComboBox1
             // 
             this.repositoryItemComboBox1.AutoHeight = false;
             this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Items.AddRange(new object[] {
+            "cccccccccc"});
             this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
-            // 
-            // barEditItem2
-            // 
-            this.barEditItem2.Caption = "Môn thi";
-            this.barEditItem2.Edit = this.repositoryItemComboBox2;
-            this.barEditItem2.Id = 14;
-            this.barEditItem2.Name = "barEditItem2";
-            this.barEditItem2.Width = 222;
             // 
             // repositoryItemComboBox2
             // 
             this.repositoryItemComboBox2.AutoHeight = false;
             this.repositoryItemComboBox2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox2.Items.AddRange(new object[] {
+            "bbbbbbbbbbb"});
             this.repositoryItemComboBox2.Name = "repositoryItemComboBox2";
-            // 
-            // barEditItem3
-            // 
-            this.barEditItem3.Caption = "Hội đồng thi";
-            this.barEditItem3.Edit = this.repositoryItemComboBox3;
-            this.barEditItem3.Id = 15;
-            this.barEditItem3.Name = "barEditItem3";
-            this.barEditItem3.Width = 200;
             // 
             // repositoryItemComboBox3
             // 
             this.repositoryItemComboBox3.AutoHeight = false;
             this.repositoryItemComboBox3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox3.DropDownRows = 15;
+            this.repositoryItemComboBox3.Items.AddRange(new object[] {
+            "aaaaaaaa"});
             this.repositoryItemComboBox3.Name = "repositoryItemComboBox3";
             // 
             // tbnThuKy1
@@ -278,6 +271,58 @@
             this.barMdiChildrenListItem2.Id = 24;
             this.barMdiChildrenListItem2.Name = "barMdiChildrenListItem2";
             // 
+            // le_HoiDong
+            // 
+            this.le_HoiDong.Caption = "Hội đồng thi";
+            this.le_HoiDong.Edit = this.repositoryItemLookUpEdit1;
+            this.le_HoiDong.Id = 25;
+            this.le_HoiDong.Name = "le_HoiDong";
+            this.le_HoiDong.Width = 200;
+            this.le_HoiDong.EditValueChanged += new System.EventHandler(this.le_HoiDong_EditValueChanged);
+            // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)), serializableAppearanceObject2, "Ctrl+H", null, null, true)});
+            this.repositoryItemLookUpEdit1.DisplayMember = "TenHoiDong";
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            this.repositoryItemLookUpEdit1.ValueMember = "MaHoiDong";
+            // 
+            // le_MonThi
+            // 
+            this.le_MonThi.Caption = "Môn thi";
+            this.le_MonThi.Edit = this.repositoryItemLookUpEdit2;
+            this.le_MonThi.Id = 26;
+            this.le_MonThi.Name = "le_MonThi";
+            this.le_MonThi.Width = 222;
+            this.le_MonThi.EditValueChanged += new System.EventHandler(this.le_MonThi_EditValueChanged);
+            // 
+            // repositoryItemLookUpEdit2
+            // 
+            this.repositoryItemLookUpEdit2.AutoHeight = false;
+            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit2.DisplayMember = "TenMonThi";
+            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
+            this.repositoryItemLookUpEdit2.ValueMember = "MaMonThi";
+            // 
+            // le_Phong
+            // 
+            this.le_Phong.Caption = "Phòng thi";
+            this.le_Phong.Edit = this.repositoryItemLookUpEdit3;
+            this.le_Phong.Id = 27;
+            this.le_Phong.Name = "le_Phong";
+            this.le_Phong.Width = 212;
+            this.le_Phong.EditValueChanged += new System.EventHandler(this.le_Phong_EditValueChanged);
+            // 
+            // repositoryItemLookUpEdit3
+            // 
+            this.repositoryItemLookUpEdit3.AutoHeight = false;
+            this.repositoryItemLookUpEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit3.Name = "repositoryItemLookUpEdit3";
+            // 
             // BigImgs
             // 
             this.BigImgs.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("BigImgs.ImageStream")));
@@ -306,9 +351,9 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barEditItem3);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barEditItem2);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barEditItem1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.le_HoiDong);
+            this.ribbonPageGroup2.ItemLinks.Add(this.le_MonThi);
+            this.ribbonPageGroup2.ItemLinks.Add(this.le_Phong);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
@@ -363,6 +408,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             this.ResumeLayout(false);
 
@@ -381,11 +429,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnNhapDiemThucHanh;
-        private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
-        private DevExpress.XtraBars.BarEditItem barEditItem2;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
-        private DevExpress.XtraBars.BarEditItem barEditItem3;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem tbnThuKy1;
@@ -400,5 +445,11 @@
         private DevExpress.XtraBars.BarMdiChildrenListItem barMdiChildrenListItem1;
         private DevExpress.XtraBars.BarMdiChildrenListItem barMdiChildrenListItem2;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.XtraBars.BarEditItem le_HoiDong;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
+        private DevExpress.XtraBars.BarEditItem le_MonThi;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
+        private DevExpress.XtraBars.BarEditItem le_Phong;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit3;
     }
 }
