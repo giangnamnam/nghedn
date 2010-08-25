@@ -28,7 +28,7 @@ namespace QuanLyThiNghe_ThuKy
 
             string expression = "(Convert(" + "MaHoiDong" + ",'System.Int32') = " + MaHoiDong + ")";
             expression += "AND (Convert(" + "MaMonThi" + ",'System.Int32') = " + MaMonThi + ")";
-            expression += "AND (Convert(" + "PhongThi" + ",'System.Int32') = " + PhongThi + ")";
+            //expression += "AND (Convert(" + "PhongThi" + ",'System.Int32') = " + PhongThi + ")";
             DataRow[] drs = dt.Select(expression);
             if (drs.Count() > 0)
             {
@@ -36,6 +36,20 @@ namespace QuanLyThiNghe_ThuKy
             }
             else
                 return null;
+        }
+        public DataTable LayTableDanhSachThiSinhTheoPhongThi(int MaHoiDong, int MaMonThi, int PhongThi)
+        {
+            DataTable tbl = dt.Clone();
+
+            string expression = "(Convert(" + "MaHoiDong" + ",'System.Int32') = " + MaHoiDong + ")";
+            expression += "AND (Convert(" + "MaMonThi" + ",'System.Int32') = " + MaMonThi + ")";
+            //expression += "AND (Convert(" + "PhongThi" + ",'System.Int32') = " + PhongThi + ")";
+            DataRow[] drs = dt.Select(expression);
+            foreach (DataRow item in drs)
+            {
+                tbl.ImportRow(item);
+            }
+            return tbl;
         }
         public bool LuuThayDoi()
         {

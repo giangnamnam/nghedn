@@ -19,14 +19,20 @@ namespace QuanLyThiNghe_ThuKy
 
         private void frmLyThuyet_Load(object sender, EventArgs e)
         {
-            
+            dataGridView1.AutoGenerateColumns = false;
         }
         public void LoadDanhSachThiSinh(int MaHoiDongThi, int MaMonThi, int PhongThi)
         {
-            dataGridView1.DataSource = DanhSachThiSinh.LayDanhSachThiSinhTheoPhongThi(MaHoiDongThi, MaMonThi, PhongThi);
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = DanhSachThiSinh.LayTableDanhSachThiSinhTheoPhongThi(MaHoiDongThi, MaMonThi, PhongThi);
+            dataGridView1.Refresh();
         }
         public void Luu()
         {
+
+            dataGridView1.EndEdit();
+
             if (DanhSachThiSinh.LuuThayDoi())
             {
                 XtraMessageBox.Show("Đã lưu dữ liệu thành công.", "Nhập điểm lý thuyết", MessageBoxButtons.OK, MessageBoxIcon.Information);
