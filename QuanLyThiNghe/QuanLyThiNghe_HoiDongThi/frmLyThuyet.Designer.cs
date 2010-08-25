@@ -29,20 +29,23 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cMaThiSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cSBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cMaThiSinh,
+            this.cSTT,
             this.cSBD,
-            this.CDiem,
-            this.cGhiChu});
+            this.CDiem});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
@@ -50,20 +53,30 @@
             this.dataGridView1.Size = new System.Drawing.Size(462, 320);
             this.dataGridView1.TabIndex = 1;
             // 
+            // cMaThiSinh
+            // 
+            this.cMaThiSinh.DataPropertyName = "MaThiSinh";
+            this.cMaThiSinh.HeaderText = "Mã thí sinh";
+            this.cMaThiSinh.Name = "cMaThiSinh";
+            // 
+            // cSTT
+            // 
+            this.cSTT.DataPropertyName = "STT";
+            this.cSTT.HeaderText = "STT";
+            this.cSTT.Name = "cSTT";
+            // 
             // cSBD
             // 
+            this.cSBD.DataPropertyName = "SBD";
             this.cSBD.HeaderText = "Số báo danh";
             this.cSBD.Name = "cSBD";
+            this.cSBD.ReadOnly = true;
             // 
             // CDiem
             // 
+            this.CDiem.DataPropertyName = "DiemLT";
             this.CDiem.HeaderText = "Điểm lý thuyết";
             this.CDiem.Name = "CDiem";
-            // 
-            // cGhiChu
-            // 
-            this.cGhiChu.HeaderText = "Ghi chú";
-            this.cGhiChu.Name = "cGhiChu";
             // 
             // frmLyThuyet
             // 
@@ -82,9 +95,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaThiSinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cSTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn cSBD;
         private System.Windows.Forms.DataGridViewTextBoxColumn CDiem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cGhiChu;
 
     }
 }

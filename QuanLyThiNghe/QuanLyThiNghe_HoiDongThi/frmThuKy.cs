@@ -56,47 +56,13 @@ namespace QuanLyThiNghe_ThuKy
                 this.Close();
             }
         }
-
         private void ribbon_Click(object sender, EventArgs e)
         {
 
         }
+        
 
-        private void btnNhapDiemLyThuyet_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            frmLyThuyet frm = new frmLyThuyet();
-            OpenForm(frm);
-        }
-
-        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            frmCapNhatDuLieu frm = new frmCapNhatDuLieu();
-            OpenForm(frm);
-        }
-
-        private void btnNhapDiemThucHanh_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            frmThucHanh frm = new frmThucHanh();
-            frm.MdiParent = this;
-            OpenForm(frm);
-        }
-
-
-
-
-
-        void OpenForm(Form frm)
-        {
-            if (Application.OpenForms[frm.Name] != null)
-                Application.OpenForms[frm.Name].Activate();
-            else
-            {
-                //AddOpenWindow(frm);
-                frm.MdiParent = this;
-                frm.Show();
-            }
-        }
-
+        
         private void frmThuKy_Load(object sender, EventArgs e)
         {
             MT = new MonThi();
@@ -105,7 +71,6 @@ namespace QuanLyThiNghe_ThuKy
 
             LoadHoiDongThi();
         }
-
         private void barEditItem3_EditValueChanged(object sender, EventArgs e)
         {
 
@@ -187,37 +152,87 @@ namespace QuanLyThiNghe_ThuKy
             {
             }
         }
-
         private void le_HoiDong_EditValueChanged(object sender, EventArgs e)
         {
              MaHoiDong = int.Parse(le_HoiDong.EditValue != null ? le_HoiDong.EditValue.ToString() : "0");
-             MaMonThi = 0;
-             PhongThi = 0;
              LoadMonThiTheoHoiDong(MaHoiDong);
              le_MonThi.Enabled = true;
              le_Phong.Enabled = false;
+             MaMonThi = int.Parse(le_MonThi.EditValue != null ? le_MonThi.EditValue.ToString() : "0");
+             PhongThi = 0;
         }
-
         private void le_MonThi_EditValueChanged(object sender, EventArgs e)
         {
             MaMonThi = int.Parse(le_MonThi.EditValue != null ? le_MonThi.EditValue.ToString() : "0");
-            PhongThi = 0;
             LoadPhongThiTheoHoiDongVaMonThi(MaHoiDong,MaMonThi);
             le_Phong.Enabled = true;
+            PhongThi = int.Parse(le_Phong.EditValue != null ? le_Phong.EditValue.ToString() : "0");
         }
-
         private void le_Phong_EditValueChanged(object sender, EventArgs e)
         {
-
+            PhongThi = int.Parse(le_Phong.EditValue != null ? le_Phong.EditValue.ToString() : "0");
+            OpenForm(Application.OpenForms[Application.OpenForms.Count - 1]);
         }
+
 
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmDongBoDuLieu frm = new frmDongBoDuLieu();
             frm.ShowDialog();
         }
-
-
-
+        private void btnNhapDiemLyThuyet_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmLyThuyet frm = new frmLyThuyet();
+            OpenForm(frm);
+        }
+        private void btnNhapDiemThucHanh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmThucHanh frm = new frmThucHanh();
+            OpenForm(frm);
+        }
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmCapNhatDuLieu frm = new frmCapNhatDuLieu();
+            OpenForm(frm);
+        }
+        
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //Lưu
+        }
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //Lưu và qua phòng thi tiếp theo.
+        }
+        
+        void OpenForm(Form frm)
+        {
+            if (frm.Name == "frmLyThuyet")
+            {
+                ((frmLyThuyet)frm).LoadDanhSachThiSinh(MaHoiDong, MaMonThi, PhongThi);
+            }
+            else if (frm.Name == "frmThucHanh")
+            {
+                ((frmThucHanh)frm).LoadDanhSachThiSinh(MaHoiDong, MaMonThi, PhongThi);
+            }
+            if (Application.OpenForms[frm.Name] != null)
+            {
+                if (frm.Name == "frmLyThuyet")
+                {
+                    ((frmLyThuyet)Application.OpenForms[frm.Name]).LoadDanhSachThiSinh(MaHoiDong, MaMonThi, PhongThi);
+                }
+                else if (frm.Name == "frmThucHanh")
+                {
+                    ((frmThucHanh)Application.OpenForms[frm.Name]).LoadDanhSachThiSinh(MaHoiDong, MaMonThi, PhongThi);
+                }
+                Application.OpenForms[frm.Name].Activate();
+            }
+            else
+            {
+                //AddOpenWindow(frm);
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
     }
 }
