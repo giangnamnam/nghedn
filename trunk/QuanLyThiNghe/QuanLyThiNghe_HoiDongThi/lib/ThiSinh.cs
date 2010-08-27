@@ -55,6 +55,54 @@ namespace QuanLyThiNghe_ThuKy
         {
            return DataProvider.GhiDanhSachThiSinh(dt);
         }
+        public int LayTongSoThiSinh()
+        {
+            return dt.Rows.Count;
+        }
+        public int LayTongSoThiSinhDaCoDiemLyThuyet()
+        {
+            string expression = "(Convert(" + "DiemLT" + ",'System.String') <> " + "" + ")";
+            return dt.Select(expression).Count();
+        }
+        public int LayTongSoThiSinhChuaCoDiemLyThuyet()
+        {
+            string expression = "(Convert(" + "DiemLT" + ",'System.String') = " + "" + ")";
+            return dt.Select(expression).Count();
+        }
+        public int LayTongSoThiSinhChuaDongBo()
+        {
+            string expression = "(Convert(" + "DaDongBo" + ",'System.String') = " + "false" + ")";
+            return dt.Select(expression).Count();
+        }
+        public int LayTongSoThiSinhChuaCoDiemLyThuyetTheoHoiDongThi(int MaHoiDong)
+        {
+            string expression = "(Convert(" + "DaDongBo" + ",'System.Int32') = " + MaHoiDong + ")";
+            expression += "(Convert(" + "DiemLT" + ",'System.String') = " + "" + ")";
+            return dt.Select(expression).Count();
+        }
+        public int LayTongSoThiSinhChuaCoDiemLyThuyetTheoHoiDongThi(int MaHoiDong)
+        {
+            string expression = "(Convert(" + "DaDongBo" + ",'System.Int32') = " + MaHoiDong + ")";
+            expression += "(Convert(" + "DiemLT" + ",'System.String') = " + "" + ")";
+            return dt.Select(expression).Count();
+        }
+        public int LayTongSo(int MaHoiDong, int MaMonThi, int Phong, bool DienLyThuyet,bool DaCoDiem, bool DaDongBo)
+        {
+            string expression = "(Convert(" + "MaHoiDong" + ",'System.Int32') = " + MaHoiDong + ")";
+            if (MaHoiDong!=0)
+                expression += "(Convert(" + "MaHoiDong" + ",'System.Int32') = " + MaHoiDong + ")";
+            if (MaMonThi != 0)
+                expression += "(Convert(" + "MaMonThi" + ",'System.Int32') = " + MaMonThi + ")";
+            if (Phong != 0)
+                expression += "(Convert(" + "Phong" + ",'System.Int32') = " + Phong + ")";
+            if (DienLyThuyet && DaCoDiem)
+                expression += "(Convert(" + "DiemLT" + ",'System.String') <> " + "" + ")";
+            if (DienLyThuyet && !DaCoDiem)
+                expression += "(Convert(" + "DiemLT" + ",'System.String')  = " + "" + ")";
 
+            if(DaDongBo)
+                expression += "(Convert(" + "DaDongBo" + ",'System.String') = " + DaDongBo.ToString() + ")";
+            return dt.Select(expression).Count();
+        }
     }
 }

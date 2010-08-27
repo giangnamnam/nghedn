@@ -170,8 +170,21 @@ namespace QuanLyThiNghe_ThuKy
         }
         private void le_Phong_EditValueChanged(object sender, EventArgs e)
         {
-            PhongThi = int.Parse(le_Phong.EditValue != null ? le_Phong.EditValue.ToString() : "0");
-            OpenForm(Application.OpenForms[Application.OpenForms.Count - 1]);
+            try
+            {
+                int a;
+                bool coPhongThi = int.TryParse(le_Phong.EditValue != null ? le_Phong.EditValue.ToString() : "0", out a);
+                PhongThi = a;
+                if (Application.OpenForms.Count > 0 && coPhongThi )
+                {
+                    OpenForm(Application.OpenForms[Application.OpenForms.Count - 1]);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
         }
 
 
