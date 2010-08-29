@@ -10,6 +10,7 @@
 
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_DMTruong_DMHuyen", "DMHuyen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMHuyen), "DMTruong", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.DMTruong))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_DMTruong_DMKhoi", "DMKhoi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMKhoi), "DMTruong", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.DMTruong))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_DMPhach_DMKyThi", "DMKyThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMKyThi), "DMPhach", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.DMPhach))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_HoiDongThi_DMKyThi", "DMKyThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMKyThi), "HoiDongThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.HoiDongThi))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_DMPhach_DMMonThi", "DMMonThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMMonThi), "DMPhach", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.DMPhach))]
@@ -21,7 +22,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_TaiKhoan_PhanQuyen", "PhanQuyen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.PhanQuyen), "TaiKhoan", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.TaiKhoan))]
 
 // Original file name:
-// Generation date: 15/08/10 11:49:43 PM
+// Generation date: 29/08/10 8:49:23 PM
 namespace QuanLyThiNghe
 {
     
@@ -85,6 +86,21 @@ namespace QuanLyThiNghe
             }
         }
         private global::System.Data.Objects.ObjectQuery<DMHuyen> _DMHuyen;
+        /// <summary>
+        /// There are no comments for DMKhoi in the schema.
+        /// </summary>
+        public global::System.Data.Objects.ObjectQuery<DMKhoi> DMKhoi
+        {
+            get
+            {
+                if ((this._DMKhoi == null))
+                {
+                    this._DMKhoi = base.CreateQuery<DMKhoi>("[DMKhoi]");
+                }
+                return this._DMKhoi;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<DMKhoi> _DMKhoi;
         /// <summary>
         /// There are no comments for DMKyThi in the schema.
         /// </summary>
@@ -221,21 +237,6 @@ namespace QuanLyThiNghe
         }
         private global::System.Data.Objects.ObjectQuery<ThiSinh> _ThiSinh;
         /// <summary>
-        /// There are no comments for ThongKe in the schema.
-        /// </summary>
-        public global::System.Data.Objects.ObjectQuery<ThongKe> ThongKe
-        {
-            get
-            {
-                if ((this._ThongKe == null))
-                {
-                    this._ThongKe = base.CreateQuery<ThongKe>("[ThongKe]");
-                }
-                return this._ThongKe;
-            }
-        }
-        private global::System.Data.Objects.ObjectQuery<ThongKe> _ThongKe;
-        /// <summary>
         /// There are no comments for Config in the schema.
         /// </summary>
         public void AddToConfig(Config config)
@@ -248,6 +249,13 @@ namespace QuanLyThiNghe
         public void AddToDMHuyen(DMHuyen dMHuyen)
         {
             base.AddObject("DMHuyen", dMHuyen);
+        }
+        /// <summary>
+        /// There are no comments for DMKhoi in the schema.
+        /// </summary>
+        public void AddToDMKhoi(DMKhoi dMKhoi)
+        {
+            base.AddObject("DMKhoi", dMKhoi);
         }
         /// <summary>
         /// There are no comments for DMKyThi in the schema.
@@ -311,13 +319,6 @@ namespace QuanLyThiNghe
         public void AddToThiSinh(ThiSinh thiSinh)
         {
             base.AddObject("ThiSinh", thiSinh);
-        }
-        /// <summary>
-        /// There are no comments for ThongKe in the schema.
-        /// </summary>
-        public void AddToThongKe(ThongKe thongKe)
-        {
-            base.AddObject("ThongKe", thongKe);
         }
     }
     /// <summary>
@@ -595,6 +596,29 @@ namespace QuanLyThiNghe
         partial void OnChoThuKyNhapDiemChanging(global::System.Nullable<bool> value);
         partial void OnChoThuKyNhapDiemChanged();
         /// <summary>
+        /// There are no comments for Property ChoThuKyQuayLaiKhiNhapDiem in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<bool> ChoThuKyQuayLaiKhiNhapDiem
+        {
+            get
+            {
+                return this._ChoThuKyQuayLaiKhiNhapDiem;
+            }
+            set
+            {
+                this.OnChoThuKyQuayLaiKhiNhapDiemChanging(value);
+                this.ReportPropertyChanging("ChoThuKyQuayLaiKhiNhapDiem");
+                this._ChoThuKyQuayLaiKhiNhapDiem = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ChoThuKyQuayLaiKhiNhapDiem");
+                this.OnChoThuKyQuayLaiKhiNhapDiemChanged();
+            }
+        }
+        private global::System.Nullable<bool> _ChoThuKyQuayLaiKhiNhapDiem;
+        partial void OnChoThuKyQuayLaiKhiNhapDiemChanging(global::System.Nullable<bool> value);
+        partial void OnChoThuKyQuayLaiKhiNhapDiemChanged();
+        /// <summary>
         /// There are no comments for Property KyThiHienTai in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
@@ -818,6 +842,95 @@ namespace QuanLyThiNghe
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<DMTruong>("QuanLyThiNghe.FK_DMTruong_DMHuyen", "DMTruong", value);
+                }
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for QuanLyThiNghe.DMKhoi in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// MaKhoi
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="DMKhoi")]
+    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
+    [global::System.Serializable()]
+    public partial class DMKhoi : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new DMKhoi object.
+        /// </summary>
+        /// <param name="maKhoi">Initial value of MaKhoi.</param>
+        public static DMKhoi CreateDMKhoi(int maKhoi)
+        {
+            DMKhoi dMKhoi = new DMKhoi();
+            dMKhoi.MaKhoi = maKhoi;
+            return dMKhoi;
+        }
+        /// <summary>
+        /// There are no comments for Property MaKhoi in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int MaKhoi
+        {
+            get
+            {
+                return this._MaKhoi;
+            }
+            set
+            {
+                this.OnMaKhoiChanging(value);
+                this.ReportPropertyChanging("MaKhoi");
+                this._MaKhoi = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("MaKhoi");
+                this.OnMaKhoiChanged();
+            }
+        }
+        private int _MaKhoi;
+        partial void OnMaKhoiChanging(int value);
+        partial void OnMaKhoiChanged();
+        /// <summary>
+        /// There are no comments for Property TenKhoi in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenKhoi
+        {
+            get
+            {
+                return this._TenKhoi;
+            }
+            set
+            {
+                this.OnTenKhoiChanging(value);
+                this.ReportPropertyChanging("TenKhoi");
+                this._TenKhoi = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("TenKhoi");
+                this.OnTenKhoiChanged();
+            }
+        }
+        private string _TenKhoi;
+        partial void OnTenKhoiChanging(string value);
+        partial void OnTenKhoiChanged();
+        /// <summary>
+        /// There are no comments for DMTruong in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_DMTruong_DMKhoi", "DMTruong")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<DMTruong> DMTruong
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<DMTruong>("QuanLyThiNghe.FK_DMTruong_DMKhoi", "DMTruong");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<DMTruong>("QuanLyThiNghe.FK_DMTruong_DMKhoi", "DMTruong", value);
                 }
             }
         }
@@ -1814,6 +1927,43 @@ namespace QuanLyThiNghe
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMHuyen>("QuanLyThiNghe.FK_DMTruong_DMHuyen", "DMHuyen", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for DMKhoi in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_DMTruong_DMKhoi", "DMKhoi")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public DMKhoi DMKhoi
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKhoi>("QuanLyThiNghe.FK_DMTruong_DMKhoi", "DMKhoi").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKhoi>("QuanLyThiNghe.FK_DMTruong_DMKhoi", "DMKhoi").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for DMKhoi in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<DMKhoi> DMKhoiReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKhoi>("QuanLyThiNghe.FK_DMTruong_DMKhoi", "DMKhoi");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMKhoi>("QuanLyThiNghe.FK_DMTruong_DMKhoi", "DMKhoi", value);
                 }
             }
         }
@@ -3377,6 +3527,75 @@ namespace QuanLyThiNghe
         partial void OnNgayTaoChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnNgayTaoChanged();
         /// <summary>
+        /// There are no comments for Property ThuKy1 in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<int> ThuKy1
+        {
+            get
+            {
+                return this._ThuKy1;
+            }
+            set
+            {
+                this.OnThuKy1Changing(value);
+                this.ReportPropertyChanging("ThuKy1");
+                this._ThuKy1 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ThuKy1");
+                this.OnThuKy1Changed();
+            }
+        }
+        private global::System.Nullable<int> _ThuKy1;
+        partial void OnThuKy1Changing(global::System.Nullable<int> value);
+        partial void OnThuKy1Changed();
+        /// <summary>
+        /// There are no comments for Property ThuKy2 in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<int> ThuKy2
+        {
+            get
+            {
+                return this._ThuKy2;
+            }
+            set
+            {
+                this.OnThuKy2Changing(value);
+                this.ReportPropertyChanging("ThuKy2");
+                this._ThuKy2 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ThuKy2");
+                this.OnThuKy2Changed();
+            }
+        }
+        private global::System.Nullable<int> _ThuKy2;
+        partial void OnThuKy2Changing(global::System.Nullable<int> value);
+        partial void OnThuKy2Changed();
+        /// <summary>
+        /// There are no comments for Property ThuKy3 in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<int> ThuKy3
+        {
+            get
+            {
+                return this._ThuKy3;
+            }
+            set
+            {
+                this.OnThuKy3Changing(value);
+                this.ReportPropertyChanging("ThuKy3");
+                this._ThuKy3 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ThuKy3");
+                this.OnThuKy3Changed();
+            }
+        }
+        private global::System.Nullable<int> _ThuKy3;
+        partial void OnThuKy3Changing(global::System.Nullable<int> value);
+        partial void OnThuKy3Changed();
+        /// <summary>
         /// There are no comments for Property NguoiCapNhat in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
@@ -3556,50 +3775,5 @@ namespace QuanLyThiNghe
                 }
             }
         }
-    }
-    /// <summary>
-    /// There are no comments for QuanLyThiNghe.ThongKe in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// GioHeThong
-    /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="ThongKe")]
-    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
-    [global::System.Serializable()]
-    public partial class ThongKe : global::System.Data.Objects.DataClasses.EntityObject
-    {
-        /// <summary>
-        /// Create a new ThongKe object.
-        /// </summary>
-        /// <param name="gioHeThong">Initial value of GioHeThong.</param>
-        public static ThongKe CreateThongKe(global::System.DateTime gioHeThong)
-        {
-            ThongKe thongKe = new ThongKe();
-            thongKe.GioHeThong = gioHeThong;
-            return thongKe;
-        }
-        /// <summary>
-        /// There are no comments for Property GioHeThong in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.DateTime GioHeThong
-        {
-            get
-            {
-                return this._GioHeThong;
-            }
-            set
-            {
-                this.OnGioHeThongChanging(value);
-                this.ReportPropertyChanging("GioHeThong");
-                this._GioHeThong = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("GioHeThong");
-                this.OnGioHeThongChanged();
-            }
-        }
-        private global::System.DateTime _GioHeThong;
-        partial void OnGioHeThongChanging(global::System.DateTime value);
-        partial void OnGioHeThongChanged();
     }
 }
