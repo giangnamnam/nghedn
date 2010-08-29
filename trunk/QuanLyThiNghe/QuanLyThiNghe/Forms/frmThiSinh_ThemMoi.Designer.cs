@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThiSinh_ThemMoi));
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -43,63 +42,44 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.comboBoxEdit3 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.comboBoxEdit4 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.comboBoxEdit5 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.lblMaPhach = new DevExpress.XtraEditors.LabelControl();
+            this.lblSBD = new DevExpress.XtraEditors.LabelControl();
+            this.cbHDT = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbMonThi = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtHo = new DevExpress.XtraEditors.TextEdit();
+            this.txtTen = new DevExpress.XtraEditors.TextEdit();
+            this.txtNgaySinh = new DevExpress.XtraEditors.DateEdit();
+            this.cbNoiSinh = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbTruong = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtLop = new DevExpress.XtraEditors.TextEdit();
+            this.txtTH = new DevExpress.XtraEditors.TextEdit();
+            this.txtLT = new DevExpress.XtraEditors.TextEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            this.lblPhongThi = new DevExpress.XtraEditors.LabelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.cbHDT.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMonThi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbNoiSinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTruong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLop.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTH.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // simpleButton2
+            // btnSave
             // 
-            this.simpleButton2.Image = global::QuanLyThiNghe.Properties.Resources.save_16;
-            this.simpleButton2.Location = new System.Drawing.Point(117, 394);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(100, 23);
-            this.simpleButton2.TabIndex = 16;
-            this.simpleButton2.Text = "Lưu";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
-            this.simpleButton1.Location = new System.Drawing.Point(11, 394);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(100, 23);
-            this.simpleButton1.TabIndex = 17;
-            this.simpleButton1.Text = "Huỷ";
+            this.btnSave.Image = global::QuanLyThiNghe.Properties.Resources.save_16;
+            this.btnSave.Location = new System.Drawing.Point(202, 390);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 23);
+            this.btnSave.TabIndex = 16;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // labelControl3
             // 
@@ -192,7 +172,7 @@
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Appearance.Options.UseImage = true;
             this.labelControl5.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.labelControl5.Location = new System.Drawing.Point(11, 81);
+            this.labelControl5.Location = new System.Drawing.Point(12, 110);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(92, 20);
             this.labelControl5.TabIndex = 22;
@@ -206,7 +186,7 @@
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Appearance.Options.UseImage = true;
             this.labelControl7.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.labelControl7.Location = new System.Drawing.Point(11, 55);
+            this.labelControl7.Location = new System.Drawing.Point(11, 56);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(77, 20);
             this.labelControl7.TabIndex = 21;
@@ -262,7 +242,7 @@
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.Appearance.Options.UseImage = true;
             this.labelControl11.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.labelControl11.Location = new System.Drawing.Point(11, 107);
+            this.labelControl11.Location = new System.Drawing.Point(12, 137);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(66, 20);
             this.labelControl11.TabIndex = 22;
@@ -276,203 +256,148 @@
             this.labelControl12.Appearance.Options.UseFont = true;
             this.labelControl12.Appearance.Options.UseImage = true;
             this.labelControl12.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.labelControl12.Location = new System.Drawing.Point(11, 133);
+            this.labelControl12.Location = new System.Drawing.Point(11, 83);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(78, 20);
             this.labelControl12.TabIndex = 22;
             this.labelControl12.Text = "Phòng thi:";
             // 
-            // labelControl17
+            // lblMaPhach
             // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl17.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl17.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Appearance.Options.UseForeColor = true;
-            this.labelControl17.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.labelControl17.Location = new System.Drawing.Point(124, 58);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(54, 14);
-            this.labelControl17.TabIndex = 21;
-            this.labelControl17.Text = "DI00001";
+            this.lblMaPhach.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaPhach.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblMaPhach.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.lblMaPhach.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMaPhach.Appearance.Options.UseFont = true;
+            this.lblMaPhach.Appearance.Options.UseForeColor = true;
+            this.lblMaPhach.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.lblMaPhach.Location = new System.Drawing.Point(124, 59);
+            this.lblMaPhach.Name = "lblMaPhach";
+            this.lblMaPhach.Size = new System.Drawing.Size(90, 14);
+            this.lblMaPhach.TabIndex = 21;
+            this.lblMaPhach.Text = "[Chưa cập nhật]";
             // 
-            // labelControl18
+            // lblSBD
             // 
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl18.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl18.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Appearance.Options.UseForeColor = true;
-            this.labelControl18.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.labelControl18.Location = new System.Drawing.Point(124, 32);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(40, 14);
-            this.labelControl18.TabIndex = 20;
-            this.labelControl18.Text = "00001";
+            this.lblSBD.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSBD.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblSBD.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.lblSBD.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSBD.Appearance.Options.UseFont = true;
+            this.lblSBD.Appearance.Options.UseForeColor = true;
+            this.lblSBD.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.lblSBD.Location = new System.Drawing.Point(124, 32);
+            this.lblSBD.Name = "lblSBD";
+            this.lblSBD.Size = new System.Drawing.Size(90, 14);
+            this.lblSBD.TabIndex = 20;
+            this.lblSBD.Text = "[Chưa cập nhật]";
             // 
-            // comboBoxEdit1
+            // cbHDT
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(124, 81);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbHDT.Location = new System.Drawing.Point(125, 110);
+            this.cbHDT.Name = "cbHDT";
+            this.cbHDT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(150, 20);
-            this.comboBoxEdit1.TabIndex = 25;
+            this.cbHDT.Size = new System.Drawing.Size(177, 20);
+            this.cbHDT.TabIndex = 25;
             // 
-            // comboBoxEdit2
+            // cbMonThi
             // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(124, 107);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbMonThi.Location = new System.Drawing.Point(125, 137);
+            this.cbMonThi.Name = "cbMonThi";
+            this.cbMonThi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(150, 20);
-            this.comboBoxEdit2.TabIndex = 25;
+            this.cbMonThi.Size = new System.Drawing.Size(177, 20);
+            this.cbMonThi.TabIndex = 25;
             // 
-            // comboBoxEdit3
+            // txtHo
             // 
-            this.comboBoxEdit3.Location = new System.Drawing.Point(124, 133);
-            this.comboBoxEdit3.Name = "comboBoxEdit3";
-            this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit3.Size = new System.Drawing.Size(150, 20);
-            this.comboBoxEdit3.TabIndex = 25;
+            this.txtHo.Location = new System.Drawing.Point(124, 256);
+            this.txtHo.Name = "txtHo";
+            this.txtHo.Size = new System.Drawing.Size(100, 20);
+            this.txtHo.TabIndex = 27;
             // 
-            // pictureEdit1
+            // txtTen
             // 
-            this.pictureEdit1.EditValue = global::QuanLyThiNghe.Properties.Resources.iconlist;
-            this.pictureEdit1.Location = new System.Drawing.Point(280, 81);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit1.Size = new System.Drawing.Size(21, 20);
-            this.pictureEdit1.TabIndex = 26;
-            this.pictureEdit1.ToolTip = "Xem danh sách HĐT";
+            this.txtTen.Location = new System.Drawing.Point(230, 256);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(71, 20);
+            this.txtTen.TabIndex = 27;
             // 
-            // pictureEdit2
+            // txtNgaySinh
             // 
-            this.pictureEdit2.EditValue = global::QuanLyThiNghe.Properties.Resources.iconlist;
-            this.pictureEdit2.Location = new System.Drawing.Point(280, 107);
-            this.pictureEdit2.Name = "pictureEdit2";
-            this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit2.Size = new System.Drawing.Size(21, 20);
-            this.pictureEdit2.TabIndex = 26;
-            this.pictureEdit2.ToolTip = "Xem danh sách môn thi";
-            // 
-            // pictureEdit3
-            // 
-            this.pictureEdit3.EditValue = global::QuanLyThiNghe.Properties.Resources.iconlist;
-            this.pictureEdit3.Location = new System.Drawing.Point(280, 133);
-            this.pictureEdit3.Name = "pictureEdit3";
-            this.pictureEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit3.Size = new System.Drawing.Size(21, 20);
-            this.pictureEdit3.TabIndex = 26;
-            this.pictureEdit3.ToolTip = "Xem danh sách  phòng thi";
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(124, 256);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(50, 20);
-            this.textEdit3.TabIndex = 27;
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Location = new System.Drawing.Point(180, 256);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(121, 20);
-            this.textEdit4.TabIndex = 27;
-            // 
-            // dateEdit1
-            // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(124, 282);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.dateEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit1.Properties.EditFormat.FormatString = "dd/MM/yyyy";
-            this.dateEdit1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit1.Properties.Mask.BeepOnError = true;
-            this.dateEdit1.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dateEdit1.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtNgaySinh.EditValue = null;
+            this.txtNgaySinh.Location = new System.Drawing.Point(124, 282);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit1.Size = new System.Drawing.Size(100, 20);
-            this.dateEdit1.TabIndex = 28;
+            this.txtNgaySinh.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.txtNgaySinh.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txtNgaySinh.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.txtNgaySinh.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txtNgaySinh.Properties.Mask.BeepOnError = true;
+            this.txtNgaySinh.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.txtNgaySinh.Properties.MaxValue = new System.DateTime(2010, 12, 30, 0, 0, 0, 0);
+            this.txtNgaySinh.Properties.MinValue = new System.DateTime(1975, 1, 1, 0, 0, 0, 0);
+            this.txtNgaySinh.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtNgaySinh.Size = new System.Drawing.Size(100, 20);
+            this.txtNgaySinh.TabIndex = 28;
             // 
-            // comboBoxEdit4
+            // cbNoiSinh
             // 
-            this.comboBoxEdit4.Location = new System.Drawing.Point(124, 308);
-            this.comboBoxEdit4.Name = "comboBoxEdit4";
-            this.comboBoxEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbNoiSinh.Location = new System.Drawing.Point(124, 308);
+            this.cbNoiSinh.Name = "cbNoiSinh";
+            this.cbNoiSinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit4.Size = new System.Drawing.Size(150, 20);
-            this.comboBoxEdit4.TabIndex = 25;
+            this.cbNoiSinh.Size = new System.Drawing.Size(177, 20);
+            this.cbNoiSinh.TabIndex = 25;
             // 
-            // comboBoxEdit5
+            // cbTruong
             // 
-            this.comboBoxEdit5.Location = new System.Drawing.Point(124, 334);
-            this.comboBoxEdit5.Name = "comboBoxEdit5";
-            this.comboBoxEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbTruong.Location = new System.Drawing.Point(124, 334);
+            this.cbTruong.Name = "cbTruong";
+            this.cbTruong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit5.Size = new System.Drawing.Size(150, 20);
-            this.comboBoxEdit5.TabIndex = 25;
+            this.cbTruong.Size = new System.Drawing.Size(177, 20);
+            this.cbTruong.TabIndex = 25;
             // 
-            // textEdit5
+            // txtLop
             // 
-            this.textEdit5.Location = new System.Drawing.Point(124, 360);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(75, 20);
-            this.textEdit5.TabIndex = 27;
+            this.txtLop.Location = new System.Drawing.Point(124, 360);
+            this.txtLop.Name = "txtLop";
+            this.txtLop.Size = new System.Drawing.Size(75, 20);
+            this.txtLop.TabIndex = 27;
             // 
-            // pictureEdit4
+            // txtTH
             // 
-            this.pictureEdit4.EditValue = global::QuanLyThiNghe.Properties.Resources.iconlist;
-            this.pictureEdit4.Location = new System.Drawing.Point(280, 334);
-            this.pictureEdit4.Name = "pictureEdit4";
-            this.pictureEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit4.Size = new System.Drawing.Size(21, 20);
-            this.pictureEdit4.TabIndex = 26;
-            this.pictureEdit4.ToolTip = "Xem danh sách  trường";
+            this.txtTH.EditValue = "";
+            this.txtTH.Location = new System.Drawing.Point(259, 193);
+            this.txtTH.Name = "txtTH";
+            this.txtTH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtTH.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.txtTH.Properties.Appearance.Options.UseFont = true;
+            this.txtTH.Properties.Appearance.Options.UseForeColor = true;
+            this.txtTH.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtTH.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtTH.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtTH.Size = new System.Drawing.Size(42, 20);
+            this.txtTH.TabIndex = 31;
             // 
-            // pictureEdit5
+            // txtLT
             // 
-            this.pictureEdit5.EditValue = global::QuanLyThiNghe.Properties.Resources.iconlist;
-            this.pictureEdit5.Location = new System.Drawing.Point(280, 308);
-            this.pictureEdit5.Name = "pictureEdit5";
-            this.pictureEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit5.Size = new System.Drawing.Size(21, 20);
-            this.pictureEdit5.TabIndex = 26;
-            this.pictureEdit5.ToolTip = "Xem danh sách tỉnh thành";
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.EditValue = "9.5";
-            this.textEdit2.Location = new System.Drawing.Point(259, 193);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.textEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit2.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textEdit2.Size = new System.Drawing.Size(42, 20);
-            this.textEdit2.TabIndex = 31;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.EditValue = "9.5";
-            this.textEdit1.Location = new System.Drawing.Point(87, 193);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit1.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textEdit1.Size = new System.Drawing.Size(42, 20);
-            this.textEdit1.TabIndex = 32;
+            this.txtLT.EditValue = "";
+            this.txtLT.Location = new System.Drawing.Point(87, 193);
+            this.txtLT.Name = "txtLT";
+            this.txtLT.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtLT.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.txtLT.Properties.Appearance.Options.UseFont = true;
+            this.txtLT.Properties.Appearance.Options.UseForeColor = true;
+            this.txtLT.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtLT.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtLT.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtLT.Size = new System.Drawing.Size(42, 20);
+            this.txtLT.TabIndex = 32;
             // 
             // labelControl13
             // 
@@ -522,48 +447,57 @@
             this.labelControl15.TabIndex = 23;
             this.labelControl15.Text = "Điểm thi:";
             // 
+            // lblPhongThi
+            // 
+            this.lblPhongThi.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhongThi.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPhongThi.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.lblPhongThi.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPhongThi.Appearance.Options.UseFont = true;
+            this.lblPhongThi.Appearance.Options.UseForeColor = true;
+            this.lblPhongThi.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.lblPhongThi.Location = new System.Drawing.Point(124, 86);
+            this.lblPhongThi.Name = "lblPhongThi";
+            this.lblPhongThi.Size = new System.Drawing.Size(90, 14);
+            this.lblPhongThi.TabIndex = 33;
+            this.lblPhongThi.Text = "[Chưa cập nhật]";
+            // 
             // frmThiSinh_ThemMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(314, 425);
-            this.Controls.Add(this.textEdit2);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.lblPhongThi);
+            this.Controls.Add(this.txtTH);
+            this.Controls.Add(this.txtLT);
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.labelControl14);
-            this.Controls.Add(this.dateEdit1);
-            this.Controls.Add(this.textEdit4);
-            this.Controls.Add(this.textEdit5);
-            this.Controls.Add(this.textEdit3);
-            this.Controls.Add(this.pictureEdit5);
-            this.Controls.Add(this.pictureEdit4);
-            this.Controls.Add(this.pictureEdit3);
-            this.Controls.Add(this.pictureEdit2);
-            this.Controls.Add(this.pictureEdit1);
-            this.Controls.Add(this.comboBoxEdit5);
-            this.Controls.Add(this.comboBoxEdit4);
-            this.Controls.Add(this.comboBoxEdit3);
-            this.Controls.Add(this.comboBoxEdit2);
-            this.Controls.Add(this.comboBoxEdit1);
-            this.Controls.Add(this.labelControl18);
+            this.Controls.Add(this.txtNgaySinh);
+            this.Controls.Add(this.txtTen);
+            this.Controls.Add(this.txtLop);
+            this.Controls.Add(this.txtHo);
+            this.Controls.Add(this.cbTruong);
+            this.Controls.Add(this.cbNoiSinh);
+            this.Controls.Add(this.cbMonThi);
+            this.Controls.Add(this.cbHDT);
+            this.Controls.Add(this.lblSBD);
             this.Controls.Add(this.labelControl15);
             this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.labelControl17);
+            this.Controls.Add(this.lblMaPhach);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -571,23 +505,17 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thêm mới thí sinh";
             this.Load += new System.EventHandler(this.frmThiSinh_ThemMoi_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbHDT.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMonThi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbNoiSinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTruong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLop.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTH.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLT.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -595,8 +523,7 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -609,26 +536,21 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.LabelControl labelControl18;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit3;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit2;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit4;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit4;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.LabelControl lblMaPhach;
+        private DevExpress.XtraEditors.LabelControl lblSBD;
+        private DevExpress.XtraEditors.ComboBoxEdit cbHDT;
+        private DevExpress.XtraEditors.ComboBoxEdit cbMonThi;
+        private DevExpress.XtraEditors.TextEdit txtHo;
+        private DevExpress.XtraEditors.TextEdit txtTen;
+        private DevExpress.XtraEditors.DateEdit txtNgaySinh;
+        private DevExpress.XtraEditors.ComboBoxEdit cbNoiSinh;
+        private DevExpress.XtraEditors.ComboBoxEdit cbTruong;
+        private DevExpress.XtraEditors.TextEdit txtLop;
+        private DevExpress.XtraEditors.TextEdit txtTH;
+        private DevExpress.XtraEditors.TextEdit txtLT;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.LabelControl lblPhongThi;
     }
 }
