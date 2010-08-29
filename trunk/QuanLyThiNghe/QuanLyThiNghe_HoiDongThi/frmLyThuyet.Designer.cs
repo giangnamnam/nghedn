@@ -57,7 +57,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(627, 320);
+            this.dataGridView1.Size = new System.Drawing.Size(555, 327);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 320);
+            this.ClientSize = new System.Drawing.Size(555, 327);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmLyThuyet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
