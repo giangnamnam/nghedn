@@ -80,12 +80,7 @@ namespace QuanLyThiNghe_ThuKy
             expression += "(Convert(" + "DiemLT" + ",'System.String') = " + "" + ")";
             return dt.Select(expression).Count();
         }
-        public int LayTongSoThiSinhChuaCoDiemLyThuyetTheoHoiDongThi(int MaHoiDong)
-        {
-            string expression = "(Convert(" + "DaDongBo" + ",'System.Int32') = " + MaHoiDong + ")";
-            expression += "(Convert(" + "DiemLT" + ",'System.String') = " + "" + ")";
-            return dt.Select(expression).Count();
-        }
+        
         public int LayTongSo(int MaHoiDong, int MaMonThi, int Phong, bool DienLyThuyet,bool DaCoDiem, bool DaDongBo)
         {
             string expression = "(Convert(" + "MaHoiDong" + ",'System.Int32') = " + MaHoiDong + ")";
