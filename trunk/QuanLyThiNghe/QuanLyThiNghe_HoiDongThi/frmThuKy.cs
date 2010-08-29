@@ -212,6 +212,17 @@ namespace QuanLyThiNghe_ThuKy
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
             //Lưu
+            if (Application.OpenForms.Count > 1)
+            {
+                if (Application.OpenForms[Application.OpenForms.Count - 1].Name == "frmLyThuyet")
+                {
+                    ((frmLyThuyet)Application.OpenForms["frmLyThuyet"]).Luu();
+                }
+                else if (Application.OpenForms[Application.OpenForms.Count - 1].Name == "frmThucHanh")
+                {
+                    ((frmThucHanh)Application.OpenForms["frmThucHanh"]).Luu();
+                }
+            }
         }
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -244,6 +255,8 @@ namespace QuanLyThiNghe_ThuKy
             {
                 //AddOpenWindow(frm);
                 frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.WindowState = FormWindowState.Maximized;
                 frm.Show();
             }
         }

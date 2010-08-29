@@ -4,61 +4,66 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyThiNghe.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
-        <EntityContainer Name="QuanLyThiNgheStoreContainer">
-          <EntitySet Name="Config" EntityType="QuanLyThiNghe.Store.Config" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DMHuyen" EntityType="QuanLyThiNghe.Store.DMHuyen" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DMKhoi" EntityType="QuanLyThiNghe.Store.DMKhoi" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DMKyThi" EntityType="QuanLyThiNghe.Store.DMKyThi" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DMMonThi" EntityType="QuanLyThiNghe.Store.DMMonThi" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DMPhach" EntityType="QuanLyThiNghe.Store.DMPhach" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DMTruong" EntityType="QuanLyThiNghe.Store.DMTruong" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="HoiDongThi" EntityType="QuanLyThiNghe.Store.HoiDongThi" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="NhatKy" EntityType="QuanLyThiNghe.Store.NhatKy" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PhanQuyen" EntityType="QuanLyThiNghe.Store.PhanQuyen" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TaiKhoan" EntityType="QuanLyThiNghe.Store.TaiKhoan" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ThiSinh" EntityType="QuanLyThiNghe.Store.ThiSinh" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_DMPhach_DMKyThi" Association="QuanLyThiNghe.Store.FK_DMPhach_DMKyThi">
+      <Schema Namespace="ThiNgeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="ThiNgeModelStoreContainer">
+          <EntitySet Name="Config" EntityType="ThiNgeModel.Store.Config" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMHuyen" EntityType="ThiNgeModel.Store.DMHuyen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMKhoi" EntityType="ThiNgeModel.Store.DMKhoi" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMKyThi" EntityType="ThiNgeModel.Store.DMKyThi" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMMonThi" EntityType="ThiNgeModel.Store.DMMonThi" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMPhach" EntityType="ThiNgeModel.Store.DMPhach" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMTruong" EntityType="ThiNgeModel.Store.DMTruong" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HoiDongThi" EntityType="ThiNgeModel.Store.HoiDongThi" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NhatKy" EntityType="ThiNgeModel.Store.NhatKy" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PhanQuyen" EntityType="ThiNgeModel.Store.PhanQuyen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TaiKhoan" EntityType="ThiNgeModel.Store.TaiKhoan" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ThiSinh" EntityType="ThiNgeModel.Store.ThiSinh" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ThongKe" EntityType="ThiNgeModel.Store.ThongKe" store:Type="Views" store:Schema="dbo" store:Name="ThongKe">
+            <DefiningQuery>SELECT 
+      [ThongKe].[GioHeThong] AS [GioHeThong]
+      FROM [dbo].[ThongKe] AS [ThongKe]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_DMPhach_DMKyThi" Association="ThiNgeModel.Store.FK_DMPhach_DMKyThi">
             <End Role="DMKyThi" EntitySet="DMKyThi" />
             <End Role="DMPhach" EntitySet="DMPhach" />
           </AssociationSet>
-          <AssociationSet Name="FK_DMPhach_DMMonThi" Association="QuanLyThiNghe.Store.FK_DMPhach_DMMonThi">
+          <AssociationSet Name="FK_DMPhach_DMMonThi" Association="ThiNgeModel.Store.FK_DMPhach_DMMonThi">
             <End Role="DMMonThi" EntitySet="DMMonThi" />
             <End Role="DMPhach" EntitySet="DMPhach" />
           </AssociationSet>
-          <AssociationSet Name="FK_DMTruong_DMHuyen" Association="QuanLyThiNghe.Store.FK_DMTruong_DMHuyen">
+          <AssociationSet Name="FK_DMTruong_DMHuyen" Association="ThiNgeModel.Store.FK_DMTruong_DMHuyen">
             <End Role="DMHuyen" EntitySet="DMHuyen" />
             <End Role="DMTruong" EntitySet="DMTruong" />
           </AssociationSet>
-          <AssociationSet Name="FK_DMTruong_DMKhoi" Association="QuanLyThiNghe.Store.FK_DMTruong_DMKhoi">
+          <AssociationSet Name="FK_DMTruong_DMKhoi" Association="ThiNgeModel.Store.FK_DMTruong_DMKhoi">
             <End Role="DMKhoi" EntitySet="DMKhoi" />
             <End Role="DMTruong" EntitySet="DMTruong" />
           </AssociationSet>
-          <AssociationSet Name="FK_HoiDongThi_DMKyThi" Association="QuanLyThiNghe.Store.FK_HoiDongThi_DMKyThi">
+          <AssociationSet Name="FK_HoiDongThi_DMKyThi" Association="ThiNgeModel.Store.FK_HoiDongThi_DMKyThi">
             <End Role="DMKyThi" EntitySet="DMKyThi" />
             <End Role="HoiDongThi" EntitySet="HoiDongThi" />
           </AssociationSet>
-          <AssociationSet Name="FK_HoiDongThi_DMTruong1" Association="QuanLyThiNghe.Store.FK_HoiDongThi_DMTruong1">
+          <AssociationSet Name="FK_HoiDongThi_DMTruong1" Association="ThiNgeModel.Store.FK_HoiDongThi_DMTruong1">
             <End Role="DMTruong" EntitySet="DMTruong" />
             <End Role="HoiDongThi" EntitySet="HoiDongThi" />
           </AssociationSet>
-          <AssociationSet Name="FK_NhatKy_TaiKhoan" Association="QuanLyThiNghe.Store.FK_NhatKy_TaiKhoan">
+          <AssociationSet Name="FK_NhatKy_TaiKhoan" Association="ThiNgeModel.Store.FK_NhatKy_TaiKhoan">
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
             <End Role="NhatKy" EntitySet="NhatKy" />
           </AssociationSet>
-          <AssociationSet Name="FK_TaiKhoan_PhanQuyen" Association="QuanLyThiNghe.Store.FK_TaiKhoan_PhanQuyen">
+          <AssociationSet Name="FK_TaiKhoan_PhanQuyen" Association="ThiNgeModel.Store.FK_TaiKhoan_PhanQuyen">
             <End Role="PhanQuyen" EntitySet="PhanQuyen" />
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
           </AssociationSet>
-          <AssociationSet Name="FK_ThiSinh_DMMonThi" Association="QuanLyThiNghe.Store.FK_ThiSinh_DMMonThi">
+          <AssociationSet Name="FK_ThiSinh_DMMonThi" Association="ThiNgeModel.Store.FK_ThiSinh_DMMonThi">
             <End Role="DMMonThi" EntitySet="DMMonThi" />
             <End Role="ThiSinh" EntitySet="ThiSinh" />
           </AssociationSet>
-          <AssociationSet Name="FK_ThiSinh_DMTruong" Association="QuanLyThiNghe.Store.FK_ThiSinh_DMTruong">
+          <AssociationSet Name="FK_ThiSinh_DMTruong" Association="ThiNgeModel.Store.FK_ThiSinh_DMTruong">
             <End Role="DMTruong" EntitySet="DMTruong" />
             <End Role="ThiSinh" EntitySet="ThiSinh" />
           </AssociationSet>
-          <AssociationSet Name="FK_ThiSinh_HoiDongThi" Association="QuanLyThiNghe.Store.FK_ThiSinh_HoiDongThi">
+          <AssociationSet Name="FK_ThiSinh_HoiDongThi" Association="ThiNgeModel.Store.FK_ThiSinh_HoiDongThi">
             <End Role="HoiDongThi" EntitySet="HoiDongThi" />
             <End Role="ThiSinh" EntitySet="ThiSinh" />
           </AssociationSet>
@@ -232,8 +237,8 @@
           <Property Name="PhongThi" Type="int" />
           <Property Name="MaPhach" Type="int" />
           <Property Name="MaHoiDong" Type="int" />
-          <Property Name="DiemLT" Type="int" />
-          <Property Name="DiemTH" Type="int" />
+          <Property Name="DiemLT" Type="float" />
+          <Property Name="DiemTH" Type="float" />
           <Property Name="TongDiem" Type="int" />
           <Property Name="XepLoai" Type="nvarchar" MaxLength="50" />
           <Property Name="NguoiTao" Type="nvarchar" MaxLength="150" />
@@ -245,9 +250,18 @@
           <Property Name="NgayCapNhat" Type="datetime" />
           <Property Name="DaXoa" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ThiNge.dbo.ThongKe' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ThongKe">
+          <Key>
+            <PropertyRef Name="GioHeThong" />
+          </Key>
+          <Property Name="GioHeThong" Type="datetime" Nullable="false" />
+        </EntityType>
         <Association Name="FK_DMPhach_DMKyThi">
-          <End Role="DMKyThi" Type="QuanLyThiNghe.Store.DMKyThi" Multiplicity="0..1" />
-          <End Role="DMPhach" Type="QuanLyThiNghe.Store.DMPhach" Multiplicity="*" />
+          <End Role="DMKyThi" Type="ThiNgeModel.Store.DMKyThi" Multiplicity="0..1" />
+          <End Role="DMPhach" Type="ThiNgeModel.Store.DMPhach" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DMKyThi">
               <PropertyRef Name="MaKyThi" />
@@ -258,8 +272,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DMPhach_DMMonThi">
-          <End Role="DMMonThi" Type="QuanLyThiNghe.Store.DMMonThi" Multiplicity="0..1" />
-          <End Role="DMPhach" Type="QuanLyThiNghe.Store.DMPhach" Multiplicity="*" />
+          <End Role="DMMonThi" Type="ThiNgeModel.Store.DMMonThi" Multiplicity="0..1" />
+          <End Role="DMPhach" Type="ThiNgeModel.Store.DMPhach" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DMMonThi">
               <PropertyRef Name="MaMonThi" />
@@ -270,8 +284,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DMTruong_DMHuyen">
-          <End Role="DMHuyen" Type="QuanLyThiNghe.Store.DMHuyen" Multiplicity="0..1" />
-          <End Role="DMTruong" Type="QuanLyThiNghe.Store.DMTruong" Multiplicity="*" />
+          <End Role="DMHuyen" Type="ThiNgeModel.Store.DMHuyen" Multiplicity="0..1" />
+          <End Role="DMTruong" Type="ThiNgeModel.Store.DMTruong" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DMHuyen">
               <PropertyRef Name="MaHuyen" />
@@ -282,8 +296,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DMTruong_DMKhoi">
-          <End Role="DMKhoi" Type="QuanLyThiNghe.Store.DMKhoi" Multiplicity="0..1" />
-          <End Role="DMTruong" Type="QuanLyThiNghe.Store.DMTruong" Multiplicity="*" />
+          <End Role="DMKhoi" Type="ThiNgeModel.Store.DMKhoi" Multiplicity="0..1" />
+          <End Role="DMTruong" Type="ThiNgeModel.Store.DMTruong" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DMKhoi">
               <PropertyRef Name="MaKhoi" />
@@ -294,8 +308,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HoiDongThi_DMKyThi">
-          <End Role="DMKyThi" Type="QuanLyThiNghe.Store.DMKyThi" Multiplicity="0..1" />
-          <End Role="HoiDongThi" Type="QuanLyThiNghe.Store.HoiDongThi" Multiplicity="*" />
+          <End Role="DMKyThi" Type="ThiNgeModel.Store.DMKyThi" Multiplicity="0..1" />
+          <End Role="HoiDongThi" Type="ThiNgeModel.Store.HoiDongThi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DMKyThi">
               <PropertyRef Name="MaKyThi" />
@@ -306,8 +320,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HoiDongThi_DMTruong1">
-          <End Role="DMTruong" Type="QuanLyThiNghe.Store.DMTruong" Multiplicity="0..1" />
-          <End Role="HoiDongThi" Type="QuanLyThiNghe.Store.HoiDongThi" Multiplicity="*" />
+          <End Role="DMTruong" Type="ThiNgeModel.Store.DMTruong" Multiplicity="0..1" />
+          <End Role="HoiDongThi" Type="ThiNgeModel.Store.HoiDongThi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DMTruong">
               <PropertyRef Name="MaTruong" />
@@ -318,8 +332,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NhatKy_TaiKhoan">
-          <End Role="TaiKhoan" Type="QuanLyThiNghe.Store.TaiKhoan" Multiplicity="0..1" />
-          <End Role="NhatKy" Type="QuanLyThiNghe.Store.NhatKy" Multiplicity="*" />
+          <End Role="TaiKhoan" Type="ThiNgeModel.Store.TaiKhoan" Multiplicity="0..1" />
+          <End Role="NhatKy" Type="ThiNgeModel.Store.NhatKy" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TaiKhoan">
               <PropertyRef Name="MaTaiKhoan" />
@@ -330,8 +344,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TaiKhoan_PhanQuyen">
-          <End Role="PhanQuyen" Type="QuanLyThiNghe.Store.PhanQuyen" Multiplicity="0..1" />
-          <End Role="TaiKhoan" Type="QuanLyThiNghe.Store.TaiKhoan" Multiplicity="*" />
+          <End Role="PhanQuyen" Type="ThiNgeModel.Store.PhanQuyen" Multiplicity="0..1" />
+          <End Role="TaiKhoan" Type="ThiNgeModel.Store.TaiKhoan" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PhanQuyen">
               <PropertyRef Name="MaPhanQuyen" />
@@ -342,8 +356,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ThiSinh_DMMonThi">
-          <End Role="DMMonThi" Type="QuanLyThiNghe.Store.DMMonThi" Multiplicity="0..1" />
-          <End Role="ThiSinh" Type="QuanLyThiNghe.Store.ThiSinh" Multiplicity="*" />
+          <End Role="DMMonThi" Type="ThiNgeModel.Store.DMMonThi" Multiplicity="0..1" />
+          <End Role="ThiSinh" Type="ThiNgeModel.Store.ThiSinh" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DMMonThi">
               <PropertyRef Name="MaMonThi" />
@@ -354,8 +368,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ThiSinh_DMTruong">
-          <End Role="DMTruong" Type="QuanLyThiNghe.Store.DMTruong" Multiplicity="0..1" />
-          <End Role="ThiSinh" Type="QuanLyThiNghe.Store.ThiSinh" Multiplicity="*" />
+          <End Role="DMTruong" Type="ThiNgeModel.Store.DMTruong" Multiplicity="0..1" />
+          <End Role="ThiSinh" Type="ThiNgeModel.Store.ThiSinh" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DMTruong">
               <PropertyRef Name="MaTruong" />
@@ -366,8 +380,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ThiSinh_HoiDongThi">
-          <End Role="HoiDongThi" Type="QuanLyThiNghe.Store.HoiDongThi" Multiplicity="0..1" />
-          <End Role="ThiSinh" Type="QuanLyThiNghe.Store.ThiSinh" Multiplicity="*" />
+          <End Role="HoiDongThi" Type="ThiNgeModel.Store.HoiDongThi" Multiplicity="0..1" />
+          <End Role="ThiSinh" Type="ThiNgeModel.Store.ThiSinh" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HoiDongThi">
               <PropertyRef Name="MaHoiDong" />
@@ -381,61 +395,62 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="QuanLyThiNghe" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <Schema Namespace="ThiNgeModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
         <EntityContainer Name="QLTN_Entities">
-          <EntitySet Name="Config" EntityType="QuanLyThiNghe.Config" />
-          <EntitySet Name="DMHuyen" EntityType="QuanLyThiNghe.DMHuyen" />
-          <EntitySet Name="DMKhoi" EntityType="QuanLyThiNghe.DMKhoi" />
-          <EntitySet Name="DMKyThi" EntityType="QuanLyThiNghe.DMKyThi" />
-          <EntitySet Name="DMMonThi" EntityType="QuanLyThiNghe.DMMonThi" />
-          <EntitySet Name="DMPhach" EntityType="QuanLyThiNghe.DMPhach" />
-          <EntitySet Name="DMTruong" EntityType="QuanLyThiNghe.DMTruong" />
-          <EntitySet Name="HoiDongThi" EntityType="QuanLyThiNghe.HoiDongThi" />
-          <EntitySet Name="NhatKy" EntityType="QuanLyThiNghe.NhatKy" />
-          <EntitySet Name="PhanQuyen" EntityType="QuanLyThiNghe.PhanQuyen" />
-          <EntitySet Name="TaiKhoan" EntityType="QuanLyThiNghe.TaiKhoan" />
-          <EntitySet Name="ThiSinh" EntityType="QuanLyThiNghe.ThiSinh" />
-          <AssociationSet Name="FK_DMTruong_DMHuyen" Association="QuanLyThiNghe.FK_DMTruong_DMHuyen">
+          <EntitySet Name="Config" EntityType="ThiNgeModel.Config" />
+          <EntitySet Name="DMHuyen" EntityType="ThiNgeModel.DMHuyen" />
+          <EntitySet Name="DMKhoi" EntityType="ThiNgeModel.DMKhoi" />
+          <EntitySet Name="DMKyThi" EntityType="ThiNgeModel.DMKyThi" />
+          <EntitySet Name="DMMonThi" EntityType="ThiNgeModel.DMMonThi" />
+          <EntitySet Name="DMPhach" EntityType="ThiNgeModel.DMPhach" />
+          <EntitySet Name="DMTruong" EntityType="ThiNgeModel.DMTruong" />
+          <EntitySet Name="HoiDongThi" EntityType="ThiNgeModel.HoiDongThi" />
+          <EntitySet Name="NhatKy" EntityType="ThiNgeModel.NhatKy" />
+          <EntitySet Name="PhanQuyen" EntityType="ThiNgeModel.PhanQuyen" />
+          <EntitySet Name="TaiKhoan" EntityType="ThiNgeModel.TaiKhoan" />
+          <EntitySet Name="ThiSinh" EntityType="ThiNgeModel.ThiSinh" />
+          <EntitySet Name="ThongKe" EntityType="ThiNgeModel.ThongKe" />
+          <AssociationSet Name="FK_DMTruong_DMHuyen" Association="ThiNgeModel.FK_DMTruong_DMHuyen">
             <End Role="DMHuyen" EntitySet="DMHuyen" />
             <End Role="DMTruong" EntitySet="DMTruong" />
           </AssociationSet>
-          <AssociationSet Name="FK_DMTruong_DMKhoi" Association="QuanLyThiNghe.FK_DMTruong_DMKhoi">
+          <AssociationSet Name="FK_DMTruong_DMKhoi" Association="ThiNgeModel.FK_DMTruong_DMKhoi">
             <End Role="DMKhoi" EntitySet="DMKhoi" />
             <End Role="DMTruong" EntitySet="DMTruong" />
           </AssociationSet>
-          <AssociationSet Name="FK_DMPhach_DMKyThi" Association="QuanLyThiNghe.FK_DMPhach_DMKyThi">
+          <AssociationSet Name="FK_DMPhach_DMKyThi" Association="ThiNgeModel.FK_DMPhach_DMKyThi">
             <End Role="DMKyThi" EntitySet="DMKyThi" />
             <End Role="DMPhach" EntitySet="DMPhach" />
           </AssociationSet>
-          <AssociationSet Name="FK_HoiDongThi_DMKyThi" Association="QuanLyThiNghe.FK_HoiDongThi_DMKyThi">
+          <AssociationSet Name="FK_HoiDongThi_DMKyThi" Association="ThiNgeModel.FK_HoiDongThi_DMKyThi">
             <End Role="DMKyThi" EntitySet="DMKyThi" />
             <End Role="HoiDongThi" EntitySet="HoiDongThi" />
           </AssociationSet>
-          <AssociationSet Name="FK_DMPhach_DMMonThi" Association="QuanLyThiNghe.FK_DMPhach_DMMonThi">
+          <AssociationSet Name="FK_DMPhach_DMMonThi" Association="ThiNgeModel.FK_DMPhach_DMMonThi">
             <End Role="DMMonThi" EntitySet="DMMonThi" />
             <End Role="DMPhach" EntitySet="DMPhach" />
           </AssociationSet>
-          <AssociationSet Name="FK_ThiSinh_DMMonThi" Association="QuanLyThiNghe.FK_ThiSinh_DMMonThi">
+          <AssociationSet Name="FK_ThiSinh_DMMonThi" Association="ThiNgeModel.FK_ThiSinh_DMMonThi">
             <End Role="DMMonThi" EntitySet="DMMonThi" />
             <End Role="ThiSinh" EntitySet="ThiSinh" />
           </AssociationSet>
-          <AssociationSet Name="FK_HoiDongThi_DMTruong1" Association="QuanLyThiNghe.FK_HoiDongThi_DMTruong1">
+          <AssociationSet Name="FK_HoiDongThi_DMTruong1" Association="ThiNgeModel.FK_HoiDongThi_DMTruong1">
             <End Role="DMTruong" EntitySet="DMTruong" />
             <End Role="HoiDongThi" EntitySet="HoiDongThi" />
           </AssociationSet>
-          <AssociationSet Name="FK_ThiSinh_DMTruong" Association="QuanLyThiNghe.FK_ThiSinh_DMTruong">
+          <AssociationSet Name="FK_ThiSinh_DMTruong" Association="ThiNgeModel.FK_ThiSinh_DMTruong">
             <End Role="DMTruong" EntitySet="DMTruong" />
             <End Role="ThiSinh" EntitySet="ThiSinh" />
           </AssociationSet>
-          <AssociationSet Name="FK_ThiSinh_HoiDongThi" Association="QuanLyThiNghe.FK_ThiSinh_HoiDongThi">
+          <AssociationSet Name="FK_ThiSinh_HoiDongThi" Association="ThiNgeModel.FK_ThiSinh_HoiDongThi">
             <End Role="HoiDongThi" EntitySet="HoiDongThi" />
             <End Role="ThiSinh" EntitySet="ThiSinh" />
           </AssociationSet>
-          <AssociationSet Name="FK_NhatKy_TaiKhoan" Association="QuanLyThiNghe.FK_NhatKy_TaiKhoan">
+          <AssociationSet Name="FK_NhatKy_TaiKhoan" Association="ThiNgeModel.FK_NhatKy_TaiKhoan">
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
             <End Role="NhatKy" EntitySet="NhatKy" />
           </AssociationSet>
-          <AssociationSet Name="FK_TaiKhoan_PhanQuyen" Association="QuanLyThiNghe.FK_TaiKhoan_PhanQuyen">
+          <AssociationSet Name="FK_TaiKhoan_PhanQuyen" Association="ThiNgeModel.FK_TaiKhoan_PhanQuyen">
             <End Role="PhanQuyen" EntitySet="PhanQuyen" />
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
           </AssociationSet>
@@ -469,7 +484,7 @@
           <Property Name="NgayCapNhat" Type="DateTime" />
           <Property Name="NguoiCapNhat" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="DaXoa" Type="Boolean" />
-          <NavigationProperty Name="DMTruong" Relationship="QuanLyThiNghe.FK_DMTruong_DMHuyen" FromRole="DMHuyen" ToRole="DMTruong" />
+          <NavigationProperty Name="DMTruong" Relationship="ThiNgeModel.FK_DMTruong_DMHuyen" FromRole="DMHuyen" ToRole="DMTruong" />
         </EntityType>
         <EntityType Name="DMKhoi">
           <Key>
@@ -477,7 +492,7 @@
           </Key>
           <Property Name="MaKhoi" Type="Int32" Nullable="false" />
           <Property Name="TenKhoi" Type="String" MaxLength="550" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="DMTruong" Relationship="QuanLyThiNghe.FK_DMTruong_DMKhoi" FromRole="DMKhoi" ToRole="DMTruong" />
+          <NavigationProperty Name="DMTruong" Relationship="ThiNgeModel.FK_DMTruong_DMKhoi" FromRole="DMKhoi" ToRole="DMTruong" />
         </EntityType>
         <EntityType Name="DMKyThi">
           <Key>
@@ -493,8 +508,8 @@
           <Property Name="NgayCapNhat" Type="DateTime" />
           <Property Name="NguoiCapNhat" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="DaXoa" Type="Boolean" />
-          <NavigationProperty Name="DMPhach" Relationship="QuanLyThiNghe.FK_DMPhach_DMKyThi" FromRole="DMKyThi" ToRole="DMPhach" />
-          <NavigationProperty Name="HoiDongThi" Relationship="QuanLyThiNghe.FK_HoiDongThi_DMKyThi" FromRole="DMKyThi" ToRole="HoiDongThi" />
+          <NavigationProperty Name="DMPhach" Relationship="ThiNgeModel.FK_DMPhach_DMKyThi" FromRole="DMKyThi" ToRole="DMPhach" />
+          <NavigationProperty Name="HoiDongThi" Relationship="ThiNgeModel.FK_HoiDongThi_DMKyThi" FromRole="DMKyThi" ToRole="HoiDongThi" />
         </EntityType>
         <EntityType Name="DMMonThi">
           <Key>
@@ -507,8 +522,8 @@
           <Property Name="NgayCapNhat" Type="DateTime" />
           <Property Name="NguoiCapNhat" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="DaXoa" Type="Boolean" />
-          <NavigationProperty Name="DMPhach" Relationship="QuanLyThiNghe.FK_DMPhach_DMMonThi" FromRole="DMMonThi" ToRole="DMPhach" />
-          <NavigationProperty Name="ThiSinh" Relationship="QuanLyThiNghe.FK_ThiSinh_DMMonThi" FromRole="DMMonThi" ToRole="ThiSinh" />
+          <NavigationProperty Name="DMPhach" Relationship="ThiNgeModel.FK_DMPhach_DMMonThi" FromRole="DMMonThi" ToRole="DMPhach" />
+          <NavigationProperty Name="ThiSinh" Relationship="ThiNgeModel.FK_ThiSinh_DMMonThi" FromRole="DMMonThi" ToRole="ThiSinh" />
         </EntityType>
         <EntityType Name="DMPhach">
           <Key>
@@ -521,8 +536,8 @@
           <Property Name="NgayCapNhat" Type="DateTime" />
           <Property Name="NguoiCapNhat" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="DaXoa" Type="Boolean" />
-          <NavigationProperty Name="DMKyThi" Relationship="QuanLyThiNghe.FK_DMPhach_DMKyThi" FromRole="DMPhach" ToRole="DMKyThi" />
-          <NavigationProperty Name="DMMonThi" Relationship="QuanLyThiNghe.FK_DMPhach_DMMonThi" FromRole="DMPhach" ToRole="DMMonThi" />
+          <NavigationProperty Name="DMKyThi" Relationship="ThiNgeModel.FK_DMPhach_DMKyThi" FromRole="DMPhach" ToRole="DMKyThi" />
+          <NavigationProperty Name="DMMonThi" Relationship="ThiNgeModel.FK_DMPhach_DMMonThi" FromRole="DMPhach" ToRole="DMMonThi" />
         </EntityType>
         <EntityType Name="DMTruong">
           <Key>
@@ -535,10 +550,10 @@
           <Property Name="NguoiCapNhat" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="NgayCapNhat" Type="DateTime" />
           <Property Name="DaXoa" Type="Boolean" />
-          <NavigationProperty Name="DMHuyen" Relationship="QuanLyThiNghe.FK_DMTruong_DMHuyen" FromRole="DMTruong" ToRole="DMHuyen" />
-          <NavigationProperty Name="DMKhoi" Relationship="QuanLyThiNghe.FK_DMTruong_DMKhoi" FromRole="DMTruong" ToRole="DMKhoi" />
-          <NavigationProperty Name="HoiDongThi" Relationship="QuanLyThiNghe.FK_HoiDongThi_DMTruong1" FromRole="DMTruong" ToRole="HoiDongThi" />
-          <NavigationProperty Name="ThiSinh" Relationship="QuanLyThiNghe.FK_ThiSinh_DMTruong" FromRole="DMTruong" ToRole="ThiSinh" />
+          <NavigationProperty Name="DMHuyen" Relationship="ThiNgeModel.FK_DMTruong_DMHuyen" FromRole="DMTruong" ToRole="DMHuyen" />
+          <NavigationProperty Name="DMKhoi" Relationship="ThiNgeModel.FK_DMTruong_DMKhoi" FromRole="DMTruong" ToRole="DMKhoi" />
+          <NavigationProperty Name="HoiDongThi" Relationship="ThiNgeModel.FK_HoiDongThi_DMTruong1" FromRole="DMTruong" ToRole="HoiDongThi" />
+          <NavigationProperty Name="ThiSinh" Relationship="ThiNgeModel.FK_ThiSinh_DMTruong" FromRole="DMTruong" ToRole="ThiSinh" />
         </EntityType>
         <EntityType Name="HoiDongThi">
           <Key>
@@ -552,9 +567,9 @@
           <Property Name="NgayCapNhat" Type="DateTime" />
           <Property Name="NguoiCapNhat" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="DaXoa" Type="Boolean" />
-          <NavigationProperty Name="DMKyThi" Relationship="QuanLyThiNghe.FK_HoiDongThi_DMKyThi" FromRole="HoiDongThi" ToRole="DMKyThi" />
-          <NavigationProperty Name="DMTruong" Relationship="QuanLyThiNghe.FK_HoiDongThi_DMTruong1" FromRole="HoiDongThi" ToRole="DMTruong" />
-          <NavigationProperty Name="ThiSinh" Relationship="QuanLyThiNghe.FK_ThiSinh_HoiDongThi" FromRole="HoiDongThi" ToRole="ThiSinh" />
+          <NavigationProperty Name="DMKyThi" Relationship="ThiNgeModel.FK_HoiDongThi_DMKyThi" FromRole="HoiDongThi" ToRole="DMKyThi" />
+          <NavigationProperty Name="DMTruong" Relationship="ThiNgeModel.FK_HoiDongThi_DMTruong1" FromRole="HoiDongThi" ToRole="DMTruong" />
+          <NavigationProperty Name="ThiSinh" Relationship="ThiNgeModel.FK_ThiSinh_HoiDongThi" FromRole="HoiDongThi" ToRole="ThiSinh" />
         </EntityType>
         <EntityType Name="NhatKy">
           <Key>
@@ -568,7 +583,7 @@
           <Property Name="NgayCapNhat" Type="DateTime" />
           <Property Name="NguoiCapNhat" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
           <Property Name="DaXoa" Type="Boolean" />
-          <NavigationProperty Name="TaiKhoan" Relationship="QuanLyThiNghe.FK_NhatKy_TaiKhoan" FromRole="NhatKy" ToRole="TaiKhoan" />
+          <NavigationProperty Name="TaiKhoan" Relationship="ThiNgeModel.FK_NhatKy_TaiKhoan" FromRole="NhatKy" ToRole="TaiKhoan" />
         </EntityType>
         <EntityType Name="PhanQuyen">
           <Key>
@@ -583,7 +598,7 @@
           <Property Name="NguoiCapNhat" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="NgayCapNhat" Type="DateTime" />
           <Property Name="DaXoa" Type="Boolean" />
-          <NavigationProperty Name="TaiKhoan" Relationship="QuanLyThiNghe.FK_TaiKhoan_PhanQuyen" FromRole="PhanQuyen" ToRole="TaiKhoan" />
+          <NavigationProperty Name="TaiKhoan" Relationship="ThiNgeModel.FK_TaiKhoan_PhanQuyen" FromRole="PhanQuyen" ToRole="TaiKhoan" />
         </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
@@ -600,8 +615,8 @@
           <Property Name="NguoiCapNhat" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="NgayCapNhat" Type="DateTime" />
           <Property Name="DaXoa" Type="Boolean" />
-          <NavigationProperty Name="NhatKy" Relationship="QuanLyThiNghe.FK_NhatKy_TaiKhoan" FromRole="TaiKhoan" ToRole="NhatKy" />
-          <NavigationProperty Name="PhanQuyen" Relationship="QuanLyThiNghe.FK_TaiKhoan_PhanQuyen" FromRole="TaiKhoan" ToRole="PhanQuyen" />
+          <NavigationProperty Name="NhatKy" Relationship="ThiNgeModel.FK_NhatKy_TaiKhoan" FromRole="TaiKhoan" ToRole="NhatKy" />
+          <NavigationProperty Name="PhanQuyen" Relationship="ThiNgeModel.FK_TaiKhoan_PhanQuyen" FromRole="TaiKhoan" ToRole="PhanQuyen" />
         </EntityType>
         <EntityType Name="ThiSinh">
           <Key>
@@ -617,8 +632,8 @@
           <Property Name="SBD" Type="Int32" />
           <Property Name="PhongThi" Type="Int32" />
           <Property Name="MaPhach" Type="Int32" />
-          <Property Name="DiemLT" Type="Int32" />
-          <Property Name="DiemTH" Type="Int32" />
+          <Property Name="DiemLT" Type="Double" />
+          <Property Name="DiemTH" Type="Double" />
           <Property Name="TongDiem" Type="Int32" />
           <Property Name="XepLoai" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="NguoiTao" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
@@ -629,62 +644,68 @@
           <Property Name="NguoiCapNhat" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="NgayCapNhat" Type="DateTime" />
           <Property Name="DaXoa" Type="Boolean" />
-          <NavigationProperty Name="DMMonThi" Relationship="QuanLyThiNghe.FK_ThiSinh_DMMonThi" FromRole="ThiSinh" ToRole="DMMonThi" />
-          <NavigationProperty Name="DMTruong" Relationship="QuanLyThiNghe.FK_ThiSinh_DMTruong" FromRole="ThiSinh" ToRole="DMTruong" />
-          <NavigationProperty Name="HoiDongThi" Relationship="QuanLyThiNghe.FK_ThiSinh_HoiDongThi" FromRole="ThiSinh" ToRole="HoiDongThi" />
+          <NavigationProperty Name="DMMonThi" Relationship="ThiNgeModel.FK_ThiSinh_DMMonThi" FromRole="ThiSinh" ToRole="DMMonThi" />
+          <NavigationProperty Name="DMTruong" Relationship="ThiNgeModel.FK_ThiSinh_DMTruong" FromRole="ThiSinh" ToRole="DMTruong" />
+          <NavigationProperty Name="HoiDongThi" Relationship="ThiNgeModel.FK_ThiSinh_HoiDongThi" FromRole="ThiSinh" ToRole="HoiDongThi" />
+        </EntityType>
+        <EntityType Name="ThongKe">
+          <Key>
+            <PropertyRef Name="GioHeThong" />
+          </Key>
+          <Property Name="GioHeThong" Type="DateTime" Nullable="false" />
         </EntityType>
         <Association Name="FK_DMTruong_DMHuyen">
-          <End Role="DMHuyen" Type="QuanLyThiNghe.DMHuyen" Multiplicity="0..1" />
-          <End Role="DMTruong" Type="QuanLyThiNghe.DMTruong" Multiplicity="*" />
+          <End Role="DMHuyen" Type="ThiNgeModel.DMHuyen" Multiplicity="0..1" />
+          <End Role="DMTruong" Type="ThiNgeModel.DMTruong" Multiplicity="*" />
         </Association>
         <Association Name="FK_DMTruong_DMKhoi">
-          <End Role="DMKhoi" Type="QuanLyThiNghe.DMKhoi" Multiplicity="0..1" />
-          <End Role="DMTruong" Type="QuanLyThiNghe.DMTruong" Multiplicity="*" />
+          <End Role="DMKhoi" Type="ThiNgeModel.DMKhoi" Multiplicity="0..1" />
+          <End Role="DMTruong" Type="ThiNgeModel.DMTruong" Multiplicity="*" />
         </Association>
         <Association Name="FK_DMPhach_DMKyThi">
-          <End Role="DMKyThi" Type="QuanLyThiNghe.DMKyThi" Multiplicity="0..1" />
-          <End Role="DMPhach" Type="QuanLyThiNghe.DMPhach" Multiplicity="*" />
+          <End Role="DMKyThi" Type="ThiNgeModel.DMKyThi" Multiplicity="0..1" />
+          <End Role="DMPhach" Type="ThiNgeModel.DMPhach" Multiplicity="*" />
         </Association>
         <Association Name="FK_HoiDongThi_DMKyThi">
-          <End Role="DMKyThi" Type="QuanLyThiNghe.DMKyThi" Multiplicity="0..1" />
-          <End Role="HoiDongThi" Type="QuanLyThiNghe.HoiDongThi" Multiplicity="*" />
+          <End Role="DMKyThi" Type="ThiNgeModel.DMKyThi" Multiplicity="0..1" />
+          <End Role="HoiDongThi" Type="ThiNgeModel.HoiDongThi" Multiplicity="*" />
         </Association>
         <Association Name="FK_DMPhach_DMMonThi">
-          <End Role="DMMonThi" Type="QuanLyThiNghe.DMMonThi" Multiplicity="0..1" />
-          <End Role="DMPhach" Type="QuanLyThiNghe.DMPhach" Multiplicity="*" />
+          <End Role="DMMonThi" Type="ThiNgeModel.DMMonThi" Multiplicity="0..1" />
+          <End Role="DMPhach" Type="ThiNgeModel.DMPhach" Multiplicity="*" />
         </Association>
         <Association Name="FK_ThiSinh_DMMonThi">
-          <End Role="DMMonThi" Type="QuanLyThiNghe.DMMonThi" Multiplicity="0..1" />
-          <End Role="ThiSinh" Type="QuanLyThiNghe.ThiSinh" Multiplicity="*" />
+          <End Role="DMMonThi" Type="ThiNgeModel.DMMonThi" Multiplicity="0..1" />
+          <End Role="ThiSinh" Type="ThiNgeModel.ThiSinh" Multiplicity="*" />
         </Association>
         <Association Name="FK_HoiDongThi_DMTruong1">
-          <End Role="DMTruong" Type="QuanLyThiNghe.DMTruong" Multiplicity="0..1" />
-          <End Role="HoiDongThi" Type="QuanLyThiNghe.HoiDongThi" Multiplicity="*" />
+          <End Role="DMTruong" Type="ThiNgeModel.DMTruong" Multiplicity="0..1" />
+          <End Role="HoiDongThi" Type="ThiNgeModel.HoiDongThi" Multiplicity="*" />
         </Association>
         <Association Name="FK_ThiSinh_DMTruong">
-          <End Role="DMTruong" Type="QuanLyThiNghe.DMTruong" Multiplicity="0..1" />
-          <End Role="ThiSinh" Type="QuanLyThiNghe.ThiSinh" Multiplicity="*" />
+          <End Role="DMTruong" Type="ThiNgeModel.DMTruong" Multiplicity="0..1" />
+          <End Role="ThiSinh" Type="ThiNgeModel.ThiSinh" Multiplicity="*" />
         </Association>
         <Association Name="FK_ThiSinh_HoiDongThi">
-          <End Role="HoiDongThi" Type="QuanLyThiNghe.HoiDongThi" Multiplicity="0..1" />
-          <End Role="ThiSinh" Type="QuanLyThiNghe.ThiSinh" Multiplicity="*" />
+          <End Role="HoiDongThi" Type="ThiNgeModel.HoiDongThi" Multiplicity="0..1" />
+          <End Role="ThiSinh" Type="ThiNgeModel.ThiSinh" Multiplicity="*" />
         </Association>
         <Association Name="FK_NhatKy_TaiKhoan">
-          <End Role="TaiKhoan" Type="QuanLyThiNghe.TaiKhoan" Multiplicity="0..1" />
-          <End Role="NhatKy" Type="QuanLyThiNghe.NhatKy" Multiplicity="*" />
+          <End Role="TaiKhoan" Type="ThiNgeModel.TaiKhoan" Multiplicity="0..1" />
+          <End Role="NhatKy" Type="ThiNgeModel.NhatKy" Multiplicity="*" />
         </Association>
         <Association Name="FK_TaiKhoan_PhanQuyen">
-          <End Role="PhanQuyen" Type="QuanLyThiNghe.PhanQuyen" Multiplicity="0..1" />
-          <End Role="TaiKhoan" Type="QuanLyThiNghe.TaiKhoan" Multiplicity="*" />
+          <End Role="PhanQuyen" Type="ThiNgeModel.PhanQuyen" Multiplicity="0..1" />
+          <End Role="TaiKhoan" Type="ThiNgeModel.TaiKhoan" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
-        <EntityContainerMapping StorageEntityContainer="QuanLyThiNgheStoreContainer" CdmEntityContainer="QLTN_Entities">
+        <EntityContainerMapping StorageEntityContainer="ThiNgeModelStoreContainer" CdmEntityContainer="QLTN_Entities">
           <EntitySetMapping Name="Config">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.Config)">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.Config)">
               <MappingFragment StoreEntitySet="Config">
                 <ScalarProperty Name="ConfigID" ColumnName="ConfigID" />
                 <ScalarProperty Name="CheckMac" ColumnName="CheckMac" />
@@ -703,7 +724,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DMHuyen">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.DMHuyen)">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.DMHuyen)">
               <MappingFragment StoreEntitySet="DMHuyen">
                 <ScalarProperty Name="MaHuyen" ColumnName="MaHuyen" />
                 <ScalarProperty Name="TenHuyen" ColumnName="TenHuyen" />
@@ -716,7 +737,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DMKhoi">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.DMKhoi)">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.DMKhoi)">
               <MappingFragment StoreEntitySet="DMKhoi">
                 <ScalarProperty Name="MaKhoi" ColumnName="MaKhoi" />
                 <ScalarProperty Name="TenKhoi" ColumnName="TenKhoi" />
@@ -724,7 +745,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DMKyThi">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.DMKyThi)">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.DMKyThi)">
               <MappingFragment StoreEntitySet="DMKyThi">
                 <ScalarProperty Name="MaKyThi" ColumnName="MaKyThi" />
                 <ScalarProperty Name="TenKyThi" ColumnName="TenKyThi" />
@@ -740,7 +761,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DMMonThi">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.DMMonThi)">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.DMMonThi)">
               <MappingFragment StoreEntitySet="DMMonThi">
                 <ScalarProperty Name="MaMonThi" ColumnName="MaMonThi" />
                 <ScalarProperty Name="TenMonThi" ColumnName="TenMonThi" />
@@ -753,7 +774,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DMPhach">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.DMPhach)">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.DMPhach)">
               <MappingFragment StoreEntitySet="DMPhach">
                 <ScalarProperty Name="MaPhach" ColumnName="MaPhach" />
                 <ScalarProperty Name="GiaTri" ColumnName="GiaTri" />
@@ -766,7 +787,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DMTruong">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.DMTruong)">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.DMTruong)">
               <MappingFragment StoreEntitySet="DMTruong">
                 <ScalarProperty Name="MaTruong" ColumnName="MaTruong" />
                 <ScalarProperty Name="TenTruong" ColumnName="TenTruong" />
@@ -779,7 +800,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HoiDongThi">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.HoiDongThi)">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.HoiDongThi)">
               <MappingFragment StoreEntitySet="HoiDongThi">
                 <ScalarProperty Name="MaHoiDong" ColumnName="MaHoiDong" />
                 <ScalarProperty Name="SoLuongPhongDuTinh" ColumnName="SoLuongPhongDuTinh" />
@@ -793,7 +814,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhatKy">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.NhatKy)">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.NhatKy)">
               <MappingFragment StoreEntitySet="NhatKy">
                 <ScalarProperty Name="MaNhatKy" ColumnName="MaNhatKy" />
                 <ScalarProperty Name="NgayThaoTac" ColumnName="NgayThaoTac" />
@@ -807,7 +828,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PhanQuyen">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.PhanQuyen)">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.PhanQuyen)">
               <MappingFragment StoreEntitySet="PhanQuyen">
                 <ScalarProperty Name="MaPhanQuyen" ColumnName="MaPhanQuyen" />
                 <ScalarProperty Name="TenQuyen" ColumnName="TenQuyen" />
@@ -822,7 +843,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TaiKhoan">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.TaiKhoan)">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.TaiKhoan)">
               <MappingFragment StoreEntitySet="TaiKhoan">
                 <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
                 <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
@@ -839,7 +860,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ThiSinh">
-            <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.ThiSinh)">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.ThiSinh)">
               <MappingFragment StoreEntitySet="ThiSinh">
                 <ScalarProperty Name="MaThiSinh" ColumnName="MaThiSinh" />
                 <ScalarProperty Name="MaKyThi" ColumnName="MaKyThi" />
@@ -866,7 +887,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="FK_DMTruong_DMHuyen" TypeName="QuanLyThiNghe.FK_DMTruong_DMHuyen" StoreEntitySet="DMTruong">
+          <EntitySetMapping Name="ThongKe">
+            <EntityTypeMapping TypeName="IsTypeOf(ThiNgeModel.ThongKe)">
+              <MappingFragment StoreEntitySet="ThongKe">
+                <ScalarProperty Name="GioHeThong" ColumnName="GioHeThong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_DMTruong_DMHuyen" TypeName="ThiNgeModel.FK_DMTruong_DMHuyen" StoreEntitySet="DMTruong">
             <EndProperty Name="DMHuyen">
               <ScalarProperty Name="MaHuyen" ColumnName="MaHuyen" />
             </EndProperty>
@@ -875,7 +903,7 @@
             </EndProperty>
             <Condition ColumnName="MaHuyen" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_DMTruong_DMKhoi" TypeName="QuanLyThiNghe.FK_DMTruong_DMKhoi" StoreEntitySet="DMTruong">
+          <AssociationSetMapping Name="FK_DMTruong_DMKhoi" TypeName="ThiNgeModel.FK_DMTruong_DMKhoi" StoreEntitySet="DMTruong">
             <EndProperty Name="DMKhoi">
               <ScalarProperty Name="MaKhoi" ColumnName="MaKhoi" />
             </EndProperty>
@@ -884,7 +912,7 @@
             </EndProperty>
             <Condition ColumnName="MaKhoi" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_DMPhach_DMKyThi" TypeName="QuanLyThiNghe.FK_DMPhach_DMKyThi" StoreEntitySet="DMPhach">
+          <AssociationSetMapping Name="FK_DMPhach_DMKyThi" TypeName="ThiNgeModel.FK_DMPhach_DMKyThi" StoreEntitySet="DMPhach">
             <EndProperty Name="DMKyThi">
               <ScalarProperty Name="MaKyThi" ColumnName="MaKyThi" />
             </EndProperty>
@@ -893,7 +921,7 @@
             </EndProperty>
             <Condition ColumnName="MaKyThi" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_HoiDongThi_DMKyThi" TypeName="QuanLyThiNghe.FK_HoiDongThi_DMKyThi" StoreEntitySet="HoiDongThi">
+          <AssociationSetMapping Name="FK_HoiDongThi_DMKyThi" TypeName="ThiNgeModel.FK_HoiDongThi_DMKyThi" StoreEntitySet="HoiDongThi">
             <EndProperty Name="DMKyThi">
               <ScalarProperty Name="MaKyThi" ColumnName="MaKyThi" />
             </EndProperty>
@@ -902,7 +930,7 @@
             </EndProperty>
             <Condition ColumnName="MaKyThi" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_DMPhach_DMMonThi" TypeName="QuanLyThiNghe.FK_DMPhach_DMMonThi" StoreEntitySet="DMPhach">
+          <AssociationSetMapping Name="FK_DMPhach_DMMonThi" TypeName="ThiNgeModel.FK_DMPhach_DMMonThi" StoreEntitySet="DMPhach">
             <EndProperty Name="DMMonThi">
               <ScalarProperty Name="MaMonThi" ColumnName="MaMonThi" />
             </EndProperty>
@@ -911,7 +939,7 @@
             </EndProperty>
             <Condition ColumnName="MaMonThi" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_ThiSinh_DMMonThi" TypeName="QuanLyThiNghe.FK_ThiSinh_DMMonThi" StoreEntitySet="ThiSinh">
+          <AssociationSetMapping Name="FK_ThiSinh_DMMonThi" TypeName="ThiNgeModel.FK_ThiSinh_DMMonThi" StoreEntitySet="ThiSinh">
             <EndProperty Name="DMMonThi">
               <ScalarProperty Name="MaMonThi" ColumnName="MaMonThi" />
             </EndProperty>
@@ -920,7 +948,7 @@
             </EndProperty>
             <Condition ColumnName="MaMonThi" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_HoiDongThi_DMTruong1" TypeName="QuanLyThiNghe.FK_HoiDongThi_DMTruong1" StoreEntitySet="HoiDongThi">
+          <AssociationSetMapping Name="FK_HoiDongThi_DMTruong1" TypeName="ThiNgeModel.FK_HoiDongThi_DMTruong1" StoreEntitySet="HoiDongThi">
             <EndProperty Name="DMTruong">
               <ScalarProperty Name="MaTruong" ColumnName="MaTruong" />
             </EndProperty>
@@ -929,7 +957,7 @@
             </EndProperty>
             <Condition ColumnName="MaTruong" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_ThiSinh_DMTruong" TypeName="QuanLyThiNghe.FK_ThiSinh_DMTruong" StoreEntitySet="ThiSinh">
+          <AssociationSetMapping Name="FK_ThiSinh_DMTruong" TypeName="ThiNgeModel.FK_ThiSinh_DMTruong" StoreEntitySet="ThiSinh">
             <EndProperty Name="DMTruong">
               <ScalarProperty Name="MaTruong" ColumnName="MaTruong" />
             </EndProperty>
@@ -938,7 +966,7 @@
             </EndProperty>
             <Condition ColumnName="MaTruong" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_ThiSinh_HoiDongThi" TypeName="QuanLyThiNghe.FK_ThiSinh_HoiDongThi" StoreEntitySet="ThiSinh">
+          <AssociationSetMapping Name="FK_ThiSinh_HoiDongThi" TypeName="ThiNgeModel.FK_ThiSinh_HoiDongThi" StoreEntitySet="ThiSinh">
             <EndProperty Name="HoiDongThi">
               <ScalarProperty Name="MaHoiDong" ColumnName="MaHoiDong" />
             </EndProperty>
@@ -947,7 +975,7 @@
             </EndProperty>
             <Condition ColumnName="MaHoiDong" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_NhatKy_TaiKhoan" TypeName="QuanLyThiNghe.FK_NhatKy_TaiKhoan" StoreEntitySet="NhatKy">
+          <AssociationSetMapping Name="FK_NhatKy_TaiKhoan" TypeName="ThiNgeModel.FK_NhatKy_TaiKhoan" StoreEntitySet="NhatKy">
             <EndProperty Name="TaiKhoan">
               <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
             </EndProperty>
@@ -956,7 +984,7 @@
             </EndProperty>
             <Condition ColumnName="MaTaiKhoan" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_TaiKhoan_PhanQuyen" TypeName="QuanLyThiNghe.FK_TaiKhoan_PhanQuyen" StoreEntitySet="TaiKhoan">
+          <AssociationSetMapping Name="FK_TaiKhoan_PhanQuyen" TypeName="ThiNgeModel.FK_TaiKhoan_PhanQuyen" StoreEntitySet="TaiKhoan">
             <EndProperty Name="PhanQuyen">
               <ScalarProperty Name="MaPhanQuyen" ColumnName="MaPhanQuyen" />
             </EndProperty>
@@ -984,56 +1012,57 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram Name="db">
-        <EntityTypeShape EntityType="QuanLyThiNghe.Config" Width="1.5" PointX="7.75" PointY="11.875" Height="3.5186979166666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThiNghe.DMHuyen" Width="1.5" PointX="0.75" PointY="3.875" Height="2.5571907552083335" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThiNghe.DMKhoi" Width="1.5" PointX="0.75" PointY="7.375" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThiNghe.DMKyThi" Width="1.5" PointX="3" PointY="2.5" Height="3.3263964843749996" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThiNghe.DMMonThi" Width="1.5" PointX="5.25" PointY="2.75" Height="2.7494921874999996" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThiNghe.DMPhach" Width="1.5" PointX="7.5" PointY="0.75" Height="2.7494921874999996" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThiNghe.DMTruong" Width="1.5" PointX="3" PointY="6.5" Height="3.1340950520833344" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThiNghe.HoiDongThi" Width="1.5" PointX="5.25" PointY="6.5" Height="3.1340950520833344" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThiNghe.NhatKy" Width="1.5" PointX="5.25" PointY="12.5" Height="2.7494921874999996" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThiNghe.PhanQuyen" Width="1.5" PointX="0.75" PointY="12.375" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThiNghe.TaiKhoan" Width="1.5" PointX="3" PointY="12.125" Height="3.5186979166666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThiNghe.ThiSinh" Width="1.5" PointX="7.5" PointY="5.25" Height="5.8263151041666648" IsExpanded="true" />
-        <AssociationConnector Association="QuanLyThiNghe.FK_DMTruong_DMHuyen" ManuallyRouted="false">
+        <EntityTypeShape EntityType="ThiNgeModel.Config" Width="1.5" PointX="7.75" PointY="11.875" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiNgeModel.DMHuyen" Width="1.5" PointX="0.75" PointY="3.875" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiNgeModel.DMKhoi" Width="1.5" PointX="0.75" PointY="7.375" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiNgeModel.DMKyThi" Width="1.5" PointX="3" PointY="2.5" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiNgeModel.DMMonThi" Width="1.5" PointX="5.25" PointY="2.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiNgeModel.DMPhach" Width="1.5" PointX="7.5" PointY="0.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiNgeModel.DMTruong" Width="1.5" PointX="3" PointY="6.5" Height="3.1340950520833344" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiNgeModel.HoiDongThi" Width="1.5" PointX="5.25" PointY="6.5" Height="3.1340950520833344" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiNgeModel.NhatKy" Width="1.5" PointX="5.25" PointY="12.5" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiNgeModel.PhanQuyen" Width="1.5" PointX="0.75" PointY="12.375" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiNgeModel.TaiKhoan" Width="1.5" PointX="3" PointY="12.125" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiNgeModel.ThiSinh" Width="1.5" PointX="7.5" PointY="5.25" Height="5.8263151041666648" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiNgeModel.ThongKe" Width="1.5" PointX="9.75" PointY="4.875" Height="1.2110807291666674" IsExpanded="true" />
+        <AssociationConnector Association="ThiNgeModel.FK_DMTruong_DMHuyen" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="5.1535953776041667" />
           <ConnectorPoint PointX="2.75" PointY="5.1535953776041667" />
           <ConnectorPoint PointX="2.75" PointY="6.076396484375" />
           <ConnectorPoint PointX="3.75" PointY="6.076396484375" />
           <ConnectorPoint PointX="3.75" PointY="6.5" /></AssociationConnector>
-        <AssociationConnector Association="QuanLyThiNghe.FK_DMTruong_DMKhoi" ManuallyRouted="false">
+        <AssociationConnector Association="ThiNgeModel.FK_DMTruong_DMKhoi" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="8.172841796875" />
           <ConnectorPoint PointX="3" PointY="8.172841796875" /></AssociationConnector>
-        <AssociationConnector Association="QuanLyThiNghe.FK_DMPhach_DMKyThi" ManuallyRouted="false">
+        <AssociationConnector Association="ThiNgeModel.FK_DMPhach_DMKyThi" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="2.59375" />
           <ConnectorPoint PointX="7.5" PointY="2.59375" /></AssociationConnector>
-        <AssociationConnector Association="QuanLyThiNghe.FK_HoiDongThi_DMKyThi" ManuallyRouted="false">
+        <AssociationConnector Association="ThiNgeModel.FK_HoiDongThi_DMKyThi" ManuallyRouted="false">
           <ConnectorPoint PointX="4.1249994999999995" PointY="5.826396484375" />
           <ConnectorPoint PointX="4.1249994999999995" PointY="6.201396484375" />
           <ConnectorPoint PointX="6" PointY="6.201396484375" />
           <ConnectorPoint PointX="6" PointY="6.5" /></AssociationConnector>
-        <AssociationConnector Association="QuanLyThiNghe.FK_DMPhach_DMMonThi" ManuallyRouted="false">
+        <AssociationConnector Association="ThiNgeModel.FK_DMPhach_DMMonThi" ManuallyRouted="false">
           <ConnectorPoint PointX="6.75" PointY="3.12474609375" />
           <ConnectorPoint PointX="7.5" PointY="3.12474609375" /></AssociationConnector>
-        <AssociationConnector Association="QuanLyThiNghe.FK_ThiSinh_DMMonThi" ManuallyRouted="false">
+        <AssociationConnector Association="ThiNgeModel.FK_ThiSinh_DMMonThi" ManuallyRouted="false">
           <ConnectorPoint PointX="6.75" PointY="4.37474609375" />
           <ConnectorPoint PointX="8.25" PointY="4.37474609375" />
           <ConnectorPoint PointX="8.25" PointY="5.25" /></AssociationConnector>
-        <AssociationConnector Association="QuanLyThiNghe.FK_HoiDongThi_DMTruong1" ManuallyRouted="false">
+        <AssociationConnector Association="ThiNgeModel.FK_HoiDongThi_DMTruong1" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="8.0670475260416676" />
           <ConnectorPoint PointX="5.25" PointY="8.0670475260416676" /></AssociationConnector>
-        <AssociationConnector Association="QuanLyThiNghe.FK_ThiSinh_DMTruong" ManuallyRouted="false">
+        <AssociationConnector Association="ThiNgeModel.FK_ThiSinh_DMTruong" ManuallyRouted="false">
           <ConnectorPoint PointX="3.75" PointY="9.6340950520833353" />
           <ConnectorPoint PointX="3.75" PointY="10.355205578124998" />
           <ConnectorPoint PointX="7.5" PointY="10.355205578124998" /></AssociationConnector>
-        <AssociationConnector Association="QuanLyThiNghe.FK_ThiSinh_HoiDongThi" ManuallyRouted="false">
+        <AssociationConnector Association="ThiNgeModel.FK_ThiSinh_HoiDongThi" ManuallyRouted="false">
           <ConnectorPoint PointX="6.75" PointY="8.0670475260416676" />
           <ConnectorPoint PointX="7.5" PointY="8.0670475260416676" /></AssociationConnector>
-        <AssociationConnector Association="QuanLyThiNghe.FK_NhatKy_TaiKhoan" ManuallyRouted="false">
+        <AssociationConnector Association="ThiNgeModel.FK_NhatKy_TaiKhoan" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="13.87474609375" />
           <ConnectorPoint PointX="5.25" PointY="13.87474609375" /></AssociationConnector>
-        <AssociationConnector Association="QuanLyThiNghe.FK_TaiKhoan_PhanQuyen" ManuallyRouted="false">
+        <AssociationConnector Association="ThiNgeModel.FK_TaiKhoan_PhanQuyen" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="13.845896809895834" />
           <ConnectorPoint PointX="3" PointY="13.845896809895834" /></AssociationConnector></Diagram></edmx:Diagrams>
   </edmx:Designer>
