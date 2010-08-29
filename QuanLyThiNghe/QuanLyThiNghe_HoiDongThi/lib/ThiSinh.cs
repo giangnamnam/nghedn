@@ -51,6 +51,30 @@ namespace QuanLyThiNghe_ThuKy
             }
             return tbl;
         }
+        public void CapNhatDiemLyThuyet(int MaThiSinh, float DiemLyThuyet, int ThuKy1, int ThuKy2, int ThuKy3, bool Luu)
+        {
+            string expression = "(Convert(" + "MaThiSinh" + ",'System.Int32') = " + MaThiSinh + ")";
+            DataRow[] drs = dt.Select(expression);
+            if (drs.Count() == 1)
+            {
+                drs[0]["DiemLT"] = DiemLyThuyet;
+                drs[0]["ThuKy1"] = ThuKy1;
+                drs[0]["ThuKy2"] = ThuKy2;
+                drs[0]["ThuKy3"] = ThuKy3;
+            }
+        }
+        public void CapNhatDiemThucHanh(int MaThiSinh, float DiemThucHanh, int ThuKy1, int ThuKy2, int ThuKy3, bool Luu)
+        {
+            string expression = "(Convert(" + "MaThiSinh" + ",'System.Int32') = " + MaThiSinh + ")";
+            DataRow[] drs = dt.Select(expression);
+            if (drs.Count() == 1)
+            {
+                drs[0]["DiemTH"] = DiemThucHanh;
+                drs[0]["ThuKy1"] = ThuKy1;
+                drs[0]["ThuKy2"] = ThuKy2;
+                drs[0]["ThuKy3"] = ThuKy3;
+            }
+        }
         public bool LuuThayDoi()
         {
            return DataProvider.GhiDanhSachThiSinh(dt);

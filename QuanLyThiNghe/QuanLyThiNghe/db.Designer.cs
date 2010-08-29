@@ -9,20 +9,20 @@
 //------------------------------------------------------------------------------
 
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_DMTruong_DMHuyen", "DMHuyen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMHuyen), "DMTruong", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.DMTruong))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_DMTruong_DMKhoi", "DMKhoi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMKhoi), "DMTruong", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.DMTruong))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_DMPhach_DMKyThi", "DMKyThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMKyThi), "DMPhach", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.DMPhach))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_HoiDongThi_DMKyThi", "DMKyThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMKyThi), "HoiDongThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.HoiDongThi))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_DMPhach_DMMonThi", "DMMonThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMMonThi), "DMPhach", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.DMPhach))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_ThiSinh_DMMonThi", "DMMonThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMMonThi), "ThiSinh", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.ThiSinh))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_HoiDongThi_DMTruong1", "DMTruong", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMTruong), "HoiDongThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.HoiDongThi))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_ThiSinh_DMTruong", "DMTruong", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMTruong), "ThiSinh", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.ThiSinh))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_ThiSinh_HoiDongThi", "HoiDongThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.HoiDongThi), "ThiSinh", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.ThiSinh))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_NhatKy_TaiKhoan", "TaiKhoan", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.TaiKhoan), "NhatKy", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.NhatKy))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_TaiKhoan_PhanQuyen", "PhanQuyen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.PhanQuyen), "TaiKhoan", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.TaiKhoan))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("ThiNgeModel", "FK_DMTruong_DMHuyen", "DMHuyen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMHuyen), "DMTruong", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.DMTruong))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("ThiNgeModel", "FK_DMTruong_DMKhoi", "DMKhoi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMKhoi), "DMTruong", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.DMTruong))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("ThiNgeModel", "FK_DMPhach_DMKyThi", "DMKyThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMKyThi), "DMPhach", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.DMPhach))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("ThiNgeModel", "FK_HoiDongThi_DMKyThi", "DMKyThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMKyThi), "HoiDongThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.HoiDongThi))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("ThiNgeModel", "FK_DMPhach_DMMonThi", "DMMonThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMMonThi), "DMPhach", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.DMPhach))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("ThiNgeModel", "FK_ThiSinh_DMMonThi", "DMMonThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMMonThi), "ThiSinh", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.ThiSinh))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("ThiNgeModel", "FK_HoiDongThi_DMTruong1", "DMTruong", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMTruong), "HoiDongThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.HoiDongThi))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("ThiNgeModel", "FK_ThiSinh_DMTruong", "DMTruong", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.DMTruong), "ThiSinh", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.ThiSinh))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("ThiNgeModel", "FK_ThiSinh_HoiDongThi", "HoiDongThi", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.HoiDongThi), "ThiSinh", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.ThiSinh))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("ThiNgeModel", "FK_NhatKy_TaiKhoan", "TaiKhoan", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.TaiKhoan), "NhatKy", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.NhatKy))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("ThiNgeModel", "FK_TaiKhoan_PhanQuyen", "PhanQuyen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.PhanQuyen), "TaiKhoan", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.TaiKhoan))]
 
 // Original file name:
-// Generation date: 29/08/10 8:49:23 PM
+// Generation date: 29/08/10 10:52:57 PM
 namespace QuanLyThiNghe
 {
     
@@ -237,6 +237,21 @@ namespace QuanLyThiNghe
         }
         private global::System.Data.Objects.ObjectQuery<ThiSinh> _ThiSinh;
         /// <summary>
+        /// There are no comments for ThongKe in the schema.
+        /// </summary>
+        public global::System.Data.Objects.ObjectQuery<ThongKe> ThongKe
+        {
+            get
+            {
+                if ((this._ThongKe == null))
+                {
+                    this._ThongKe = base.CreateQuery<ThongKe>("[ThongKe]");
+                }
+                return this._ThongKe;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<ThongKe> _ThongKe;
+        /// <summary>
         /// There are no comments for Config in the schema.
         /// </summary>
         public void AddToConfig(Config config)
@@ -320,14 +335,21 @@ namespace QuanLyThiNghe
         {
             base.AddObject("ThiSinh", thiSinh);
         }
+        /// <summary>
+        /// There are no comments for ThongKe in the schema.
+        /// </summary>
+        public void AddToThongKe(ThongKe thongKe)
+        {
+            base.AddObject("ThongKe", thongKe);
+        }
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.Config in the schema.
+    /// There are no comments for ThiNgeModel.Config in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ConfigID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="Config")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="Config")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class Config : global::System.Data.Objects.DataClasses.EntityObject
@@ -643,12 +665,12 @@ namespace QuanLyThiNghe
         partial void OnKyThiHienTaiChanged();
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.DMHuyen in the schema.
+    /// There are no comments for ThiNgeModel.DMHuyen in the schema.
     /// </summary>
     /// <KeyProperties>
     /// MaHuyen
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="DMHuyen")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="DMHuyen")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class DMHuyen : global::System.Data.Objects.DataClasses.EntityObject
@@ -827,7 +849,7 @@ namespace QuanLyThiNghe
         /// <summary>
         /// There are no comments for DMTruong in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_DMTruong_DMHuyen", "DMTruong")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_DMTruong_DMHuyen", "DMTruong")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -835,24 +857,24 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<DMTruong>("QuanLyThiNghe.FK_DMTruong_DMHuyen", "DMTruong");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<DMTruong>("ThiNgeModel.FK_DMTruong_DMHuyen", "DMTruong");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<DMTruong>("QuanLyThiNghe.FK_DMTruong_DMHuyen", "DMTruong", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<DMTruong>("ThiNgeModel.FK_DMTruong_DMHuyen", "DMTruong", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.DMKhoi in the schema.
+    /// There are no comments for ThiNgeModel.DMKhoi in the schema.
     /// </summary>
     /// <KeyProperties>
     /// MaKhoi
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="DMKhoi")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="DMKhoi")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class DMKhoi : global::System.Data.Objects.DataClasses.EntityObject
@@ -916,7 +938,7 @@ namespace QuanLyThiNghe
         /// <summary>
         /// There are no comments for DMTruong in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_DMTruong_DMKhoi", "DMTruong")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_DMTruong_DMKhoi", "DMTruong")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -924,24 +946,24 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<DMTruong>("QuanLyThiNghe.FK_DMTruong_DMKhoi", "DMTruong");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<DMTruong>("ThiNgeModel.FK_DMTruong_DMKhoi", "DMTruong");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<DMTruong>("QuanLyThiNghe.FK_DMTruong_DMKhoi", "DMTruong", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<DMTruong>("ThiNgeModel.FK_DMTruong_DMKhoi", "DMTruong", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.DMKyThi in the schema.
+    /// There are no comments for ThiNgeModel.DMKyThi in the schema.
     /// </summary>
     /// <KeyProperties>
     /// MaKyThi
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="DMKyThi")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="DMKyThi")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class DMKyThi : global::System.Data.Objects.DataClasses.EntityObject
@@ -1189,7 +1211,7 @@ namespace QuanLyThiNghe
         /// <summary>
         /// There are no comments for DMPhach in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_DMPhach_DMKyThi", "DMPhach")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_DMPhach_DMKyThi", "DMPhach")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1197,20 +1219,20 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<DMPhach>("QuanLyThiNghe.FK_DMPhach_DMKyThi", "DMPhach");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<DMPhach>("ThiNgeModel.FK_DMPhach_DMKyThi", "DMPhach");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<DMPhach>("QuanLyThiNghe.FK_DMPhach_DMKyThi", "DMPhach", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<DMPhach>("ThiNgeModel.FK_DMPhach_DMKyThi", "DMPhach", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for HoiDongThi in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_HoiDongThi_DMKyThi", "HoiDongThi")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_HoiDongThi_DMKyThi", "HoiDongThi")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1218,24 +1240,24 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<HoiDongThi>("QuanLyThiNghe.FK_HoiDongThi_DMKyThi", "HoiDongThi");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<HoiDongThi>("ThiNgeModel.FK_HoiDongThi_DMKyThi", "HoiDongThi");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<HoiDongThi>("QuanLyThiNghe.FK_HoiDongThi_DMKyThi", "HoiDongThi", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<HoiDongThi>("ThiNgeModel.FK_HoiDongThi_DMKyThi", "HoiDongThi", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.DMMonThi in the schema.
+    /// There are no comments for ThiNgeModel.DMMonThi in the schema.
     /// </summary>
     /// <KeyProperties>
     /// MaMonThi
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="DMMonThi")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="DMMonThi")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class DMMonThi : global::System.Data.Objects.DataClasses.EntityObject
@@ -1414,7 +1436,7 @@ namespace QuanLyThiNghe
         /// <summary>
         /// There are no comments for DMPhach in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_DMPhach_DMMonThi", "DMPhach")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_DMPhach_DMMonThi", "DMPhach")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1422,20 +1444,20 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<DMPhach>("QuanLyThiNghe.FK_DMPhach_DMMonThi", "DMPhach");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<DMPhach>("ThiNgeModel.FK_DMPhach_DMMonThi", "DMPhach");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<DMPhach>("QuanLyThiNghe.FK_DMPhach_DMMonThi", "DMPhach", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<DMPhach>("ThiNgeModel.FK_DMPhach_DMMonThi", "DMPhach", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for ThiSinh in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_ThiSinh_DMMonThi", "ThiSinh")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_ThiSinh_DMMonThi", "ThiSinh")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1443,24 +1465,24 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<ThiSinh>("QuanLyThiNghe.FK_ThiSinh_DMMonThi", "ThiSinh");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<ThiSinh>("ThiNgeModel.FK_ThiSinh_DMMonThi", "ThiSinh");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<ThiSinh>("QuanLyThiNghe.FK_ThiSinh_DMMonThi", "ThiSinh", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<ThiSinh>("ThiNgeModel.FK_ThiSinh_DMMonThi", "ThiSinh", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.DMPhach in the schema.
+    /// There are no comments for ThiNgeModel.DMPhach in the schema.
     /// </summary>
     /// <KeyProperties>
     /// MaPhach
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="DMPhach")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="DMPhach")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class DMPhach : global::System.Data.Objects.DataClasses.EntityObject
@@ -1639,7 +1661,7 @@ namespace QuanLyThiNghe
         /// <summary>
         /// There are no comments for DMKyThi in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_DMPhach_DMKyThi", "DMKyThi")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_DMPhach_DMKyThi", "DMKyThi")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1647,11 +1669,11 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKyThi>("QuanLyThiNghe.FK_DMPhach_DMKyThi", "DMKyThi").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKyThi>("ThiNgeModel.FK_DMPhach_DMKyThi", "DMKyThi").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKyThi>("QuanLyThiNghe.FK_DMPhach_DMKyThi", "DMKyThi").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKyThi>("ThiNgeModel.FK_DMPhach_DMKyThi", "DMKyThi").Value = value;
             }
         }
         /// <summary>
@@ -1663,20 +1685,20 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKyThi>("QuanLyThiNghe.FK_DMPhach_DMKyThi", "DMKyThi");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKyThi>("ThiNgeModel.FK_DMPhach_DMKyThi", "DMKyThi");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMKyThi>("QuanLyThiNghe.FK_DMPhach_DMKyThi", "DMKyThi", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMKyThi>("ThiNgeModel.FK_DMPhach_DMKyThi", "DMKyThi", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for DMMonThi in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_DMPhach_DMMonThi", "DMMonThi")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_DMPhach_DMMonThi", "DMMonThi")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1684,11 +1706,11 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMMonThi>("QuanLyThiNghe.FK_DMPhach_DMMonThi", "DMMonThi").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMMonThi>("ThiNgeModel.FK_DMPhach_DMMonThi", "DMMonThi").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMMonThi>("QuanLyThiNghe.FK_DMPhach_DMMonThi", "DMMonThi").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMMonThi>("ThiNgeModel.FK_DMPhach_DMMonThi", "DMMonThi").Value = value;
             }
         }
         /// <summary>
@@ -1700,24 +1722,24 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMMonThi>("QuanLyThiNghe.FK_DMPhach_DMMonThi", "DMMonThi");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMMonThi>("ThiNgeModel.FK_DMPhach_DMMonThi", "DMMonThi");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMMonThi>("QuanLyThiNghe.FK_DMPhach_DMMonThi", "DMMonThi", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMMonThi>("ThiNgeModel.FK_DMPhach_DMMonThi", "DMMonThi", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.DMTruong in the schema.
+    /// There are no comments for ThiNgeModel.DMTruong in the schema.
     /// </summary>
     /// <KeyProperties>
     /// MaTruong
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="DMTruong")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="DMTruong")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class DMTruong : global::System.Data.Objects.DataClasses.EntityObject
@@ -1896,7 +1918,7 @@ namespace QuanLyThiNghe
         /// <summary>
         /// There are no comments for DMHuyen in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_DMTruong_DMHuyen", "DMHuyen")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_DMTruong_DMHuyen", "DMHuyen")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1904,11 +1926,11 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMHuyen>("QuanLyThiNghe.FK_DMTruong_DMHuyen", "DMHuyen").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMHuyen>("ThiNgeModel.FK_DMTruong_DMHuyen", "DMHuyen").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMHuyen>("QuanLyThiNghe.FK_DMTruong_DMHuyen", "DMHuyen").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMHuyen>("ThiNgeModel.FK_DMTruong_DMHuyen", "DMHuyen").Value = value;
             }
         }
         /// <summary>
@@ -1920,20 +1942,20 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMHuyen>("QuanLyThiNghe.FK_DMTruong_DMHuyen", "DMHuyen");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMHuyen>("ThiNgeModel.FK_DMTruong_DMHuyen", "DMHuyen");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMHuyen>("QuanLyThiNghe.FK_DMTruong_DMHuyen", "DMHuyen", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMHuyen>("ThiNgeModel.FK_DMTruong_DMHuyen", "DMHuyen", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for DMKhoi in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_DMTruong_DMKhoi", "DMKhoi")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_DMTruong_DMKhoi", "DMKhoi")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1941,11 +1963,11 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKhoi>("QuanLyThiNghe.FK_DMTruong_DMKhoi", "DMKhoi").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKhoi>("ThiNgeModel.FK_DMTruong_DMKhoi", "DMKhoi").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKhoi>("QuanLyThiNghe.FK_DMTruong_DMKhoi", "DMKhoi").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKhoi>("ThiNgeModel.FK_DMTruong_DMKhoi", "DMKhoi").Value = value;
             }
         }
         /// <summary>
@@ -1957,20 +1979,20 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKhoi>("QuanLyThiNghe.FK_DMTruong_DMKhoi", "DMKhoi");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKhoi>("ThiNgeModel.FK_DMTruong_DMKhoi", "DMKhoi");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMKhoi>("QuanLyThiNghe.FK_DMTruong_DMKhoi", "DMKhoi", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMKhoi>("ThiNgeModel.FK_DMTruong_DMKhoi", "DMKhoi", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for HoiDongThi in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_HoiDongThi_DMTruong1", "HoiDongThi")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_HoiDongThi_DMTruong1", "HoiDongThi")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1978,20 +2000,20 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<HoiDongThi>("QuanLyThiNghe.FK_HoiDongThi_DMTruong1", "HoiDongThi");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<HoiDongThi>("ThiNgeModel.FK_HoiDongThi_DMTruong1", "HoiDongThi");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<HoiDongThi>("QuanLyThiNghe.FK_HoiDongThi_DMTruong1", "HoiDongThi", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<HoiDongThi>("ThiNgeModel.FK_HoiDongThi_DMTruong1", "HoiDongThi", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for ThiSinh in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_ThiSinh_DMTruong", "ThiSinh")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_ThiSinh_DMTruong", "ThiSinh")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1999,24 +2021,24 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<ThiSinh>("QuanLyThiNghe.FK_ThiSinh_DMTruong", "ThiSinh");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<ThiSinh>("ThiNgeModel.FK_ThiSinh_DMTruong", "ThiSinh");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<ThiSinh>("QuanLyThiNghe.FK_ThiSinh_DMTruong", "ThiSinh", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<ThiSinh>("ThiNgeModel.FK_ThiSinh_DMTruong", "ThiSinh", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.HoiDongThi in the schema.
+    /// There are no comments for ThiNgeModel.HoiDongThi in the schema.
     /// </summary>
     /// <KeyProperties>
     /// MaHoiDong
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="HoiDongThi")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="HoiDongThi")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class HoiDongThi : global::System.Data.Objects.DataClasses.EntityObject
@@ -2218,7 +2240,7 @@ namespace QuanLyThiNghe
         /// <summary>
         /// There are no comments for DMKyThi in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_HoiDongThi_DMKyThi", "DMKyThi")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_HoiDongThi_DMKyThi", "DMKyThi")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2226,11 +2248,11 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKyThi>("QuanLyThiNghe.FK_HoiDongThi_DMKyThi", "DMKyThi").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKyThi>("ThiNgeModel.FK_HoiDongThi_DMKyThi", "DMKyThi").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKyThi>("QuanLyThiNghe.FK_HoiDongThi_DMKyThi", "DMKyThi").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKyThi>("ThiNgeModel.FK_HoiDongThi_DMKyThi", "DMKyThi").Value = value;
             }
         }
         /// <summary>
@@ -2242,20 +2264,20 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKyThi>("QuanLyThiNghe.FK_HoiDongThi_DMKyThi", "DMKyThi");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMKyThi>("ThiNgeModel.FK_HoiDongThi_DMKyThi", "DMKyThi");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMKyThi>("QuanLyThiNghe.FK_HoiDongThi_DMKyThi", "DMKyThi", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMKyThi>("ThiNgeModel.FK_HoiDongThi_DMKyThi", "DMKyThi", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for DMTruong in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_HoiDongThi_DMTruong1", "DMTruong")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_HoiDongThi_DMTruong1", "DMTruong")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2263,11 +2285,11 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMTruong>("QuanLyThiNghe.FK_HoiDongThi_DMTruong1", "DMTruong").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMTruong>("ThiNgeModel.FK_HoiDongThi_DMTruong1", "DMTruong").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMTruong>("QuanLyThiNghe.FK_HoiDongThi_DMTruong1", "DMTruong").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMTruong>("ThiNgeModel.FK_HoiDongThi_DMTruong1", "DMTruong").Value = value;
             }
         }
         /// <summary>
@@ -2279,20 +2301,20 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMTruong>("QuanLyThiNghe.FK_HoiDongThi_DMTruong1", "DMTruong");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMTruong>("ThiNgeModel.FK_HoiDongThi_DMTruong1", "DMTruong");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMTruong>("QuanLyThiNghe.FK_HoiDongThi_DMTruong1", "DMTruong", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMTruong>("ThiNgeModel.FK_HoiDongThi_DMTruong1", "DMTruong", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for ThiSinh in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_ThiSinh_HoiDongThi", "ThiSinh")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_ThiSinh_HoiDongThi", "ThiSinh")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2300,24 +2322,24 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<ThiSinh>("QuanLyThiNghe.FK_ThiSinh_HoiDongThi", "ThiSinh");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<ThiSinh>("ThiNgeModel.FK_ThiSinh_HoiDongThi", "ThiSinh");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<ThiSinh>("QuanLyThiNghe.FK_ThiSinh_HoiDongThi", "ThiSinh", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<ThiSinh>("ThiNgeModel.FK_ThiSinh_HoiDongThi", "ThiSinh", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.NhatKy in the schema.
+    /// There are no comments for ThiNgeModel.NhatKy in the schema.
     /// </summary>
     /// <KeyProperties>
     /// MaNhatKy
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="NhatKy")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="NhatKy")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class NhatKy : global::System.Data.Objects.DataClasses.EntityObject
@@ -2519,7 +2541,7 @@ namespace QuanLyThiNghe
         /// <summary>
         /// There are no comments for TaiKhoan in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_NhatKy_TaiKhoan", "TaiKhoan")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_NhatKy_TaiKhoan", "TaiKhoan")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2527,11 +2549,11 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<TaiKhoan>("QuanLyThiNghe.FK_NhatKy_TaiKhoan", "TaiKhoan").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<TaiKhoan>("ThiNgeModel.FK_NhatKy_TaiKhoan", "TaiKhoan").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<TaiKhoan>("QuanLyThiNghe.FK_NhatKy_TaiKhoan", "TaiKhoan").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<TaiKhoan>("ThiNgeModel.FK_NhatKy_TaiKhoan", "TaiKhoan").Value = value;
             }
         }
         /// <summary>
@@ -2543,24 +2565,24 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<TaiKhoan>("QuanLyThiNghe.FK_NhatKy_TaiKhoan", "TaiKhoan");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<TaiKhoan>("ThiNgeModel.FK_NhatKy_TaiKhoan", "TaiKhoan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<TaiKhoan>("QuanLyThiNghe.FK_NhatKy_TaiKhoan", "TaiKhoan", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<TaiKhoan>("ThiNgeModel.FK_NhatKy_TaiKhoan", "TaiKhoan", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.PhanQuyen in the schema.
+    /// There are no comments for ThiNgeModel.PhanQuyen in the schema.
     /// </summary>
     /// <KeyProperties>
     /// MaPhanQuyen
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="PhanQuyen")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="PhanQuyen")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PhanQuyen : global::System.Data.Objects.DataClasses.EntityObject
@@ -2785,7 +2807,7 @@ namespace QuanLyThiNghe
         /// <summary>
         /// There are no comments for TaiKhoan in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_TaiKhoan_PhanQuyen", "TaiKhoan")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_TaiKhoan_PhanQuyen", "TaiKhoan")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2793,24 +2815,24 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<TaiKhoan>("QuanLyThiNghe.FK_TaiKhoan_PhanQuyen", "TaiKhoan");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<TaiKhoan>("ThiNgeModel.FK_TaiKhoan_PhanQuyen", "TaiKhoan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<TaiKhoan>("QuanLyThiNghe.FK_TaiKhoan_PhanQuyen", "TaiKhoan", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<TaiKhoan>("ThiNgeModel.FK_TaiKhoan_PhanQuyen", "TaiKhoan", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.TaiKhoan in the schema.
+    /// There are no comments for ThiNgeModel.TaiKhoan in the schema.
     /// </summary>
     /// <KeyProperties>
     /// MaTaiKhoan
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="TaiKhoan")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="TaiKhoan")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class TaiKhoan : global::System.Data.Objects.DataClasses.EntityObject
@@ -3081,7 +3103,7 @@ namespace QuanLyThiNghe
         /// <summary>
         /// There are no comments for NhatKy in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_NhatKy_TaiKhoan", "NhatKy")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_NhatKy_TaiKhoan", "NhatKy")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -3089,20 +3111,20 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<NhatKy>("QuanLyThiNghe.FK_NhatKy_TaiKhoan", "NhatKy");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<NhatKy>("ThiNgeModel.FK_NhatKy_TaiKhoan", "NhatKy");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<NhatKy>("QuanLyThiNghe.FK_NhatKy_TaiKhoan", "NhatKy", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<NhatKy>("ThiNgeModel.FK_NhatKy_TaiKhoan", "NhatKy", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for PhanQuyen in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_TaiKhoan_PhanQuyen", "PhanQuyen")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_TaiKhoan_PhanQuyen", "PhanQuyen")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -3110,11 +3132,11 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PhanQuyen>("QuanLyThiNghe.FK_TaiKhoan_PhanQuyen", "PhanQuyen").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PhanQuyen>("ThiNgeModel.FK_TaiKhoan_PhanQuyen", "PhanQuyen").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PhanQuyen>("QuanLyThiNghe.FK_TaiKhoan_PhanQuyen", "PhanQuyen").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PhanQuyen>("ThiNgeModel.FK_TaiKhoan_PhanQuyen", "PhanQuyen").Value = value;
             }
         }
         /// <summary>
@@ -3126,24 +3148,24 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PhanQuyen>("QuanLyThiNghe.FK_TaiKhoan_PhanQuyen", "PhanQuyen");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PhanQuyen>("ThiNgeModel.FK_TaiKhoan_PhanQuyen", "PhanQuyen");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PhanQuyen>("QuanLyThiNghe.FK_TaiKhoan_PhanQuyen", "PhanQuyen", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PhanQuyen>("ThiNgeModel.FK_TaiKhoan_PhanQuyen", "PhanQuyen", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for QuanLyThiNghe.ThiSinh in the schema.
+    /// There are no comments for ThiNgeModel.ThiSinh in the schema.
     /// </summary>
     /// <KeyProperties>
     /// MaThiSinh
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="QuanLyThiNghe", Name="ThiSinh")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="ThiSinh")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ThiSinh : global::System.Data.Objects.DataClasses.EntityObject
@@ -3393,7 +3415,7 @@ namespace QuanLyThiNghe
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<int> DiemLT
+        public global::System.Nullable<double> DiemLT
         {
             get
             {
@@ -3408,15 +3430,15 @@ namespace QuanLyThiNghe
                 this.OnDiemLTChanged();
             }
         }
-        private global::System.Nullable<int> _DiemLT;
-        partial void OnDiemLTChanging(global::System.Nullable<int> value);
+        private global::System.Nullable<double> _DiemLT;
+        partial void OnDiemLTChanging(global::System.Nullable<double> value);
         partial void OnDiemLTChanged();
         /// <summary>
         /// There are no comments for Property DiemTH in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<int> DiemTH
+        public global::System.Nullable<double> DiemTH
         {
             get
             {
@@ -3431,8 +3453,8 @@ namespace QuanLyThiNghe
                 this.OnDiemTHChanged();
             }
         }
-        private global::System.Nullable<int> _DiemTH;
-        partial void OnDiemTHChanging(global::System.Nullable<int> value);
+        private global::System.Nullable<double> _DiemTH;
+        partial void OnDiemTHChanging(global::System.Nullable<double> value);
         partial void OnDiemTHChanged();
         /// <summary>
         /// There are no comments for Property TongDiem in the schema.
@@ -3667,7 +3689,7 @@ namespace QuanLyThiNghe
         /// <summary>
         /// There are no comments for DMMonThi in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_ThiSinh_DMMonThi", "DMMonThi")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_ThiSinh_DMMonThi", "DMMonThi")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -3675,11 +3697,11 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMMonThi>("QuanLyThiNghe.FK_ThiSinh_DMMonThi", "DMMonThi").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMMonThi>("ThiNgeModel.FK_ThiSinh_DMMonThi", "DMMonThi").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMMonThi>("QuanLyThiNghe.FK_ThiSinh_DMMonThi", "DMMonThi").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMMonThi>("ThiNgeModel.FK_ThiSinh_DMMonThi", "DMMonThi").Value = value;
             }
         }
         /// <summary>
@@ -3691,20 +3713,20 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMMonThi>("QuanLyThiNghe.FK_ThiSinh_DMMonThi", "DMMonThi");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMMonThi>("ThiNgeModel.FK_ThiSinh_DMMonThi", "DMMonThi");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMMonThi>("QuanLyThiNghe.FK_ThiSinh_DMMonThi", "DMMonThi", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMMonThi>("ThiNgeModel.FK_ThiSinh_DMMonThi", "DMMonThi", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for DMTruong in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_ThiSinh_DMTruong", "DMTruong")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_ThiSinh_DMTruong", "DMTruong")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -3712,11 +3734,11 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMTruong>("QuanLyThiNghe.FK_ThiSinh_DMTruong", "DMTruong").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMTruong>("ThiNgeModel.FK_ThiSinh_DMTruong", "DMTruong").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMTruong>("QuanLyThiNghe.FK_ThiSinh_DMTruong", "DMTruong").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMTruong>("ThiNgeModel.FK_ThiSinh_DMTruong", "DMTruong").Value = value;
             }
         }
         /// <summary>
@@ -3728,20 +3750,20 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMTruong>("QuanLyThiNghe.FK_ThiSinh_DMTruong", "DMTruong");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<DMTruong>("ThiNgeModel.FK_ThiSinh_DMTruong", "DMTruong");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMTruong>("QuanLyThiNghe.FK_ThiSinh_DMTruong", "DMTruong", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<DMTruong>("ThiNgeModel.FK_ThiSinh_DMTruong", "DMTruong", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for HoiDongThi in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_ThiSinh_HoiDongThi", "HoiDongThi")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("ThiNgeModel", "FK_ThiSinh_HoiDongThi", "HoiDongThi")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -3749,11 +3771,11 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<HoiDongThi>("QuanLyThiNghe.FK_ThiSinh_HoiDongThi", "HoiDongThi").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<HoiDongThi>("ThiNgeModel.FK_ThiSinh_HoiDongThi", "HoiDongThi").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<HoiDongThi>("QuanLyThiNghe.FK_ThiSinh_HoiDongThi", "HoiDongThi").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<HoiDongThi>("ThiNgeModel.FK_ThiSinh_HoiDongThi", "HoiDongThi").Value = value;
             }
         }
         /// <summary>
@@ -3765,15 +3787,60 @@ namespace QuanLyThiNghe
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<HoiDongThi>("QuanLyThiNghe.FK_ThiSinh_HoiDongThi", "HoiDongThi");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<HoiDongThi>("ThiNgeModel.FK_ThiSinh_HoiDongThi", "HoiDongThi");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<HoiDongThi>("QuanLyThiNghe.FK_ThiSinh_HoiDongThi", "HoiDongThi", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<HoiDongThi>("ThiNgeModel.FK_ThiSinh_HoiDongThi", "HoiDongThi", value);
                 }
             }
         }
+    }
+    /// <summary>
+    /// There are no comments for ThiNgeModel.ThongKe in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// GioHeThong
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="ThiNgeModel", Name="ThongKe")]
+    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
+    [global::System.Serializable()]
+    public partial class ThongKe : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new ThongKe object.
+        /// </summary>
+        /// <param name="gioHeThong">Initial value of GioHeThong.</param>
+        public static ThongKe CreateThongKe(global::System.DateTime gioHeThong)
+        {
+            ThongKe thongKe = new ThongKe();
+            thongKe.GioHeThong = gioHeThong;
+            return thongKe;
+        }
+        /// <summary>
+        /// There are no comments for Property GioHeThong in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.DateTime GioHeThong
+        {
+            get
+            {
+                return this._GioHeThong;
+            }
+            set
+            {
+                this.OnGioHeThongChanging(value);
+                this.ReportPropertyChanging("GioHeThong");
+                this._GioHeThong = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("GioHeThong");
+                this.OnGioHeThongChanged();
+            }
+        }
+        private global::System.DateTime _GioHeThong;
+        partial void OnGioHeThongChanging(global::System.DateTime value);
+        partial void OnGioHeThongChanged();
     }
 }
