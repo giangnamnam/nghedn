@@ -61,7 +61,6 @@ namespace QuanLyThiNghe_ThuKy
             DataGridView dgv = sender as DataGridView;
             dgv["cSTT", e.RowIndex].Value = (e.RowIndex + 1).ToString();
         }
-
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
