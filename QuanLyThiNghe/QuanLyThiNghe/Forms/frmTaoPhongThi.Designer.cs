@@ -59,8 +59,7 @@
             this.gvColSchoolName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gvColNumOfRooms = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cThiSinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.cbSchools = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.gluESchoolName = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
@@ -415,8 +414,7 @@
             this.gvColSchoolName,
             this.gridColumn3,
             this.gridColumn4,
-            this.gvColNumOfRooms,
-            this.gridColumn2});
+            this.cThiSinh});
             this.gvHDT.GridControl = this.gcHDT;
             this.gvHDT.GroupPanelText = "Danh sách huyện trong tỉnh";
             this.gvHDT.GroupRowHeight = 0;
@@ -435,8 +433,6 @@
             this.gridColumn1.Caption = "gridColumn1";
             this.gridColumn1.FieldName = "MaTruong";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 5;
             // 
             // gvColSchoolName
             // 
@@ -467,35 +463,18 @@
             this.gridColumn4.VisibleIndex = 1;
             this.gridColumn4.Width = 100;
             // 
-            // gvColNumOfRooms
+            // cThiSinh
             // 
-            this.gvColNumOfRooms.AppearanceCell.Options.UseTextOptions = true;
-            this.gvColNumOfRooms.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gvColNumOfRooms.AppearanceHeader.Options.UseTextOptions = true;
-            this.gvColNumOfRooms.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gvColNumOfRooms.Caption = "Phòng thi";
-            this.gvColNumOfRooms.FieldName = "SoLuongPhongDuTinh";
-            this.gvColNumOfRooms.Name = "gvColNumOfRooms";
-            this.gvColNumOfRooms.OptionsColumn.AllowFocus = false;
-            this.gvColNumOfRooms.OptionsColumn.AllowMove = false;
-            this.gvColNumOfRooms.OptionsColumn.AllowSize = false;
-            this.gvColNumOfRooms.OptionsColumn.ReadOnly = true;
-            this.gvColNumOfRooms.Visible = true;
-            this.gvColNumOfRooms.VisibleIndex = 3;
-            this.gvColNumOfRooms.Width = 82;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.Caption = "Thí sinh";
-            this.gridColumn2.FieldName = "SoThiSinhDuTinh";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 4;
-            this.gridColumn2.Width = 88;
+            this.cThiSinh.AppearanceCell.Options.UseTextOptions = true;
+            this.cThiSinh.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cThiSinh.AppearanceHeader.Options.UseTextOptions = true;
+            this.cThiSinh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cThiSinh.Caption = "Thí sinh";
+            this.cThiSinh.FieldName = "SoThiSinh";
+            this.cThiSinh.Name = "cThiSinh";
+            this.cThiSinh.Visible = true;
+            this.cThiSinh.VisibleIndex = 3;
+            this.cThiSinh.Width = 88;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -731,8 +710,7 @@
         private DevExpress.XtraGrid.GridControl gcHDT;
         private DevExpress.XtraGrid.Views.Grid.GridView gvHDT;
         private DevExpress.XtraGrid.Columns.GridColumn gvColSchoolName;
-        private DevExpress.XtraGrid.Columns.GridColumn gvColNumOfRooms;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn cThiSinh;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cbSchools;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit gluESchoolName;

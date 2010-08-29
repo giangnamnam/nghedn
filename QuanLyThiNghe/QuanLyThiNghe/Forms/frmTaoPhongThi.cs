@@ -66,17 +66,17 @@ namespace QuanLyThiNghe.Forms
                 lblSoPhongDuTinh.Text = HDT.SoLuongPhongDuTinh.Value.ToString();
                 lblSoThiSinhDuTinh.Text = HDT.SoThiSinhDuTinh.Value.ToString();
 
-                //int hdtid = HDT.HoiDongThi.FirstOrDefault().MaHoiDong;
-                //var schools = en.ThiSinh.Where(ts => ts.HoiDongThi.MaHoiDong == hdtid).Select(ts1 => ts1.DMTruong).Distinct();
-                //lvSchools2.Items.Clear();
-                //if (schools!=null)
-                //{
-                //    foreach (var item in schools)
-                //    {
-                //        lvSchools2.Items.Add(item.TenTruong, item.TenTruong, 0);
-                //        ListViewItem lvi = lvSchools2.Items[item.TenTruong];
-                //    }
-                //}
+                LoadThongTinHDT();
+
+                int TongThiSinh = 0;
+
+                for (int i = 0; i < gvHDT.RowCount; i++)
+                {
+                    var soTS = int.Parse(gvHDT.GetRowCellValue(i, "SoThiSinh").ToString());
+                    TongThiSinh += soTS;
+                }
+
+                lblSoThiSinh.Text = TongThiSinh.ToString();
             }
         }
 
@@ -112,6 +112,12 @@ namespace QuanLyThiNghe.Forms
             SoLuongThiSinhVuotGioiHan = SoThiSinhChoPhep < soTS;
         }
 
+        void LoadThongTinHDT()
+        {
+            var source = en.ThiSinh.Where(t => t.HoiDongThi.DMTruong.TenTruong == lblSchoolName.Text).Select(t => new { TenTruong = t.DMTruong.TenTruong, TenMonThi = t.DMMonThi.TenMonThi, TenHuyen = t.DMTruong.DMHuyen.TenHuyen, SoThiSinh = (en.ThiSinh.Where(t1 => t1.HoiDongThi.DMTruong.TenTruong == lblSchoolName.Text).Count()) }).Distinct().OrderBy(t => t.TenTruong).OrderBy(t => t.TenMonThi);
+            gcHDT.DataSource = source;
+        }
+
         #endregion
 
         private void cbHDT_SelectedIndexChanged(object sender, EventArgs e)
@@ -140,6 +146,30 @@ namespace QuanLyThiNghe.Forms
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng thí sinh của môn thi này vượt giới hạn của hội đồng thi.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
+            }
+
+            var tenTruong = cbTruong.EditValue.ToString();
+            var tenMonThi = cbMonThi.EditValue.ToString();
+            var TS = en.ThiSinh.Where(t => (t.DaXoa == false || t.DaXoa == null) && t.DMMonThi.TenMonThi == tenMonThi && t.DMTruong.TenTruong == tenTruong);
+
+            foreach (var item in TS)
+            {
+                item.HoiDongThi = en.HoiDongThi.First(h => h.DMTruong.TenTruong == lblSchoolName.Text);
+            }
+
+            try
+            {
+                en.SaveChanges();
+            }
+            catch (Exception exp)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Có lỗi xảy ra: " + exp.Message, "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            finally
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Đã thêm danh sách thí sinh của môn thi này vào hội đồng thi.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.None);
+                LoadHDTDetails(cbHDT.EditValue.ToString());
             }
         }
 

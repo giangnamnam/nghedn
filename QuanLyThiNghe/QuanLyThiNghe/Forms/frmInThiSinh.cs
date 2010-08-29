@@ -9,11 +9,16 @@ using System.Windows.Forms;
 
 namespace QuanLyThiNghe.Forms
 {
-    public partial class frmInThiSinh : Form
+    public partial class frmTruyVanThiSinh : Form
     {
-        public frmInThiSinh()
+        public frmTruyVanThiSinh()
         {
             InitializeComponent();
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

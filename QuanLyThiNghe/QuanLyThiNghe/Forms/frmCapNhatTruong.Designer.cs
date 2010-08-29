@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.txtSchoolName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -40,6 +40,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Image = global::QuanLyThiNghe.Properties.Resources.save_16;
             this.btnSave.Location = new System.Drawing.Point(135, 77);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 23);
@@ -87,12 +88,12 @@
             this.cbHuyen.MinimumSize = new System.Drawing.Size(140, 0);
             this.cbHuyen.Name = "cbHuyen";
             this.cbHuyen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.DropDown, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleLeft, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, false)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.DropDown, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleLeft, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, false)});
             this.cbHuyen.Properties.DropDownRows = 10;
             this.cbHuyen.Size = new System.Drawing.Size(140, 20);
             this.cbHuyen.TabIndex = 9;
             // 
-            // frmCapNhatHuyen
+            // frmCapNhatTruong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,7 +106,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmCapNhatHuyen";
+            this.Name = "frmCapNhatTruong";
             this.Text = "Thêm/Cập nhật thông tin trường";
             this.Load += new System.EventHandler(this.frmCapNhatHuyen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSchoolName.Properties)).EndInit();

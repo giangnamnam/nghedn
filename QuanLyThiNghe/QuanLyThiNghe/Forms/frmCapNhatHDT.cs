@@ -128,8 +128,8 @@ namespace QuanLyThiNghe.Forms
                 }
                 finally
                 {
-                    frmHoiDongThi frm = new frmHoiDongThi();
                     DevExpress.XtraEditors.XtraMessageBox.Show("Đã thêm thành công.");
+                    frmHoiDongThi frm = new frmHoiDongThi();
                     frm.LoadHDT();
                 }
             }
@@ -154,9 +154,9 @@ namespace QuanLyThiNghe.Forms
                 }
                 finally
                 {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Đã cập nhật thành công.");
                     frmHoiDongThi frm = new frmHoiDongThi();
                     frm.LoadHDT();
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Đã cập nhật thành công.");
                 }
             }
 

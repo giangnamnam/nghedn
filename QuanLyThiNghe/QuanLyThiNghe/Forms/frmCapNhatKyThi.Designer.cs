@@ -51,6 +51,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Image = global::QuanLyThiNghe.Properties.Resources.save_16;
             this.btnSave.Location = new System.Drawing.Point(172, 92);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 23);

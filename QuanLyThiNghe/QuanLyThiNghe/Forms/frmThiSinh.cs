@@ -43,85 +43,57 @@ namespace QuanLyThiNghe.Forms
 
         void LoadTruong()
         {
-            var source = _Entities.DMTruong.Where(t => t.DaXoa == false || t.DaXoa == null).OrderBy(t => t.TenTruong);
+            var source = _Entities.ThiSinh.Where(t => t.DaXoa == false || t.DaXoa == null).Select(t => new { t.DMTruong.TenTruong }).OrderBy(t1 => t1.TenTruong);
 
-            foreach (var item in source)
-            {
-                ImageComboBoxItem i = new ImageComboBoxItem();
-                i.Value = item.TenTruong;
-                i.Description = item.MaTruong.ToString();
-
-                cbItems.Properties.Items.Add(i);
-            }
+            cbItems.Properties.Items.AddRange(source.ToList());
             
         }
 
         void LoadHuyen()
         {
-            var source = _Entities.DMHuyen.Where(t => t.DaXoa == false || t.DaXoa == null).OrderBy(t => t.TenHuyen);
+            var source = _Entities.ThiSinh.Where(t => t.DaXoa == false || t.DaXoa == null).Select(t => new { t.DMTruong.DMHuyen.TenHuyen }).OrderBy(t => t.TenHuyen);
 
-            foreach (var item in source)
-            {
-                ImageComboBoxItem i = new ImageComboBoxItem();
-                i.Value = item.TenHuyen;
-                i.Description = item.MaHuyen.ToString();
-
-                cbItems.Properties.Items.Add(i);
-            }
+            cbItems.Properties.Items.AddRange(source.ToList());
         }
 
         void LoadMonThi()
         {
-            var source = _Entities.DMMonThi.Where(t => t.DaXoa == false || t.DaXoa == null).OrderBy(t => t.TenMonThi);
+            var source = _Entities.ThiSinh.Where(t => t.DaXoa == false || t.DaXoa == null).Select(t => new { t.DMMonThi.TenMonThi }).OrderBy(t => t.TenMonThi);
 
-            foreach (var item in source)
-            {
-                ImageComboBoxItem i = new ImageComboBoxItem();
-                i.Value = item.TenMonThi;
-                i.Description = item.MaMonThi.ToString();
-
-                cbItems.Properties.Items.Add(i);
-            }
+            cbItems.Properties.Items.AddRange(source.ToList());
         }
 
         void LoadHDT()
         {
-            var source = _Entities.HoiDongThi.Where(t => t.DaXoa == false || t.DaXoa == null).Select(t => new { t.MaHoiDong, t.DMTruong.TenTruong }).OrderBy(t => t.TenTruong);
+            var source = _Entities.ThiSinh.Where(t => t.DaXoa == false || t.DaXoa == null).Select(t => new { t.HoiDongThi.DMTruong.TenTruong }).OrderBy(t => t.TenTruong);
 
-            foreach (var item in source)
-            {
-                ImageComboBoxItem i = new ImageComboBoxItem();
-                i.Value = item.TenTruong;
-                i.Description = item.MaHoiDong.ToString();
-
-                cbItems.Properties.Items.Add(i);
-            }
+            cbItems.Properties.Items.AddRange(source.ToList());
         }
 
         void LoadThiSinhTheoTruong(int MaTruong)
         {
-            var source = _Entities.ThiSinh.Where(t => t.DMTruong.MaTruong == MaTruong && t.DaXoa == false || t.DaXoa == null).OrderBy(t => t.Ten);
+            var source = _Entities.ThiSinh.Include("DMMonThi").Include("HoiDongThi").Include("DMTruong").Include("DMTruong.DMHuyen").Where(t => t.DMTruong.MaTruong == MaTruong && t.DaXoa == false || t.DaXoa == null).OrderBy(t => t.Ten);
 
             gridControl1.DataSource = source;
         }
 
         void LoadThiSinhTheoHuyen(int MaHuyen)
         {
-            var source = _Entities.ThiSinh.Where(t => t.DMTruong.DMHuyen.MaHuyen == MaHuyen && t.DaXoa == false || t.DaXoa == null).OrderBy(t => t.Ten);
+            var source = _Entities.ThiSinh.Include("DMMonThi").Include("HoiDongThi").Include("DMTruong").Include("DMTruong.DMHuyen").Where(t => t.DMTruong.DMHuyen.MaHuyen == MaHuyen && t.DaXoa == false || t.DaXoa == null).OrderBy(t => t.Ten);
 
             gridControl1.DataSource = source;
         }
 
         void LoadThiSinhTheoMonThi(int MaMonThi)
         {
-            var source = _Entities.ThiSinh.Where(t => t.DMMonThi.MaMonThi == MaMonThi && t.DaXoa == false || t.DaXoa == null).OrderBy(t => t.Ten);
+            var source = _Entities.ThiSinh.Include("DMMonThi").Include("HoiDongThi").Include("DMTruong").Include("DMTruong.DMHuyen").Where(t => t.DMMonThi.MaMonThi == MaMonThi && t.DaXoa == false || t.DaXoa == null).OrderBy(t => t.Ten);
 
             gridControl1.DataSource = source;
         }
 
         void LoadThiSinhTheoHDT(int MaHDT)
         {
-            var source = _Entities.ThiSinh.Where(t => t.HoiDongThi.MaHoiDong == MaHDT && t.DaXoa == false || t.DaXoa == null).OrderBy(t => t.Ten);
+            var source = _Entities.ThiSinh.Include("DMMonThi").Include("HoiDongThi").Include("DMTruong").Include("DMTruong.DMHuyen").Where(t => t.HoiDongThi.MaHoiDong == MaHDT && t.DaXoa == false || t.DaXoa == null).OrderBy(t => t.Ten);
 
             gridControl1.DataSource = source;
         }
@@ -145,11 +117,6 @@ namespace QuanLyThiNghe.Forms
         }
 
         private void frmThiSinh_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
         {
 
         }
@@ -199,7 +166,8 @@ namespace QuanLyThiNghe.Forms
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            gridControl1.ShowPrintPreview();
+            frmTruyVanThiSinh frm = new frmTruyVanThiSinh();
+            frm.ShowDialog();
         }
 
         private void cbItems_TextChanged(object sender, EventArgs e)

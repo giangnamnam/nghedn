@@ -37,7 +37,6 @@
             this.btnEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.xoáHuyệnNàyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDeleteSelecteds = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cMaThiSinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,7 +56,6 @@
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEditMark = new DevExpress.XtraEditors.SimpleButton();
             this.cbItems = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
@@ -107,18 +105,17 @@
             this.thêmHuyệnMớiToolStripMenuItem,
             this.btnEdit,
             this.toolStripSeparator1,
-            this.xoáHuyệnNàyToolStripMenuItem,
-            this.btnDeleteSelecteds});
+            this.xoáHuyệnNàyToolStripMenuItem});
             this.Menu.Name = "contextMenuStrip1";
-            this.Menu.Size = new System.Drawing.Size(266, 98);
+            this.Menu.Size = new System.Drawing.Size(153, 98);
             // 
             // thêmHuyệnMớiToolStripMenuItem
             // 
             this.thêmHuyệnMớiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Add_16x16;
             this.thêmHuyệnMớiToolStripMenuItem.Name = "thêmHuyệnMớiToolStripMenuItem";
             this.thêmHuyệnMớiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
-            this.thêmHuyệnMớiToolStripMenuItem.Text = "Thêm thí sinh mới";
+            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.thêmHuyệnMớiToolStripMenuItem.Text = "Thêm";
             this.thêmHuyệnMớiToolStripMenuItem.Click += new System.EventHandler(this.btnAddCandidate_Click);
             // 
             // btnEdit
@@ -126,30 +123,22 @@
             this.btnEdit.Image = global::QuanLyThiNghe.Properties.Resources.Edit_16x16;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.btnEdit.Size = new System.Drawing.Size(265, 22);
-            this.btnEdit.Text = "Chỉnh sửa thông tin thí sinh";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.Size = new System.Drawing.Size(152, 22);
+            this.btnEdit.Text = "Cập nhật";
+            this.btnEdit.Click += new System.EventHandler(this.btnInpuMark_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(262, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(138, 6);
             // 
             // xoáHuyệnNàyToolStripMenuItem
             // 
             this.xoáHuyệnNàyToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
             this.xoáHuyệnNàyToolStripMenuItem.Name = "xoáHuyệnNàyToolStripMenuItem";
             this.xoáHuyệnNàyToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
-            this.xoáHuyệnNàyToolStripMenuItem.Text = "Xoá thí sinh này";
-            // 
-            // btnDeleteSelecteds
-            // 
-            this.btnDeleteSelecteds.Name = "btnDeleteSelecteds";
-            this.btnDeleteSelecteds.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.btnDeleteSelecteds.Size = new System.Drawing.Size(265, 22);
-            this.btnDeleteSelecteds.Text = "Xoá các trường được chọn";
-            this.btnDeleteSelecteds.Click += new System.EventHandler(this.btnDeleteSelecteds_Click);
+            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.xoáHuyệnNàyToolStripMenuItem.Text = "Xoá";
             // 
             // gridView1
             // 
@@ -349,7 +338,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnEditMark);
             this.panel1.Controls.Add(this.cbItems);
             this.panel1.Controls.Add(this.cbType);
             this.panel1.Controls.Add(this.btnDelete);
@@ -361,18 +349,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(3);
             this.panel1.Size = new System.Drawing.Size(592, 30);
             this.panel1.TabIndex = 7;
-            // 
-            // btnEditMark
-            // 
-            this.btnEditMark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditMark.Image = global::QuanLyThiNghe.Properties.Resources.Edit_16x16;
-            this.btnEditMark.Location = new System.Drawing.Point(427, 3);
-            this.btnEditMark.Name = "btnEditMark";
-            this.btnEditMark.Size = new System.Drawing.Size(100, 24);
-            this.btnEditMark.TabIndex = 8;
-            this.btnEditMark.Text = "Sửa điểm thi";
-            this.btnEditMark.ToolTip = "Thêm huyện mới        Ctr + N";
-            this.btnEditMark.Click += new System.EventHandler(this.btnInpuMark_Click);
             // 
             // cbItems
             // 
@@ -473,7 +449,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnEdit;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem xoáHuyệnNàyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem btnDeleteSelecteds;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
@@ -493,7 +468,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
-        private DevExpress.XtraEditors.SimpleButton btnEditMark;
         private DevExpress.XtraGrid.Columns.GridColumn cMaThiSinh;
         public DevExpress.XtraEditors.ComboBoxEdit cbType;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
