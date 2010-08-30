@@ -206,7 +206,7 @@ namespace QuanLyThiNghe_ThuKy
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmCapNhatDuLieu frm = new frmCapNhatDuLieu();
-            OpenForm(frm);
+            frm.ShowDialog();
         }
         
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
@@ -259,6 +259,16 @@ namespace QuanLyThiNghe_ThuKy
                 frm.WindowState = FormWindowState.Maximized;
                 frm.Show();
             }
+        }
+        private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmLyThuyet frm = new frmLyThuyet();
+            OpenForm(frm);
+        }
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmThucHanh frm = new frmThucHanh();
+            OpenForm(frm);
         }
     }
 }
