@@ -19,6 +19,8 @@ namespace QuanLyThiNghe_ThuKy
         public int MaMonThi { get; set; }
         public int PhongThi { get; set; }
 
+        public string frm_active { get; set; }
+
         public System.Collections.ArrayList TaiKhoanHienTai { get; set; }
         public frmThuKy()
         {
@@ -175,9 +177,16 @@ namespace QuanLyThiNghe_ThuKy
                 int a;
                 bool coPhongThi = int.TryParse(le_Phong.EditValue != null ? le_Phong.EditValue.ToString() : "0", out a);
                 PhongThi = a;
-                if (Application.OpenForms.Count > 0 && coPhongThi )
+                if (this.MdiChildren.Length > 0 && coPhongThi)
                 {
-                    OpenForm(Application.OpenForms[Application.OpenForms.Count - 1]);
+                    if (frm_active == "frmThucHanh")
+                    {
+                        OpenForm(new frmThucHanh());
+                    }
+                    else if (frm_active == "frmLyThuyet")
+                    {
+                        OpenForm(new frmLyThuyet());
+                    }
                 }
             }
             catch (Exception ex)
@@ -231,6 +240,8 @@ namespace QuanLyThiNghe_ThuKy
         
         void OpenForm(Form frm)
         {
+            frm.MdiParent = this;
+
             if (frm.Name == "frmLyThuyet")
             {
                 ((frmLyThuyet)frm).LoadDanhSachThiSinh(MaHoiDong, MaMonThi, PhongThi);
@@ -254,7 +265,7 @@ namespace QuanLyThiNghe_ThuKy
             else
             {
                 //AddOpenWindow(frm);
-                frm.MdiParent = this;
+                
                 frm.StartPosition = FormStartPosition.CenterScreen;
                 frm.WindowState = FormWindowState.Maximized;
                 frm.Show();
@@ -269,6 +280,15 @@ namespace QuanLyThiNghe_ThuKy
         {
             frmThucHanh frm = new frmThucHanh();
             OpenForm(frm);
+        }
+
+        private void le_MonThi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+        public void ghiChuTinhTrang(string NoiDung)
+        {
+            lblStatus.Caption = NoiDung;
         }
     }
 }

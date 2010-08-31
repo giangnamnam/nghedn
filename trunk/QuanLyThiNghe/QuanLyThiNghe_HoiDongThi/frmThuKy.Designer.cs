@@ -30,10 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThuKy));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.smallimgs = new System.Windows.Forms.ImageList(this.components);
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
@@ -51,6 +53,8 @@
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.le_Phong = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemLookUpEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.barMdiChildrenListItem3 = new DevExpress.XtraBars.BarMdiChildrenListItem();
+            this.lblStatus = new DevExpress.XtraBars.BarStaticItem();
             this.BigImgs = new System.Windows.Forms.ImageList(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -62,9 +66,6 @@
             this.repositoryItemComboBox3 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barMdiChildrenListItem3 = new DevExpress.XtraBars.BarMdiChildrenListItem();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
@@ -107,6 +108,22 @@
             this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Nhập điểm lý thuyết";
+            this.barButtonItem6.Id = 30;
+            this.barButtonItem6.ImageIndex = 13;
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Nhập điểm thực hành";
+            this.barButtonItem7.Id = 31;
+            this.barButtonItem7.ImageIndex = 16;
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            // 
             // ribbon
             // 
             this.ribbon.ApplicationButtonDropDownControl = this.applicationMenu1;
@@ -129,10 +146,11 @@
             this.barButtonItem5,
             this.barButtonItem6,
             this.barButtonItem7,
-            this.barMdiChildrenListItem3});
+            this.barMdiChildrenListItem3,
+            this.lblStatus});
             this.ribbon.LargeImages = this.BigImgs;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 33;
+            this.ribbon.MaxItemId = 34;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.barMdiChildrenListItem2);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -258,7 +276,7 @@
             // 
             this.repositoryItemLookUpEdit1.AutoHeight = false;
             this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)), serializableAppearanceObject3, "Ctrl+H", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)), serializableAppearanceObject1, "Ctrl+H", null, null, true)});
             this.repositoryItemLookUpEdit1.DisplayMember = "TenHoiDong";
             this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
             this.repositoryItemLookUpEdit1.ValueMember = "MaHoiDong";
@@ -270,6 +288,7 @@
             this.le_MonThi.Id = 26;
             this.le_MonThi.Name = "le_MonThi";
             this.le_MonThi.Width = 222;
+            this.le_MonThi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.le_MonThi_ItemClick);
             this.le_MonThi.EditValueChanged += new System.EventHandler(this.le_MonThi_EditValueChanged);
             // 
             // repositoryItemLookUpEdit2
@@ -296,6 +315,20 @@
             this.repositoryItemLookUpEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEdit3.Name = "repositoryItemLookUpEdit3";
+            // 
+            // barMdiChildrenListItem3
+            // 
+            this.barMdiChildrenListItem3.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barMdiChildrenListItem3.Caption = "Đang mở";
+            this.barMdiChildrenListItem3.Id = 32;
+            this.barMdiChildrenListItem3.Name = "barMdiChildrenListItem3";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Caption = "Status here";
+            this.lblStatus.Id = 33;
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
             // BigImgs
             // 
@@ -380,6 +413,7 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barMdiChildrenListItem3);
+            this.ribbonStatusBar.ItemLinks.Add(this.lblStatus);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 433);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
@@ -388,29 +422,6 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Blue";
-            // 
-            // barButtonItem6
-            // 
-            this.barButtonItem6.Caption = "Nhập điểm lý thuyết";
-            this.barButtonItem6.Id = 30;
-            this.barButtonItem6.ImageIndex = 13;
-            this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
-            // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.Caption = "Nhập điểm thực hành";
-            this.barButtonItem7.Id = 31;
-            this.barButtonItem7.ImageIndex = 16;
-            this.barButtonItem7.Name = "barButtonItem7";
-            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
-            // 
-            // barMdiChildrenListItem3
-            // 
-            this.barMdiChildrenListItem3.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barMdiChildrenListItem3.Caption = "Đang mở";
-            this.barMdiChildrenListItem3.Id = 32;
-            this.barMdiChildrenListItem3.Name = "barMdiChildrenListItem3";
             // 
             // frmThuKy
             // 
@@ -468,15 +479,16 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarMdiChildrenListItem barMdiChildrenListItem2;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private DevExpress.XtraBars.BarEditItem le_HoiDong;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
-        private DevExpress.XtraBars.BarEditItem le_MonThi;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
-        private DevExpress.XtraBars.BarEditItem le_Phong;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarMdiChildrenListItem barMdiChildrenListItem3;
+        public DevExpress.XtraBars.BarStaticItem lblStatus;
+        public DevExpress.XtraBars.BarEditItem le_HoiDong;
+        public DevExpress.XtraBars.BarEditItem le_MonThi;
+        public DevExpress.XtraBars.BarEditItem le_Phong;
     }
 }

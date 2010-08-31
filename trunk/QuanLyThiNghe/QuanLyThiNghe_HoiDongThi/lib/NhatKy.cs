@@ -50,7 +50,14 @@ namespace QuanLyThiNghe_ThuKy
         {
             return DataProvider.GhiNhatKy(dt);
         }
+        public void DongBoHoaNhatKy()
+        {
+            string expression = "(Convert(" + "DaDongBo" + ",'System.String') = " + "False" + ")";
+            DataRow[] drs = dt.Select(expression);
 
+            foreach (DataRow item in drs)
+                XuLyDuLieu.DongBoNhatKy(item);
+        }
         
 
 

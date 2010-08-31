@@ -84,6 +84,7 @@
             this.Name = "frmThucHanh";
             this.Text = "Nhập điểm thi thực hành";
             this.Load += new System.EventHandler(this.frmThucHanh_Load);
+            this.Activated += new System.EventHandler(this.frmThucHanh_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

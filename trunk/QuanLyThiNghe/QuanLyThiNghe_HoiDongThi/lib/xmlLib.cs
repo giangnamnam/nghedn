@@ -128,6 +128,8 @@ namespace QuanLyThiNghe_ThuKy
         private static string stMonThi = "thuky_MonThi";
         private static string stNhatKy = "thuky_NhatKyTemplate";
         private static string stTaiKhoan = "thuky_TaiKhoanThuKyVaAdminDangSuDung";
+        private static string s_DongBoDiem = "thuky_DongBoHoa_CapNhatDiem";
+        private static string s_DongBoNhatKy = "thuky_DongBoHoa_ThemNhatKy";
         
 
         public static void CapNhatDuLieuThiNgheVeMay()
@@ -212,6 +214,51 @@ namespace QuanLyThiNghe_ThuKy
             }
             return true;
         }
+
+        public static bool DongBoDiem(DataRow pThiSinh)
+        {
+            try
+            {
+                
+                
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+        public static bool DongBoNhatKy(DataRow pNhatKy)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection("Data Source=designpro.vn;Initial Catalog=ThiNge;Persist Security Info=True;User ID=thinge;Password=tn123@");
+                SqlCommand com = new SqlCommand(s_DongBoDiem, con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.Add(new SqlParameter("MaTaiKhoan", pNhatKy["MaTaiKhoan"].ToString()));
+                com.Parameters.Add(new SqlParameter("NgayThaoTac", pNhatKy["NgayThaoTac"].ToString()));
+                com.Parameters.Add(new SqlParameter("IP", pNhatKy["IP"].ToString()));
+                com.Parameters.Add(new SqlParameter("ComputerUser", pNhatKy["ComputerUser"].ToString()));
+                com.Parameters.Add(new SqlParameter("ThaoTac", pNhatKy["ThaoTac"].ToString()));
+
+                /*
+                    @MaTaiKhoan int
+                   ,@NgayThaoTac datetime
+                   ,@IP varchar(550)
+                   ,@ComputerUser nvarchar(550)
+                   ,@ThaoTac nvarchar(550)   
+                 */
+                con.Open();
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
 
         private static DataTable ReadFromDatabase(string Command)
         {
