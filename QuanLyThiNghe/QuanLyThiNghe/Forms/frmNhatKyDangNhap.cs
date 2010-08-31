@@ -49,7 +49,8 @@ namespace QuanLyThiNghe.Forms
             {
                 if (string.IsNullOrEmpty(pTenDangNhap))
                 {
-                    var NhatKys = en.NhatKy.Where(x => ((x.DaXoa == null || x.DaXoa == false) && (x.NgayThaoTac >= tuNgay) && (x.NgayThaoTac <= denNgay))).Select(tk => new { tk.TaiKhoan.TenDangNhap, tk.TaiKhoan.HoVaTen, tk.TaiKhoan.PhanQuyen.TenQuyen, tk.NgayThaoTac, tk.ThaoTac, tk.ComputerUser, tk.IP, tk.MaNhatKy });
+                    var NhatKys = en.NhatKy.Where
+                        (x => ((x.DaXoa == null || x.DaXoa == false) && (x.NgayThaoTac >= tuNgay) && (x.NgayThaoTac <= denNgay))).Select(tk => new { tk.TaiKhoan.TenDangNhap, tk.TaiKhoan.HoVaTen, tk.TaiKhoan.PhanQuyen.TenQuyen, tk.NgayThaoTac, tk.ThaoTac, tk.ComputerUser, tk.IP, tk.MaNhatKy });
                     int st = gridView1.TopRowIndex;
                     int[] sindex = gridView1.GetSelectedRows();
                     gridControl1.DataSource = NhatKys;

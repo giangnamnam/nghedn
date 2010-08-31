@@ -36,5 +36,11 @@ namespace QuanLyThiNghe_ThuKy
                 XtraMessageBox.Show("Lưu dữ liệu không thành công, xin vui lòng kiểm tra lỗi và thực hiện lưu lại.", "Nhập điểm lý thuyết", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void frmThucHanh_Activated(object sender, EventArgs e)
+        {
+            ((frmThuKy)this.MdiParent).frm_active = this.Name;
+            ((frmThuKy)this.MdiParent).ghiChuTinhTrang(this.Text);
+        }
     }
 }

@@ -79,6 +79,7 @@ namespace QuanLyThiNghe_ThuKy
                 else
                     labelControl6.Appearance.ImageIndex = 0;
             }
+            XtraMessageBox.Show("Đã cập nhật thành công.", "Cập nhật dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
             rs = DialogResult.OK;
             XuLyForm.LuuNhatKy(2, "Cập nhật dữ liệu thi nghề");
 

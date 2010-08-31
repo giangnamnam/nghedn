@@ -35,6 +35,7 @@
             this.cSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cMaThiSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cSBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cMaPhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             this.cSTT,
             this.cMaThiSinh,
             this.cSBD,
+            this.cMaPhach,
             this.CDiem});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -98,6 +100,13 @@
             this.cSBD.Name = "cSBD";
             this.cSBD.ReadOnly = true;
             // 
+            // cMaPhach
+            // 
+            this.cMaPhach.DataPropertyName = "MaPhach";
+            this.cMaPhach.HeaderText = "Mã phách";
+            this.cMaPhach.Name = "cMaPhach";
+            this.cMaPhach.ReadOnly = true;
+            // 
             // CDiem
             // 
             this.CDiem.DataPropertyName = "DiemLT";
@@ -121,6 +130,8 @@
             this.Text = "Nhập điểm thi lý thuyết";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmLyThuyet_Load);
+            this.Activated += new System.EventHandler(this.frmLyThuyet_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLyThuyet_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -132,6 +143,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cSTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn cMaThiSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn cSBD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaPhach;
         private System.Windows.Forms.DataGridViewTextBoxColumn CDiem;
 
     }
