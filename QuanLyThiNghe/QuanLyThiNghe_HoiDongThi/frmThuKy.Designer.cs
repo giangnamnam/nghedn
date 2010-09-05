@@ -270,6 +270,7 @@
             this.le_HoiDong.Id = 25;
             this.le_HoiDong.Name = "le_HoiDong";
             this.le_HoiDong.Width = 200;
+            this.le_HoiDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.le_HoiDong_ItemClick);
             this.le_HoiDong.EditValueChanged += new System.EventHandler(this.le_HoiDong_EditValueChanged);
             // 
             // repositoryItemLookUpEdit1
@@ -279,6 +280,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)), serializableAppearanceObject1, "Ctrl+H", null, null, true)});
             this.repositoryItemLookUpEdit1.DisplayMember = "TenHoiDong";
             this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            this.repositoryItemLookUpEdit1.NullText = "xin chọn hội đồng thi";
             this.repositoryItemLookUpEdit1.ValueMember = "MaHoiDong";
             // 
             // le_MonThi
@@ -298,6 +300,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEdit2.DisplayMember = "TenMonThi";
             this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
+            this.repositoryItemLookUpEdit2.NullText = "xin chọn môn thi";
             this.repositoryItemLookUpEdit2.ValueMember = "MaMonThi";
             // 
             // le_Phong
@@ -307,6 +310,7 @@
             this.le_Phong.Id = 27;
             this.le_Phong.Name = "le_Phong";
             this.le_Phong.Width = 212;
+            this.le_Phong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.le_Phong_ItemClick);
             this.le_Phong.EditValueChanged += new System.EventHandler(this.le_Phong_EditValueChanged);
             // 
             // repositoryItemLookUpEdit3
@@ -315,6 +319,7 @@
             this.repositoryItemLookUpEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEdit3.Name = "repositoryItemLookUpEdit3";
+            this.repositoryItemLookUpEdit3.NullText = "xin chọn phòng thi";
             // 
             // barMdiChildrenListItem3
             // 
@@ -325,7 +330,7 @@
             // 
             // lblStatus
             // 
-            this.lblStatus.Caption = "Status here";
+            this.lblStatus.Caption = "Chấm điểm thi nghề";
             this.lblStatus.Id = 33;
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.TextAlignment = System.Drawing.StringAlignment.Near;
