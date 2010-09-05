@@ -112,32 +112,37 @@ namespace QuanLyThiNghe_ThuKy
                 }
                 if (DaNhapDiemHet)
                     dataGridView1.Enabled = false;
+                else
+                    dataGridView1.Enabled = true;
             }
 
         }
         public void Luu()
         {
-            int thuky1, thuky2, thuky3;
-            thuky1 = thuky2 = thuky3 = 0;
-            System.Collections.ArrayList TaiKhoan = ((frmThuKy)this.ParentForm).TaiKhoanHienTai;
-            thuky1 = int.Parse(((DataRow)TaiKhoan[0])[0].ToString());
-            if (TaiKhoan.Count==2)
-                thuky2 = int.Parse(((DataRow)TaiKhoan[1])[0].ToString());
-            else if (TaiKhoan.Count == 3)
+            if (dataGridView1.Enabled)
             {
-                thuky2 = int.Parse(((DataRow)TaiKhoan[1])[0].ToString());
-                thuky3 = int.Parse(((DataRow)TaiKhoan[2])[0].ToString());
-            }
+                int thuky1, thuky2, thuky3;
+                thuky1 = thuky2 = thuky3 = 0;
+                System.Collections.ArrayList TaiKhoan = ((frmThuKy)this.ParentForm).TaiKhoanHienTai;
+                thuky1 = int.Parse(((DataRow)TaiKhoan[0])[0].ToString());
+                if (TaiKhoan.Count == 2)
+                    thuky2 = int.Parse(((DataRow)TaiKhoan[1])[0].ToString());
+                else if (TaiKhoan.Count == 3)
+                {
+                    thuky2 = int.Parse(((DataRow)TaiKhoan[1])[0].ToString());
+                    thuky3 = int.Parse(((DataRow)TaiKhoan[2])[0].ToString());
+                }
 
-            dataGridView1.EndEdit();
-            foreach (DataRow item in DanhSachTheoPhong.Rows)
-                if (item["DiemLT"].ToString() != "")
-                    DanhSachThiSinh.CapNhatDiemLyThuyet(int.Parse(item["MaThiSinh"].ToString()), float.Parse(item["DiemLT"].ToString()), thuky1, thuky2, thuky3, false);
-            //CapNhatDiemLyThuyet
-            if (DanhSachThiSinh.LuuThayDoi())
-                XtraMessageBox.Show("Đã lưu dữ liệu thành công.", "Nhập điểm lý thuyết", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                XtraMessageBox.Show("Lưu dữ liệu không thành công, xin vui lòng kiểm tra lỗi và thực hiện lưu lại.", "Nhập điểm lý thuyết", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dataGridView1.EndEdit();
+                foreach (DataRow item in DanhSachTheoPhong.Rows)
+                    if (item["DiemLT"].ToString() != "")
+                        DanhSachThiSinh.CapNhatDiemLyThuyet(int.Parse(item["MaThiSinh"].ToString()), float.Parse(item["DiemLT"].ToString()), thuky1, thuky2, thuky3, false);
+                //CapNhatDiemLyThuyet
+                if (DanhSachThiSinh.LuuThayDoi())
+                    XtraMessageBox.Show("Đã lưu dữ liệu thành công.", "Nhập điểm lý thuyết", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    XtraMessageBox.Show("Lưu dữ liệu không thành công, xin vui lòng kiểm tra lỗi và thực hiện lưu lại.", "Nhập điểm lý thuyết", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -178,8 +178,8 @@ namespace QuanLyThiNghe_ThuKy
                 {
                     SqlHelper.ExecuteNonQuery(StrConnection, "thuky_DongBoHoa_CapNhatDiem",
                         item["MaThiSinh"].ToString(),
-                        item["DiemLT"].ToString() == "" ? "-1" : item["DiemLT"].ToString(),
-                        item["DiemTH"].ToString() == "" ? "-1" : item["DiemTH"].ToString(),
+                        item["DiemLT"].ToString() == "" ? DBNull.Value : item["DiemLT"],
+                        item["DiemTH"].ToString() == "" ? DBNull.Value : item["DiemTH"],
                         item["ThuKy1"].ToString(),
                         item["ThuKy2"].ToString(),
                         item["ThuKy3"].ToString()

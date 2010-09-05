@@ -41,6 +41,7 @@ namespace QuanLyThiNghe.Forms
             checkEdit4.Checked = (cf.ChoHoiDongNhanKetQua == true ? true : false);
             checkEdit5.Checked = (cf.ChoThuKyNhapDiem == true ? true : false);
             checkEdit6.Checked = (cf.ChoLoginWeb == true ? true : false);
+            chkNLD.Checked = (cf.ChoThuKyQuayLaiKhiNhapDiem == true ? true : false);
             memoEdit1.Text = cf.NoiDungThongBaoTrenWeb;
             DMKyThi kt = (from k in en.DMKyThi where k.MaKyThi == cf.KyThiHienTai select k).First();
             comboBoxEdit1.SelectedText = kt.TenKyThi;
@@ -65,7 +66,7 @@ namespace QuanLyThiNghe.Forms
                 cf.ChoThuKyNhapDiem = checkEdit5.Checked;
                 cf.ChoLoginWeb = checkEdit6.Checked;
                 cf.NoiDungThongBaoTrenWeb = memoEdit1.Text;
-
+                cf.ChoThuKyQuayLaiKhiNhapDiem = chkNLD.Checked;
                 if (comboBoxEdit1.SelectedItem != null)
                 {
                     string kythi = comboBoxEdit1.SelectedItem.ToString();
