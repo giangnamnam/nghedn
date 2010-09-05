@@ -97,6 +97,23 @@ namespace QuanLyThiNghe_ThuKy
             DanhSachTheoPhong = DanhSachThiSinh.LayTableDanhSachThiSinhTheoPhongThi(MaHoiDongThi, MaMonThi, PhongThi);
             dataGridView1.DataSource = DanhSachTheoPhong;
             dataGridView1.Refresh();
+
+            bool dcQuayLai = ((frmThuKy)this.MdiParent).KT.ChoThuKyQuayLaiKhiNhapDiem;
+            if (!dcQuayLai)
+            {
+                bool DaNhapDiemHet = true;
+                foreach (DataRow item in DanhSachTheoPhong.Rows)
+                {
+                    if (string.IsNullOrEmpty(item["DiemLT"].ToString()))
+                    {
+                        DaNhapDiemHet = false;
+                        break;
+                    }
+                }
+                if (DaNhapDiemHet)
+                    dataGridView1.Enabled = false;
+            }
+
         }
         public void Luu()
         {
