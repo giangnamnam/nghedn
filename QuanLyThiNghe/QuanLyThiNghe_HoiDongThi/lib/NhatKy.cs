@@ -55,8 +55,19 @@ namespace QuanLyThiNghe_ThuKy
             string expression = "(Convert(" + "DaDongBo" + ",'System.String') = " + "False" + ")";
             DataRow[] drs = dt.Select(expression);
 
-            foreach (DataRow item in drs)
-                XuLyDuLieu.DongBoNhatKy(item);
+            try
+            {
+                foreach (DataRow item in drs)
+                {
+                    XuLyDuLieu.DongBoNhatKy(item);
+                    item["DaDongBo"] = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                GhiNhatKy();
+            }
+            GhiNhatKy();
         }
         
 

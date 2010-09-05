@@ -44,7 +44,9 @@ namespace QuanLyThiNghe_ThuKy
             XtraMessageBox.Show("Số bài được đồng bộ: "+dbhd.ToString()+".", "Đồng bộ dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             //đồng bộ hóa nhật ký.
+            NK.DongBoHoaNhatKy();
 
+            LoadThongTin();  
 
         }
 

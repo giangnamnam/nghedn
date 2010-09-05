@@ -221,15 +221,15 @@ namespace QuanLyThiNghe_ThuKy
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
             //Lưu
-            if (Application.OpenForms.Count > 1)
+            if (this.MdiChildren.Length > 0 )
             {
-                if (Application.OpenForms[Application.OpenForms.Count - 1].Name == "frmLyThuyet")
-                {
-                    ((frmLyThuyet)Application.OpenForms["frmLyThuyet"]).Luu();
-                }
-                else if (Application.OpenForms[Application.OpenForms.Count - 1].Name == "frmThucHanh")
+                if (frm_active == "frmThucHanh")
                 {
                     ((frmThucHanh)Application.OpenForms["frmThucHanh"]).Luu();
+                }
+                else if (frm_active == "frmLyThuyet")
+                {
+                    ((frmLyThuyet)Application.OpenForms["frmLyThuyet"]).Luu();
                 }
             }
         }

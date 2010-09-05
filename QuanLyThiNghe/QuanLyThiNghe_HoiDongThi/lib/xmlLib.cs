@@ -233,7 +233,7 @@ namespace QuanLyThiNghe_ThuKy
             try
             {
                 SqlConnection con = new SqlConnection("Data Source=designpro.vn;Initial Catalog=ThiNge;Persist Security Info=True;User ID=thinge;Password=tn123@");
-                SqlCommand com = new SqlCommand(s_DongBoDiem, con);
+                SqlCommand com = new SqlCommand(s_DongBoNhatKy, con);
                 com.CommandType = CommandType.StoredProcedure;
                 com.Parameters.Add(new SqlParameter("MaTaiKhoan", pNhatKy["MaTaiKhoan"].ToString()));
                 com.Parameters.Add(new SqlParameter("NgayThaoTac", pNhatKy["NgayThaoTac"].ToString()));
