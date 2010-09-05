@@ -148,14 +148,18 @@ namespace QuanLyThiNghe_ThuKy
             Luu();
             int index = repositoryItemLookUpEdit3.GetDataSourceRowIndex(repositoryItemLookUpEdit3.Columns["PhongThi"], le_Phong.EditValue); //  .Items.IndexOf(barEditItem1.EditValue
             DataTable tbl = (DataTable)repositoryItemLookUpEdit3.DataSource;
-            if (index==(tbl.Rows.Count-1))
+            if (tbl != null)
             {
-                XtraMessageBox.Show("Đã chấm điểm đến phòng cuối cùng.", "Thư ký", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (index == (tbl.Rows.Count - 1))
+                {
+                    XtraMessageBox.Show("Đã chấm điểm đến phòng cuối cùng.", "Thư ký", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (index < tbl.Rows.Count)
+                {
+                    le_Phong.EditValue = tbl.Rows[index + 1][0];
+                }
             }
-            else if (index<tbl.Rows.Count)
-            {
-                le_Phong.EditValue = tbl.Rows[index + 1][0];
-            }
+            
                 
 
         }
