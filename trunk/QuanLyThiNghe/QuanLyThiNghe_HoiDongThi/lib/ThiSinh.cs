@@ -4,6 +4,7 @@ using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.ApplicationBlocks.Data;
 
 namespace QuanLyThiNghe_ThuKy
 {
@@ -163,76 +164,34 @@ namespace QuanLyThiNghe_ThuKy
             expression += "or (Convert(" + "DiemTH" + ",'System.String') <> " + "''" + "))";
             expression += " and (Convert(" + "DaDongBo" + ",'System.String') = " + "False" + ")";
 
-            DataTable tbl = new DataTable("ThiSinh");
-            tbl = LayDanhSachTheoDieuKien(expression);
-            tbl.TableName = "ThiSinh";
-
-            SqlConnection conn = new SqlConnection("Data Source=designpro.vn;Initial Catalog=ThiNge;Persist Security Info=True;User ID=thinge;Password=tn123@");
-            SqlCommand cmd = new SqlCommand("thuky_DongBoHoa_CapNhatDiem", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            conn.Open();
-            SqlDataAdapter da = new SqlDataAdapter();
-            DataSet ds = new DataSet();
-            ds.Tables.Add(tbl);
-
-/*@MaThiSinh int
-,@DiemLT FLOAT
-,@DiemTH FLOAT
-,@ThuKy1 int
-,@ThuKy2 int
-,@ThuKy3 int*/
-
-         try
-         {
-             cmd.Parameters.Add("@DiemLT", SqlDbType.Float, 4, "DiemLT");
-             cmd.Parameters.Add("@DiemTH", SqlDbType.Float, 4, "DiemTH");
-             cmd.Parameters.Add("@ThuKy1", SqlDbType.Int, 4, "ThuKy1");
-             cmd.Parameters.Add("@ThuKy2", SqlDbType.Int, 4, "ThuKy2");
-             cmd.Parameters.Add("@ThuKy3", SqlDbType.Int, 4, "ThuKy3");
-
-             SqlParameter parm = cmd.Parameters.Add("@MaThiSinh", SqlDbType.Int, 15, "MaThiSinh");
-             parm.SourceVersion = DataRowVersion.Original;
-             
-             da.UpdateCommand = cmd;
-             da.Update(ds, "ThiSinh");
-         }
-         catch (Exception e)
-         {
-             Console.WriteLine("Error: " + e);
-         }
-         finally
-         {
-             conn.Close();
-         }
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            //try
-            //{
-            //    foreach (DataRow item in drs)
-            //    {
-                    
-
-            //        item["DaDongBo"] = true;
-            //        SoBaiDuocDongBo++;
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    LuuThayDoi();
-            //}
+            DataRow[] drs = dt.Select(expression);
+            /*@MaThiSinh int
+            ,@DiemLT FLOAT
+            ,@DiemTH FLOAT
+            ,@ThuKy1 int
+            ,@ThuKy2 int
+            ,@ThuKy3 int*/
+            string StrConnection = "Data Source=designpro.vn;Initial Catalog=ThiNge;Persist Security Info=True;User ID=thinge;Password=tn123@";
+            try
+            {
+                foreach (DataRow item in drs)
+                {
+                    SqlHelper.ExecuteNonQuery(StrConnection, "thuky_DongBoHoa_CapNhatDiem",
+                        item["MaThiSinh"].ToString(),
+                        item["DiemLT"].ToString() == "" ? "-1" : item["DiemLT"].ToString(),
+                        item["DiemTH"].ToString() == "" ? "-1" : item["DiemTH"].ToString(),
+                        item["ThuKy1"].ToString(),
+                        item["ThuKy2"].ToString(),
+                        item["ThuKy3"].ToString()
+                        );
+                    item["DaDongBo"] = true;
+                    SoBaiDuocDongBo++;
+                }
+            }
+            catch (Exception ex)
+            {
+                LuuThayDoi();
+            }
             
             LuuThayDoi();
             return SoBaiDuocDongBo;
