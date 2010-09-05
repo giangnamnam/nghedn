@@ -161,35 +161,79 @@ namespace QuanLyThiNghe_ThuKy
 
             string expression = "((Convert(" + "DiemLT" + ",'System.String') <> " + "''" + ")";
             expression += "or (Convert(" + "DiemTH" + ",'System.String') <> " + "''" + "))";
-
             expression += " and (Convert(" + "DaDongBo" + ",'System.String') = " + "False" + ")";
-            DataRow[] drs = dt.Select(expression);
 
-            SqlConnection con = new SqlConnection("Data Source=designpro.vn;Initial Catalog=ThiNge;Persist Security Info=True;User ID=thinge;Password=tn123@");
-            SqlCommand com = new SqlCommand("thuky_DongBoHoa_CapNhatDiem", con);
-            com.CommandType = CommandType.StoredProcedure;
-            con.Open();
-            try
-            {
-                foreach (DataRow item in drs)
-                {
-                    com.Parameters.Add(new SqlParameter("MaThiSinh", item["MaThiSinh"].ToString()));
-                    com.Parameters.Add(new SqlParameter("DiemLT", item["DiemLT"].ToString()));
-                    com.Parameters.Add(new SqlParameter("DiemTH", item["DiemTH"].ToString()));
-                    com.Parameters.Add(new SqlParameter("ThuKy1", item["ThuKy1"].ToString()));
-                    com.Parameters.Add(new SqlParameter("ThuKy2", item["ThuKy2"].ToString()));
-                    com.Parameters.Add(new SqlParameter("ThuKy3", item["ThuKy3"].ToString()));
-                    com.ExecuteNonQuery();
+            DataTable tbl = new DataTable("ThiSinh");
+            tbl = LayDanhSachTheoDieuKien(expression);
+            tbl.TableName = "ThiSinh";
 
-                    item["DaDongBo"] = true;
-                    SoBaiDuocDongBo++;
-                }
-            }
-            catch (Exception)
-            {
-                LuuThayDoi();
-            }
-            finally { con.Close(); }
+            SqlConnection conn = new SqlConnection("Data Source=designpro.vn;Initial Catalog=ThiNge;Persist Security Info=True;User ID=thinge;Password=tn123@");
+            SqlCommand cmd = new SqlCommand("thuky_DongBoHoa_CapNhatDiem", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            ds.Tables.Add(tbl);
+
+/*@MaThiSinh int
+,@DiemLT FLOAT
+,@DiemTH FLOAT
+,@ThuKy1 int
+,@ThuKy2 int
+,@ThuKy3 int*/
+
+         try
+         {
+             cmd.Parameters.Add("@DiemLT", SqlDbType.Float, 4, "DiemLT");
+             cmd.Parameters.Add("@DiemTH", SqlDbType.Float, 4, "DiemTH");
+             cmd.Parameters.Add("@ThuKy1", SqlDbType.Int, 4, "ThuKy1");
+             cmd.Parameters.Add("@ThuKy2", SqlDbType.Int, 4, "ThuKy2");
+             cmd.Parameters.Add("@ThuKy3", SqlDbType.Int, 4, "ThuKy3");
+
+             SqlParameter parm = cmd.Parameters.Add("@MaThiSinh", SqlDbType.Int, 15, "MaThiSinh");
+             parm.SourceVersion = DataRowVersion.Original;
+             
+             da.UpdateCommand = cmd;
+             da.Update(ds, "ThiSinh");
+         }
+         catch (Exception e)
+         {
+             Console.WriteLine("Error: " + e);
+         }
+         finally
+         {
+             conn.Close();
+         }
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            //try
+            //{
+            //    foreach (DataRow item in drs)
+            //    {
+                    
+
+            //        item["DaDongBo"] = true;
+            //        SoBaiDuocDongBo++;
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    LuuThayDoi();
+            //}
+            
             LuuThayDoi();
             return SoBaiDuocDongBo;
         }
