@@ -3,6 +3,8 @@
 <%@ Register assembly="DevExpress.Web.ASPxGridView.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGridView" tagprefix="dxwgv" %>
 <%@ Register assembly="DevExpress.Web.ASPxEditors.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dxe" %>
 
+<%@ Register assembly="DevExpress.Web.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxDataView" tagprefix="dxdv" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,7 +18,7 @@
     </div>
     <dxwgv:ASPxGridView ID="ASPxGridView1" runat="server" 
         AutoGenerateColumns="False" CssFilePath="~/App_Themes/Aqua/{0}/styles.css" 
-        CssPostfix="Aqua" DataSourceID="AccessDataSource1">
+        CssPostfix="Aqua" DataSourceID="SqlDataSource1" KeyFieldName="MaThiSinh">
         <Styles CssFilePath="~/App_Themes/Aqua/{0}/styles.css" CssPostfix="Aqua">
         </Styles>
         <SettingsLoadingPanel Text="" />
@@ -59,22 +61,57 @@
                 Width="13px" />
         </Images>
         <Columns>
-            <dxwgv:GridViewDataTextColumn FieldName="HO" VisibleIndex="0">
+            <dxwgv:GridViewDataTextColumn FieldName="MaThiSinh" VisibleIndex="0" 
+                ReadOnly="True">
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn FieldName="TEN" VisibleIndex="1">
+            <dxwgv:GridViewDataTextColumn FieldName="MaKyThi" VisibleIndex="1">
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn FieldName="NGAYSINH" VisibleIndex="2">
+            <dxwgv:GridViewDataTextColumn FieldName="MaTruong" VisibleIndex="2">
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn FieldName="NOISINH" VisibleIndex="3">
+            <dxwgv:GridViewDataTextColumn FieldName="MaMonThi" VisibleIndex="3">
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn FieldName="LOP" VisibleIndex="4">
+            <dxwgv:GridViewDataTextColumn FieldName="Ho" VisibleIndex="4">
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn FieldName="TENNGHE" VisibleIndex="5">
+            <dxwgv:GridViewDataTextColumn FieldName="Ten" VisibleIndex="5">
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn FieldName="TENTRUONG" VisibleIndex="6">
+            <dxwgv:GridViewDataTextColumn FieldName="NgaySinh" VisibleIndex="6">
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn FieldName="HUYEN" VisibleIndex="7">
+            <dxwgv:GridViewDataTextColumn FieldName="NoiSinh" VisibleIndex="7">
             </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="Lop" VisibleIndex="8">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="SBD" VisibleIndex="9">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="PhongThi" VisibleIndex="10">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="MaPhach" VisibleIndex="11">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="MaHoiDong" VisibleIndex="12">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="DiemLT" VisibleIndex="13">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="DiemTH" VisibleIndex="14">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="TongDiem" VisibleIndex="15">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="XepLoai" VisibleIndex="16">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="NguoiTao" VisibleIndex="17">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataDateColumn FieldName="NgayTao" VisibleIndex="18">
+            </dxwgv:GridViewDataDateColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="ThuKy1" VisibleIndex="19">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="ThuKy2" VisibleIndex="20">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="ThuKy3" VisibleIndex="21">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="NguoiCapNhat" VisibleIndex="22">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataDateColumn FieldName="NgayCapNhat" VisibleIndex="23">
+            </dxwgv:GridViewDataDateColumn>
+            <dxwgv:GridViewDataCheckColumn FieldName="DaXoa" VisibleIndex="24">
+            </dxwgv:GridViewDataCheckColumn>
         </Columns>
         <StylesEditors>
             <ProgressBar Height="25px">
@@ -116,45 +153,9 @@
                 Width="7px" />
         </ImagesEditors>
     </dxwgv:ASPxGridView>
-    <asp:AccessDataSource ID="AccessDataSource1" runat="server" 
-        DataFile="~/App_Data/DataTHPT00.mdb" SelectCommand="SELECT        DS_THISINH.HO, DS_THISINH.TEN, DS_THISINH.NGAYSINH, DS_THISINH.NOISINH, DS_THISINH.LOP, DS_NGHE.TENNGHE, DS_TRUONG.TENTRUONG, 
-                         DS_THISINH.HUYEN
-FROM            ((DS_THISINH INNER JOIN
-                         DS_TRUONG ON DS_THISINH.MATRUONG = DS_TRUONG.MATRUONG) INNER JOIN
-                         DS_NGHE ON DS_THISINH.MANGHE = DS_NGHE.MANGHE)
-ORDER BY DS_THISINH.HUYEN, DS_NGHE.TENNGHE, DS_TRUONG.TENTRUONG">
-    </asp:AccessDataSource>
-    
-    
-    
-    
-    <script type="text/javascript">
-    var macAddress = "";
-    var ipAddress = "";
-    var computerName = "";
-    var wmi = GetObject("winmgmts:{impersonationLevel=impersonate}");
-    e = new Enumerator(wmi.ExecQuery("SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled = True"));
-    for(; !e.atEnd(); e.moveNext()) {
-        var s = e.item(); 
-        macAddress = s.MACAddress;
-        ipAddress = s.IPAddress(0);
-        computerName = s.DNSHostName;
-    } 
-</script>
-
-Instead of Win32_Processor, here we'll access Win32_NetworkAdapterConfiguration to read network related details like the MAC Address, IP Address and the computer name.
-
-Then we can simply use textboxes to display that information or whatever you like.
-
-<input type="text" id="txtMACAdress" />
-<input type="text" id="txtIPAdress" />
-<input type="text" id="txtComputerName" />
-
-<script type="text/javascript">
-    document.getElementById("txtMACAdress").value = unescape(macAddress);
-    document.getElementById("txtIPAdress").value = unescape(ipAddress);
-    document.getElementById("txtComputerName").value = unescape(computerName);
-</script>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+        SelectCommand="SELECT * FROM [ThiSinh]"></asp:SqlDataSource>
     </form>
 </body>
 </html>

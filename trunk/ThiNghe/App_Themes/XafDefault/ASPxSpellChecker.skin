@@ -1,0 +1,4 @@
+<%@ Register TagPrefix="dxwsc" Namespace="DevExpress.Web.ASPxSpellChecker" Assembly="DevExpress.Web.ASPxSpellChecker.v9.2" %>
+<dxwsc:ASPxSpellChecker runat="server" 
+    CssFilePath="~/App_Themes/XafDefault/{0}/styles.css" CssPostfix="xaf" ImageFolder="~/App_Themes/XafDefault/{0}/">
+</dxwsc:ASPxSpellChecker>
