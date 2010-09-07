@@ -12,7 +12,13 @@
     <AssemblyName>QuanLyThiNghe</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <PublishUrl>http://localhost/QuanLyThiNghe/</PublishUrl>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>B3ECE47934732D367130ACC6C2E91A93D4E5065D</ManifestCertificateThumbprint>
+    <ManifestKeyFile>QuanLyThiNghe_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <ApplicationIcon>reports %281%29.ico</ApplicationIcon>
+    <PublishUrl>ftp://thinghe.gdtrhdongnai.edu.vn/httpdocs/ThiNghe/ChuTich/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -22,11 +28,22 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <InstallUrl>http://thinghe.gdtrhdongnai.edu.vn/thinghe/chutich/</InstallUrl>
+    <SupportUrl>http://thinghe.gdtrhdongnai.edu.vn</SupportUrl>
+    <ErrorReportUrl>http://thinghe.gdtrhdongnai.edu.vn</ErrorReportUrl>
+    <ProductName>QuanLyThiNghe</ProductName>
+    <PublisherName>GDTrHDN</PublisherName>
+    <SuiteName>ChuTich-ThiNghe</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>index.html</WebPage>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+    <BootstrapperComponentsUrl>http://gdtrhdongnai.edu.vn/ThiNghe/Prerequisites/</BootstrapperComponentsUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -478,7 +495,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>db.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="QuanLyThiNghe_TemporaryKey.pfx" />
     <None Include="Resources\HDT.png" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="reports %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

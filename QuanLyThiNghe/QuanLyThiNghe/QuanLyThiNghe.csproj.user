@@ -1,17 +1,12 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>
-    </PublishUrlHistory>
-    <InstallUrlHistory>
-    </InstallUrlHistory>
-    <SupportUrlHistory>
-    </SupportUrlHistory>
+    <PublishUrlHistory>ftp://thinghe.gdtrhdongnai.edu.vn/httpdocs/ThiNghe/ChuTich/|ftp://thinghe.gdtrhdongnai.edu.vn/httpdocs /ThiNghe /ChuTich/|ftp://thinghe.gdtrhdongnai.edu.vn/httpdocs / ThiNghe / ChuTich/|ftp://thinghe.gdtrhdongnai.edu.vn/httpdocs/|http://localhost/QuanLyThiNghe/</PublishUrlHistory>
+    <InstallUrlHistory>http://thinghe.gdtrhdongnai.edu.vn/thinghe/chutich/|http://thinghe.gdtrhdongnai.edu.vn/chutich/</InstallUrlHistory>
+    <SupportUrlHistory>http://thinghe.gdtrhdongnai.edu.vn</SupportUrlHistory>
     <UpdateUrlHistory>
     </UpdateUrlHistory>
-    <BootstrapperUrlHistory>
-    </BootstrapperUrlHistory>
-    <ErrorReportUrlHistory>
-    </ErrorReportUrlHistory>
+    <BootstrapperUrlHistory>http://gdtrhdongnai.edu.vn/ThiNghe/Prerequisites/</BootstrapperUrlHistory>
+    <ErrorReportUrlHistory>http://thinghe.gdtrhdongnai.edu.vn</ErrorReportUrlHistory>
     <FallbackCulture>en-US</FallbackCulture>
     <VerifyUploadedFiles>true</VerifyUploadedFiles>
     <ProjectView>ShowAllFiles</ProjectView>

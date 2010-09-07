@@ -7,19 +7,23 @@
     <style>
         .btn
         {
+            background-position: center center;
+            border: 1px solid #82A2CA;
             float: left;
-            margin-left: 70px;
+            height: 20px;
+            background-image: url('img/edtButtonBack.gif');
+            color: #253A54;
         }
     </style>
 </head>
-<body style="margin: 0; padding: 0; color: #333333;">
+<body style="margin: 0; padding: 0; color: #2B4362;">
     <form id="form1" runat="server">
     <div id="header" style="border-color: #80A0C9; width: 100%; background-image: url('img/DialogBackRepeat.gif');
         background-color: #90B0D3; height: 87px;">
         <div style="background-position: right; float: right; border-color: #80A0C9; width: 100%;
             background-image: url('img/DialogBackImage.jpg'); height: 87px; background-repeat: no-repeat;">
         
-        <h1 style="line-height:75px; margin-left:20px;"> HùngVQ</h1>
+        <h1 style="line-height:75px; margin:0; margin-left:20px;"> HùngVQ</h1>
         </div>
     </div>
     <center>
@@ -47,13 +51,17 @@
                     Mật khẩu
                 </td>
                 <td>
-                    <asp:TextBox ID="txtPass" runat="server" CssClass="txt" Width="300px"></asp:TextBox>
+                    <asp:TextBox ID="txtPass" runat="server" CssClass="txt" Width="300px" 
+                        TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPass"
                         ErrorMessage="Xin vui lòng nhập mật khẩu">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td >
+                    
+                </td>
+                <td >
                     <asp:Button ID="btnDangNhap" runat="server" CssClass="btn" Text="Đăng nhập" />
                 </td>
             </tr>
