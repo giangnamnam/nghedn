@@ -35,10 +35,7 @@ public partial class DangNhap : System.Web.UI.Page
         }
     }
 
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        
-    }
+
     protected void loadStatus()
     {
         if (Session["ThanhVien"] != null)
@@ -46,11 +43,11 @@ public partial class DangNhap : System.Web.UI.Page
             //NotLogged.Visible = false; Logged.Visible = true;
             System.Collections.ArrayList arr = new ArrayList();
             arr = (ArrayList)(Session["ThanhVien"]);
-            UserLink.Text = arr[2].ToString();
+           // UserLink.Text = arr[2].ToString();
         }
         else
         {
-            NotLogged.Visible = true; Logged.Visible = false;
+            //NotLogged.Visible = true; Logged.Visible = false;
         }
     }
     protected DataView UserLog(string UserName, string Password)

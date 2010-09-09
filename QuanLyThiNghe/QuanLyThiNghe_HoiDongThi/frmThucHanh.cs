@@ -34,18 +34,48 @@ namespace QuanLyThiNghe_ThuKy
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
-            string current = dgv.CurrentCell.Value.ToString();
-            if (current != "")
+            if (dgv.CurrentCell.Value != null)
             {
-                float val = -1;
-                bool pass = float.TryParse(current, out val);
-                if (pass)
-                    pass = ((val <= 10) && (val >= 0));
-                if (!pass)
+
+                string current = dgv.CurrentCell.Value.ToString();
+                if (current != "")
                 {
-                    XtraMessageBox.Show("Điểm không hợp lệ, xin vui lòng nhập lại.", "Nhập điểm lý thuyết", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    dgv.CurrentCell.Value = DBNull.Value;
-                    SendKeys.Send("{UP}");
+                    double val = -1;
+                    bool pass = double.TryParse(current, out val);
+                    if (pass)
+                    {
+                        if ((val <= 100) && (val > 10))
+                        {
+                            int Nguyen = (int)Math.Ceiling(val / 10); ;
+                            double Du = (val % 10);
+                            if (Du > 0)
+                            {
+                                Du = 0.5;
+                                Nguyen--;
+                            }
+                            val = Nguyen + Du;
+                            pass = true;
+                        }
+                        if ((val <= 10) && (val >= 0))
+                        {
+                            val = Math.Round(val, 1);
+                            pass = true;
+                        }
+                        else
+                            pass = false;
+                    }
+
+                    if (!pass)
+                    {
+                        XtraMessageBox.Show("Điểm " + val.ToString() + " không hợp lệ, xin vui lòng nhập lại.", "Nhập điểm lý thuyết", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        dgv.CurrentCell.Value = "=>" + dgv.CurrentCell.Value.ToString();
+                        //SendKeys.Send("+{Home}");
+                        SendKeys.Send("{UP}");
+                    }
+                    else
+                    {
+                        dgv.CurrentCell.Value = val;
+                    }
                 }
             }
         }
@@ -144,5 +174,34 @@ namespace QuanLyThiNghe_ThuKy
                     XtraMessageBox.Show("Lưu dữ liệu không thành công, xin vui lòng kiểm tra lỗi và thực hiện lưu lại.", "Nhập điểm lý thuyết", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dataGridView1_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+
+            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "";
+            DataGridViewCell cell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            if (cell.IsInEditMode)
+            {
+                double val;
+                bool pas = double.TryParse(e.FormattedValue.ToString(), out val);
+
+                if (!(string.IsNullOrEmpty(e.FormattedValue.ToString()) || (pas && (val >= 0 && val <= 100))))
+                {
+
+                    XtraMessageBox.Show("Điểm " + e.FormattedValue.ToString() + " không hợp lệ, xin vui lòng nhập lại.", "Nhập điểm lý thuyết", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "Điểm bạn nhập không hợp lệ. Xin vui lòng nhập lại điểm hoặc bấm Esc để bỏ qua.";
+                    this.Focus();
+                    this.dataGridView1.Focus();
+
+                    DataGridViewTextBoxEditingControl editControl =
+                    (DataGridViewTextBoxEditingControl)dataGridView1.EditingControl;
+                    editControl.SelectionStart = 0;
+                    editControl.SelectionLength = editControl.Text.Length;
+                    e.Cancel = true;
+
+                }
+            }
+        }
+
     }
 }

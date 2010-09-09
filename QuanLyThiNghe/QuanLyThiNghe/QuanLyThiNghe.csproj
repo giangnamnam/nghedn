@@ -147,6 +147,12 @@
     <Compile Include="Forms\frmCapNhatTruong.Designer.cs">
       <DependentUpon>frmCapNhatTruong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmDanhMaPhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDanhMaPhach.Designer.cs">
+      <DependentUpon>frmDanhMaPhach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmGioiThieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,7 +273,9 @@
     <Compile Include="Forms\frmCauHinh.Designer.cs">
       <DependentUpon>frmCauHinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="lib\DanhMaPhach.cs" />
     <Compile Include="lib\lib.cs" />
+    <Compile Include="lib\SQLHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frmCapNhatHDT.resx">
@@ -287,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCauHinh.resx">
       <DependentUpon>frmCauHinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDanhMaPhach.resx">
+      <DependentUpon>frmDanhMaPhach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmGioiThieu.resx">
       <DependentUpon>frmGioiThieu.cs</DependentUpon>
