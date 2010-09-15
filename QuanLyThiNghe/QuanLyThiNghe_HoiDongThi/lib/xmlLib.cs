@@ -208,7 +208,7 @@ namespace QuanLyThiNghe_ThuKy
                 DataProvider.GhiTaiKhoan(ReadFromDatabase(stTaiKhoan));
             
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -262,7 +262,8 @@ namespace QuanLyThiNghe_ThuKy
 
         private static DataTable ReadFromDatabase(string Command)
         {
-            SqlConnection con = new SqlConnection("Data Source=designpro.vn;Initial Catalog=ThiNge;Persist Security Info=True;User ID=thinge;Password=tn123@");
+            //SqlConnection con = new SqlConnection("Data Source=designpro.vn;Initial Catalog=ThiNge;Persist Security Info=True;User ID=thinge;Password=tn123@");
+            SqlConnection con = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=ThiNge;Integrated Security=True");
             SqlCommand com = new SqlCommand(Command, con);
             com.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(com);

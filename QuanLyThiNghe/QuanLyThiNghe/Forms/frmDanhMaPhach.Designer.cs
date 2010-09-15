@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhMaPhach));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCapNhat = new DevExpress.XtraEditors.SimpleButton();
@@ -42,13 +43,26 @@
             this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
             this.chk = new DevExpress.XtraEditors.CheckEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.reviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.designToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk.Properties)).BeginInit();
@@ -56,6 +70,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCapNhat
@@ -178,6 +195,7 @@
             this.progressBarControl1.EditValue = "0";
             this.progressBarControl1.Location = new System.Drawing.Point(199, 137);
             this.progressBarControl1.Name = "progressBarControl1";
+            this.progressBarControl1.Properties.EndColor = System.Drawing.SystemColors.HighlightText;
             this.progressBarControl1.Size = new System.Drawing.Size(493, 18);
             this.progressBarControl1.TabIndex = 25;
             this.progressBarControl1.Visible = false;
@@ -186,10 +204,11 @@
             // chk
             // 
             this.chk.EditValue = true;
+            this.chk.Enabled = false;
             this.chk.Location = new System.Drawing.Point(468, 57);
             this.chk.Name = "chk";
-            this.chk.Properties.Caption = "Đánh số tăng thí sinh ngẫu nhiên";
-            this.chk.Size = new System.Drawing.Size(212, 19);
+            this.chk.Properties.Caption = "Đánh mã phách ngẫu nhiên";
+            this.chk.Size = new System.Drawing.Size(212, 18);
             this.chk.TabIndex = 26;
             // 
             // groupBox1
@@ -203,6 +222,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cách đánh mã phách";
             // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(9, 47);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(219, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "Mã phách bắt đầu bằng số thứ tự phòng";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -215,23 +244,14 @@
             this.radioButton1.Text = "Mã phách bắt đầu bằng đầu phách";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(9, 47);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(219, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Mã phách bắt đầu bằng số thứ tự phòng";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
             // textEdit1
             // 
-            this.textEdit1.EditValue = "{0:0000}";
+            this.textEdit1.EditValue = "{0}";
             this.textEdit1.Location = new System.Drawing.Point(54, 22);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(104, 20);
             this.textEdit1.TabIndex = 28;
+            this.textEdit1.ToolTip = "định dạng 4 ký tự {0:0000}";
             // 
             // labelControl2
             // 
@@ -252,6 +272,7 @@
             // textEdit2
             // 
             this.textEdit2.EditValue = "{0:00}";
+            this.textEdit2.Enabled = false;
             this.textEdit2.Location = new System.Drawing.Point(54, 46);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(104, 20);
@@ -270,11 +291,89 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Định dạng số";
             // 
+            // dropDownButton1
+            // 
+            this.dropDownButton1.DropDownControl = this.popupMenu1;
+            this.dropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("dropDownButton1.Image")));
+            this.dropDownButton1.Location = new System.Drawing.Point(594, 82);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(86, 30);
+            this.dropDownButton1.TabIndex = 29;
+            this.dropDownButton1.Text = "In";
+            this.dropDownButton1.Click += new System.EventHandler(this.dropDownButton1_Click);
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Review";
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.ImageIndex = 1;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Design";
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.ImageIndex = 0;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Images = this.imageList1;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem1,
+            this.barButtonItem2});
+            this.barManager1.MaxItemId = 2;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Edit_16x16.png");
+            this.imageList1.Images.SetKeyName(1, "Preview_16x16.png");
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reviewToolStripMenuItem,
+            this.designToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(112, 48);
+            // 
+            // reviewToolStripMenuItem
+            // 
+            this.reviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reviewToolStripMenuItem.Image")));
+            this.reviewToolStripMenuItem.Name = "reviewToolStripMenuItem";
+            this.reviewToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.reviewToolStripMenuItem.Text = "Review";
+            // 
+            // designToolStripMenuItem
+            // 
+            this.designToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("designToolStripMenuItem.Image")));
+            this.designToolStripMenuItem.Name = "designToolStripMenuItem";
+            this.designToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.designToolStripMenuItem.Text = "Design";
+            // 
             // frmDanhMaPhach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 437);
+            this.Controls.Add(this.dropDownButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chk);
@@ -284,8 +383,12 @@
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "frmDanhMaPhach";
-            this.Text = "frmDanhMaPhach";
+            this.Text = "Đánh mã phách";
             this.Load += new System.EventHandler(this.frmDanhMaPhach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
@@ -296,6 +399,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -321,5 +427,18 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private System.Windows.Forms.GroupBox groupBox2;
+        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem reviewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem designToolStripMenuItem;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

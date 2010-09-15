@@ -112,10 +112,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crosstab.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Crosstab.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachThiSinh.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DanhSachThiSinh.xsd</DependentUpon>
+    </Compile>
     <Compile Include="db.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DSDauMaPhach.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDauMaPhach.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmCapNhatHDT.cs">
       <SubType>Form</SubType>
@@ -164,6 +179,12 @@
     </Compile>
     <Compile Include="Forms\frmHuyen.Designer.cs">
       <DependentUpon>frmHuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInDanhSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInDanhSach.Designer.cs">
+      <DependentUpon>frmInDanhSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmInThiSinh.cs">
       <SubType>Form</SubType>
@@ -273,6 +294,11 @@
     <Compile Include="Forms\frmCauHinh.Designer.cs">
       <DependentUpon>frmCauHinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="InDauMaPhach.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InDauMaPhach.xsd</DependentUpon>
+    </Compile>
     <Compile Include="lib\DanhMaPhach.cs" />
     <Compile Include="lib\lib.cs" />
     <Compile Include="lib\SQLHelper.cs" />
@@ -307,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmHuyen.resx">
       <DependentUpon>frmHuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInDanhSach.resx">
+      <DependentUpon>frmInDanhSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmKyThi.resx">
       <DependentUpon>frmKyThi.cs</DependentUpon>
@@ -359,6 +388,24 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDanhSachMaPhachTheoPhong.resx">
+      <DependentUpon>rptDanhSachMaPhachTheoPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDanhSachMaPhachTheoSBD.resx">
+      <DependentUpon>rptDanhSachMaPhachTheoSBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDanhSachThiSinhDuThi_Truong.resx">
+      <DependentUpon>rptDanhSachThiSinhDuThi_Truong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptThongKeSoLuongThiSinhDuThi.resx">
+      <DependentUpon>rptThongKeSoLuongThiSinhDuThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptThongKeSoLuongThiSinhDuThu.resx">
+      <DependentUpon>rptThongKeSoLuongThiSinhDuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -372,6 +419,47 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachMaPhachTheoPhong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachMaPhachTheoPhong.Designer.cs">
+      <DependentUpon>rptDanhSachMaPhachTheoPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachMaPhachTheoSBD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachMaPhachTheoSBD.Designer.cs">
+      <DependentUpon>rptDanhSachMaPhachTheoSBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachThiSinhDuThi_Truong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachThiSinhDuThi_Truong.Designer.cs">
+      <DependentUpon>rptDanhSachThiSinhDuThi_Truong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptThongKeSoLuongThiSinhDuThi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptThongKeSoLuongThiSinhDuThi.Designer.cs">
+      <DependentUpon>rptThongKeSoLuongThiSinhDuThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptThongKeSoLuongThiSinhDuThu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptThongKeSoLuongThiSinhDuThu.Designer.cs">
+      <DependentUpon>rptThongKeSoLuongThiSinhDuThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThiNgeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThiNgeDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -505,8 +593,63 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>db.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Crosstab.xsc">
+      <DependentUpon>Crosstab.xsd</DependentUpon>
+    </None>
+    <None Include="Crosstab.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Crosstab.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Crosstab.xss">
+      <DependentUpon>Crosstab.xsd</DependentUpon>
+    </None>
+    <None Include="DanhSachThiSinh.xsc">
+      <DependentUpon>DanhSachThiSinh.xsd</DependentUpon>
+    </None>
+    <None Include="DanhSachThiSinh.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DanhSachThiSinh.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DanhSachThiSinh.xss">
+      <DependentUpon>DanhSachThiSinh.xsd</DependentUpon>
+    </None>
+    <None Include="DSDauMaPhach.xsc">
+      <DependentUpon>DSDauMaPhach.xsd</DependentUpon>
+    </None>
+    <None Include="DSDauMaPhach.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDauMaPhach.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSDauMaPhach.xss">
+      <DependentUpon>DSDauMaPhach.xsd</DependentUpon>
+    </None>
+    <None Include="InDauMaPhach.xsc">
+      <DependentUpon>InDauMaPhach.xsd</DependentUpon>
+    </None>
+    <None Include="InDauMaPhach.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InDauMaPhach.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InDauMaPhach.xss">
+      <DependentUpon>InDauMaPhach.xsd</DependentUpon>
+    </None>
     <None Include="QuanLyThiNghe_TemporaryKey.pfx" />
     <None Include="Resources\HDT.png" />
+    <None Include="ThiNgeDataSet.xsc">
+      <DependentUpon>ThiNgeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ThiNgeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThiNgeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ThiNgeDataSet.xss">
+      <DependentUpon>ThiNgeDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

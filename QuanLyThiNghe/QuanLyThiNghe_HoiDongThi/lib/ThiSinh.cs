@@ -162,7 +162,7 @@ namespace QuanLyThiNghe_ThuKy
 
             string expression = "((Convert(" + "DiemLT" + ",'System.String') <> " + "''" + ")";
             expression += "or (Convert(" + "DiemTH" + ",'System.String') <> " + "''" + "))";
-            expression += " and (Convert(" + "DaDongBo" + ",'System.String') = " + "False" + ")";
+           // expression += " and (Convert(" + "DaDongBo" + ",'System.String') = " + "False" + ")";
 
             DataRow[] drs = dt.Select(expression);
             /*@MaThiSinh int
@@ -171,7 +171,8 @@ namespace QuanLyThiNghe_ThuKy
             ,@ThuKy1 int
             ,@ThuKy2 int
             ,@ThuKy3 int*/
-            string StrConnection = "Data Source=designpro.vn;Initial Catalog=ThiNge;Persist Security Info=True;User ID=thinge;Password=tn123@";
+            string StrConnection = @"Data Source=.\sqlexpress;Initial Catalog=ThiNge;Integrated Security=True";
+            //string StrConnection = "Data Source=designpro.vn;Initial Catalog=ThiNge;Persist Security Info=True;User ID=thinge;Password=tn123@";
             try
             {
                 foreach (DataRow item in drs)
