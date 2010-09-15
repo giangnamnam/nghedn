@@ -64,6 +64,14 @@ namespace QuanLyThiNghe.lib
             SqlHelper.ExecuteScalar(StrConnection, CommandType.StoredProcedure, "DemSoThiSinhCuaKyThiHienTai").ToString());
             return tong;
         }
-        
+        public int DemSoPhongThiTheoMonThi(int MaMonThi)
+        {
+            int tong = 0;
+            tong = int.Parse(
+            SqlHelper.ExecuteScalar(StrConnection,
+            "DemSoPhongThiCuaKyThiHienTai_TheoMonThi",MaMonThi).ToString());
+            return tong;
+            
+        }
     }
 }

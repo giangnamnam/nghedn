@@ -54,7 +54,12 @@ namespace QuanLyThiNghe.Forms
                             string TDN = MT["GiaTri"].ToString();
                             string expression = "(Convert(" + "MaMonThi" + ",'System.String') = " + MT["MaMonThi"].ToString() + ")";
                             DataTable HDThi = MP.LayTheoDieuKien(expression).DefaultView.ToTable(true, "MaHoiDong");
+                            int intmamonthi = int.Parse(MT["MaMonThi"].ToString());
                             int P = 0;
+                            int countSoPhongTheoMon = MP.DemSoPhongThiTheoMonThi(intmamonthi);
+                            System.Collections.ArrayList arr = new System.Collections.ArrayList();
+                            for (int i = 1; i <= countSoPhongTheoMon; i++)
+                                arr.Add(i);
 
                             #region Lap hoi dong thi
                             foreach (DataRow HD in HDThi.Rows)
@@ -65,31 +70,29 @@ namespace QuanLyThiNghe.Forms
                                 #region Lap phong thi
                                 foreach (DataRow PT in PhongThi.Rows)
                                 {
-                                    P++;
+                                    if (MaNgauNhien)
+                                    {
+                                        Random r = new Random();
+                                        int index = r.Next(0, arr.Count - 1);
+                                        P = (int)arr[index];
+                                        arr.RemoveAt(index);
+                                    }
+                                    else
+                                    { 
+                                        P++;
+                                    }
                                     int mamonthi = int.Parse(MT["MaMonThi"].ToString());
                                     int mahoidong = int.Parse(HD["MaHoiDong"].ToString());
                                     int phong = int.Parse(PT["PhongThi"].ToString());
                                     DataTable DSTS = MP.LayDanhSachThiSinhTheoPhong(mamonthi, mahoidong, phong);
 
-                                    System.Collections.ArrayList arr = new System.Collections.ArrayList();
-                                    for (int i = 1; i <= 24; i++)
-                                        arr.Add(i);
+                                    
                                     int randomNumber = 0;
                                     #region lapThiSinh
                                     foreach (DataRow item in DSTS.Rows)
                                     {
-                                        if (MaNgauNhien)
-                                        {
-                                            Random r = new Random();
-                                            int index = r.Next(0, arr.Count - 1);
-                                            randomNumber = (int)arr[index];
-                                            arr.RemoveAt(index);
-                                        }
-                                        else
-                                            randomNumber++;
-
+                                        randomNumber++;
                                         int mathisinh = int.Parse(item["MaThiSinh"].ToString());
-
                                         string strMaPhach = "";
                                         if (BatDauBangDauPhach)
                                             strMaPhach = TDN + String.Format(pHONGfORMAT, P) + String.Format(sTTfORMAT, randomNumber);
@@ -137,7 +140,35 @@ namespace QuanLyThiNghe.Forms
         }
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            CapNhatMaPhachChoThiSinh();
+            dataGridView1.Update();
+            DataTable newTable = new DataTable();
+            newTable = dt.GetChanges();
+            if (newTable != null)
+            {
+                DialogResult re =
+                XtraMessageBox.Show("Định nghĩa đầu phách có thay đổi, bạn có muốn lưu lại các thay đổi này không?",
+                    "Đánh mã phách", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);// 
+                if (re == DialogResult.Yes)
+                {
+                    try
+                    {
+                        SqlCommandBuilder cmb = new SqlCommandBuilder(adap);
+                        adap.TableMappings.Clear();
+                        adap.TableMappings.Add("GiaTri", dt.TableName);
+                        adap.Update(newTable);
+                        loadCSDL();
+                        CapNhatMaPhachChoThiSinh();
+                    }
+                    catch (Exception ex)
+                    {
+                        //MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                CapNhatMaPhachChoThiSinh();
+            }
         }
         public void CapNhatMaPhachChoThiSinh()
         {
@@ -217,6 +248,33 @@ namespace QuanLyThiNghe.Forms
         private void progressBarControl1_TextChanged(object sender, EventArgs e)
         {
             progressBarControl1.Text = progressBarControl1.Text;
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dropDownButton1_Click(object sender, EventArgs e)
+        {
+            Reports.rptDanhSachMaPhachTheoPhong rpt = new QuanLyThiNghe.Reports.rptDanhSachMaPhachTheoPhong();
+            //rpt.ShowDesigner();
+            //rpt.ShowDesignerDialog();
+            //rpt.ShowPreview();
+            rpt.ShowPreviewDialog();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Reports.rptDanhSachMaPhachTheoPhong rpt = new QuanLyThiNghe.Reports.rptDanhSachMaPhachTheoPhong();
+            rpt.ShowPreviewDialog();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Reports.rptDanhSachMaPhachTheoPhong rpt = new QuanLyThiNghe.Reports.rptDanhSachMaPhachTheoPhong();
+            rpt.ShowDesignerDialog();
+            
         }
 
         
