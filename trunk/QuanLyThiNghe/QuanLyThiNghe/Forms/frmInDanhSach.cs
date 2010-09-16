@@ -25,14 +25,14 @@ namespace QuanLyThiNghe.Forms
 
         private void dropDownButton1_Click(object sender, EventArgs e)
         {
-            rptDanhSachThiSinhDuThi_Truong rpt = new rptDanhSachThiSinhDuThi_Truong();
-            rpt.ShowPreviewDialog();
+            //rptDanhSachThiSinhDuThi_Truong rpt = new rptDanhSachThiSinhDuThi_Truong();
+            //rpt.ShowPreviewDialog();
         }
 
         private void dropDownButton4_Click(object sender, EventArgs e)
         {
-            rptDanhSachMaPhachTheoPhong rpt = new rptDanhSachMaPhachTheoPhong();
-            rpt.ShowPreviewDialog();
+            //rptDanhSachMaPhachTheoPhong rpt = new rptDanhSachMaPhachTheoPhong();
+            //rpt.ShowPreviewDialog();
         }
     }
 }
