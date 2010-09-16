@@ -120,25 +120,94 @@
   <metadata name="Detail.Name" xml:space="preserve">
     <value>Detail</value>
   </metadata>
-  <metadata name="PageHeader.Name" xml:space="preserve">
-    <value>PageHeader</value>
+  <metadata name="xrLabel9.Name" xml:space="preserve">
+    <value>xrLabel9</value>
   </metadata>
-  <metadata name="PageFooter.Name" xml:space="preserve">
-    <value>PageFooter</value>
+  <metadata name="xrLabel10.Name" xml:space="preserve">
+    <value>xrLabel10</value>
   </metadata>
-  <metadata name="danhSachThiSinh1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="dsMaPhach1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="danhSachThiSinh1.Name" xml:space="preserve">
-    <value>danhSachThiSinh1</value>
+  <metadata name="dsMaPhach1.Name" xml:space="preserve">
+    <value>dsMaPhach1</value>
   </metadata>
-  <metadata name="rpt_LayDanhSachThiSinh_kyThiHienTaiTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>168, 17</value>
+  <metadata name="chuTich_MaPhach_InDauMaPhachTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>138, 17</value>
   </metadata>
-  <metadata name="rpt_LayDanhSachThiSinh_kyThiHienTaiTableAdapter.Name" xml:space="preserve">
-    <value>rpt_LayDanhSachThiSinh_kyThiHienTaiTableAdapter</value>
+  <metadata name="chuTich_MaPhach_InDauMaPhachTableAdapter.Name" xml:space="preserve">
+    <value>chuTich_MaPhach_InDauMaPhachTableAdapter</value>
+  </metadata>
+  <metadata name="Title.Name" xml:space="preserve">
+    <value>Title</value>
+  </metadata>
+  <metadata name="FieldCaption.Name" xml:space="preserve">
+    <value>FieldCaption</value>
+  </metadata>
+  <metadata name="PageInfo.Name" xml:space="preserve">
+    <value>PageInfo</value>
+  </metadata>
+  <metadata name="DataField.Name" xml:space="preserve">
+    <value>DataField</value>
+  </metadata>
+  <metadata name="groupHeaderBand1.Name" xml:space="preserve">
+    <value>groupHeaderBand1</value>
+  </metadata>
+  <metadata name="xrLabel2.Name" xml:space="preserve">
+    <value>xrLabel2</value>
+  </metadata>
+  <metadata name="groupHeaderBand2.Name" xml:space="preserve">
+    <value>groupHeaderBand2</value>
+  </metadata>
+  <metadata name="xrLabel4.Name" xml:space="preserve">
+    <value>xrLabel4</value>
+  </metadata>
+  <metadata name="groupHeaderBand3.Name" xml:space="preserve">
+    <value>groupHeaderBand3</value>
+  </metadata>
+  <metadata name="xrLabel6.Name" xml:space="preserve">
+    <value>xrLabel6</value>
+  </metadata>
+  <metadata name="groupHeaderBand4.Name" xml:space="preserve">
+    <value>groupHeaderBand4</value>
+  </metadata>
+  <metadata name="xrLabel7.Name" xml:space="preserve">
+    <value>xrLabel7</value>
+  </metadata>
+  <metadata name="xrLabel8.Name" xml:space="preserve">
+    <value>xrLabel8</value>
+  </metadata>
+  <metadata name="pageFooterBand1.Name" xml:space="preserve">
+    <value>pageFooterBand1</value>
+  </metadata>
+  <metadata name="xrPageInfo2.Name" xml:space="preserve">
+    <value>xrPageInfo2</value>
+  </metadata>
+  <metadata name="reportHeaderBand1.Name" xml:space="preserve">
+    <value>reportHeaderBand1</value>
+  </metadata>
+  <metadata name="xrLabel11.Name" xml:space="preserve">
+    <value>xrLabel11</value>
+  </metadata>
+  <metadata name="groupFooterBand1.Name" xml:space="preserve">
+    <value>groupFooterBand1</value>
+  </metadata>
+  <metadata name="groupFooterBand2.Name" xml:space="preserve">
+    <value>groupFooterBand2</value>
+  </metadata>
+  <metadata name="xrLabel13.Name" xml:space="preserve">
+    <value>xrLabel13</value>
+  </metadata>
+  <metadata name="xrLabel12.Name" xml:space="preserve">
+    <value>xrLabel12</value>
+  </metadata>
+  <metadata name="groupFooterBand3.Name" xml:space="preserve">
+    <value>groupFooterBand3</value>
+  </metadata>
+  <metadata name="groupFooterBand4.Name" xml:space="preserve">
+    <value>groupFooterBand4</value>
   </metadata>
   <metadata name="$this.Name" xml:space="preserve">
-    <value>rptThongKeSoLuongThiSinhDuThu</value>
+    <value>InMaPhach</value>
   </metadata>
 </root>

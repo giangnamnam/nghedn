@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace QuanLyThiNghe.Reports
 {
-    public partial class rptDanhSachMaPhachTheoSBD : DevExpress.XtraReports.UI.XtraReport
+    public partial class InMaPhach : DevExpress.XtraReports.UI.XtraReport
     {
-        public rptDanhSachMaPhachTheoSBD()
+        public InMaPhach()
         {
             InitializeComponent();
         }

@@ -22,11 +22,14 @@ namespace QuanLyThiNghe.lib
 
         public DanhMaPhach()
         {
+        }
+        public void LayDanhSach_MonThi_HoiDong_PhongThi_TheoKhoi(int maKhoi)
+        {
             //QLTN_Entities en = new QLTN_Entities();
             //Config c = en.Config.First();
-           // KyThiHienTai = c.KyThiHienTai!=null? KyThiHienTai:0;
+            // KyThiHienTai = c.KyThiHienTai!=null? KyThiHienTai:0;
             DS_MonThi_HoiDongThi_PhongThi = new DataTable();
-            DS_MonThi_HoiDongThi_PhongThi.Load(SqlHelper.ExecuteReader(StrConnection, "chuTich_LayDanhSach_MonThi_HoiDong_PhongThi"));
+            DS_MonThi_HoiDongThi_PhongThi.Load(SqlHelper.ExecuteReader(StrConnection, "chuTich_LayDanhSach_MonThi_HoiDong_PhongThi",maKhoi));
         }
         public bool CapNhatMaPhach(int MaThiSinh, string MaPhach )
         {
@@ -51,10 +54,16 @@ namespace QuanLyThiNghe.lib
             }
             return tbl;
         }
-        public DataTable LayDanhSachThiSinhTheoPhong(int MaMonThi, int MaHoiDong, int PhongThi)
+        public DataTable LayDanhSachKhoiThi()
         {
             DataTable ret = new DataTable();
-            ret.Load(SqlHelper.ExecuteReader(StrConnection, "chuTich_DanhMaPhach_LayDanhSachThiSinhTheoPhong",MaMonThi,MaHoiDong,PhongThi));
+            ret.Load(SqlHelper.ExecuteReader(StrConnection, "chuTich_DanhMaPhach_LayKhoiThi"));
+            return ret;
+        }
+        public DataTable LayDanhSachThiSinhTheoPhong(int MaKhoi, int MaMonThi, int MaHoiDong, int PhongThi)
+        {
+            DataTable ret = new DataTable();
+            ret.Load(SqlHelper.ExecuteReader(StrConnection, "chuTich_DanhMaPhach_LayDanhSachThiSinhTheoPhong", MaKhoi,MaMonThi, MaHoiDong, PhongThi));
             return ret;
         }
         public int LayTongSoThiSinhCanDanhMaPhach()
@@ -73,5 +82,15 @@ namespace QuanLyThiNghe.lib
             return tong;
             
         }
+        public int DemSoThiSinhDaCoMaPhach(int MaKhoi)
+        {
+            int tong = 0;
+            tong = int.Parse(
+            SqlHelper.ExecuteScalar(StrConnection,
+            "chuTich_DanhMaPhach_DemSoPhachDaCo",MaKhoi).ToString());
+            return tong;
+
+        }
+
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="InDauMaPhach" targetNamespace="http://tempuri.org/InDauMaPhach.xsd" xmlns:mstns="http://tempuri.org/InDauMaPhach.xsd" xmlns="http://tempuri.org/InDauMaPhach.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="dsMaPhach" targetNamespace="http://tempuri.org/dsMaPhach.xsd" xmlns:mstns="http://tempuri.org/dsMaPhach.xsd" xmlns="http://tempuri.org/dsMaPhach.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -21,6 +21,7 @@
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="TenKhoi" DataSetColumn="TenKhoi" />
               <Mapping SourceColumn="TenMonThi" DataSetColumn="TenMonThi" />
               <Mapping SourceColumn="HoiDongThi" DataSetColumn="HoiDongThi" />
               <Mapping SourceColumn="PhongThi" DataSetColumn="PhongThi" />
@@ -33,12 +34,19 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="InDauMaPhach" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="InDauMaPhach" msprop:Generator_UserDSName="InDauMaPhach" msprop:EnableTableAdapterManager="True">
+  <xs:element name="dsMaPhach" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsMaPhach" msprop:Generator_UserDSName="dsMaPhach" msprop:EnableTableAdapterManager="True">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="chuTich_MaPhach_InDauMaPhach" msprop:Generator_UserTableName="chuTich_MaPhach_InDauMaPhach" msprop:Generator_RowDeletedName="chuTich_MaPhach_InDauMaPhachRowDeleted" msprop:Generator_TableClassName="chuTich_MaPhach_InDauMaPhachDataTable" msprop:Generator_RowChangedName="chuTich_MaPhach_InDauMaPhachRowChanged" msprop:Generator_RowClassName="chuTich_MaPhach_InDauMaPhachRow" msprop:Generator_RowChangingName="chuTich_MaPhach_InDauMaPhachRowChanging" msprop:Generator_RowEvArgName="chuTich_MaPhach_InDauMaPhachRowChangeEvent" msprop:Generator_RowEvHandlerName="chuTich_MaPhach_InDauMaPhachRowChangeEventHandler" msprop:Generator_TablePropName="chuTich_MaPhach_InDauMaPhach" msprop:Generator_TableVarName="tablechuTich_MaPhach_InDauMaPhach" msprop:Generator_RowDeletingName="chuTich_MaPhach_InDauMaPhachRowDeleting">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="TenKhoi" msprop:Generator_UserColumnName="TenKhoi" msprop:Generator_ColumnPropNameInRow="TenKhoi" msprop:Generator_ColumnVarNameInTable="columnTenKhoi" msprop:Generator_ColumnPropNameInTable="TenKhoiColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="550" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="TenMonThi" msprop:Generator_UserColumnName="TenMonThi" msprop:Generator_ColumnPropNameInRow="TenMonThi" msprop:Generator_ColumnVarNameInTable="columnTenMonThi" msprop:Generator_ColumnPropNameInTable="TenMonThiColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -57,7 +65,7 @@
               <xs:element name="MaPhach" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MaPhach" msprop:Generator_ColumnPropNameInRow="MaPhach" msprop:Generator_ColumnVarNameInTable="columnMaPhach" msprop:Generator_ColumnPropNameInTable="MaPhachColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="6" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

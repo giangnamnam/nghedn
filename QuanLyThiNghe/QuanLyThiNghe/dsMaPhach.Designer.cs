@@ -21,16 +21,16 @@ namespace QuanLyThiNghe {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DanhSachThiSinh")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsMaPhach")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DanhSachThiSinh : global::System.Data.DataSet {
+    public partial class dsMaPhach : global::System.Data.DataSet {
         
-        private rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable tablerpt_LayDanhSachThiSinh_kyThiHienTai;
+        private chuTich_MaPhach_InDauMaPhachDataTable tablechuTich_MaPhach_InDauMaPhach;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public DanhSachThiSinh() {
+        public dsMaPhach() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -40,7 +40,7 @@ namespace QuanLyThiNghe {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        protected DanhSachThiSinh(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsMaPhach(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -53,8 +53,8 @@ namespace QuanLyThiNghe {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["rpt_LayDanhSachThiSinh_kyThiHienTai"] != null)) {
-                    base.Tables.Add(new rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable(ds.Tables["rpt_LayDanhSachThiSinh_kyThiHienTai"]));
+                if ((ds.Tables["chuTich_MaPhach_InDauMaPhach"] != null)) {
+                    base.Tables.Add(new chuTich_MaPhach_InDauMaPhachDataTable(ds.Tables["chuTich_MaPhach_InDauMaPhach"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -77,9 +77,9 @@ namespace QuanLyThiNghe {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable rpt_LayDanhSachThiSinh_kyThiHienTai {
+        public chuTich_MaPhach_InDauMaPhachDataTable chuTich_MaPhach_InDauMaPhach {
             get {
-                return this.tablerpt_LayDanhSachThiSinh_kyThiHienTai;
+                return this.tablechuTich_MaPhach_InDauMaPhach;
             }
         }
         
@@ -120,7 +120,7 @@ namespace QuanLyThiNghe {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public override global::System.Data.DataSet Clone() {
-            DanhSachThiSinh cln = ((DanhSachThiSinh)(base.Clone()));
+            dsMaPhach cln = ((dsMaPhach)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -142,8 +142,8 @@ namespace QuanLyThiNghe {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["rpt_LayDanhSachThiSinh_kyThiHienTai"] != null)) {
-                    base.Tables.Add(new rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable(ds.Tables["rpt_LayDanhSachThiSinh_kyThiHienTai"]));
+                if ((ds.Tables["chuTich_MaPhach_InDauMaPhach"] != null)) {
+                    base.Tables.Add(new chuTich_MaPhach_InDauMaPhachDataTable(ds.Tables["chuTich_MaPhach_InDauMaPhach"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -175,27 +175,27 @@ namespace QuanLyThiNghe {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         internal void InitVars(bool initTable) {
-            this.tablerpt_LayDanhSachThiSinh_kyThiHienTai = ((rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable)(base.Tables["rpt_LayDanhSachThiSinh_kyThiHienTai"]));
+            this.tablechuTich_MaPhach_InDauMaPhach = ((chuTich_MaPhach_InDauMaPhachDataTable)(base.Tables["chuTich_MaPhach_InDauMaPhach"]));
             if ((initTable == true)) {
-                if ((this.tablerpt_LayDanhSachThiSinh_kyThiHienTai != null)) {
-                    this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.InitVars();
+                if ((this.tablechuTich_MaPhach_InDauMaPhach != null)) {
+                    this.tablechuTich_MaPhach_InDauMaPhach.InitVars();
                 }
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitClass() {
-            this.DataSetName = "DanhSachThiSinh";
+            this.DataSetName = "dsMaPhach";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DanhSachThiSinh.xsd";
+            this.Namespace = "http://tempuri.org/dsMaPhach.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablerpt_LayDanhSachThiSinh_kyThiHienTai = new rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable();
-            base.Tables.Add(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai);
+            this.tablechuTich_MaPhach_InDauMaPhach = new chuTich_MaPhach_InDauMaPhachDataTable();
+            base.Tables.Add(this.tablechuTich_MaPhach_InDauMaPhach);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private bool ShouldSerializerpt_LayDanhSachThiSinh_kyThiHienTai() {
+        private bool ShouldSerializechuTich_MaPhach_InDauMaPhach() {
             return false;
         }
         
@@ -208,7 +208,7 @@ namespace QuanLyThiNghe {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DanhSachThiSinh ds = new DanhSachThiSinh();
+            dsMaPhach ds = new dsMaPhach();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -252,7 +252,7 @@ namespace QuanLyThiNghe {
             return type;
         }
         
-        public delegate void rpt_LayDanhSachThiSinh_kyThiHienTaiRowChangeEventHandler(object sender, rpt_LayDanhSachThiSinh_kyThiHienTaiRowChangeEvent e);
+        public delegate void chuTich_MaPhach_InDauMaPhachRowChangeEventHandler(object sender, chuTich_MaPhach_InDauMaPhachRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -260,52 +260,28 @@ namespace QuanLyThiNghe {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable : global::System.Data.TypedTableBase<rpt_LayDanhSachThiSinh_kyThiHienTaiRow> {
+        public partial class chuTich_MaPhach_InDauMaPhachDataTable : global::System.Data.TypedTableBase<chuTich_MaPhach_InDauMaPhachRow> {
             
-            private global::System.Data.DataColumn columnMaThiSinh;
+            private global::System.Data.DataColumn columnTenKhoi;
             
             private global::System.Data.DataColumn columnTenMonThi;
             
-            private global::System.Data.DataColumn columnTenTruong;
-            
-            private global::System.Data.DataColumn columnTenHoiDongThi;
-            
-            private global::System.Data.DataColumn columnSBD;
-            
-            private global::System.Data.DataColumn columnHo;
-            
-            private global::System.Data.DataColumn columnTen;
-            
-            private global::System.Data.DataColumn columnNgaySinh;
-            
-            private global::System.Data.DataColumn columnNoiSinh;
-            
-            private global::System.Data.DataColumn columnLop;
+            private global::System.Data.DataColumn columnHoiDongThi;
             
             private global::System.Data.DataColumn columnPhongThi;
             
-            private global::System.Data.DataColumn columnDiemLT;
-            
-            private global::System.Data.DataColumn columnDiemTH;
-            
-            private global::System.Data.DataColumn columnTongDiem;
-            
-            private global::System.Data.DataColumn columnXepLoai;
-            
-            private global::System.Data.DataColumn columnMaKyThi;
-            
-            private global::System.Data.DataColumn columnDaXoa;
+            private global::System.Data.DataColumn columnMaPhach;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable() {
-                this.TableName = "rpt_LayDanhSachThiSinh_kyThiHienTai";
+            public chuTich_MaPhach_InDauMaPhachDataTable() {
+                this.TableName = "chuTich_MaPhach_InDauMaPhach";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable(global::System.Data.DataTable table) {
+            internal chuTich_MaPhach_InDauMaPhachDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,15 +297,15 @@ namespace QuanLyThiNghe {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected chuTich_MaPhach_InDauMaPhachDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn MaThiSinhColumn {
+            public global::System.Data.DataColumn TenKhoiColumn {
                 get {
-                    return this.columnMaThiSinh;
+                    return this.columnTenKhoi;
                 }
             }
             
@@ -341,58 +317,9 @@ namespace QuanLyThiNghe {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn TenTruongColumn {
+            public global::System.Data.DataColumn HoiDongThiColumn {
                 get {
-                    return this.columnTenTruong;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn TenHoiDongThiColumn {
-                get {
-                    return this.columnTenHoiDongThi;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn SBDColumn {
-                get {
-                    return this.columnSBD;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn HoColumn {
-                get {
-                    return this.columnHo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn TenColumn {
-                get {
-                    return this.columnTen;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn NgaySinhColumn {
-                get {
-                    return this.columnNgaySinh;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn NoiSinhColumn {
-                get {
-                    return this.columnNoiSinh;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn LopColumn {
-                get {
-                    return this.columnLop;
+                    return this.columnHoiDongThi;
                 }
             }
             
@@ -404,44 +331,9 @@ namespace QuanLyThiNghe {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn DiemLTColumn {
+            public global::System.Data.DataColumn MaPhachColumn {
                 get {
-                    return this.columnDiemLT;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn DiemTHColumn {
-                get {
-                    return this.columnDiemTH;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn TongDiemColumn {
-                get {
-                    return this.columnTongDiem;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn XepLoaiColumn {
-                get {
-                    return this.columnXepLoai;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn MaKyThiColumn {
-                get {
-                    return this.columnMaKyThi;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn DaXoaColumn {
-                get {
-                    return this.columnDaXoa;
+                    return this.columnMaPhach;
                 }
             }
             
@@ -454,209 +346,128 @@ namespace QuanLyThiNghe {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public rpt_LayDanhSachThiSinh_kyThiHienTaiRow this[int index] {
+            public chuTich_MaPhach_InDauMaPhachRow this[int index] {
                 get {
-                    return ((rpt_LayDanhSachThiSinh_kyThiHienTaiRow)(this.Rows[index]));
+                    return ((chuTich_MaPhach_InDauMaPhachRow)(this.Rows[index]));
                 }
             }
             
-            public event rpt_LayDanhSachThiSinh_kyThiHienTaiRowChangeEventHandler rpt_LayDanhSachThiSinh_kyThiHienTaiRowChanging;
+            public event chuTich_MaPhach_InDauMaPhachRowChangeEventHandler chuTich_MaPhach_InDauMaPhachRowChanging;
             
-            public event rpt_LayDanhSachThiSinh_kyThiHienTaiRowChangeEventHandler rpt_LayDanhSachThiSinh_kyThiHienTaiRowChanged;
+            public event chuTich_MaPhach_InDauMaPhachRowChangeEventHandler chuTich_MaPhach_InDauMaPhachRowChanged;
             
-            public event rpt_LayDanhSachThiSinh_kyThiHienTaiRowChangeEventHandler rpt_LayDanhSachThiSinh_kyThiHienTaiRowDeleting;
+            public event chuTich_MaPhach_InDauMaPhachRowChangeEventHandler chuTich_MaPhach_InDauMaPhachRowDeleting;
             
-            public event rpt_LayDanhSachThiSinh_kyThiHienTaiRowChangeEventHandler rpt_LayDanhSachThiSinh_kyThiHienTaiRowDeleted;
+            public event chuTich_MaPhach_InDauMaPhachRowChangeEventHandler chuTich_MaPhach_InDauMaPhachRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Addrpt_LayDanhSachThiSinh_kyThiHienTaiRow(rpt_LayDanhSachThiSinh_kyThiHienTaiRow row) {
+            public void AddchuTich_MaPhach_InDauMaPhachRow(chuTich_MaPhach_InDauMaPhachRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public rpt_LayDanhSachThiSinh_kyThiHienTaiRow Addrpt_LayDanhSachThiSinh_kyThiHienTaiRow(
-                        string TenMonThi, 
-                        string TenTruong, 
-                        string TenHoiDongThi, 
-                        string SBD, 
-                        string Ho, 
-                        string Ten, 
-                        string NgaySinh, 
-                        string NoiSinh, 
-                        string Lop, 
-                        int PhongThi, 
-                        double DiemLT, 
-                        double DiemTH, 
-                        int TongDiem, 
-                        string XepLoai, 
-                        int MaKyThi, 
-                        bool DaXoa) {
-                rpt_LayDanhSachThiSinh_kyThiHienTaiRow rowrpt_LayDanhSachThiSinh_kyThiHienTaiRow = ((rpt_LayDanhSachThiSinh_kyThiHienTaiRow)(this.NewRow()));
+            public chuTich_MaPhach_InDauMaPhachRow AddchuTich_MaPhach_InDauMaPhachRow(string TenKhoi, string TenMonThi, string HoiDongThi, int PhongThi, string MaPhach) {
+                chuTich_MaPhach_InDauMaPhachRow rowchuTich_MaPhach_InDauMaPhachRow = ((chuTich_MaPhach_InDauMaPhachRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        TenKhoi,
                         TenMonThi,
-                        TenTruong,
-                        TenHoiDongThi,
-                        SBD,
-                        Ho,
-                        Ten,
-                        NgaySinh,
-                        NoiSinh,
-                        Lop,
+                        HoiDongThi,
                         PhongThi,
-                        DiemLT,
-                        DiemTH,
-                        TongDiem,
-                        XepLoai,
-                        MaKyThi,
-                        DaXoa};
-                rowrpt_LayDanhSachThiSinh_kyThiHienTaiRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowrpt_LayDanhSachThiSinh_kyThiHienTaiRow);
-                return rowrpt_LayDanhSachThiSinh_kyThiHienTaiRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public rpt_LayDanhSachThiSinh_kyThiHienTaiRow FindByMaThiSinh(int MaThiSinh) {
-                return ((rpt_LayDanhSachThiSinh_kyThiHienTaiRow)(this.Rows.Find(new object[] {
-                            MaThiSinh})));
+                        MaPhach};
+                rowchuTich_MaPhach_InDauMaPhachRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowchuTich_MaPhach_InDauMaPhachRow);
+                return rowchuTich_MaPhach_InDauMaPhachRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public override global::System.Data.DataTable Clone() {
-                rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable cln = ((rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable)(base.Clone()));
+                chuTich_MaPhach_InDauMaPhachDataTable cln = ((chuTich_MaPhach_InDauMaPhachDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable();
+                return new chuTich_MaPhach_InDauMaPhachDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal void InitVars() {
-                this.columnMaThiSinh = base.Columns["MaThiSinh"];
+                this.columnTenKhoi = base.Columns["TenKhoi"];
                 this.columnTenMonThi = base.Columns["TenMonThi"];
-                this.columnTenTruong = base.Columns["TenTruong"];
-                this.columnTenHoiDongThi = base.Columns["TenHoiDongThi"];
-                this.columnSBD = base.Columns["SBD"];
-                this.columnHo = base.Columns["Ho"];
-                this.columnTen = base.Columns["Ten"];
-                this.columnNgaySinh = base.Columns["NgaySinh"];
-                this.columnNoiSinh = base.Columns["NoiSinh"];
-                this.columnLop = base.Columns["Lop"];
+                this.columnHoiDongThi = base.Columns["HoiDongThi"];
                 this.columnPhongThi = base.Columns["PhongThi"];
-                this.columnDiemLT = base.Columns["DiemLT"];
-                this.columnDiemTH = base.Columns["DiemTH"];
-                this.columnTongDiem = base.Columns["TongDiem"];
-                this.columnXepLoai = base.Columns["XepLoai"];
-                this.columnMaKyThi = base.Columns["MaKyThi"];
-                this.columnDaXoa = base.Columns["DaXoa"];
+                this.columnMaPhach = base.Columns["MaPhach"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             private void InitClass() {
-                this.columnMaThiSinh = new global::System.Data.DataColumn("MaThiSinh", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMaThiSinh);
+                this.columnTenKhoi = new global::System.Data.DataColumn("TenKhoi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTenKhoi);
                 this.columnTenMonThi = new global::System.Data.DataColumn("TenMonThi", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTenMonThi);
-                this.columnTenTruong = new global::System.Data.DataColumn("TenTruong", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTenTruong);
-                this.columnTenHoiDongThi = new global::System.Data.DataColumn("TenHoiDongThi", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTenHoiDongThi);
-                this.columnSBD = new global::System.Data.DataColumn("SBD", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSBD);
-                this.columnHo = new global::System.Data.DataColumn("Ho", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHo);
-                this.columnTen = new global::System.Data.DataColumn("Ten", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTen);
-                this.columnNgaySinh = new global::System.Data.DataColumn("NgaySinh", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNgaySinh);
-                this.columnNoiSinh = new global::System.Data.DataColumn("NoiSinh", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNoiSinh);
-                this.columnLop = new global::System.Data.DataColumn("Lop", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLop);
+                this.columnHoiDongThi = new global::System.Data.DataColumn("HoiDongThi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHoiDongThi);
                 this.columnPhongThi = new global::System.Data.DataColumn("PhongThi", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPhongThi);
-                this.columnDiemLT = new global::System.Data.DataColumn("DiemLT", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDiemLT);
-                this.columnDiemTH = new global::System.Data.DataColumn("DiemTH", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDiemTH);
-                this.columnTongDiem = new global::System.Data.DataColumn("TongDiem", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTongDiem);
-                this.columnXepLoai = new global::System.Data.DataColumn("XepLoai", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnXepLoai);
-                this.columnMaKyThi = new global::System.Data.DataColumn("MaKyThi", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMaKyThi);
-                this.columnDaXoa = new global::System.Data.DataColumn("DaXoa", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDaXoa);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnMaThiSinh}, true));
-                this.columnMaThiSinh.AutoIncrement = true;
-                this.columnMaThiSinh.AllowDBNull = false;
-                this.columnMaThiSinh.ReadOnly = true;
-                this.columnMaThiSinh.Unique = true;
+                this.columnMaPhach = new global::System.Data.DataColumn("MaPhach", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaPhach);
+                this.columnTenKhoi.MaxLength = 550;
                 this.columnTenMonThi.MaxLength = 150;
-                this.columnTenTruong.MaxLength = 50;
-                this.columnTenHoiDongThi.MaxLength = 50;
-                this.columnSBD.MaxLength = 50;
-                this.columnHo.MaxLength = 150;
-                this.columnTen.MaxLength = 50;
-                this.columnNgaySinh.MaxLength = 50;
-                this.columnNoiSinh.MaxLength = 150;
-                this.columnLop.MaxLength = 50;
-                this.columnXepLoai.MaxLength = 50;
+                this.columnHoiDongThi.MaxLength = 50;
+                this.columnMaPhach.ReadOnly = true;
+                this.columnMaPhach.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public rpt_LayDanhSachThiSinh_kyThiHienTaiRow Newrpt_LayDanhSachThiSinh_kyThiHienTaiRow() {
-                return ((rpt_LayDanhSachThiSinh_kyThiHienTaiRow)(this.NewRow()));
+            public chuTich_MaPhach_InDauMaPhachRow NewchuTich_MaPhach_InDauMaPhachRow() {
+                return ((chuTich_MaPhach_InDauMaPhachRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new rpt_LayDanhSachThiSinh_kyThiHienTaiRow(builder);
+                return new chuTich_MaPhach_InDauMaPhachRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Type GetRowType() {
-                return typeof(rpt_LayDanhSachThiSinh_kyThiHienTaiRow);
+                return typeof(chuTich_MaPhach_InDauMaPhachRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.rpt_LayDanhSachThiSinh_kyThiHienTaiRowChanged != null)) {
-                    this.rpt_LayDanhSachThiSinh_kyThiHienTaiRowChanged(this, new rpt_LayDanhSachThiSinh_kyThiHienTaiRowChangeEvent(((rpt_LayDanhSachThiSinh_kyThiHienTaiRow)(e.Row)), e.Action));
+                if ((this.chuTich_MaPhach_InDauMaPhachRowChanged != null)) {
+                    this.chuTich_MaPhach_InDauMaPhachRowChanged(this, new chuTich_MaPhach_InDauMaPhachRowChangeEvent(((chuTich_MaPhach_InDauMaPhachRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.rpt_LayDanhSachThiSinh_kyThiHienTaiRowChanging != null)) {
-                    this.rpt_LayDanhSachThiSinh_kyThiHienTaiRowChanging(this, new rpt_LayDanhSachThiSinh_kyThiHienTaiRowChangeEvent(((rpt_LayDanhSachThiSinh_kyThiHienTaiRow)(e.Row)), e.Action));
+                if ((this.chuTich_MaPhach_InDauMaPhachRowChanging != null)) {
+                    this.chuTich_MaPhach_InDauMaPhachRowChanging(this, new chuTich_MaPhach_InDauMaPhachRowChangeEvent(((chuTich_MaPhach_InDauMaPhachRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.rpt_LayDanhSachThiSinh_kyThiHienTaiRowDeleted != null)) {
-                    this.rpt_LayDanhSachThiSinh_kyThiHienTaiRowDeleted(this, new rpt_LayDanhSachThiSinh_kyThiHienTaiRowChangeEvent(((rpt_LayDanhSachThiSinh_kyThiHienTaiRow)(e.Row)), e.Action));
+                if ((this.chuTich_MaPhach_InDauMaPhachRowDeleted != null)) {
+                    this.chuTich_MaPhach_InDauMaPhachRowDeleted(this, new chuTich_MaPhach_InDauMaPhachRowChangeEvent(((chuTich_MaPhach_InDauMaPhachRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.rpt_LayDanhSachThiSinh_kyThiHienTaiRowDeleting != null)) {
-                    this.rpt_LayDanhSachThiSinh_kyThiHienTaiRowDeleting(this, new rpt_LayDanhSachThiSinh_kyThiHienTaiRowChangeEvent(((rpt_LayDanhSachThiSinh_kyThiHienTaiRow)(e.Row)), e.Action));
+                if ((this.chuTich_MaPhach_InDauMaPhachRowDeleting != null)) {
+                    this.chuTich_MaPhach_InDauMaPhachRowDeleting(this, new chuTich_MaPhach_InDauMaPhachRowChangeEvent(((chuTich_MaPhach_InDauMaPhachRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Removerpt_LayDanhSachThiSinh_kyThiHienTaiRow(rpt_LayDanhSachThiSinh_kyThiHienTaiRow row) {
+            public void RemovechuTich_MaPhach_InDauMaPhachRow(chuTich_MaPhach_InDauMaPhachRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -664,7 +475,7 @@ namespace QuanLyThiNghe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DanhSachThiSinh ds = new DanhSachThiSinh();
+                dsMaPhach ds = new dsMaPhach();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -682,7 +493,7 @@ namespace QuanLyThiNghe {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable";
+                attribute2.FixedValue = "chuTich_MaPhach_InDauMaPhachDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -727,23 +538,29 @@ namespace QuanLyThiNghe {
         ///Represents strongly named DataRow class.
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public partial class rpt_LayDanhSachThiSinh_kyThiHienTaiRow : global::System.Data.DataRow {
+        public partial class chuTich_MaPhach_InDauMaPhachRow : global::System.Data.DataRow {
             
-            private rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable tablerpt_LayDanhSachThiSinh_kyThiHienTai;
+            private chuTich_MaPhach_InDauMaPhachDataTable tablechuTich_MaPhach_InDauMaPhach;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal rpt_LayDanhSachThiSinh_kyThiHienTaiRow(global::System.Data.DataRowBuilder rb) : 
+            internal chuTich_MaPhach_InDauMaPhachRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablerpt_LayDanhSachThiSinh_kyThiHienTai = ((rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable)(this.Table));
+                this.tablechuTich_MaPhach_InDauMaPhach = ((chuTich_MaPhach_InDauMaPhachDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int MaThiSinh {
+            public string TenKhoi {
                 get {
-                    return ((int)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.MaThiSinhColumn]));
+                    try {
+                        return ((string)(this[this.tablechuTich_MaPhach_InDauMaPhach.TenKhoiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TenKhoi\' in table \'chuTich_MaPhach_InDauMaPhach\' is DBNull." +
+                                "", e);
+                    }
                 }
                 set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.MaThiSinhColumn] = value;
+                    this[this.tablechuTich_MaPhach_InDauMaPhach.TenKhoiColumn] = value;
                 }
             }
             
@@ -751,143 +568,31 @@ namespace QuanLyThiNghe {
             public string TenMonThi {
                 get {
                     try {
-                        return ((string)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenMonThiColumn]));
+                        return ((string)(this[this.tablechuTich_MaPhach_InDauMaPhach.TenMonThiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TenMonThi\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' i" +
-                                "s DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenMonThiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string TenTruong {
-                get {
-                    try {
-                        return ((string)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenTruongColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TenTruong\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' i" +
-                                "s DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenTruongColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string TenHoiDongThi {
-                get {
-                    try {
-                        return ((string)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenHoiDongThiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TenHoiDongThi\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTa" +
-                                "i\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenHoiDongThiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string SBD {
-                get {
-                    try {
-                        return ((string)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.SBDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SBD\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.SBDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string Ho {
-                get {
-                    try {
-                        return ((string)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.HoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ho\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is DBNul" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'TenMonThi\' in table \'chuTich_MaPhach_InDauMaPhach\' is DBNul" +
                                 "l.", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.HoColumn] = value;
+                    this[this.tablechuTich_MaPhach_InDauMaPhach.TenMonThiColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string Ten {
+            public string HoiDongThi {
                 get {
                     try {
-                        return ((string)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenColumn]));
+                        return ((string)(this[this.tablechuTich_MaPhach_InDauMaPhach.HoiDongThiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ten\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is DBNu" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'HoiDongThi\' in table \'chuTich_MaPhach_InDauMaPhach\' is DBNu" +
                                 "ll.", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string NgaySinh {
-                get {
-                    try {
-                        return ((string)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.NgaySinhColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NgaySinh\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is" +
-                                " DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.NgaySinhColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string NoiSinh {
-                get {
-                    try {
-                        return ((string)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.NoiSinhColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NoiSinh\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.NoiSinhColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string Lop {
-                get {
-                    try {
-                        return ((string)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.LopColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Lop\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.LopColumn] = value;
+                    this[this.tablechuTich_MaPhach_InDauMaPhach.HoiDongThiColumn] = value;
                 }
             }
             
@@ -895,272 +600,82 @@ namespace QuanLyThiNghe {
             public int PhongThi {
                 get {
                     try {
-                        return ((int)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.PhongThiColumn]));
+                        return ((int)(this[this.tablechuTich_MaPhach_InDauMaPhach.PhongThiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PhongThi\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is" +
-                                " DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PhongThi\' in table \'chuTich_MaPhach_InDauMaPhach\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.PhongThiColumn] = value;
+                    this[this.tablechuTich_MaPhach_InDauMaPhach.PhongThiColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public double DiemLT {
+            public string MaPhach {
                 get {
                     try {
-                        return ((double)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.DiemLTColumn]));
+                        return ((string)(this[this.tablechuTich_MaPhach_InDauMaPhach.MaPhachColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DiemLT\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is D" +
-                                "BNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'MaPhach\' in table \'chuTich_MaPhach_InDauMaPhach\' is DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.DiemLTColumn] = value;
+                    this[this.tablechuTich_MaPhach_InDauMaPhach.MaPhachColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public double DiemTH {
-                get {
-                    try {
-                        return ((double)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.DiemTHColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DiemTH\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is D" +
-                                "BNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.DiemTHColumn] = value;
-                }
+            public bool IsTenKhoiNull() {
+                return this.IsNull(this.tablechuTich_MaPhach_InDauMaPhach.TenKhoiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int TongDiem {
-                get {
-                    try {
-                        return ((int)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TongDiemColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TongDiem\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is" +
-                                " DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TongDiemColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string XepLoai {
-                get {
-                    try {
-                        return ((string)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.XepLoaiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'XepLoai\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.XepLoaiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int MaKyThi {
-                get {
-                    try {
-                        return ((int)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.MaKyThiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MaKyThi\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.MaKyThiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool DaXoa {
-                get {
-                    try {
-                        return ((bool)(this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.DaXoaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DaXoa\' in table \'rpt_LayDanhSachThiSinh_kyThiHienTai\' is DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.DaXoaColumn] = value;
-                }
+            public void SetTenKhoiNull() {
+                this[this.tablechuTich_MaPhach_InDauMaPhach.TenKhoiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsTenMonThiNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenMonThiColumn);
+                return this.IsNull(this.tablechuTich_MaPhach_InDauMaPhach.TenMonThiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetTenMonThiNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenMonThiColumn] = global::System.Convert.DBNull;
+                this[this.tablechuTich_MaPhach_InDauMaPhach.TenMonThiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsTenTruongNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenTruongColumn);
+            public bool IsHoiDongThiNull() {
+                return this.IsNull(this.tablechuTich_MaPhach_InDauMaPhach.HoiDongThiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetTenTruongNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenTruongColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsTenHoiDongThiNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenHoiDongThiColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetTenHoiDongThiNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenHoiDongThiColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsSBDNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.SBDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetSBDNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.SBDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsHoNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.HoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetHoNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.HoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsTenNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetTenNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TenColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsNgaySinhNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.NgaySinhColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetNgaySinhNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.NgaySinhColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsNoiSinhNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.NoiSinhColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetNoiSinhNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.NoiSinhColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsLopNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.LopColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetLopNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.LopColumn] = global::System.Convert.DBNull;
+            public void SetHoiDongThiNull() {
+                this[this.tablechuTich_MaPhach_InDauMaPhach.HoiDongThiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsPhongThiNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.PhongThiColumn);
+                return this.IsNull(this.tablechuTich_MaPhach_InDauMaPhach.PhongThiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetPhongThiNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.PhongThiColumn] = global::System.Convert.DBNull;
+                this[this.tablechuTich_MaPhach_InDauMaPhach.PhongThiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsDiemLTNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.DiemLTColumn);
+            public bool IsMaPhachNull() {
+                return this.IsNull(this.tablechuTich_MaPhach_InDauMaPhach.MaPhachColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetDiemLTNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.DiemLTColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsDiemTHNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.DiemTHColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetDiemTHNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.DiemTHColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsTongDiemNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TongDiemColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetTongDiemNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.TongDiemColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsXepLoaiNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.XepLoaiColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetXepLoaiNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.XepLoaiColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsMaKyThiNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.MaKyThiColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetMaKyThiNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.MaKyThiColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsDaXoaNull() {
-                return this.IsNull(this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.DaXoaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetDaXoaNull() {
-                this[this.tablerpt_LayDanhSachThiSinh_kyThiHienTai.DaXoaColumn] = global::System.Convert.DBNull;
+            public void SetMaPhachNull() {
+                this[this.tablechuTich_MaPhach_InDauMaPhach.MaPhachColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1168,20 +683,20 @@ namespace QuanLyThiNghe {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public class rpt_LayDanhSachThiSinh_kyThiHienTaiRowChangeEvent : global::System.EventArgs {
+        public class chuTich_MaPhach_InDauMaPhachRowChangeEvent : global::System.EventArgs {
             
-            private rpt_LayDanhSachThiSinh_kyThiHienTaiRow eventRow;
+            private chuTich_MaPhach_InDauMaPhachRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public rpt_LayDanhSachThiSinh_kyThiHienTaiRowChangeEvent(rpt_LayDanhSachThiSinh_kyThiHienTaiRow row, global::System.Data.DataRowAction action) {
+            public chuTich_MaPhach_InDauMaPhachRowChangeEvent(chuTich_MaPhach_InDauMaPhachRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public rpt_LayDanhSachThiSinh_kyThiHienTaiRow Row {
+            public chuTich_MaPhach_InDauMaPhachRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1196,7 +711,7 @@ namespace QuanLyThiNghe {
         }
     }
 }
-namespace QuanLyThiNghe.DanhSachThiSinhTableAdapters {
+namespace QuanLyThiNghe.dsMaPhachTableAdapters {
     
     
     /// <summary>
@@ -1209,7 +724,7 @@ namespace QuanLyThiNghe.DanhSachThiSinhTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class rpt_LayDanhSachThiSinh_kyThiHienTaiTableAdapter : global::System.ComponentModel.Component {
+    public partial class chuTich_MaPhach_InDauMaPhachTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1222,7 +737,7 @@ namespace QuanLyThiNghe.DanhSachThiSinhTableAdapters {
         private bool _clearBeforeFill;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public rpt_LayDanhSachThiSinh_kyThiHienTaiTableAdapter() {
+        public chuTich_MaPhach_InDauMaPhachTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1313,24 +828,12 @@ namespace QuanLyThiNghe.DanhSachThiSinhTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "rpt_LayDanhSachThiSinh_kyThiHienTai";
-            tableMapping.ColumnMappings.Add("MaThiSinh", "MaThiSinh");
+            tableMapping.DataSetTable = "chuTich_MaPhach_InDauMaPhach";
+            tableMapping.ColumnMappings.Add("TenKhoi", "TenKhoi");
             tableMapping.ColumnMappings.Add("TenMonThi", "TenMonThi");
-            tableMapping.ColumnMappings.Add("TenTruong", "TenTruong");
-            tableMapping.ColumnMappings.Add("TenHoiDongThi", "TenHoiDongThi");
-            tableMapping.ColumnMappings.Add("SBD", "SBD");
-            tableMapping.ColumnMappings.Add("Ho", "Ho");
-            tableMapping.ColumnMappings.Add("Ten", "Ten");
-            tableMapping.ColumnMappings.Add("NgaySinh", "NgaySinh");
-            tableMapping.ColumnMappings.Add("NoiSinh", "NoiSinh");
-            tableMapping.ColumnMappings.Add("Lop", "Lop");
+            tableMapping.ColumnMappings.Add("HoiDongThi", "HoiDongThi");
             tableMapping.ColumnMappings.Add("PhongThi", "PhongThi");
-            tableMapping.ColumnMappings.Add("DiemLT", "DiemLT");
-            tableMapping.ColumnMappings.Add("DiemTH", "DiemTH");
-            tableMapping.ColumnMappings.Add("TongDiem", "TongDiem");
-            tableMapping.ColumnMappings.Add("XepLoai", "XepLoai");
-            tableMapping.ColumnMappings.Add("MaKyThi", "MaKyThi");
-            tableMapping.ColumnMappings.Add("DaXoa", "DaXoa");
+            tableMapping.ColumnMappings.Add("MaPhach", "MaPhach");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1345,7 +848,7 @@ namespace QuanLyThiNghe.DanhSachThiSinhTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.rpt_LayDanhSachThiSinh_kyThiHienTai";
+            this._commandCollection[0].CommandText = "dbo.chuTich_MaPhach_InDauMaPhach";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -1353,7 +856,7 @@ namespace QuanLyThiNghe.DanhSachThiSinhTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DanhSachThiSinh.rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable dataTable) {
+        public virtual int Fill(dsMaPhach.chuTich_MaPhach_InDauMaPhachDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1365,9 +868,9 @@ namespace QuanLyThiNghe.DanhSachThiSinhTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DanhSachThiSinh.rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable GetData() {
+        public virtual dsMaPhach.chuTich_MaPhach_InDauMaPhachDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DanhSachThiSinh.rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable dataTable = new DanhSachThiSinh.rpt_LayDanhSachThiSinh_kyThiHienTaiDataTable();
+            dsMaPhach.chuTich_MaPhach_InDauMaPhachDataTable dataTable = new dsMaPhach.chuTich_MaPhach_InDauMaPhachDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1437,7 +940,7 @@ namespace QuanLyThiNghe.DanhSachThiSinhTableAdapters {
         ///Update rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateUpdatedRows(DanhSachThiSinh dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(dsMaPhach dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1446,7 +949,7 @@ namespace QuanLyThiNghe.DanhSachThiSinhTableAdapters {
         ///Insert rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateInsertedRows(DanhSachThiSinh dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(dsMaPhach dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1455,7 +958,7 @@ namespace QuanLyThiNghe.DanhSachThiSinhTableAdapters {
         ///Delete rows in bottom-up order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateDeletedRows(DanhSachThiSinh dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(dsMaPhach dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1487,7 +990,7 @@ namespace QuanLyThiNghe.DanhSachThiSinhTableAdapters {
         ///Update all changes to the dataset.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public virtual int UpdateAll(DanhSachThiSinh dataSet) {
+        public virtual int UpdateAll(dsMaPhach dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

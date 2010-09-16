@@ -100,6 +100,7 @@
             this.cSBD.MinimumWidth = 50;
             this.cSBD.Name = "cSBD";
             this.cSBD.ReadOnly = true;
+            this.cSBD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.cSBD.Visible = false;
             // 
             // cMaPhach

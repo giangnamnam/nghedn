@@ -8,7 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Threading;
-using System.Diagnostics; 
+using System.Diagnostics;
+using QuanLyThiNghe.Reports; 
 
 namespace QuanLyThiNghe.Forms
 {
@@ -18,7 +19,6 @@ namespace QuanLyThiNghe.Forms
         {
             InitializeComponent();
         }
-
         private void frmDanhMaPhach_Load(object sender, EventArgs e)
         {
             dataGridView1.AutoGenerateColumns = false;
@@ -33,7 +33,8 @@ namespace QuanLyThiNghe.Forms
                 {
                     // load the control with the appropriate data
                     lib.DanhMaPhach MP = new QuanLyThiNghe.lib.DanhMaPhach();
-                    DataTable MonThi = MP.DS_MonThi_HoiDongThi_PhongThi.DefaultView.ToTable(true, "GiaTri", "MaMonThi");
+                    
+                    DataTable Khoi = MP.LayDanhSachKhoiThi();
                     int soLuongHoanThanh = 0;
                     int Tong = MP.LayTongSoThiSinhCanDanhMaPhach();
                     bool MaNgauNhien = chk.Checked;
@@ -47,81 +48,82 @@ namespace QuanLyThiNghe.Forms
                     con.Open();
                     try
                     {
-
-                        #region Lap mon thi
-                        foreach (DataRow MT in MonThi.Rows)
+                        foreach (DataRow drkhoithi in Khoi.Rows)
                         {
-                            string TDN = MT["GiaTri"].ToString();
-                            string expression = "(Convert(" + "MaMonThi" + ",'System.String') = " + MT["MaMonThi"].ToString() + ")";
-                            DataTable HDThi = MP.LayTheoDieuKien(expression).DefaultView.ToTable(true, "MaHoiDong");
-                            int intmamonthi = int.Parse(MT["MaMonThi"].ToString());
-                            int P = 0;
-                            int countSoPhongTheoMon = MP.DemSoPhongThiTheoMonThi(intmamonthi);
-                            System.Collections.ArrayList arr = new System.Collections.ArrayList();
-                            for (int i = 1; i <= countSoPhongTheoMon; i++)
-                                arr.Add(i);
+                            int maKhoiThi = int.Parse(drkhoithi["MaKhoi"].ToString());
+                            MP.LayDanhSach_MonThi_HoiDong_PhongThi_TheoKhoi(maKhoiThi);
+                            DataTable MonThi = MP.DS_MonThi_HoiDongThi_PhongThi.DefaultView.ToTable(true, "GiaTri", "MaMonThi");
 
-                            #region Lap hoi dong thi
-                            foreach (DataRow HD in HDThi.Rows)
+                            #region Lap mon thi
+                            foreach (DataRow MT in MonThi.Rows)
                             {
-                                string expressionHD = "(Convert(" + "MaMonThi" + ",'System.String') = " + MT["MaMonThi"].ToString() + ")";
-                                expressionHD += "AND (Convert(" + "MaHoiDong" + ",'System.String') = " + HD["MaHoiDong"].ToString() + ")";
-                                DataTable PhongThi = MP.LayTheoDieuKien(expressionHD).DefaultView.ToTable(true, "PhongThi");
-                                #region Lap phong thi
-                                foreach (DataRow PT in PhongThi.Rows)
+                                string TDN = MT["GiaTri"].ToString();
+                                string expression = "(Convert(" + "MaMonThi" + ",'System.String') = " + MT["MaMonThi"].ToString() + ")";
+                                DataTable HDThi = MP.LayTheoDieuKien(expression).DefaultView.ToTable(true, "MaHoiDong");
+                                int intmamonthi = int.Parse(MT["MaMonThi"].ToString());
+                                int P = 0;
+                                int countSoPhongTheoMon = MP.DemSoPhongThiTheoMonThi(intmamonthi);
+                                System.Collections.ArrayList arr = new System.Collections.ArrayList();
+                                for (int i = 1; i <= countSoPhongTheoMon; i++)
+                                    arr.Add(i);
+                                #region Lap hoi dong thi
+                                foreach (DataRow HD in HDThi.Rows)
                                 {
-                                    if (MaNgauNhien)
+                                    string expressionHD = "(Convert(" + "MaMonThi" + ",'System.String') = " + MT["MaMonThi"].ToString() + ")";
+                                    expressionHD += "AND (Convert(" + "MaHoiDong" + ",'System.String') = " + HD["MaHoiDong"].ToString() + ")";
+                                    DataTable PhongThi = MP.LayTheoDieuKien(expressionHD).DefaultView.ToTable(true, "PhongThi");
+                                    #region Lap phong thi
+                                    foreach (DataRow PT in PhongThi.Rows)
                                     {
-                                        Random r = new Random();
-                                        int index = r.Next(0, arr.Count - 1);
-                                        P = (int)arr[index];
-                                        arr.RemoveAt(index);
-                                    }
-                                    else
-                                    { 
-                                        P++;
-                                    }
-                                    int mamonthi = int.Parse(MT["MaMonThi"].ToString());
-                                    int mahoidong = int.Parse(HD["MaHoiDong"].ToString());
-                                    int phong = int.Parse(PT["PhongThi"].ToString());
-                                    DataTable DSTS = MP.LayDanhSachThiSinhTheoPhong(mamonthi, mahoidong, phong);
-
-                                    
-                                    int randomNumber = 0;
-                                    #region lapThiSinh
-                                    foreach (DataRow item in DSTS.Rows)
-                                    {
-                                        randomNumber++;
-                                        int mathisinh = int.Parse(item["MaThiSinh"].ToString());
-                                        string strMaPhach = "";
-                                        if (BatDauBangDauPhach)
-                                            strMaPhach = TDN + String.Format(pHONGfORMAT, P) + String.Format(sTTfORMAT, randomNumber);
+                                        if (MaNgauNhien)
+                                        {
+                                            Random r = new Random();
+                                            int index = r.Next(0, arr.Count - 1);
+                                            P = (int)arr[index];
+                                            arr.RemoveAt(index);
+                                        }
                                         else
-                                            strMaPhach = String.Format(pHONGfORMAT, P) + TDN + String.Format(sTTfORMAT, randomNumber);
-                                        //string strMaPhach = TDN + String.Format("{0:0000}", P) + String.Format("{0:00}", randomNumber);
-                                        //string strMaPhach = P.ToString()+ TDN +  randomNumber.ToString();
-                                        soLuongHoanThanh++;
-                                        com.Parameters.Clear();
-                                        com.Parameters.Add("@MaThiSinh", mathisinh);
-                                        com.Parameters.Add("@MaPhach", strMaPhach);
-                                        com.ExecuteNonQuery();
+                                        {
+                                            P++;
+                                        }
+                                        int mamonthi = int.Parse(MT["MaMonThi"].ToString());
+                                        int mahoidong = int.Parse(HD["MaHoiDong"].ToString());
+                                        int phong = int.Parse(PT["PhongThi"].ToString());
+                                        DataTable DSTS = MP.LayDanhSachThiSinhTheoPhong(maKhoiThi, mamonthi, mahoidong, phong);
+
+
+                                        int randomNumber = 0;
+                                        #region lapThiSinh
+                                        foreach (DataRow item in DSTS.Rows)
+                                        {
+                                            randomNumber++;
+                                            int mathisinh = int.Parse(item["MaThiSinh"].ToString());
+                                            string strMaPhach = "";
+                                            if (BatDauBangDauPhach)
+                                                strMaPhach = TDN + String.Format(pHONGfORMAT, P) + String.Format(sTTfORMAT, randomNumber);
+                                            else
+                                                strMaPhach = String.Format(pHONGfORMAT, P) + TDN + String.Format(sTTfORMAT, randomNumber);
+                                            //string strMaPhach = TDN + String.Format("{0:0000}", P) + String.Format("{0:00}", randomNumber);
+                                            //string strMaPhach = P.ToString()+ TDN +  randomNumber.ToString();
+                                            soLuongHoanThanh++;
+                                            com.Parameters.Clear();
+                                            com.Parameters.Add("@MaThiSinh", mathisinh);
+                                            com.Parameters.Add("@MaPhach", strMaPhach);
+                                            com.ExecuteNonQuery();
+                                        }
+                                        #endregion
+                                        progressBarControl1.Text = ((soLuongHoanThanh * 100) / Tong).ToString();
+                                        progressBarControl1.Update();
                                     }
                                     #endregion
-                                    progressBarControl1.Text = ((soLuongHoanThanh * 100) / Tong).ToString();
-                                    progressBarControl1.Update();
+
+
                                 }
                                 #endregion
-
-
                             }
                             #endregion
 
-
-
                         }
-                        #endregion
-
-
 
                     }
                     catch (Exception ex)
@@ -140,34 +142,42 @@ namespace QuanLyThiNghe.Forms
         }
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            dataGridView1.Update();
-            DataTable newTable = new DataTable();
-            newTable = dt.GetChanges();
-            if (newTable != null)
+
+            lib.DanhMaPhach MP = new QuanLyThiNghe.lib.DanhMaPhach();
+            int intDaCoMaPhach =
+            MP.DemSoThiSinhDaCoMaPhach(1) + MP.DemSoThiSinhDaCoMaPhach(2);
+            if (intDaCoMaPhach == 0 || XtraMessageBox.Show("Đã có " + intDaCoMaPhach.ToString() + " thí sinh được đánh mã phách rồi, bạn có muốn đánh mã phách lại không?",
+                    "Đánh mã phách", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                DialogResult re =
-                XtraMessageBox.Show("Định nghĩa đầu phách có thay đổi, bạn có muốn lưu lại các thay đổi này không?",
-                    "Đánh mã phách", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);// 
-                if (re == DialogResult.Yes)
+                dataGridView1.Update();
+                DataTable newTable = new DataTable();
+                newTable = dt.GetChanges();
+                if (newTable != null)
                 {
-                    try
+                    DialogResult re =
+                    XtraMessageBox.Show("Định nghĩa đầu phách có thay đổi, bạn có muốn lưu lại các thay đổi này không?",
+                        "Đánh mã phách", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);// 
+                    if (re == DialogResult.Yes)
                     {
-                        SqlCommandBuilder cmb = new SqlCommandBuilder(adap);
-                        adap.TableMappings.Clear();
-                        adap.TableMappings.Add("GiaTri", dt.TableName);
-                        adap.Update(newTable);
-                        loadCSDL();
-                        CapNhatMaPhachChoThiSinh();
-                    }
-                    catch (Exception ex)
-                    {
-                        //MessageBox.Show(ex.Message);
+                        try
+                        {
+                            SqlCommandBuilder cmb = new SqlCommandBuilder(adap);
+                            adap.TableMappings.Clear();
+                            adap.TableMappings.Add("GiaTri", dt.TableName);
+                            adap.Update(newTable);
+                            loadCSDL();
+                            CapNhatMaPhachChoThiSinh();
+                        }
+                        catch (Exception ex)
+                        {
+                            //MessageBox.Show(ex.Message);
+                        }
                     }
                 }
-            }
-            else
-            {
-                CapNhatMaPhachChoThiSinh();
+                else
+                {
+                    CapNhatMaPhachChoThiSinh();
+                }
             }
         }
         public void CapNhatMaPhachChoThiSinh()
@@ -208,7 +218,6 @@ namespace QuanLyThiNghe.Forms
             adap.Fill(dt);
             dataGridView1.DataSource = dt;
         }
-
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
@@ -216,63 +225,62 @@ namespace QuanLyThiNghe.Forms
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Nếu thay đổi đầu phách, bạn có thể phải đánh lại toàn bộ mã phách. \nBạn vẫn muốn cập nhật lại đầu phách?", "Đánh mã phách", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                try
-                {
+            
                     //adap.Update(dt);
                     dataGridView1.Update();
                     DataTable newTable = new DataTable();
                     newTable = dt.GetChanges();
                     if (newTable != null)
                     {
-                        SqlCommandBuilder cmb = new SqlCommandBuilder(adap);
-                        adap.TableMappings.Clear();
-                        adap.TableMappings.Add("GiaTri", dt.TableName);
-                        adap.Update(newTable);
-                        loadCSDL();
-
-                        if (XtraMessageBox.Show("Đã lưu đầu phách thành công. Bạn có muốn đánh mã phách theo đầu phách mới này ngay không?", "Đánh mã phách", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (XtraMessageBox.Show("Nếu thay đổi đầu phách, bạn có thể phải đánh lại toàn bộ mã phách. \nBạn vẫn muốn cập nhật lại đầu phách?", "Đánh mã phách", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            CapNhatMaPhachChoThiSinh();
+                            try
+                            {
+                                SqlCommandBuilder cmb = new SqlCommandBuilder(adap);
+                                adap.TableMappings.Clear();
+                                adap.TableMappings.Add("GiaTri", dt.TableName);
+                                adap.Update(newTable);
+                                loadCSDL();
+
+                                if (XtraMessageBox.Show("Đã lưu đầu phách thành công. Bạn có muốn đánh mã phách theo đầu phách mới này ngay không?", "Đánh mã phách", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                {
+                                    CapNhatMaPhachChoThiSinh();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                //MessageBox.Show(ex.Message);
+                            }
                         }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    //MessageBox.Show(ex.Message);
-                }
+                        else
+                            loadCSDL();
+                
             }
         }
-
         private void progressBarControl1_TextChanged(object sender, EventArgs e)
         {
             progressBarControl1.Text = progressBarControl1.Text;
         }
-
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             
         }
-
         private void dropDownButton1_Click(object sender, EventArgs e)
         {
-            Reports.rptDanhSachMaPhachTheoPhong rpt = new QuanLyThiNghe.Reports.rptDanhSachMaPhachTheoPhong();
+            InMaPhach rpt = new InMaPhach();
             //rpt.ShowDesigner();
             //rpt.ShowDesignerDialog();
             //rpt.ShowPreview();
             rpt.ShowPreviewDialog();
         }
-
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Reports.rptDanhSachMaPhachTheoPhong rpt = new QuanLyThiNghe.Reports.rptDanhSachMaPhachTheoPhong();
+            InMaPhach rpt = new InMaPhach();
             rpt.ShowPreviewDialog();
         }
-
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Reports.rptDanhSachMaPhachTheoPhong rpt = new QuanLyThiNghe.Reports.rptDanhSachMaPhachTheoPhong();
+            InMaPhach rpt = new InMaPhach();
             rpt.ShowDesignerDialog();
             
         }
