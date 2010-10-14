@@ -21,7 +21,7 @@ namespace QuanLyThiNghe_ThuKy
             }
             catch (Exception ex)
             {
-                throw;
+                
                 
             }
             
