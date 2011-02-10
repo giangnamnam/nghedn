@@ -340,6 +340,9 @@
     <EmbeddedResource Include="Forms\frmInDanhSach.resx">
       <DependentUpon>frmInDanhSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInThiSinh.resx">
+      <DependentUpon>frmInThiSinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmKyThi.resx">
       <DependentUpon>frmKyThi.cs</DependentUpon>
     </EmbeddedResource>

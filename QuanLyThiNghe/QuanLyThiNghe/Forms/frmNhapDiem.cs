@@ -10,7 +10,7 @@ using DevExpress.XtraEditors;
 
 namespace QuanLyThiNghe.Forms
 {
-    public partial class frmNhapDiem : Form
+    public partial class frmNhapDiem : DevExpress.XtraEditors.XtraForm
     {
         public frmNhapDiem()
         {

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace QuanLyThiNghe.Forms
 {
-    public partial class frmTruyVanThiSinh : Form
+    public partial class frmTruyVanThiSinh : DevExpress.XtraEditors.XtraForm
     {
         public frmTruyVanThiSinh()
         {
@@ -17,6 +17,11 @@ namespace QuanLyThiNghe.Forms
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
         {
 
         }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTruyVanThiSinh));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cMaThiSinh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -520,6 +519,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(151, 23);
             this.simpleButton3.TabIndex = 12;
             this.simpleButton3.Text = "In danh sách";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton2
             // 
@@ -532,12 +532,12 @@
             // 
             // radioGroup1
             // 
-            this.radioGroup1.EditValue = 0D;
+            this.radioGroup1.EditValue = 0;
             this.radioGroup1.Location = new System.Drawing.Point(250, 30);
             this.radioGroup1.Name = "radioGroup1";
             this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(1D, "TS bình thường"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(0D, "TS vi phạm")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "TS bình thường"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "TS vi phạm")});
             this.radioGroup1.Size = new System.Drawing.Size(154, 52);
             this.radioGroup1.TabIndex = 10;
             // 
@@ -582,7 +582,6 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmTruyVanThiSinh";

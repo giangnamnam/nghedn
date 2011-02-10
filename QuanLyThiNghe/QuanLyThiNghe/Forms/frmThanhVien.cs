@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace QuanLyThiNghe.Forms
 {
-    public partial class frmThanhVien : Form
+    public partial class frmThanhVien : DevExpress.XtraEditors.XtraForm
     {
         QLTN_Entities en = new QLTN_Entities();
         public int MaPhanQuyen { get; set; }

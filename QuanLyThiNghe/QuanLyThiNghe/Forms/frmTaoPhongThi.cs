@@ -11,7 +11,7 @@ using DevExpress.XtraEditors;
 
 namespace QuanLyThiNghe.Forms
 {
-    public partial class frmTaoPhongThi : Form
+    public partial class frmTaoPhongThi : DevExpress.XtraEditors.XtraForm
     {
         QLTN_Entities en = new QLTN_Entities();
         bool SoLuongThiSinhVuotGioiHan = false;

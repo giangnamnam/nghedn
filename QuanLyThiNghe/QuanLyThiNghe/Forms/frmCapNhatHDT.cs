@@ -10,7 +10,7 @@ using DevExpress.XtraEditors.Controls;
 
 namespace QuanLyThiNghe.Forms
 {
-    public partial class frmCapNhatHDT : Form
+    public partial class frmCapNhatHDT : DevExpress.XtraEditors.XtraForm
     {
         QLTN_Entities _Entities = new QLTN_Entities();
         public int MaHDT = 0;
