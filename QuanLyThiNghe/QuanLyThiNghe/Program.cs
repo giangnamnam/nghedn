@@ -20,7 +20,11 @@ namespace QuanLyThiNghe
             {
                 //Application.Run(new Forms.frmMain());
                 //Application.Run(new Forms.frmGioiThieu());
+<<<<<<< .mine
+                //Application.Run(new Forms.frmChiaHoiDongThi());
+=======
                 Application.Run(new Forms.frmChiaHoiDongThi());
+>>>>>>> .r89
             }
             catch (Exception)
             {
