@@ -10,7 +10,7 @@ using DevExpress.XtraEditors;
 
 namespace QuanLyThiNghe.Forms
 {
-    public partial class frmHoiDongThi : Form
+    public partial class frmHoiDongThi : DevExpress.XtraEditors.XtraForm
     {
         QLTN_Entities _entities = new QLTN_Entities();
         public frmHoiDongThi()

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -39,7 +39,6 @@
             this.xoáHuyệnNàyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cMaThiSinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,10 +56,11 @@
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbItems = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbType = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAddCandidate = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.cbType = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.btnAddCandidate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.bar1 = new DevExpress.XtraBars.Bar();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             this.Menu.SuspendLayout();
@@ -93,7 +93,7 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(592, 332);
+            this.gridControl1.Size = new System.Drawing.Size(795, 398);
             this.gridControl1.TabIndex = 8;
             this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -107,14 +107,14 @@
             this.toolStripSeparator1,
             this.xoáHuyệnNàyToolStripMenuItem});
             this.Menu.Name = "contextMenuStrip1";
-            this.Menu.Size = new System.Drawing.Size(153, 98);
+            this.Menu.Size = new System.Drawing.Size(138, 76);
             // 
             // thêmHuyệnMớiToolStripMenuItem
             // 
             this.thêmHuyệnMớiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Add_16x16;
             this.thêmHuyệnMớiToolStripMenuItem.Name = "thêmHuyệnMớiToolStripMenuItem";
             this.thêmHuyệnMớiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.thêmHuyệnMớiToolStripMenuItem.Text = "Thêm";
             this.thêmHuyệnMớiToolStripMenuItem.Click += new System.EventHandler(this.btnAddCandidate_Click);
             // 
@@ -123,28 +123,27 @@
             this.btnEdit.Image = global::QuanLyThiNghe.Properties.Resources.Edit_16x16;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.btnEdit.Size = new System.Drawing.Size(152, 22);
+            this.btnEdit.Size = new System.Drawing.Size(137, 22);
             this.btnEdit.Text = "Cập nhật";
             this.btnEdit.Click += new System.EventHandler(this.btnInpuMark_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(138, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
             // 
             // xoáHuyệnNàyToolStripMenuItem
             // 
             this.xoáHuyệnNàyToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
             this.xoáHuyệnNàyToolStripMenuItem.Name = "xoáHuyệnNàyToolStripMenuItem";
             this.xoáHuyệnNàyToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.xoáHuyệnNàyToolStripMenuItem.Text = "Xoá";
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.cMaThiSinh,
-            this.gridColumn12,
             this.gridColumn5,
             this.gridColumn1,
             this.gridColumn4,
@@ -178,19 +177,6 @@
             this.cMaThiSinh.FieldName = "MaThiSinh";
             this.cMaThiSinh.Name = "cMaThiSinh";
             // 
-            // gridColumn12
-            // 
-            this.gridColumn12.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn12.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn12.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn12.Caption = "Mã Phách";
-            this.gridColumn12.FieldName = "MaPhach";
-            this.gridColumn12.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 1;
-            // 
             // gridColumn5
             // 
             this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
@@ -210,7 +196,7 @@
             this.gridColumn1.FieldName = "Ho";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
+            this.gridColumn1.VisibleIndex = 1;
             this.gridColumn1.Width = 150;
             // 
             // gridColumn4
@@ -220,7 +206,7 @@
             this.gridColumn4.MinWidth = 100;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 2;
             this.gridColumn4.Width = 100;
             // 
             // gridColumn2
@@ -236,7 +222,7 @@
             this.gridColumn2.OptionsColumn.AllowSize = false;
             this.gridColumn2.OptionsColumn.FixedWidth = true;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 4;
+            this.gridColumn2.VisibleIndex = 3;
             // 
             // gridColumn6
             // 
@@ -244,7 +230,7 @@
             this.gridColumn6.FieldName = "NoiSinh";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 4;
             // 
             // gridColumn7
             // 
@@ -252,7 +238,7 @@
             this.gridColumn7.FieldName = "DMTruong.TenTruong";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.VisibleIndex = 5;
             // 
             // gridColumn8
             // 
@@ -260,7 +246,7 @@
             this.gridColumn8.FieldName = "Lop";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.VisibleIndex = 6;
             // 
             // gridColumn9
             // 
@@ -268,7 +254,7 @@
             this.gridColumn9.FieldName = "DMMonThi.TenMonThi";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 10;
+            this.gridColumn9.VisibleIndex = 9;
             // 
             // gridColumn10
             // 
@@ -280,7 +266,7 @@
             this.gridColumn10.FieldName = "PhongThi";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 9;
+            this.gridColumn10.VisibleIndex = 8;
             // 
             // gridColumn11
             // 
@@ -288,7 +274,7 @@
             this.gridColumn11.FieldName = "HoiDongThi.DMTruong.TenTruong";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 8;
+            this.gridColumn11.VisibleIndex = 7;
             // 
             // gridColumn13
             // 
@@ -300,7 +286,7 @@
             this.gridColumn13.FieldName = "DiemLT";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 11;
+            this.gridColumn13.VisibleIndex = 10;
             // 
             // gridColumn14
             // 
@@ -312,7 +298,7 @@
             this.gridColumn14.FieldName = "DiemTH";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 12;
+            this.gridColumn14.VisibleIndex = 11;
             // 
             // gridColumn3
             // 
@@ -320,7 +306,7 @@
             this.gridColumn3.FieldName = "TongDiem";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 13;
+            this.gridColumn3.VisibleIndex = 12;
             // 
             // gridColumn15
             // 
@@ -328,7 +314,7 @@
             this.gridColumn15.FieldName = "XepLoai";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 14;
+            this.gridColumn15.VisibleIndex = 13;
             // 
             // repositoryItemCheckEdit2
             // 
@@ -339,21 +325,21 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.cbItems);
-            this.panel1.Controls.Add(this.cbType);
-            this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.btnAddCandidate);
             this.panel1.Controls.Add(this.btnPrint);
+            this.panel1.Controls.Add(this.cbType);
+            this.panel1.Controls.Add(this.btnAddCandidate);
+            this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(3);
-            this.panel1.Size = new System.Drawing.Size(592, 30);
+            this.panel1.Size = new System.Drawing.Size(795, 30);
             this.panel1.TabIndex = 7;
             // 
             // cbItems
             // 
             this.cbItems.EditValue = "";
-            this.cbItems.Location = new System.Drawing.Point(269, 5);
+            this.cbItems.Location = new System.Drawing.Point(273, 5);
             this.cbItems.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.cbItems.MaximumSize = new System.Drawing.Size(250, 0);
             this.cbItems.MinimumSize = new System.Drawing.Size(120, 0);
@@ -362,18 +348,29 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.DropDown)});
             this.cbItems.Size = new System.Drawing.Size(140, 20);
             this.cbItems.TabIndex = 7;
-            this.cbItems.TextChanged += new System.EventHandler(this.cbItems_TextChanged);
+            this.cbItems.SelectedIndexChanged += new System.EventHandler(this.cbItems_SelectedIndexChanged);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.Image = global::QuanLyThiNghe.Properties.Resources.Print_16x16;
+            this.btnPrint.Location = new System.Drawing.Point(732, 3);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(60, 24);
+            this.btnPrint.TabIndex = 0;
+            this.btnPrint.Text = "In";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // cbType
             // 
             this.cbType.EditValue = "Thí sinh theo trường";
-            this.cbType.Location = new System.Drawing.Point(127, 5);
+            this.cbType.Location = new System.Drawing.Point(130, 5);
             this.cbType.Margin = new System.Windows.Forms.Padding(0);
             this.cbType.MaximumSize = new System.Drawing.Size(250, 0);
             this.cbType.MinimumSize = new System.Drawing.Size(120, 0);
             this.cbType.Name = "cbType";
             this.cbType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.DropDown, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleLeft, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, false)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.DropDown, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleLeft, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, false)});
             this.cbType.Properties.DropDownRows = 10;
             this.cbType.Properties.Items.AddRange(new object[] {
             "Thí sinh theo trường",
@@ -382,23 +379,12 @@
             "Thí sinh theo hội đồng thi"});
             this.cbType.Size = new System.Drawing.Size(140, 20);
             this.cbType.TabIndex = 6;
-            this.cbType.TextChanged += new System.EventHandler(this.cbType_TextChanged);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
-            this.btnDelete.Location = new System.Drawing.Point(65, 3);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(60, 24);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Xoá";
-            this.btnDelete.ToolTip = "Thêm huyện mới        Ctr + N";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // btnAddCandidate
             // 
             this.btnAddCandidate.Image = global::QuanLyThiNghe.Properties.Resources.Add_16x16;
-            this.btnAddCandidate.Location = new System.Drawing.Point(3, 3);
+            this.btnAddCandidate.Location = new System.Drawing.Point(2, 3);
             this.btnAddCandidate.Name = "btnAddCandidate";
             this.btnAddCandidate.Size = new System.Drawing.Size(60, 24);
             this.btnAddCandidate.TabIndex = 1;
@@ -406,25 +392,34 @@
             this.btnAddCandidate.ToolTip = "Thêm huyện mới        Ctr + N";
             this.btnAddCandidate.Click += new System.EventHandler(this.btnAddCandidate_Click);
             // 
-            // btnPrint
+            // btnDelete
             // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Image = global::QuanLyThiNghe.Properties.Resources.Print_16x16;
-            this.btnPrint.Location = new System.Drawing.Point(529, 3);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(60, 24);
-            this.btnPrint.TabIndex = 0;
-            this.btnPrint.Text = "In";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            this.btnDelete.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
+            this.btnDelete.Location = new System.Drawing.Point(66, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(60, 24);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Xoá";
+            this.btnDelete.ToolTip = "Thêm huyện mới        Ctr + N";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Tools";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.FloatLocation = new System.Drawing.Point(455, 166);
+            this.bar1.Offset = 209;
+            this.bar1.Text = "Tools";
             // 
             // frmThiSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 362);
+            this.ClientSize = new System.Drawing.Size(795, 428);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(608, 400);
+            this.MinimumSize = new System.Drawing.Size(600, 389);
             this.Name = "frmThiSinh";
             this.Text = "Danh sách thí sinh";
             this.Load += new System.EventHandler(this.frmThiSinh_Load);
@@ -459,7 +454,6 @@
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
@@ -473,5 +467,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         public DevExpress.XtraEditors.ComboBoxEdit cbItems;
+        private DevExpress.XtraBars.Bar bar1;
     }
 }

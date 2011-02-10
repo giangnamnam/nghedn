@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace QuanLyThiNghe.Forms
 {
-    public partial class frmGioiThieu : Form
+    public partial class frmGioiThieu : DevExpress.XtraEditors.XtraForm
     {
         public frmGioiThieu()
         {

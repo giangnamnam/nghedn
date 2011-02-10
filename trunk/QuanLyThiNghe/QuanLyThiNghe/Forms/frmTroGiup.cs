@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace QuanLyThiNghe.Forms
 {
-    public partial class frmTroGiup : Form
+    public partial class frmTroGiup : DevExpress.XtraEditors.XtraForm
     {
         public frmTroGiup()
         {

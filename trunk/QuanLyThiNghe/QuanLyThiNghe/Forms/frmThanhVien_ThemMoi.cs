@@ -10,7 +10,7 @@ using DevExpress.XtraEditors;
 
 namespace QuanLyThiNghe.Forms
 {
-    public partial class frmThanhVien_ThemMoi : Form
+    public partial class frmThanhVien_ThemMoi : DevExpress.XtraEditors.XtraForm
     {
         QLTN_Entities en = new QLTN_Entities();
         DialogResult rt = DialogResult.Cancel;

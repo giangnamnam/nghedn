@@ -10,7 +10,7 @@ using QuanLyThiNghe;
 
 namespace QuanLyThiNghe.Forms
 {
-    public partial class frmHuyen : Form
+    public partial class frmHuyen : DevExpress.XtraEditors.XtraForm
     {
         QLTN_Entities _Entities = new QLTN_Entities();
         int MaHuyen = 0;

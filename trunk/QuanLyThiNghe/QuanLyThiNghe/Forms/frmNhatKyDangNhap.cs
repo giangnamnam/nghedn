@@ -9,8 +9,8 @@ using System.Windows.Forms;
 
 namespace QuanLyThiNghe.Forms
 {
-    
-    public partial class frmNhatKyDangNhap : Form
+
+    public partial class frmNhatKyDangNhap : DevExpress.XtraEditors.XtraForm
     {
         QLTN_Entities en = new QLTN_Entities();
         public string pTenDangNhap { get; set; }
