@@ -63,7 +63,7 @@ namespace QuanLyThiNghe.Forms
         }
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            LoadDanhSach();
+            //LoadDanhSach();
         }
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -73,6 +73,7 @@ namespace QuanLyThiNghe.Forms
         void LoadDanhSach()
         {
             BindTreeTruong();
+            BindTreeHoiDongThi();
         }
         void LoadKyThi()
         {
@@ -85,42 +86,77 @@ namespace QuanLyThiNghe.Forms
             int Khoi = radioButton1.Checked ? 2 : 1;
             foreach (DMHuyen item in dmHuyen)
             {
-                try
+                int Huyen = item.MaHuyen;
+
+                List<DMTruong> dmTruong = en.DMTruong.Include("DMKhoi").Include("ThiSinh").Include("HoiDongThi").Where(t =>
+                    t.DMKhoi.MaKhoi == Khoi && t.DMHuyen.MaHuyen == Huyen).ToList();
+                DevExpress.XtraTreeList.Nodes.TreeListNode H = treeListTruong.AppendNode(new object[] { item.TenHuyen }, null);
+
+                foreach (DMTruong t in dmTruong)
                 {
-                    int Huyen = item.MaHuyen;
-                    
-                    List<DMTruong> dmTruong = en.DMTruong.Include("DMKhoi").Include("ThiSinh").Include("HoiDongThi").Where(t =>
-                        t.DMKhoi.MaKhoi == Khoi && t.DMHuyen.MaHuyen == Huyen).ToList();
-                    DevExpress.XtraTreeList.Nodes.TreeListNode H = treeListTruong.AppendNode(new object[] { item.TenHuyen }, null);
-
-                    foreach (DMTruong t in dmTruong)
+                    int Truong = t.MaTruong;
+                    int SoLuongTheoTruong = en.ThiSinh.Include("DMMonThi").Where(s => s.DMTruong.MaTruong == Truong && s.MaKyThi == MaKyThiHienTai).Count();
+                    if (SoLuongTheoTruong > 0)
                     {
-                        int Truong = t.MaTruong;
-                        int SoLuongTheoTruong = en.ThiSinh.Include("DMMonThi").Where(s => s.DMTruong.MaTruong == Truong && s.MaKyThi == MaKyThiHienTai).Count();
-                        if (SoLuongTheoTruong > 0)
+                        DevExpress.XtraTreeList.Nodes.TreeListNode T = treeListTruong.AppendNode(new object[] { t.TenTruong + " (" + SoLuongTheoTruong.ToString() + ")" }, H);
+                        var thisinh = en.ThiSinh.Include("DMMonThi").Where(s => s.DMTruong.MaTruong == Truong && s.MaKyThi == MaKyThiHienTai).Select(ts => new { ts.DMMonThi.TenMonThi, ts.DMMonThi.MaMonThi }).Distinct().ToList();
+
+
+                        for (int i = 0; i < thisinh.Count; i++)
                         {
-                            DevExpress.XtraTreeList.Nodes.TreeListNode T = treeListTruong.AppendNode(new object[] { t.TenTruong + " (" + SoLuongTheoTruong.ToString() + ")" }, H);
-                            var thisinh = en.ThiSinh.Include("DMMonThi").Where(s => s.DMTruong.MaTruong == Truong && s.MaKyThi == MaKyThiHienTai).Select(ts => new { ts.DMMonThi.TenMonThi, ts.DMMonThi.MaMonThi }).Distinct().ToList();
-
-
-                            for (int i = 0; i < thisinh.Count; i++)
-                            {
-                                int MonThi = thisinh[i].MaMonThi;
-                                int SoLuong = en.ThiSinh.Include("DMMonThi").Where(s => s.DMTruong.MaTruong == Truong && s.DMMonThi.MaMonThi == MonThi && s.MaKyThi == MaKyThiHienTai).Count();
-                                treeListTruong.AppendNode(new object[] { thisinh[i].TenMonThi + " (" + SoLuong.ToString() + ")" }, T);
-                            }
+                            int MonThi = thisinh[i].MaMonThi;
+                            int SoLuong = en.ThiSinh.Include("DMMonThi").Where(s => s.DMTruong.MaTruong == Truong && s.DMMonThi.MaMonThi == MonThi && s.MaKyThi == MaKyThiHienTai).Count();
+                            treeListTruong.AppendNode(new object[] { thisinh[i].TenMonThi + " (" + SoLuong.ToString() + ")" }, T);
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    throw;
                 }
             }
         }
         void BindTreeHoiDongThi()
         {
+            try
+            {
+                treeListHDT.Nodes.Clear();
+                List<DMHuyen> dmHuyen = en.DMHuyen.ToList();
+                //int Khoi = radioButton1.Checked ? 2 : 1;
+                List<HoiDongThi> dmHDTs = en.HoiDongThi.Include("DMTruong").Include("DMKyThi").Where(h => h.DMKyThi.MaKyThi == MaKyThiHienTai).ToList();
+                foreach (HoiDongThi item in dmHDTs)
+                {
+                    item.DMTruong.DMHuyenReference.Load();
+                    item.DMTruong.DMKhoiReference.Load();
+                }
+                foreach (DMHuyen item in dmHuyen)
+                {
+                    int Huyen = item.MaHuyen;
+                    List<HoiDongThi> dmHDT = dmHDTs.Where(h => h.DMTruong.DMHuyen.MaHuyen == Huyen).ToList();
+                    DevExpress.XtraTreeList.Nodes.TreeListNode H = treeListHDT.AppendNode(new object[] { item.TenHuyen }, null);
 
+                    foreach (HoiDongThi t in dmHDT)
+                    {
+                        int MaHoiDong = t.MaHoiDong;
+                        int SoLuongTheoHoiDong = en.ThiSinh.Include("DMMonThi").Where(s => s.HoiDongThi.MaHoiDong == MaHoiDong).Count();
+                        //if (SoLuongTheoHoiDong > 0)
+                        //{
+                        DevExpress.XtraTreeList.Nodes.TreeListNode T = treeListHDT.AppendNode(new object[] { t.DMTruong.DMKhoi.TenKhoi + " - " + t.DMTruong.TenTruong + " (" + SoLuongTheoHoiDong.ToString() + ")" }, H);
+                        var thisinh = en.ThiSinh.Include("DMMonThi").Where(s => s.HoiDongThi.MaHoiDong == MaHoiDong).Select(ts => new { ts.DMMonThi.TenMonThi, ts.DMMonThi.MaMonThi }).Distinct().ToList();
+
+
+                        for (int i = 0; i < thisinh.Count; i++)
+                        {
+                            int MonThi = thisinh[i].MaMonThi;
+                            int SoLuong = en.ThiSinh.Include("DMMonThi").Where(s => s.HoiDongThi.MaHoiDong == MaHoiDong && s.DMMonThi.MaMonThi == MonThi).Count();
+                            treeListHDT.AppendNode(new object[] { thisinh[i].TenMonThi + " (" + SoLuong.ToString() + ")" }, T);
+                        }
+                        //}
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
         }
     }
 }
