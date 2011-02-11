@@ -29,22 +29,103 @@ namespace QuanLyThiNghe.Forms
             }
         }
 
-        private void treeListTruong_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
-        {
-
-        }
-
         void LoadKyThi()
         {
 
         }
         void BindTreeTruong()
         {
+            treeListTruong.Nodes.Clear();
+            List<DMHuyen> dmHuyen = en.DMHuyen.ToList();
+            int Khoi = radioButton1.Checked ? 2 : 1;
+            foreach (DMHuyen item in dmHuyen)
+            {
+                try
+                {
+                    int Huyen = item.MaHuyen;
+                    DevExpress.XtraTreeList.Nodes.TreeListNode H = treeListTruong.AppendNode(new object[] { item.TenHuyen }, null);
+                    List<DMTruong> dmTruong = en.DMTruong.Include("DMKhoi").Include("ThiSinh").Include("HoiDongThi").Where(t =>
+                        t.DMKhoi.MaKhoi == Khoi && t.DMHuyen.MaHuyen == Huyen).ToList();
+                    foreach (DMTruong t in dmTruong)
+                    {
+                        int Truong = t.MaTruong;
+                        DevExpress.XtraTreeList.Nodes.TreeListNode T = treeListTruong.AppendNode(new object[] { t.TenTruong }, H);
+                        var thisinh =  en.ThiSinh.Include("DMMonThi").Where(s => s.DMTruong.MaTruong == Truong).Select(ts => new { ts.DMMonThi.TenMonThi,ts.DMMonThi.MaMonThi }).Distinct().ToList();
+                        
 
+                        for (int i = 0; i < thisinh.Count; i++)
+                        {
+                            int MonThi = thisinh[i].MaMonThi;
+                            int SoLuong = en.ThiSinh.Include("DMMonThi").Where(s => s.DMTruong.MaTruong == Truong && s.DMMonThi.MaMonThi == MonThi).Count();
+                            treeListTruong.AppendNode(new object[] { thisinh[i].TenMonThi + " ("+SoLuong.ToString()+")"}, T);
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+                
+            }
+            
+            
         }
         void BindTreeHoiDongThi()
         {
 
+        }
+
+        private void treeListHDT_DragEnter(object sender, DragEventArgs e)
+        {
+            if (GetDragNode(e.Data) != null)
+                e.Effect = DragDropEffects.Move;
+        }
+
+        private void treeListHDT_DragDrop(object sender, DragEventArgs e)
+        {
+            DevExpress.XtraTreeList.TreeList tl = sender as DevExpress.XtraTreeList.TreeList;
+            DevExpress.XtraTreeList.Nodes.TreeListNode node = GetDragNode(e.Data);
+            if (node != null)
+            {
+                //string dragString = GetStringByNode(node);
+                //int ind = lb.IndexFromPoint(lb.PointToClient(new Point(e.X, e.Y)));
+                tl.Nodes.Add(node);
+            }
+        }
+
+
+
+        private DevExpress.XtraTreeList.Nodes.TreeListNode GetDragNode(IDataObject data)
+        {
+            return data.GetData(typeof(DevExpress.XtraTreeList.Nodes.TreeListNode)) as DevExpress.XtraTreeList.Nodes.TreeListNode;
+        }
+        private string GetStringByNode(DevExpress.XtraTreeList.Nodes.TreeListNode node)
+        {
+            string ret = "";
+            for (int i = 0; i < treeListTruong.Columns.Count; i++)
+                ret += node.GetDisplayText(i) + (i < treeListTruong.Columns.Count - 1 ? "; " : ".");
+            return ret;
+        }
+
+        private void comboBoxKyThi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDanhSach();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadDanhSach();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadDanhSach();
+        }
+
+        void LoadDanhSach()
+        {
+            BindTreeTruong();
         }
     }
 }

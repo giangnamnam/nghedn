@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyThiNghe.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+    <Schema Namespace="QuanLyThiNghe.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityContainer Name="QuanLyThiNgheStoreContainer">
           <EntitySet Name="Config" EntityType="QuanLyThiNghe.Store.Config" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="DMHuyen" EntityType="QuanLyThiNghe.Store.DMHuyen" store:Type="Tables" Schema="dbo" />
@@ -165,6 +165,7 @@
             <PropertyRef Name="MaHoiDong" />
           </Key>
           <Property Name="MaHoiDong" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Alias" Type="nvarchar" MaxLength="50" />
           <Property Name="MaTruong" Type="int" />
           <Property Name="MaKyThi" Type="int" />
           <Property Name="SoLuongPhongDuTinh" Type="int" />
@@ -233,7 +234,7 @@
           <Property Name="NgaySinh" Type="nvarchar" MaxLength="50" />
           <Property Name="NoiSinh" Type="nvarchar" MaxLength="150" />
           <Property Name="Lop" Type="nvarchar" MaxLength="50" />
-          <Property Name="SBD" Type="nvarchar" MaxLength="50" />
+          <Property Name="SBD" Type="int" />
           <Property Name="PhongThi" Type="int" />
           <Property Name="MaPhach" Type="nvarchar" MaxLength="50" />
           <Property Name="MaHoiDong" Type="int" />
@@ -246,6 +247,9 @@
           <Property Name="ThuKy1" Type="int" />
           <Property Name="ThuKy2" Type="int" />
           <Property Name="ThuKy3" Type="int" />
+          <Property Name="BoBaiLT" Type="bit" />
+          <Property Name="BoBaiTH" Type="bit" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="550" />
           <Property Name="NguoiCapNhat" Type="nvarchar" MaxLength="150" />
           <Property Name="NgayCapNhat" Type="datetime" />
           <Property Name="DaXoa" Type="bit" />
@@ -391,8 +395,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyThiNghe" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
@@ -570,7 +573,7 @@
           <NavigationProperty Name="DMKyThi" Relationship="QuanLyThiNghe.FK_HoiDongThi_DMKyThi" FromRole="HoiDongThi" ToRole="DMKyThi" />
           <NavigationProperty Name="DMTruong" Relationship="QuanLyThiNghe.FK_HoiDongThi_DMTruong1" FromRole="HoiDongThi" ToRole="DMTruong" />
           <NavigationProperty Name="ThiSinh" Relationship="QuanLyThiNghe.FK_ThiSinh_HoiDongThi" FromRole="HoiDongThi" ToRole="ThiSinh" />
-        </EntityType>
+          <Property Name="Alias" Type="String" Nullable="true" /></EntityType>
         <EntityType Name="NhatKy">
           <Key>
             <PropertyRef Name="MaNhatKy" />
@@ -629,7 +632,7 @@
           <Property Name="NgaySinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="NoiSinh" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="Lop" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="SBD" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SBD" Type="Int32" />
           <Property Name="PhongThi" Type="Int32" />
           <Property Name="MaPhach" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="DiemLT" Type="Double" />
@@ -647,7 +650,9 @@
           <NavigationProperty Name="DMMonThi" Relationship="QuanLyThiNghe.FK_ThiSinh_DMMonThi" FromRole="ThiSinh" ToRole="DMMonThi" />
           <NavigationProperty Name="DMTruong" Relationship="QuanLyThiNghe.FK_ThiSinh_DMTruong" FromRole="ThiSinh" ToRole="DMTruong" />
           <NavigationProperty Name="HoiDongThi" Relationship="QuanLyThiNghe.FK_ThiSinh_HoiDongThi" FromRole="ThiSinh" ToRole="HoiDongThi" />
-        </EntityType>
+          <Property Name="BoBaiLT" Type="Boolean" Nullable="true" />
+          <Property Name="BoBaiTH" Type="Boolean" Nullable="true" />
+          <Property Name="GhiChu" Type="String" Nullable="true" /></EntityType>
         <EntityType Name="ThongKe">
           <Key>
             <PropertyRef Name="GioHeThong" />
@@ -802,6 +807,7 @@
           <EntitySetMapping Name="HoiDongThi">
             <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.HoiDongThi)">
               <MappingFragment StoreEntitySet="HoiDongThi">
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
                 <ScalarProperty Name="MaHoiDong" ColumnName="MaHoiDong" />
                 <ScalarProperty Name="SoLuongPhongDuTinh" ColumnName="SoLuongPhongDuTinh" />
                 <ScalarProperty Name="SoThiSinhDuTinh" ColumnName="SoThiSinhDuTinh" />
@@ -862,6 +868,9 @@
           <EntitySetMapping Name="ThiSinh">
             <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.ThiSinh)">
               <MappingFragment StoreEntitySet="ThiSinh">
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="BoBaiTH" ColumnName="BoBaiTH" />
+                <ScalarProperty Name="BoBaiLT" ColumnName="BoBaiLT" />
                 <ScalarProperty Name="MaThiSinh" ColumnName="MaThiSinh" />
                 <ScalarProperty Name="MaKyThi" ColumnName="MaKyThi" />
                 <ScalarProperty Name="Ho" ColumnName="Ho" />
