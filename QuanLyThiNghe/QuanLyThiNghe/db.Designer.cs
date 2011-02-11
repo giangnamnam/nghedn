@@ -22,7 +22,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_TaiKhoan_PhanQuyen", "PhanQuyen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.PhanQuyen), "TaiKhoan", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.TaiKhoan))]
 
 // Original file name:
-// Generation date: 8/09/10 9:29:41 PM
+// Generation date: 2/11/2011 5:19:55 PM
 namespace QuanLyThiNghe
 {
     
@@ -2238,6 +2238,29 @@ namespace QuanLyThiNghe
         partial void OnDaXoaChanging(global::System.Nullable<bool> value);
         partial void OnDaXoaChanged();
         /// <summary>
+        /// There are no comments for Property Alias in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Alias
+        {
+            get
+            {
+                return this._Alias;
+            }
+            set
+            {
+                this.OnAliasChanging(value);
+                this.ReportPropertyChanging("Alias");
+                this._Alias = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("Alias");
+                this.OnAliasChanged();
+            }
+        }
+        private string _Alias;
+        partial void OnAliasChanging(string value);
+        partial void OnAliasChanged();
+        /// <summary>
         /// There are no comments for DMKyThi in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("QuanLyThiNghe", "FK_HoiDongThi_DMKyThi", "DMKyThi")]
@@ -3346,7 +3369,7 @@ namespace QuanLyThiNghe
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string SBD
+        public global::System.Nullable<int> SBD
         {
             get
             {
@@ -3356,13 +3379,13 @@ namespace QuanLyThiNghe
             {
                 this.OnSBDChanging(value);
                 this.ReportPropertyChanging("SBD");
-                this._SBD = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._SBD = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("SBD");
                 this.OnSBDChanged();
             }
         }
-        private string _SBD;
-        partial void OnSBDChanging(string value);
+        private global::System.Nullable<int> _SBD;
+        partial void OnSBDChanging(global::System.Nullable<int> value);
         partial void OnSBDChanged();
         /// <summary>
         /// There are no comments for Property PhongThi in the schema.
@@ -3686,6 +3709,75 @@ namespace QuanLyThiNghe
         private global::System.Nullable<bool> _DaXoa;
         partial void OnDaXoaChanging(global::System.Nullable<bool> value);
         partial void OnDaXoaChanged();
+        /// <summary>
+        /// There are no comments for Property BoBaiLT in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<bool> BoBaiLT
+        {
+            get
+            {
+                return this._BoBaiLT;
+            }
+            set
+            {
+                this.OnBoBaiLTChanging(value);
+                this.ReportPropertyChanging("BoBaiLT");
+                this._BoBaiLT = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("BoBaiLT");
+                this.OnBoBaiLTChanged();
+            }
+        }
+        private global::System.Nullable<bool> _BoBaiLT;
+        partial void OnBoBaiLTChanging(global::System.Nullable<bool> value);
+        partial void OnBoBaiLTChanged();
+        /// <summary>
+        /// There are no comments for Property BoBaiTH in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<bool> BoBaiTH
+        {
+            get
+            {
+                return this._BoBaiTH;
+            }
+            set
+            {
+                this.OnBoBaiTHChanging(value);
+                this.ReportPropertyChanging("BoBaiTH");
+                this._BoBaiTH = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("BoBaiTH");
+                this.OnBoBaiTHChanged();
+            }
+        }
+        private global::System.Nullable<bool> _BoBaiTH;
+        partial void OnBoBaiTHChanging(global::System.Nullable<bool> value);
+        partial void OnBoBaiTHChanged();
+        /// <summary>
+        /// There are no comments for Property GhiChu in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string GhiChu
+        {
+            get
+            {
+                return this._GhiChu;
+            }
+            set
+            {
+                this.OnGhiChuChanging(value);
+                this.ReportPropertyChanging("GhiChu");
+                this._GhiChu = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("GhiChu");
+                this.OnGhiChuChanged();
+            }
+        }
+        private string _GhiChu;
+        partial void OnGhiChuChanging(string value);
+        partial void OnGhiChuChanged();
         /// <summary>
         /// There are no comments for DMMonThi in the schema.
         /// </summary>
