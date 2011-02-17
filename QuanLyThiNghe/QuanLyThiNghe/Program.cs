@@ -18,10 +18,10 @@ namespace QuanLyThiNghe
             
             try
             {
-                Application.Run(new Forms.frmMain());
+                //Application.Run(new Forms.frmMain());
                 //Application.Run(new Forms.frmGioiThieu());
                 //Application.Run(new Forms.frmChiaHoiDongThi());
-
+                Application.Run(new Forms.XtraForm1());
 
             }
             catch (Exception)
