@@ -86,6 +86,7 @@ namespace QuanLyThiNghe.Forms
             // 
             // treeView1
             // 
+            this.treeView1.AllowDrop = true;
             this.treeView1.Location = new System.Drawing.Point(13, 13);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "Node3";
@@ -117,9 +118,12 @@ namespace QuanLyThiNghe.Forms
             treeNode10});
             this.treeView1.Size = new System.Drawing.Size(368, 472);
             this.treeView1.TabIndex = 0;
+            this.treeView1.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeView1_DragEnter);
+            this.treeView1.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.treeView1_ItemDrag);
             // 
             // treeView2
             // 
+            this.treeView2.AllowDrop = true;
             this.treeView2.Location = new System.Drawing.Point(387, 12);
             this.treeView2.Name = "treeView2";
             treeNode11.Name = "Node16";
@@ -170,6 +174,8 @@ namespace QuanLyThiNghe.Forms
             treeNode30});
             this.treeView2.Size = new System.Drawing.Size(368, 472);
             this.treeView2.TabIndex = 1;
+            this.treeView2.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView2_DragDrop);
+            this.treeView2.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeView2_DragEnter);
             // 
             // XtraForm1
             // 

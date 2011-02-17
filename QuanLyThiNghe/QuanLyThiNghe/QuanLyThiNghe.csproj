@@ -296,6 +296,12 @@
     <Compile Include="Forms\frmCauHinh.Designer.cs">
       <DependentUpon>frmCauHinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\XtraForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraForm1.Designer.cs">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="lib\DanhMaPhach.cs" />
     <Compile Include="lib\lib.cs" />
     <Compile Include="lib\SQLHelper.cs" />
@@ -387,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTruong.resx">
       <DependentUpon>frmTruong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraForm1.resx">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
