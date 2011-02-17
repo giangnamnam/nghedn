@@ -15,5 +15,39 @@ namespace QuanLyThiNghe.Forms
         {
             InitializeComponent();
         }
+
+        private void treeView2_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void treeView1_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            DoDragDrop(e.Item, DragDropEffects.Move);
+        }
+
+        private void treeView2_DragDrop(object sender, DragEventArgs e)
+        {
+            TreeNode NewNode;
+
+            if (e.Data.GetDataPresent("System.Windows.Forms.TreeNode", false))
+            {
+                Point pt = ((TreeView)sender).PointToClient(new Point(e.X, e.Y));
+                TreeNode DestinationNode = ((TreeView)sender).GetNodeAt(pt);
+                NewNode = (TreeNode)e.Data.GetData("System.Windows.Forms.TreeNode");
+
+                //if (DestinationNode.TreeView == NewNode.TreeView)
+                //{
+                    DestinationNode.Nodes.Add((TreeNode)NewNode.Clone());
+                    DestinationNode.Expand();
+                    NewNode.Remove();
+                //}
+            }
+        }
+
+        private void treeView1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
     }
 }
