@@ -78,6 +78,10 @@ namespace QuanLyThiNghe
         {
             return ((Forms.frmMain) System.Windows.Forms.Application.OpenForms["frmMain"]).TaiKhoanHienTai;
         }
+        public static DMKyThi KyThiHienTai()
+        {
+            return ((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).KyThiHienTai;
+        }
         public static DateTime LayGioHeThong()
         {
             QLTN_Entities en = new QLTN_Entities();
