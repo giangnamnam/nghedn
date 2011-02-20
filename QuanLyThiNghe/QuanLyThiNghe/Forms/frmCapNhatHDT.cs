@@ -67,8 +67,8 @@ namespace QuanLyThiNghe.Forms
             cbHuyen.Text = HDT.DMTruong.DMHuyen.TenHuyen;
             cbTruong.Text = HDT.DMTruong.TenTruong;
 
-            txtSoPhong.Value = (decimal)HDT.SoLuongPhongDuTinh.Value;
-            txtSoThiSinh.Value = (decimal)HDT.SoThiSinhDuTinh.Value;
+            txtSoPhong.Value = (decimal)HDT.SoLuongPhongDuTinh.GetValueOrDefault(0);
+            txtSoThiSinh.Value = (decimal)HDT.SoThiSinhDuTinh.GetValueOrDefault(0);
 
             btnSave.ToolTipTitle = "update";
             cbHuyen.Enabled = cbTruong.Enabled = false;
@@ -165,6 +165,24 @@ namespace QuanLyThiNghe.Forms
         private void cbHuyen_TextChanged(object sender, EventArgs e)
         {
             LoadTruong(cbHuyen.EditValue.ToString());
+        }
+
+        private void frmCapNhatHDT_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void spinEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            if (spinEdit1.Value>100||spinEdit1.Value<1)
+                spinEdit1.Value = 1;
+            
+            txtSoPhong.Value = (int)((int)txtSoThiSinh.Value / (int)spinEdit1.Value);
+        }
+
+        private void txtSoThiSinh_EditValueChanged(object sender, EventArgs e)
+        {
+            txtSoPhong.Value = (int)((int)txtSoThiSinh.Value / (int)spinEdit1.Value);
         }
     }
 }

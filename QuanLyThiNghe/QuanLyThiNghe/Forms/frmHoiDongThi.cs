@@ -104,5 +104,15 @@ namespace QuanLyThiNghe.Forms
             frm.LoadChiTietHDT(MaHD);
             frm.ShowDialog();
         }
+
+        private void danhSáchThíSinhDựThiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void xoáHuyệnNàyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
