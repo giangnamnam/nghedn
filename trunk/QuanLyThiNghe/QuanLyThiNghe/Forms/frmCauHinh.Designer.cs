@@ -39,13 +39,13 @@
             this.chkCheckMAC = new DevExpress.XtraEditors.CheckEdit();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.chkNLD = new DevExpress.XtraEditors.CheckEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.chkKetThuc = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.checkEdit6 = new DevExpress.XtraEditors.CheckEdit();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.chkNLD = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).BeginInit();
@@ -57,12 +57,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkNLD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkKetThuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkNLD.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // checkEdit5
@@ -170,6 +170,16 @@
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Cấu hình giao tiếp web";
             // 
+            // chkNLD
+            // 
+            this.chkNLD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkNLD.Location = new System.Drawing.Point(8, 174);
+            this.chkNLD.Name = "chkNLD";
+            this.chkNLD.Properties.Caption = "Cho phép thư ký nhập lại điểm sau khi đã nhập điểm hoàn tất";
+            this.chkNLD.Size = new System.Drawing.Size(329, 18);
+            this.chkNLD.TabIndex = 6;
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.chkKetThuc);
@@ -234,16 +244,6 @@
             this.btnLuu.Text = "Lưu các thay đổi";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // chkNLD
-            // 
-            this.chkNLD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkNLD.Location = new System.Drawing.Point(8, 174);
-            this.chkNLD.Name = "chkNLD";
-            this.chkNLD.Properties.Caption = "Cho phép thư ký nhập lại điểm sau khi đã nhập điểm hoàn tất";
-            this.chkNLD.Size = new System.Drawing.Size(329, 18);
-            this.chkNLD.TabIndex = 6;
-            // 
             // frmCauHinh
             // 
             this.AcceptButton = this.btnLuu;
@@ -257,7 +257,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(387, 541);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(387, 541);
+            this.MinimumSize = new System.Drawing.Size(379, 530);
             this.Name = "frmCauHinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cấu hình hệ thống";
@@ -273,13 +273,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkNLD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkKetThuc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkNLD.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

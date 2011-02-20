@@ -73,7 +73,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.panel1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panel1.Size = new System.Drawing.Size(691, 30);
             this.panel1.TabIndex = 2;
             // 
@@ -159,14 +159,14 @@
             this.toolStripSeparator1,
             this.xoáHuyệnNàyToolStripMenuItem});
             this.Menu.Name = "contextMenuStrip1";
-            this.Menu.Size = new System.Drawing.Size(161, 120);
+            this.Menu.Size = new System.Drawing.Size(157, 98);
             // 
             // thêmHuyệnMớiToolStripMenuItem
             // 
             this.thêmHuyệnMớiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Add_16x16;
             this.thêmHuyệnMớiToolStripMenuItem.Name = "thêmHuyệnMớiToolStripMenuItem";
             this.thêmHuyệnMớiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.thêmHuyệnMớiToolStripMenuItem.Text = "Thêm mới";
             this.thêmHuyệnMớiToolStripMenuItem.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -175,7 +175,7 @@
             this.btnEdit.Image = global::QuanLyThiNghe.Properties.Resources.Edit_16x16;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.btnEdit.Size = new System.Drawing.Size(160, 22);
+            this.btnEdit.Size = new System.Drawing.Size(156, 22);
             this.btnEdit.Text = "Chỉnh sửa";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -184,21 +184,23 @@
             this.danhSáchThíSinhDựThiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.iconlist;
             this.danhSáchThíSinhDựThiToolStripMenuItem.Name = "danhSáchThíSinhDựThiToolStripMenuItem";
             this.danhSáchThíSinhDựThiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.danhSáchThíSinhDựThiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.danhSáchThíSinhDựThiToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.danhSáchThíSinhDựThiToolStripMenuItem.Text = "Sắp xếp HĐT";
+            this.danhSáchThíSinhDựThiToolStripMenuItem.Click += new System.EventHandler(this.danhSáchThíSinhDựThiToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(153, 6);
             // 
             // xoáHuyệnNàyToolStripMenuItem
             // 
             this.xoáHuyệnNàyToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
             this.xoáHuyệnNàyToolStripMenuItem.Name = "xoáHuyệnNàyToolStripMenuItem";
             this.xoáHuyệnNàyToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.xoáHuyệnNàyToolStripMenuItem.Text = "Xoá";
+            this.xoáHuyệnNàyToolStripMenuItem.Click += new System.EventHandler(this.xoáHuyệnNàyToolStripMenuItem_Click);
             // 
             // gvHDT
             // 
@@ -319,12 +321,13 @@
             // 
             // frmHoiDongThi
             // 
+            this.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 397);
             this.Controls.Add(this.gcHDT);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHoiDongThi";
             this.Text = "Danh sách hội đồng thi";
