@@ -14,43 +14,37 @@ namespace QuanLyThiNghe.Forms
     {
         QLTN_Entities _Entities = new QLTN_Entities();
         public int MaHDT = 0;
+        public int MaHuyen { get; set; }
+        public int MaTruong { get; set; }
+
         public frmCapNhatHDT()
         {
+            MaHuyen = 3;
             InitializeComponent();
             LoadHuyen();
-            cbHuyen.SelectedIndex = 0;
-            LoadTruong(cbHuyen.EditValue.ToString());
-        }
-
-        void LoadTruong(string TenHuyen)
-        {
-            cbTruong.Properties.Items.Clear();
-            cbTruong.Text = "";
-            var source = _Entities.DMTruong.Where(t => t.DaXoa == false || t.DaXoa == null && t.DMHuyen.TenHuyen== TenHuyen).OrderBy(t => t.TenTruong);
-
-            foreach (var item in source)
+            int HuyenDangChon = 0;
+            if (MaHuyen!=0)
             {
-                ImageComboBoxItem i = new ImageComboBoxItem();
-                i.Value = item.TenTruong;
-                i.Description = item.MaTruong.ToString();
-
-                cbTruong.Properties.Items.Add(i);
+                lookUpHuyen.EditValue = MaHuyen;
             }
-
+            
+            if (int.TryParse(lookUpHuyen.EditValue.ToString(),out HuyenDangChon))
+            {
+                MaHuyen = HuyenDangChon;
+                LoadTruong(MaHuyen);
+            }
+            
         }
-
+        void LoadTruong(int MaHuyen)
+        {
+            var source = _Entities.DMTruong.Where(t => (t.DaXoa == false || t.DaXoa == null) && t.DMHuyen.MaHuyen== MaHuyen).OrderBy(t => t.TenTruong);
+            lookUpTruong.Properties.DataSource = source;
+        }
         void LoadHuyen()
         {
             var source = _Entities.DMHuyen.Where(t => t.DaXoa == false || t.DaXoa == null).OrderBy(t => t.TenHuyen);
-
-            foreach (var item in source)
-            {
-                ImageComboBoxItem i = new ImageComboBoxItem();
-                i.Value = item.TenHuyen;
-                i.Description = item.MaHuyen.ToString();
-
-                cbHuyen.Properties.Items.Add(i);
-            }
+            lookUpHuyen.Properties.DataSource = source;
+            //lookUpHuyen
         }
 
         public void LoadChiTietHDT(int MaHD)
@@ -64,22 +58,24 @@ namespace QuanLyThiNghe.Forms
             HDT.DMTruongReference.Load();
             HDT.DMTruong.DMHuyenReference.Load();
 
-            cbHuyen.Text = HDT.DMTruong.DMHuyen.TenHuyen;
-            cbTruong.Text = HDT.DMTruong.TenTruong;
+            lookUpHuyen.EditValue = HDT.DMTruong.DMHuyen.MaHuyen;
+            lookUpTruong.EditValue = HDT.DMTruong.MaTruong;
+            
 
             txtSoPhong.Value = (decimal)HDT.SoLuongPhongDuTinh.GetValueOrDefault(0);
             txtSoThiSinh.Value = (decimal)HDT.SoThiSinhDuTinh.GetValueOrDefault(0);
 
             btnSave.ToolTipTitle = "update";
-            cbHuyen.Enabled = cbTruong.Enabled = false;
+            lookUpHuyen.Enabled = lookUpTruong.Enabled = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (btnSave.ToolTipTitle== "insert")
             {
-                var TenTruong = cbTruong.EditValue.ToString();
-                var hdt = _Entities.HoiDongThi.Where(t => t.DMTruong.TenTruong == TenTruong).FirstOrDefault();
+                MaTruong = int.Parse(lookUpTruong.EditValue.ToString());
+                int KyThiHienTai = HeThong.KyThiHienTai().MaKyThi;
+                var hdt = _Entities.HoiDongThi.Where(t => t.DMTruong.MaTruong == MaTruong && t.DMKyThi.MaKyThi==KyThiHienTai).FirstOrDefault();
                 if (hdt != null && (hdt.DaXoa == false || hdt.DaXoa == null))
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show("Trường này đã có trong danh sách hội đồng thi, xin chọn trường khác.");
@@ -110,7 +106,7 @@ namespace QuanLyThiNghe.Forms
                     var MaKT = _Entities.Config.FirstOrDefault().KyThiHienTai;
                     HDT.DMKyThi = _Entities.DMKyThi.Where(d => d.MaKyThi == MaKT).FirstOrDefault();
 
-                    HDT.DMTruong = _Entities.DMTruong.Where(t => t.TenTruong == TenTruong).FirstOrDefault();
+                    HDT.DMTruong = _Entities.DMTruong.Where(t => t.MaTruong == MaTruong).FirstOrDefault();
 
                     HDT.NgayCapNhat = HDT.NgayTao = HeThong.LayGioHeThong();
                     HDT.NguoiCapNhat = HDT.NguoiTao = HeThong.TaiKhoanDangNhap().TenDangNhap;
@@ -161,17 +157,14 @@ namespace QuanLyThiNghe.Forms
             }
 
         }
-
         private void cbHuyen_TextChanged(object sender, EventArgs e)
         {
-            LoadTruong(cbHuyen.EditValue.ToString());
+            //LoadTruong(cbHuyen.EditValue.ToString());
         }
-
         private void frmCapNhatHDT_Load(object sender, EventArgs e)
         {
 
         }
-
         private void spinEdit1_EditValueChanged(object sender, EventArgs e)
         {
             if (spinEdit1.Value>100||spinEdit1.Value<1)
@@ -179,10 +172,19 @@ namespace QuanLyThiNghe.Forms
             
             txtSoPhong.Value = (int)((int)txtSoThiSinh.Value / (int)spinEdit1.Value);
         }
-
         private void txtSoThiSinh_EditValueChanged(object sender, EventArgs e)
         {
             txtSoPhong.Value = (int)((int)txtSoThiSinh.Value / (int)spinEdit1.Value);
+        }
+
+        private void lookUpHuyen_EditValueChanged(object sender, EventArgs e)
+        {
+            int HuyenDangChon = 0;
+            if (int.TryParse(lookUpHuyen.EditValue.ToString(), out HuyenDangChon))
+            {
+                MaHuyen = HuyenDangChon;
+                LoadTruong(MaHuyen);
+            }
         }
     }
 }
