@@ -82,6 +82,12 @@ namespace QuanLyThiNghe
         {
             return ((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).KyThiHienTai;
         }
+        public static void GanKyThiHienTai(DMKyThi KyThiHienTai)
+        {
+            ((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).KyThiHienTai = KyThiHienTai;
+            ((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).btnKyThiHienTai.Caption = "kỳ thi hiện tại: " + KyThiHienTai.TenKyThi + " (" + (KyThiHienTai.DaKetThuc.GetValueOrDefault(false) == true ? "Đã kết thúc" : "Chưa kết thúc") + ")";
+
+        }
         public static DateTime LayGioHeThong()
         {
             QLTN_Entities en = new QLTN_Entities();
