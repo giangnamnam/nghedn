@@ -122,11 +122,11 @@ namespace QuanLyThiNghe
             }
             return ip;
         }
-        public static void Loading(bool show)
+        public static void Loading(object show)
         {
             //((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).pictureBoxLoading.Visible = show;
 
-            if (show)
+            if ((bool)show)
                 ((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).pictureBoxLoading.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             else
                 ((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).pictureBoxLoading.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
