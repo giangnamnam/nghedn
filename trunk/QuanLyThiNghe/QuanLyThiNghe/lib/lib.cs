@@ -126,11 +126,18 @@ namespace QuanLyThiNghe
         {
             //((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).pictureBoxLoading.Visible = show;
 
+            //if ((bool)show)
+            //    ((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).pictureBoxLoading.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //else
+            //    ((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).pictureBoxLoading.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+
             if ((bool)show)
-                ((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).pictureBoxLoading.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                ((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).ShowLoading();
             else
-                ((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).pictureBoxLoading.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                
+                ((Forms.frmMain)System.Windows.Forms.Application.OpenForms["frmMain"]).EndLoading();
+            
+            
         }
     }
     public class DataCopyHelper
