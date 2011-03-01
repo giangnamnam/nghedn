@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bSI_AboutUs.Caption" xml:space="preserve">
-    <value>Tên đăng nhập</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bSI_AboutUs.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -143,24 +140,6 @@
         XnA6M2pDNuwdj0iUTGQwGEggEJBAmEjxp8UkiBdSXOwpa6FY7nc6oyA8MaMgUig6ExifkGybIMkkQVws
         xcVE73jUajX9B2MdFDuDhdJjAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="btnKyThiHienTai.Caption" xml:space="preserve">
-    <value>Kỳ thi hiện tại: </value>
-  </data>
-  <data name="lblTime.Caption" xml:space="preserve">
-    <value>11:20:12</value>
-  </data>
-  <data name="lblZone.Caption" xml:space="preserve">
-    <value> AM </value>
-  </data>
-  <data name="lblDate.Caption" xml:space="preserve">
-    <value>4-10-2009</value>
-  </data>
-  <data name="ribbonStatusBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 576</value>
-  </data>
-  <data name="ribbon.ApplicationCaption" xml:space="preserve">
-    <value>Chương trình quản lý thi nghề</value>
   </data>
   <data name="ribbon.ApplicationIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -197,9 +176,6 @@
         WP6eTUtZHqq4wt6KfLbaoJo0UV0tvHCBatcSiYS4ubmts7Oz+827hiZE32gnMWOxiLm5+a9irY5CzH6n
         XdXRH5wqCdtzgu1qo2y802xtbEVFBfkvxW4rpf325NgAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="barStaticItem1.Caption" xml:space="preserve">
-    <value>Chào, Administrator</value>
   </data>
   <data name="barStaticItem1.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -241,12 +217,6 @@
         gXDkHfDw8KDYbPY7Vq9cQa3SYVF6+usoI2t3ORu/PBPO/ppgax9hhuXe8lKL3cJSiz3VxVa+tdGWgfXO
         RnahGutNnCZqsnSoFdqryHfZFJ1ra61ixmxubh4i8F/Obs3qPU47/gAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="bSI_LogOut.Caption" xml:space="preserve">
-    <value>Đăng xuất</value>
-  </data>
-  <data name="bSI_LogOut.Description" xml:space="preserve">
-    <value>Đăng xuất</value>
   </data>
   <data name="bSI_LogOut.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -448,12 +418,6 @@
         v8OVX3ob+I5XfqkApQKUDgS9653g0j7AOx4F/j9SBJzxzvN/9wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bSI_LogOut.Hint" xml:space="preserve">
-    <value>Đăng xuất</value>
-  </data>
-  <data name="barMdiChildrenListItem1.Caption" xml:space="preserve">
-    <value>Các cửa sổ đang mở</value>
-  </data>
   <data name="barMdiChildrenListItem1.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -468,9 +432,6 @@
         YO/wAzq9d0Ky+nzJK4g8ugzbGfMunyvhgsjaFa9gefWSK+CS867DYz1XWLp7Yfda5CIWgWI7fwAH9eSo
         H1ICKwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="bSI_CloseAll.Description" xml:space="preserve">
-    <value>Đóng tất cả cửa sổ</value>
   </data>
   <data name="bSI_CloseAll.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -488,12 +449,6 @@
         ED/okH4PDuIyFrs5Ju3ZNBiSmzU1UnE9/3PTnDnf1CSdRqPFc/4D3CdvHoiZubwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bSI_CloseAll.Hint" xml:space="preserve">
-    <value>Đóng tất cả cửa sổ</value>
-  </data>
-  <data name="bSI_CloseAllButCurrent.Caption" xml:space="preserve">
-    <value>Đóng tất cả cửa sổ trừ hiện tại</value>
-  </data>
   <data name="bSI_CloseAllButCurrent.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -510,113 +465,6 @@
         ED/okH4PDuIyFrs5Ju3ZNBiSmzU1UnE9/3PTnDnf1CSdRqPFc/4D3CdvHoiZubwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="barButtonCauHinh.Caption" xml:space="preserve">
-    <value>Cấu hình</value>
-  </data>
-  <data name="barButtonCauHinh.Description" xml:space="preserve">
-    <value>Cấu hình</value>
-  </data>
-  <data name="barButtonCauHinh.Hint" xml:space="preserve">
-    <value>Cấu hình</value>
-  </data>
-  <data name="barButtonDiemDanhSuaDiem.Caption" xml:space="preserve">
-    <value>Điểm danh - sửa điểm</value>
-  </data>
-  <data name="barButtonDiemDanhSuaDiem.Description" xml:space="preserve">
-    <value>Điểm danh - sửa điểm</value>
-  </data>
-  <data name="barButtonDiemDanhSuaDiem.Hint" xml:space="preserve">
-    <value>Điểm danh - sửa điểm</value>
-  </data>
-  <data name="barButtonNhatKy.Caption" xml:space="preserve">
-    <value>Nhật ký hệ thống</value>
-  </data>
-  <data name="barButtonNhatKy.Description" xml:space="preserve">
-    <value>Nhật ký hệ thống</value>
-  </data>
-  <data name="barButtonNhatKy.Hint" xml:space="preserve">
-    <value>Nhật ký hệ thống</value>
-  </data>
-  <data name="barButtonBieuMauInAn.Caption" xml:space="preserve">
-    <value>Biểu mẫu - In ấn </value>
-  </data>
-  <data name="barButtonBieuMauInAn.Description" xml:space="preserve">
-    <value>Biểu mẫu - In ấn </value>
-  </data>
-  <data name="barButtonBieuMauInAn.Hint" xml:space="preserve">
-    <value>Biểu mẫu - In ấn </value>
-  </data>
-  <data name="ribbon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="repositoryItemImageEdit1.AutoHeight" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <assembly alias="DevExpress.Utils.v9.2" name="DevExpress.Utils.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="repositoryItemImageEdit1.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v9.2">
-    <value>Combo</value>
-  </data>
-  <data name="ribbon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 52</value>
-  </data>
-  <data name="&gt;&gt;ribbon.Name" xml:space="preserve">
-    <value>ribbon</value>
-  </data>
-  <data name="&gt;&gt;ribbon.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.Ribbon.RibbonControl, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;ribbon.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ribbon.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ribbonStatusBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 23</value>
-  </data>
-  <data name="&gt;&gt;ribbonStatusBar.Name" xml:space="preserve">
-    <value>ribbonStatusBar</value>
-  </data>
-  <data name="&gt;&gt;ribbonStatusBar.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.Ribbon.RibbonStatusBar, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;ribbonStatusBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ribbonStatusBar.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="defaultLookAndFeel1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="xtraTabbedMdiManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>184, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>42</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>792, 599</value>
-  </data>
-  <data name="navBarGroup3.Caption" xml:space="preserve">
-    <value>Xử lý nghiệp vụ</value>
-  </data>
-  <data name="navBarItemChiaHoiDong.Caption" xml:space="preserve">
-    <value>Chia hội đồng thi</value>
-  </data>
-  <data name="navBarItem4.Caption" xml:space="preserve">
-    <value>SBD &amp; chia phòng thi</value>
-  </data>
-  <data name="btnMaPhach.Caption" xml:space="preserve">
-    <value>Đánh mã phách</value>
-  </data>
   <data name="btnMaPhach.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -626,9 +474,6 @@
         F38B2gIILIrvWJYAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="navBarItem5.Caption" xml:space="preserve">
-    <value>Điểm danh &amp; sửa điểm</value>
-  </data>
   <data name="navBarItem5.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -637,9 +482,6 @@
         v3yH/KhmfPEGiipYaNM3wG7tS1FYfL7+PSieSbYZ5KWX5+vX79iS9t+93fg9SfEM0nxgfXXA5a2F/ycX
         m88vjNQWIDptwxSqqaquj/HWdiBZI1QDAJ8qnyK+FymGAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="nBI_Log.Caption" xml:space="preserve">
-    <value>Nhật ký hệ thống</value>
   </data>
   <data name="nBI_Log.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -659,9 +501,6 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="navBarItem14.Caption" xml:space="preserve">
-    <value>Sao lưu &amp; Phục hồi</value>
-  </data>
   <data name="navBarItem14.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -677,9 +516,6 @@
         vkSl3YJc7eHsex+fkkN8jHVw5D9EyOkaW7afbR3EDznLl5NkmiVTaWY1m5eemE0PjAbje5PJIJmMG7LZ
         9Lhq3dyQLBZjyPLU8tBk2VyKiTHOkf4AbxcUDWwy79AAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="navBarItem13.Caption" xml:space="preserve">
-    <value>Cấu hình</value>
   </data>
   <data name="navBarItem13.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -777,16 +613,6 @@
         T/3f8b8x6yaDiJQCfAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="navBarControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="navBarGroup1.Caption" xml:space="preserve">
-    <value>Quản lý danh mục</value>
-  </data>
-  <data name="nBI_KiThi.Caption" xml:space="preserve">
-    <value>Kỳ thi</value>
-  </data>
   <data name="nBI_KiThi.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -807,9 +633,6 @@
         YjkDXO2/iJ/NDCYmJmCxWOBwOACNTYLeyQp0jJbg8mARlLqCNJW+oLp1QJSlGBBBqS+A2lAI9aAYd6bM
         8Hn98Pl8CAQCWFhYQPRL/h/+A2nfNYg+ULinAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="nBI_MonThi.Caption" xml:space="preserve">
-    <value>Môn thi</value>
   </data>
   <data name="nBI_MonThi.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -832,9 +655,6 @@
         CPWgGHemzPB5/fD5fAgEAlhYWED0S/4f/gNp3zWIPlC4pwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="nBI_HDT.Caption" xml:space="preserve">
-    <value>Hội đồng thi</value>
-  </data>
   <data name="nBI_HDT.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -855,9 +675,6 @@
         FkKWKgC+KWI5A1ztv4ifzQwmJiZgsVjgcDgAjU2C3skKdIyW4PJgEZS6gjSVvqC6dUCUpRgQQakvgNpQ
         CPWgGHemzPB5/fD5fAgEAlhYWED0S/4f/gNp3zWIPlC4pwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="nBI_Truong.Caption" xml:space="preserve">
-    <value>Các trường trong tỉnh</value>
   </data>
   <data name="nBI_Truong.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -880,9 +697,6 @@
         CPWgGHemzPB5/fD5fAgEAlhYWED0S/4f/gNp3zWIPlC4pwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="nBI_Districts.Caption" xml:space="preserve">
-    <value>Các huyện trong tỉnh</value>
-  </data>
   <data name="nBI_Districts.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -903,9 +717,6 @@
         FkKWKgC+KWI5A1ztv4ifzQwmJiZgsVjgcDgAjU2C3skKdIyW4PJgEZS6gjSVvqC6dUCUpRgQQakvgNpQ
         CPWgGHemzPB5/fD5fAgEAlhYWED0S/4f/gNp3zWIPlC4pwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="nBI_ThiSinh.Caption" xml:space="preserve">
-    <value>Thí sinh dự thi</value>
   </data>
   <data name="nBI_ThiSinh.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -966,12 +777,6 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="navBarGroup2.Caption" xml:space="preserve">
-    <value>Quản lý tài khoản</value>
-  </data>
-  <data name="nBI_TaiKhoan.Caption" xml:space="preserve">
-    <value>Tài khoản</value>
-  </data>
   <data name="nBI_TaiKhoan.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -992,9 +797,6 @@
         FkKWKgC+KWI5A1ztv4ifzQwmJiZgsVjgcDgAjU2C3skKdIyW4PJgEZS6gjSVvqC6dUCUpRgQQakvgNpQ
         CPWgGHemzPB5/fD5fAgEAlhYWED0S/4f/gNp3zWIPlC4pwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="nBI_PhanQuyen.Caption" xml:space="preserve">
-    <value>Phân quyền</value>
   </data>
   <data name="nBI_PhanQuyen.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1058,12 +860,6 @@
         RnahGutNnCZqsnSoFdqryHfZFJ1ra61ixmxubh4i8F/Obs3qPU47/gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="navBarGroup5.Caption" xml:space="preserve">
-    <value>Thống kê &amp; Báo cáo</value>
-  </data>
-  <data name="navBarItem8.Caption" xml:space="preserve">
-    <value>HĐT chưa nhập điểm</value>
-  </data>
   <data name="navBarItem8.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1084,9 +880,6 @@
         FkKWKgC+KWI5A1ztv4ifzQwmJiZgsVjgcDgAjU2C3skKdIyW4PJgEZS6gjSVvqC6dUCUpRgQQakvgNpQ
         CPWgGHemzPB5/fD5fAgEAlhYWED0S/4f/gNp3zWIPlC4pwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="navBarItem10.Caption" xml:space="preserve">
-    <value>Vi phạm quy chế</value>
   </data>
   <data name="navBarItem10.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1109,9 +902,6 @@
         CPWgGHemzPB5/fD5fAgEAlhYWED0S/4f/gNp3zWIPlC4pwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="navBarItem11.Caption" xml:space="preserve">
-    <value>So sánh kỳ thi</value>
-  </data>
   <data name="navBarItem11.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1133,9 +923,6 @@
         CPWgGHemzPB5/fD5fAgEAlhYWED0S/4f/gNp3zWIPlC4pwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="navBarItem12.Caption" xml:space="preserve">
-    <value>Tỉ lệ đậu rớt</value>
-  </data>
   <data name="navBarItem12.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1156,9 +943,6 @@
         YjkDXO2/iJ/NDCYmJmCxWOBwOACNTYLeyQp0jJbg8mARlLqCNJW+oLp1QJSlGBBBqS+A2lAI9aAYd6bM
         8Hn98Pl8CAQCWFhYQPRL/h/+A2nfNYg+ULinAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="tbnInMaPhach.Caption" xml:space="preserve">
-    <value>In danh sách mã phách</value>
   </data>
   <data name="navBarGroup5.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1198,12 +982,6 @@
         T76f1mcF3W3PTXF1LSMjk0rbkEGlrt9IpeNIvtvvm52dpf4NYEM0QGTQRZgAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="nBG_OpenWindows.Caption" xml:space="preserve">
-    <value>Các cửa sổ đang mở</value>
-  </data>
-  <data name="nBI_CloseAllWindows.Caption" xml:space="preserve">
-    <value>Đóng tất cả cửa sổ</value>
-  </data>
   <data name="nBI_CloseAllWindows.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1220,12 +998,6 @@
         qpg2A+PMtP1CufbNYj3ZMJaEe+aqmDYDe575H9AfxapkmS7CtBcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="nBI_CloseAllButCurrent.Caption" xml:space="preserve">
-    <value>Đóng tất cả, trừ cửa sổ đang mở</value>
-  </data>
-  <data name="nBI_CloseAllButCurrent.Hint" xml:space="preserve">
-    <value>Đóng tất cả, trừ cửa sổ đang mở</value>
-  </data>
   <data name="nBI_CloseAllButCurrent.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1241,9 +1013,6 @@
         vrqKUGurTLtCQNtUJphl49rFGqsrzXqShCUJn5zgbHlZpp1eXJQz/ywUpDLBQr26ypVes55sGEvi9/vl
         qpg2A+PMtP1CufbNYj3ZMJaEe+aqmDYDe575H9AfxapkmS7CtBcAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="navBarItem3.Caption" xml:space="preserve">
-    <value>-----------------------------------------</value>
   </data>
   <data name="nBG_OpenWindows.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1278,30 +1047,6 @@
         u5UCgtMGneiXslNgPrSCAmiDZJyZ4ML3QhtsyRP5pMWarO0YkAe3gPQ/Q0JCp07+P6eT+a85e/8HRI+u
         bNPn8MYAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="navBarControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 52</value>
-  </data>
-  <data name="navBarControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 524</value>
-  </data>
-  <data name="navBarControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="navBarControl1.Text" xml:space="preserve">
-    <value>navBarControl1</value>
-  </data>
-  <data name="&gt;&gt;navBarControl1.Name" xml:space="preserve">
-    <value>navBarControl1</value>
-  </data>
-  <data name="&gt;&gt;navBarControl1.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarControl, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;navBarControl1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1388,411 +1133,10 @@
         /wD+AP8A/AB/APwYPwD4PB8A/H4/AP///wD///8A////AP///wD///8A////AA==
 </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>On</value>
+    <value>NoControl</value>
   </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 600</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Chương trình quản lý thi nghề</value>
-  </data>
-  <data name="&gt;&gt;bSI_AboutUs.Name" xml:space="preserve">
-    <value>bSI_AboutUs</value>
-  </data>
-  <data name="&gt;&gt;bSI_AboutUs.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;btnKyThiHienTai.Name" xml:space="preserve">
-    <value>btnKyThiHienTai</value>
-  </data>
-  <data name="&gt;&gt;btnKyThiHienTai.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;lblTime.Name" xml:space="preserve">
-    <value>lblTime</value>
-  </data>
-  <data name="&gt;&gt;lblTime.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;lblZone.Name" xml:space="preserve">
-    <value>lblZone</value>
-  </data>
-  <data name="&gt;&gt;lblZone.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;lblDate.Name" xml:space="preserve">
-    <value>lblDate</value>
-  </data>
-  <data name="&gt;&gt;lblDate.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxLoading.Name" xml:space="preserve">
-    <value>pictureBoxLoading</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxLoading.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarEditItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;repositoryItemMarqueeProgressBar1.Name" xml:space="preserve">
-    <value>repositoryItemMarqueeProgressBar1</value>
-  </data>
-  <data name="&gt;&gt;repositoryItemMarqueeProgressBar1.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar, DevExpress.XtraEditors.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem1.Name" xml:space="preserve">
-    <value>barStaticItem1</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem1.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;bSI_LogOut.Name" xml:space="preserve">
-    <value>bSI_LogOut</value>
-  </data>
-  <data name="&gt;&gt;bSI_LogOut.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barMdiChildrenListItem1.Name" xml:space="preserve">
-    <value>barMdiChildrenListItem1</value>
-  </data>
-  <data name="&gt;&gt;barMdiChildrenListItem1.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarMdiChildrenListItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;bSI_CloseAll.Name" xml:space="preserve">
-    <value>bSI_CloseAll</value>
-  </data>
-  <data name="&gt;&gt;bSI_CloseAll.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;bSI_CloseAllButCurrent.Name" xml:space="preserve">
-    <value>bSI_CloseAllButCurrent</value>
-  </data>
-  <data name="&gt;&gt;bSI_CloseAllButCurrent.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barButtonCauHinh.Name" xml:space="preserve">
-    <value>barButtonCauHinh</value>
-  </data>
-  <data name="&gt;&gt;barButtonCauHinh.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barButtonDiemDanhSuaDiem.Name" xml:space="preserve">
-    <value>barButtonDiemDanhSuaDiem</value>
-  </data>
-  <data name="&gt;&gt;barButtonDiemDanhSuaDiem.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barButtonNhatKy.Name" xml:space="preserve">
-    <value>barButtonNhatKy</value>
-  </data>
-  <data name="&gt;&gt;barButtonNhatKy.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barButtonBieuMauInAn.Name" xml:space="preserve">
-    <value>barButtonBieuMauInAn</value>
-  </data>
-  <data name="&gt;&gt;barButtonBieuMauInAn.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;repositoryItemPictureEdit1.Name" xml:space="preserve">
-    <value>repositoryItemPictureEdit1</value>
-  </data>
-  <data name="&gt;&gt;repositoryItemPictureEdit1.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit, DevExpress.XtraEditors.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;repositoryItemImageEdit1.Name" xml:space="preserve">
-    <value>repositoryItemImageEdit1</value>
-  </data>
-  <data name="&gt;&gt;repositoryItemImageEdit1.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.Repository.RepositoryItemImageEdit, DevExpress.XtraEditors.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;repositoryItemPictureEdit2.Name" xml:space="preserve">
-    <value>repositoryItemPictureEdit2</value>
-  </data>
-  <data name="&gt;&gt;repositoryItemPictureEdit2.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit, DevExpress.XtraEditors.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;defaultLookAndFeel1.Name" xml:space="preserve">
-    <value>defaultLookAndFeel1</value>
-  </data>
-  <data name="&gt;&gt;defaultLookAndFeel1.Type" xml:space="preserve">
-    <value>DevExpress.LookAndFeel.DefaultLookAndFeel, DevExpress.Utils.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;xtraTabbedMdiManager1.Name" xml:space="preserve">
-    <value>xtraTabbedMdiManager1</value>
-  </data>
-  <data name="&gt;&gt;xtraTabbedMdiManager1.Type" xml:space="preserve">
-    <value>DevExpress.XtraTabbedMdi.XtraTabbedMdiManager, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;tTime.Name" xml:space="preserve">
-    <value>tTime</value>
-  </data>
-  <data name="&gt;&gt;tTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;navBarGroup3.Name" xml:space="preserve">
-    <value>navBarGroup3</value>
-  </data>
-  <data name="&gt;&gt;navBarGroup3.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarGroup, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarItemChiaHoiDong.Name" xml:space="preserve">
-    <value>navBarItemChiaHoiDong</value>
-  </data>
-  <data name="&gt;&gt;navBarItemChiaHoiDong.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarItem4.Name" xml:space="preserve">
-    <value>navBarItem4</value>
-  </data>
-  <data name="&gt;&gt;navBarItem4.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;btnMaPhach.Name" xml:space="preserve">
-    <value>btnMaPhach</value>
-  </data>
-  <data name="&gt;&gt;btnMaPhach.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarItem5.Name" xml:space="preserve">
-    <value>navBarItem5</value>
-  </data>
-  <data name="&gt;&gt;navBarItem5.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nBI_Log.Name" xml:space="preserve">
-    <value>nBI_Log</value>
-  </data>
-  <data name="&gt;&gt;nBI_Log.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarItem14.Name" xml:space="preserve">
-    <value>navBarItem14</value>
-  </data>
-  <data name="&gt;&gt;navBarItem14.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarItem13.Name" xml:space="preserve">
-    <value>navBarItem13</value>
-  </data>
-  <data name="&gt;&gt;navBarItem13.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarGroup1.Name" xml:space="preserve">
-    <value>navBarGroup1</value>
-  </data>
-  <data name="&gt;&gt;navBarGroup1.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarGroup, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nBI_KiThi.Name" xml:space="preserve">
-    <value>nBI_KiThi</value>
-  </data>
-  <data name="&gt;&gt;nBI_KiThi.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nBI_MonThi.Name" xml:space="preserve">
-    <value>nBI_MonThi</value>
-  </data>
-  <data name="&gt;&gt;nBI_MonThi.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nBI_HDT.Name" xml:space="preserve">
-    <value>nBI_HDT</value>
-  </data>
-  <data name="&gt;&gt;nBI_HDT.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nBI_Truong.Name" xml:space="preserve">
-    <value>nBI_Truong</value>
-  </data>
-  <data name="&gt;&gt;nBI_Truong.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nBI_Districts.Name" xml:space="preserve">
-    <value>nBI_Districts</value>
-  </data>
-  <data name="&gt;&gt;nBI_Districts.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nBI_ThiSinh.Name" xml:space="preserve">
-    <value>nBI_ThiSinh</value>
-  </data>
-  <data name="&gt;&gt;nBI_ThiSinh.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarGroup2.Name" xml:space="preserve">
-    <value>navBarGroup2</value>
-  </data>
-  <data name="&gt;&gt;navBarGroup2.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarGroup, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nBI_TaiKhoan.Name" xml:space="preserve">
-    <value>nBI_TaiKhoan</value>
-  </data>
-  <data name="&gt;&gt;nBI_TaiKhoan.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nBI_PhanQuyen.Name" xml:space="preserve">
-    <value>nBI_PhanQuyen</value>
-  </data>
-  <data name="&gt;&gt;nBI_PhanQuyen.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarGroup5.Name" xml:space="preserve">
-    <value>navBarGroup5</value>
-  </data>
-  <data name="&gt;&gt;navBarGroup5.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarGroup, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarItem8.Name" xml:space="preserve">
-    <value>navBarItem8</value>
-  </data>
-  <data name="&gt;&gt;navBarItem8.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarItem10.Name" xml:space="preserve">
-    <value>navBarItem10</value>
-  </data>
-  <data name="&gt;&gt;navBarItem10.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarItem11.Name" xml:space="preserve">
-    <value>navBarItem11</value>
-  </data>
-  <data name="&gt;&gt;navBarItem11.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarItem12.Name" xml:space="preserve">
-    <value>navBarItem12</value>
-  </data>
-  <data name="&gt;&gt;navBarItem12.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;tbnInMaPhach.Name" xml:space="preserve">
-    <value>tbnInMaPhach</value>
-  </data>
-  <data name="&gt;&gt;tbnInMaPhach.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nBG_OpenWindows.Name" xml:space="preserve">
-    <value>nBG_OpenWindows</value>
-  </data>
-  <data name="&gt;&gt;nBG_OpenWindows.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarGroup, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nBI_CloseAllWindows.Name" xml:space="preserve">
-    <value>nBI_CloseAllWindows</value>
-  </data>
-  <data name="&gt;&gt;nBI_CloseAllWindows.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nBI_CloseAllButCurrent.Name" xml:space="preserve">
-    <value>nBI_CloseAllButCurrent</value>
-  </data>
-  <data name="&gt;&gt;nBI_CloseAllButCurrent.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarItem3.Name" xml:space="preserve">
-    <value>navBarItem3</value>
-  </data>
-  <data name="&gt;&gt;navBarItem3.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;phóngToToolStripMenuItem.Name" xml:space="preserve">
-    <value>phóngToToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;phóngToToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cửaSổBìnhThườngToolStripMenuItem.Name" xml:space="preserve">
-    <value>cửaSổBìnhThườngToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;cửaSổBìnhThườngToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;thuNhỏCửaSổToolStripMenuItem.Name" xml:space="preserve">
-    <value>thuNhỏCửaSổToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;thuNhỏCửaSổToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;đăngXuấtToolStripMenuItem.Name" xml:space="preserve">
-    <value>đăngXuấtToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;đăngXuấtToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;đóngChươngTrìnhToolStripMenuItem.Name" xml:space="preserve">
-    <value>đóngChươngTrìnhToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;đóngChươngTrìnhToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem4.Name" xml:space="preserve">
-    <value>barStaticItem4</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem4.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem5.Name" xml:space="preserve">
-    <value>barStaticItem5</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem5.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem3.Name" xml:space="preserve">
-    <value>barStaticItem3</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem3.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;navBarItem1.Name" xml:space="preserve">
-    <value>navBarItem1</value>
-  </data>
-  <data name="&gt;&gt;navBarItem1.Type" xml:space="preserve">
-    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem7.Name" xml:space="preserve">
-    <value>barStaticItem7</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem7.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem6.Name" xml:space="preserve">
-    <value>barStaticItem6</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem6.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem2.Name" xml:space="preserve">
-    <value>barStaticItem2</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem2.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;popupMenu1.Name" xml:space="preserve">
-    <value>popupMenu1</value>
-  </data>
-  <data name="&gt;&gt;popupMenu1.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.PopupMenu, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>frmMain</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.Ribbon.RibbonForm, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <metadata name="tTime.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>374, 17</value>
-  </metadata>
   <data name="phóngToToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1803,12 +1147,6 @@
         uBisB6SXwT9XEczBF2Domo9cXQnWA9LL4JkuDebgCm1smk/eWA/WA9LL4JIoCuZgiypcms/e2grWA9LL
         4BAjAOaQg0F6GWzCeaYB8X8y8TQA9j662fKuXRoAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="phóngToToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
-  </data>
-  <data name="phóngToToolStripMenuItem.Text" xml:space="preserve">
-    <value>Phóng to cửa sổ</value>
   </data>
   <data name="cửaSổBìnhThườngToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1825,12 +1163,6 @@
         H1ICKwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="cửaSổBìnhThườngToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
-  </data>
-  <data name="cửaSổBìnhThườngToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cửa sổ bình thường</value>
-  </data>
   <data name="thuNhỏCửaSổToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1844,15 +1176,6 @@
         SKzxc+nuo0zeirhs24JlGxTS6VgavO89cHfkoX/iYRK8TshSsTtjq9h9A6moaLyF+6230f7qjgPPK5qy
         FfEP+HYdZQ1ZMoGW4QLwyPOEc62ceLGk7qZMgMc/P/gLanP1fvs5FFwAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="thuNhỏCửaSổToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
-  </data>
-  <data name="thuNhỏCửaSổToolStripMenuItem.Text" xml:space="preserve">
-    <value>Thu nhỏ cửa sổ</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 6</value>
   </data>
   <data name="đăngXuấtToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2054,12 +1377,6 @@
         v8OVX3ob+I5XfqkApQKUDgS9653g0j7AOx4F/j9SBJzxzvN/9wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="đăngXuấtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
-  </data>
-  <data name="đăngXuấtToolStripMenuItem.Text" xml:space="preserve">
-    <value>Đăng xuất</value>
-  </data>
   <data name="đóngChươngTrìnhToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -2137,27 +1454,6 @@
         T/3f8b8x6yaDiJQCfAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="đóngChươngTrìnhToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
-  </data>
-  <data name="đóngChươngTrìnhToolStripMenuItem.Text" xml:space="preserve">
-    <value>Đóng chương trình</value>
-  </data>
-  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>456, 17</value>
-  </metadata>
-  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 120</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStrip1.Name" xml:space="preserve">
-    <value>contextMenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="barStaticItem4.Caption" xml:space="preserve">
-    <value>Đóng tất cả cửa sổ</value>
-  </data>
   <data name="barStaticItem4.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -2173,9 +1469,6 @@
         kKTb7+5ObpWWYrukBGki4eZt1dXdGRVnPqTxfaWxMvAnbeuv/n4UIpGbo3qp169oBK9MpodLQt8wSTYQ
         ED/okH4PDuIyFrs5Ju3ZNBiSmzU1UnE9/3PTnDnf1CSdRqPFc/4D3CdvHoiZubwAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="barStaticItem5.Caption" xml:space="preserve">
-    <value>Đóng tất cả cửa sổ</value>
   </data>
   <data name="barStaticItem5.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2193,9 +1486,6 @@
         ED/okH4PDuIyFrs5Ju3ZNBiSmzU1UnE9/3PTnDnf1CSdRqPFc/4D3CdvHoiZubwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="barStaticItem3.Caption" xml:space="preserve">
-    <value>Đóng tất cả cửa sổ, trừ hiện tại</value>
-  </data>
   <data name="barStaticItem3.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -2211,9 +1501,6 @@
         kKTb7+5ObpWWYrukBGki4eZt1dXdGRVnPqTxfaWxMvAnbeuv/n4UIpGbo3qp169oBK9MpodLQt8wSTYQ
         ED/okH4PDuIyFrs5Ju3ZNBiSmzU1UnE9/3PTnDnf1CSdRqPFc/4D3CdvHoiZubwAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="navBarItem1.Caption" xml:space="preserve">
-    <value>Tỉ lệ đậu rớt</value>
   </data>
   <data name="navBarItem1.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2235,15 +1522,6 @@
         YjkDXO2/iJ/NDCYmJmCxWOBwOACNTYLeyQp0jJbg8mARlLqCNJW+oLp1QJSlGBBBqS+A2lAI9aAYd6bM
         8Hn98Pl8CAQCWFhYQPRL/h/+A2nfNYg+ULinAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="barStaticItem7.Caption" xml:space="preserve">
-    <value>barStaticItem7</value>
-  </data>
-  <data name="barStaticItem6.Caption" xml:space="preserve">
-    <value>barStaticItem6</value>
-  </data>
-  <data name="barStaticItem2.Caption" xml:space="preserve">
-    <value>Quản lý thi nghề - Bản quyền © DesignPro team - www.designpro.vn</value>
   </data>
   <data name="barStaticItem2.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2268,7 +1546,4 @@
         xcVE73jUajX9B2MdFDuDhdJjAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="popupMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>611, 17</value>
-  </metadata>
 </root>
