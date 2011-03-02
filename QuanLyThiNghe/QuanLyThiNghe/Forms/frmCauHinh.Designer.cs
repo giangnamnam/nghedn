@@ -72,7 +72,7 @@
             this.checkEdit5.Location = new System.Drawing.Point(8, 150);
             this.checkEdit5.Name = "checkEdit5";
             this.checkEdit5.Properties.Caption = "Cho phép thư ký nhập điểm vào hệ thống";
-            this.checkEdit5.Size = new System.Drawing.Size(329, 19);
+            this.checkEdit5.Size = new System.Drawing.Size(329, 18);
             this.checkEdit5.TabIndex = 5;
             // 
             // checkEdit4
@@ -82,7 +82,7 @@
             this.checkEdit4.Location = new System.Drawing.Point(8, 125);
             this.checkEdit4.Name = "checkEdit4";
             this.checkEdit4.Properties.Caption = "Cho phép các hội đồng nhận kết quả thi";
-            this.checkEdit4.Size = new System.Drawing.Size(329, 19);
+            this.checkEdit4.Size = new System.Drawing.Size(329, 18);
             this.checkEdit4.TabIndex = 4;
             // 
             // checkEdit3
@@ -92,7 +92,7 @@
             this.checkEdit3.Location = new System.Drawing.Point(8, 100);
             this.checkEdit3.Name = "checkEdit3";
             this.checkEdit3.Properties.Caption = "Cho phép các trường nhận kết quả thi";
-            this.checkEdit3.Size = new System.Drawing.Size(329, 19);
+            this.checkEdit3.Size = new System.Drawing.Size(329, 18);
             this.checkEdit3.TabIndex = 3;
             // 
             // checkEdit2
@@ -102,7 +102,7 @@
             this.checkEdit2.Location = new System.Drawing.Point(8, 75);
             this.checkEdit2.Name = "checkEdit2";
             this.checkEdit2.Properties.Caption = "Cho phép các hội đồng thi nhận danh sách thí sinh dự thi";
-            this.checkEdit2.Size = new System.Drawing.Size(329, 19);
+            this.checkEdit2.Size = new System.Drawing.Size(329, 18);
             this.checkEdit2.TabIndex = 2;
             // 
             // checkEdit1
@@ -112,7 +112,7 @@
             this.checkEdit1.Location = new System.Drawing.Point(8, 50);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "Cho phép các trường nhận danh sách thí sinh";
-            this.checkEdit1.Size = new System.Drawing.Size(329, 19);
+            this.checkEdit1.Size = new System.Drawing.Size(329, 18);
             this.checkEdit1.TabIndex = 1;
             // 
             // chk
@@ -122,7 +122,7 @@
             this.chk.Location = new System.Drawing.Point(8, 25);
             this.chk.Name = "chk";
             this.chk.Properties.Caption = "Cho phép các trường gửi danh sách thí sinh dự thi";
-            this.chk.Size = new System.Drawing.Size(329, 19);
+            this.chk.Size = new System.Drawing.Size(329, 18);
             this.chk.TabIndex = 0;
             // 
             // chkHienThiThongBao
@@ -132,7 +132,7 @@
             this.chkHienThiThongBao.Location = new System.Drawing.Point(10, 96);
             this.chkHienThiThongBao.Name = "chkHienThiThongBao";
             this.chkHienThiThongBao.Properties.Caption = "Hiển thị thông báo khi đăng nhập trên web";
-            this.chkHienThiThongBao.Size = new System.Drawing.Size(327, 19);
+            this.chkHienThiThongBao.Size = new System.Drawing.Size(327, 18);
             this.chkHienThiThongBao.TabIndex = 2;
             // 
             // chkCheckMAC
@@ -142,7 +142,7 @@
             this.chkCheckMAC.Location = new System.Drawing.Point(10, 50);
             this.chkCheckMAC.Name = "chkCheckMAC";
             this.chkCheckMAC.Properties.Caption = "Kiểm tra địa chỉ MAC khi đăng nhập";
-            this.chkCheckMAC.Size = new System.Drawing.Size(327, 19);
+            this.chkCheckMAC.Size = new System.Drawing.Size(327, 18);
             this.chkCheckMAC.TabIndex = 0;
             // 
             // memoEdit1
@@ -177,7 +177,7 @@
             this.chkNLD.Location = new System.Drawing.Point(8, 174);
             this.chkNLD.Name = "chkNLD";
             this.chkNLD.Properties.Caption = "Cho phép thư ký nhập lại điểm sau khi đã nhập điểm hoàn tất";
-            this.chkNLD.Size = new System.Drawing.Size(329, 19);
+            this.chkNLD.Size = new System.Drawing.Size(329, 18);
             this.chkNLD.TabIndex = 6;
             // 
             // groupControl2
@@ -203,7 +203,7 @@
             this.chkKetThuc.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.chkKetThuc.Properties.Appearance.Options.UseForeColor = true;
             this.chkKetThuc.Properties.Caption = "Đánh dấu kỳ thi đã kết thúc";
-            this.chkKetThuc.Size = new System.Drawing.Size(164, 19);
+            this.chkKetThuc.Size = new System.Drawing.Size(164, 18);
             this.chkKetThuc.TabIndex = 4;
             // 
             // labelControl1
@@ -231,7 +231,7 @@
             this.checkEdit6.Location = new System.Drawing.Point(10, 73);
             this.checkEdit6.Name = "checkEdit6";
             this.checkEdit6.Properties.Caption = "Cho phép đăng nhập vào web thi nghề";
-            this.checkEdit6.Size = new System.Drawing.Size(327, 19);
+            this.checkEdit6.Size = new System.Drawing.Size(327, 18);
             this.checkEdit6.TabIndex = 1;
             // 
             // btnLuu
@@ -258,7 +258,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(387, 541);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(379, 530);
+            this.MinimumSize = new System.Drawing.Size(377, 527);
             this.Name = "frmCauHinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cấu hình hệ thống";

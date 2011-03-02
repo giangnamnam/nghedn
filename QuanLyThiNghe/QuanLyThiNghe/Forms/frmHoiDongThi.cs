@@ -12,31 +12,27 @@ namespace QuanLyThiNghe.Forms
 {
     public partial class frmHoiDongThi : DevExpress.XtraEditors.XtraForm
     {
-        QLTN_Entities _entities = new QLTN_Entities();
+        QLTN_Entities en = new QLTN_Entities();
+
+        public DMKyThi KyThiHienTai { get; set; }
         public frmHoiDongThi()
         {
             InitializeComponent();
-            LoadHDT();
-
-            btnCreateRooms.Enabled = gvHDT.RowCount > 0;
-            btnPrint.Enabled = gvHDT.RowCount > 0;
-            btnDelete.Enabled = gvHDT.RowCount > 0;
         }
 
         private void frmHoiDongThi_Load(object sender, EventArgs e)
         {
-            
+            KyThiHienTai = HeThong.KyThiHienTai();
+            LoadHDT();
+            btnPrint.Enabled = gvHDT.RowCount > 0;
+            btnDelete.Enabled = gvHDT.RowCount > 0;
         }
 
         public void LoadHDT()
         {
-            gcHDT.DataSource = _entities.HoiDongThi.Where(h => h.DaXoa == false || h.DaXoa == null).Select(h => new { h.SoLuongPhongDuTinh, TenTruong = h.DMTruong.TenTruong, h.MaHoiDong, h.SoThiSinhDuTinh });
-        }
-
-        private void btnCreateRooms_Click(object sender, EventArgs e)
-        {
-            frmTaoPhongThi frm = new frmTaoPhongThi();
-            frm.ShowDialog();
+            int MaKyThiHienTai = KyThiHienTai.MaKyThi;
+            gcHDT.DataSource = en.HoiDongThi.Where(h => (h.DaXoa == false || h.DaXoa == null) && h.DMKyThi.MaKyThi == MaKyThiHienTai)
+                .Select(h => new { h.SoLuongPhongDuTinh, TenTruong = h.DMTruong.TenTruong, h.MaHoiDong, h.SoThiSinhDuTinh });
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -67,7 +63,7 @@ namespace QuanLyThiNghe.Forms
                 {
                     var MaHD = int.Parse(gvHDT.GetRowCellValue(gvHDT.GetSelectedRows()[i], "MaHoiDong").ToString());
 
-                    var h = _entities.HoiDongThi.First(d => d.MaHoiDong == MaHD);
+                    var h = en.HoiDongThi.First(d => d.MaHoiDong == MaHD);
                     h.DMTruongReference.Load();
 
                     h.DaXoa = true;
@@ -75,7 +71,7 @@ namespace QuanLyThiNghe.Forms
 
                     TenHuyens += TenHuyen + ", ";
                 }
-                _entities.SaveChanges();
+                en.SaveChanges();
             }
             catch (Exception exp)
             {
@@ -105,14 +101,55 @@ namespace QuanLyThiNghe.Forms
             frm.ShowDialog();
         }
 
-        private void danhSáchThíSinhDựThiToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnDanhSoBaoDanhVaChiaPhongThi_Click(object sender, EventArgs e)
         {
-
+            if (DevExpress.XtraEditors.XtraMessageBox.Show("Thao tác đánh số báo danh và chia phòng thi sẽ ghi đè lên các dữ liệu cũ nếu có bạn vẫn muốn tiếp tục thao tác?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)== DialogResult.Yes)
+            {
+                ChiaPhongThiVaDanhSoBaoDanh();
+            }
+            DevExpress.XtraEditors.XtraMessageBox.Show("Đã đánh số báo danh và chia phòng thi xong.", "Đánh số báo danh và chia phòng thi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
-        private void xoáHuyệnNàyToolStripMenuItem_Click(object sender, EventArgs e)
+        void ChiaPhongThiVaDanhSoBaoDanh()
         {
+            int MaKyThiHienTai = KyThiHienTai.MaKyThi;
+            var HDTs = en.ThiSinh.Where(t => t.MaKyThi == MaKyThiHienTai && (t.DaXoa == false || t.DaXoa == null) && t.HoiDongThi!=null).Select(t => new { t.HoiDongThi.MaHoiDong }).Distinct().ToList();
+            for (int i = 0; i < HDTs.Count; i++)
+            {
+                int MaHDT = HDTs[i].MaHoiDong;
+                int phong = 1;
+                int phongtmp = 1;
+                var MTs = en.ThiSinh.Where(t => t.MaKyThi == MaKyThiHienTai && (t.DaXoa==false || t.DaXoa==null) && t.HoiDongThi.MaHoiDong == MaHDT).Select(t => new { t.DMMonThi.MaMonThi }).Distinct().ToList();
+                for (int j = 0; j < MTs.Count; j++)
+                {
+                    int MaMonThi = MTs[j].MaMonThi;
+                    List<ThiSinh> TSs = en.ThiSinh.Where(t => t.MaKyThi == MaKyThiHienTai && (t.DaXoa==false || t.DaXoa==null) && t.HoiDongThi.MaHoiDong == MaHDT && t.DMMonThi.MaMonThi == MaMonThi).OrderBy(t => t.Ten).ThenBy(t => t.NgaySinh).ToList();
+                    if (phongtmp!=1)
+                    {
+                        phong++;
+                        phongtmp = 1;
+                    }
+                    int sbd = 1;
 
+
+                    foreach (ThiSinh ts in TSs)
+                    {
+                        ts.SBD = sbd;
+                        ts.PhongThi = phong;
+                        
+                        if (phongtmp==20) //20 thi sinh mot phong
+                        {
+                            phong++;
+                            phongtmp = 0;
+                        }
+                        phongtmp++;
+                        sbd++;
+                    }
+                }
+            }
+            en.SaveChanges();
+            XuLyForm.LuuNhatKy("Đánh số báo danh và chia phòng thi cho thí sinh dự kỳ thi: "+KyThiHienTai.TenKyThi);
         }
     }
 }

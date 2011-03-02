@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHoiDongThi));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCreateRooms = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDanhSoBaoDanhVaChiaPhongThi = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
@@ -65,30 +65,28 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnCreateRooms);
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btnDanhSoBaoDanhVaChiaPhongThi);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(691, 30);
             this.panel1.TabIndex = 2;
             // 
-            // btnCreateRooms
+            // btnDanhSoBaoDanhVaChiaPhongThi
             // 
-            this.btnCreateRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreateRooms.Image = global::QuanLyThiNghe.Properties.Resources.iconlist;
-            this.btnCreateRooms.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnCreateRooms.Location = new System.Drawing.Point(449, 3);
-            this.btnCreateRooms.Name = "btnCreateRooms";
-            this.btnCreateRooms.Size = new System.Drawing.Size(160, 24);
-            this.btnCreateRooms.TabIndex = 5;
-            this.btnCreateRooms.Text = "Xem/Sắp xếp hội đồng thi";
-            this.btnCreateRooms.ToolTip = "Sắp xếp hội đồng thi.";
-            this.btnCreateRooms.Click += new System.EventHandler(this.btnCreateRooms_Click);
+            this.btnDanhSoBaoDanhVaChiaPhongThi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDanhSoBaoDanhVaChiaPhongThi.Image = global::QuanLyThiNghe.Properties.Resources.icon20;
+            this.btnDanhSoBaoDanhVaChiaPhongThi.Location = new System.Drawing.Point(405, 3);
+            this.btnDanhSoBaoDanhVaChiaPhongThi.Name = "btnDanhSoBaoDanhVaChiaPhongThi";
+            this.btnDanhSoBaoDanhVaChiaPhongThi.Size = new System.Drawing.Size(203, 24);
+            this.btnDanhSoBaoDanhVaChiaPhongThi.TabIndex = 7;
+            this.btnDanhSoBaoDanhVaChiaPhongThi.Text = "Đánh số báo danh và chia phòng thi";
+            this.btnDanhSoBaoDanhVaChiaPhongThi.Click += new System.EventHandler(this.btnDanhSoBaoDanhVaChiaPhongThi_Click);
             // 
             // btnDelete
             // 
@@ -105,7 +103,7 @@
             // 
             this.btnAdd.Image = global::QuanLyThiNghe.Properties.Resources.Add_16x16;
             this.btnAdd.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(5, 3);
+            this.btnAdd.Location = new System.Drawing.Point(4, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 24);
             this.btnAdd.TabIndex = 1;
@@ -118,7 +116,7 @@
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.Image = global::QuanLyThiNghe.Properties.Resources.Print_16x16;
             this.btnPrint.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(611, 3);
+            this.btnPrint.Location = new System.Drawing.Point(612, 3);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 24);
             this.btnPrint.TabIndex = 0;
@@ -159,14 +157,14 @@
             this.toolStripSeparator1,
             this.xoáHuyệnNàyToolStripMenuItem});
             this.Menu.Name = "contextMenuStrip1";
-            this.Menu.Size = new System.Drawing.Size(157, 98);
+            this.Menu.Size = new System.Drawing.Size(161, 98);
             // 
             // thêmHuyệnMớiToolStripMenuItem
             // 
             this.thêmHuyệnMớiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Add_16x16;
             this.thêmHuyệnMớiToolStripMenuItem.Name = "thêmHuyệnMớiToolStripMenuItem";
             this.thêmHuyệnMớiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.thêmHuyệnMớiToolStripMenuItem.Text = "Thêm mới";
             this.thêmHuyệnMớiToolStripMenuItem.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -175,7 +173,7 @@
             this.btnEdit.Image = global::QuanLyThiNghe.Properties.Resources.Edit_16x16;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.btnEdit.Size = new System.Drawing.Size(156, 22);
+            this.btnEdit.Size = new System.Drawing.Size(160, 22);
             this.btnEdit.Text = "Chỉnh sửa";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -184,23 +182,21 @@
             this.danhSáchThíSinhDựThiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.iconlist;
             this.danhSáchThíSinhDựThiToolStripMenuItem.Name = "danhSáchThíSinhDựThiToolStripMenuItem";
             this.danhSáchThíSinhDựThiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.danhSáchThíSinhDựThiToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.danhSáchThíSinhDựThiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.danhSáchThíSinhDựThiToolStripMenuItem.Text = "Sắp xếp HĐT";
-            this.danhSáchThíSinhDựThiToolStripMenuItem.Click += new System.EventHandler(this.danhSáchThíSinhDựThiToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(153, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
             // 
             // xoáHuyệnNàyToolStripMenuItem
             // 
             this.xoáHuyệnNàyToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
             this.xoáHuyệnNàyToolStripMenuItem.Name = "xoáHuyệnNàyToolStripMenuItem";
             this.xoáHuyệnNàyToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.xoáHuyệnNàyToolStripMenuItem.Text = "Xoá";
-            this.xoáHuyệnNàyToolStripMenuItem.Click += new System.EventHandler(this.xoáHuyệnNàyToolStripMenuItem_Click);
             // 
             // gvHDT
             // 
@@ -356,7 +352,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gvColSchoolName;
         private DevExpress.XtraGrid.Columns.GridColumn gvColNumOfRooms;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private DevExpress.XtraEditors.SimpleButton btnCreateRooms;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cbSchools;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit gluESchoolName;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
@@ -369,6 +364,7 @@
         private System.Windows.Forms.ToolStripMenuItem danhSáchThíSinhDựThiToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem xoáHuyệnNàyToolStripMenuItem;
+        private DevExpress.XtraEditors.SimpleButton btnDanhSoBaoDanhVaChiaPhongThi;
 
     }
 }

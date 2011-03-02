@@ -9,18 +9,22 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Threading;
 using System.Diagnostics;
-using QuanLyThiNghe.Reports; 
+using QuanLyThiNghe.Reports;
+using System.Linq;
 
 namespace QuanLyThiNghe.Forms
 {
     public partial class frmDanhMaPhach : DevExpress.XtraEditors.XtraForm
     {
+        QLTN_Entities en = new QLTN_Entities();
         public frmDanhMaPhach()
         {
             InitializeComponent();
         }
+        public DMKyThi KyThiHienTai { get; set; }
         private void frmDanhMaPhach_Load(object sender, EventArgs e)
         {
+            KyThiHienTai = HeThong.KyThiHienTai();
             dataGridView1.AutoGenerateColumns = false;
             loadCSDL();
         }
@@ -142,10 +146,11 @@ namespace QuanLyThiNghe.Forms
         }
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
+            int MaKyThiHienTai = KyThiHienTai.MaKyThi;
 
             lib.DanhMaPhach MP = new QuanLyThiNghe.lib.DanhMaPhach();
-            int intDaCoMaPhach =
-            MP.DemSoThiSinhDaCoMaPhach(1) + MP.DemSoThiSinhDaCoMaPhach(2);
+            int intDaCoMaPhach = en.ThiSinh.Where(t => t.MaKyThi == MaKyThiHienTai && t.MaPhach!=null).Count();
+            //MP.DemSoThiSinhDaCoMaPhach(1) + MP.DemSoThiSinhDaCoMaPhach(2);
             if (intDaCoMaPhach == 0 || XtraMessageBox.Show("Đã có " + intDaCoMaPhach.ToString() + " thí sinh được đánh mã phách rồi, bạn có muốn đánh mã phách lại không?",
                     "Đánh mã phách", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -194,9 +199,10 @@ namespace QuanLyThiNghe.Forms
         DataTable dt;
         public void loadCSDL()
         {
-            String sql;
+            String sql;//WHERE MaKyThi = (SELECT TOP 1 KyThiHienTai FROM dbo.Config)
             sql = @"SELECT TenMonThi, MP.* FROM (
-                    SELECT * FROM dbo.DMPhach WHERE MaKyThi = (SELECT TOP 1 KyThiHienTai FROM dbo.Config)
+                    SELECT * FROM dbo.DMPhach 
+                    
                     ) AS MP INNER JOIN
                     dbo.DMMonThi ON MP.MaMonThi = dbo.DMMonThi.MaMonThi";
             //sql = @"SELECT * FROM dbo.DMPhach WHERE MaKyThi = (SELECT TOP 1 KyThiHienTai FROM dbo.Config)";
