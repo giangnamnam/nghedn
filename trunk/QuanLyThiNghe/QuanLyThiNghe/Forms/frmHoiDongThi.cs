@@ -18,11 +18,12 @@ namespace QuanLyThiNghe.Forms
         public frmHoiDongThi()
         {
             InitializeComponent();
+            KyThiHienTai = HeThong.KyThiHienTai();
         }
 
         private void frmHoiDongThi_Load(object sender, EventArgs e)
         {
-            KyThiHienTai = HeThong.KyThiHienTai();
+            
             LoadHDT();
             btnPrint.Enabled = gvHDT.RowCount > 0;
             btnDelete.Enabled = gvHDT.RowCount > 0;
@@ -32,7 +33,7 @@ namespace QuanLyThiNghe.Forms
         {
             int MaKyThiHienTai = KyThiHienTai.MaKyThi;
             gcHDT.DataSource = en.HoiDongThi.Where(h => (h.DaXoa == false || h.DaXoa == null) && h.DMKyThi.MaKyThi == MaKyThiHienTai)
-                .Select(h => new { h.SoLuongPhongDuTinh, TenTruong = h.DMTruong.TenTruong, h.MaHoiDong, h.SoThiSinhDuTinh });
+                .Select(h => new { h.SoLuongPhongDuTinh, TenTruong = h.DMTruong.TenTruong, h.MaHoiDong, h.SoThiSinhDuTinh, SoThiSinhHienTai = h.ThiSinh.Count });
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -106,8 +107,8 @@ namespace QuanLyThiNghe.Forms
             if (DevExpress.XtraEditors.XtraMessageBox.Show("Thao tác đánh số báo danh và chia phòng thi sẽ ghi đè lên các dữ liệu cũ nếu có bạn vẫn muốn tiếp tục thao tác?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)== DialogResult.Yes)
             {
                 ChiaPhongThiVaDanhSoBaoDanh();
+                DevExpress.XtraEditors.XtraMessageBox.Show("Đã đánh số báo danh và chia phòng thi xong.", "Đánh số báo danh và chia phòng thi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            DevExpress.XtraEditors.XtraMessageBox.Show("Đã đánh số báo danh và chia phòng thi xong.", "Đánh số báo danh và chia phòng thi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
         }
 

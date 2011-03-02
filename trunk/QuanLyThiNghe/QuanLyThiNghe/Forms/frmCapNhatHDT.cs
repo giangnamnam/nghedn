@@ -85,7 +85,7 @@ namespace QuanLyThiNghe.Forms
                     hdt.DaXoa = false;
 
                     _Entities.SaveChanges();
-
+                    this.DialogResult = DialogResult.OK;
                     frmHoiDongThi frm = new frmHoiDongThi();
                     DevExpress.XtraEditors.XtraMessageBox.Show("Đã thêm thành công.");
                     frm.LoadHDT();
