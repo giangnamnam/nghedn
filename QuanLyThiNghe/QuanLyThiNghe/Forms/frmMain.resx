@@ -608,6 +608,98 @@
   <data name="navBarGroup3.Caption" xml:space="preserve">
     <value>Xử lý nghiệp vụ</value>
   </data>
+  <data name="navBarItemChiaHoiDong.Caption" xml:space="preserve">
+    <value>Chia hội đồng thi</value>
+  </data>
+  <data name="navBarItem4.Caption" xml:space="preserve">
+    <value>SBD &amp; chia phòng thi</value>
+  </data>
+  <data name="btnMaPhach.Caption" xml:space="preserve">
+    <value>Đánh mã phách</value>
+  </data>
+  <data name="btnMaPhach.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAACxSURBVDhPnZM9CsQgEEa9vXYeYVtbG1sbC5s9wd7EH2bzCS5udEKMMAghPt98g4KIhHOOYoxT
+        4bv3no79JbjVAcc+LQBSShRC4CFnwLbNCrBlswMAeGppF9AhaLXlOgL8+4OwVh1MEzLGzACc5ABnqlLq
+        2gA2XAEmpZwBtdbbBkvAmMEjg5zzzwA2XLEtjCFuGVhrSWvdgulTgM2qSiltIH8ZjA/t7hhZwGiDn64K
+        F38B2gIILIrvWJYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="navBarItem5.Caption" xml:space="preserve">
+    <value>Điểm danh &amp; sửa điểm</value>
+  </data>
+  <data name="navBarItem5.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAADHSURBVDhPY2AgA9xftyLhUWfT++MRQfNJ1r5nz56EGzdu/L8wqff/PjfH9yQZsH7f+oRr1679
+        P3/2zP/6+rr/2zNSEog2IOd4TkLnpc7/209v/V9fV/d/+pTJpGluvtj8P+FQwn/zSeb/G/prydNsOMnw
+        v3yH/KhmfPEGiipYaNM3wG7tS1FYfL7+PSieSbYZ5KWX5+vX79iS9t+93fg9SfEM0nxgfXXA5a2F/ycX
+        m88vjNQWIDptwxSqqaquj/HWdiBZI1QDAJ8qnyK+FymGAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="nBI_Log.Caption" xml:space="preserve">
+    <value>Nhật ký hệ thống</value>
+  </data>
+  <data name="nBI_Log.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
+        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAArpAAAK6QH9dc7TAAAAGHRFWHRTb2Z0d2FyZQBBZG9i
+        ZSBGaXJld29ya3NPsx9OAAACdklEQVQ4T6WTS0wTURSGLxCEQhUasNRWjTHRGF0YY9yYuDNxTXwt3BkW
+        EHHBWm1sjAsIRKJxgSFEwSAGNxoepbw0aTGgwUhLpJpANx06LcPtDNOZ0kJ/71xgBGGlJ/lnztzzn+/O
+        nJkhAMj/aM9m7S3JT0+4LqUDztp0wFGfnjh8OT1KLHtttAugf3Jd18bK5/XxSmj+U0j5T0P/aIc2Viay
+        Wv3fkB0AbcTZoA1ZkZ6+gVxyEtmMhsyqjtxKEKvBOmi+A0iNHHq6HWIC1EHnea3PAjp1F1nmMGJmJgi/
+        P8DzdSYabIbWVwJ1wHFtC2IClHeWftV3YcO8nkM2m8XgwABed3XyfG1tjdc0/1UovYVz6rcTvJcf5DdV
+        luRLomTCz7lJURSkUikO6Onuhq7rSCbpBlwYhvyKQO6pPGYCkp32I7SNgIbfc1M8HockSZgNhTDsGwKl
+        FLIsI2fAhe+g7ftAO0ovmgDa4aqQWklW/9nLAbFYDNFolIFEDHm98LjdGB8b5bWMOA3pWQGW22xnTYCR
+        JJryfqx4b3OTqqpYWJhHJLIAURQRCgXR0tQI7/gU1mdakWgkyvKL4/y7MIeYaC6/s9RYCjUywSduzGBx
+        UYAgRHluxHI0DKnVwQBW81X+ATBa/JHVLzy2Q//l4w3bIyNMI9ZyEqLHEkk8Obff2H3HHfCF2eoi6in7
+        kLhfArn9Cmj/PUj9D6B0VmPJXQbJbf2MjjOOrWYTUECIlclJCHExVXXdtDVM1hQF5mrzo+G6/MWvNYVf
+        em/ZHhJSdJTVHYbX6NkOKGYLNqaDBoDJylTCVEFIXiU7l25e2w3Pprd49yP8w6/9Gxx9wV5wnweMAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="navBarItem14.Caption" xml:space="preserve">
+    <value>Sao lưu &amp; Phục hồi</value>
+  </data>
+  <data name="navBarItem14.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAACRUlEQVQ4T52Ty2saURTGL+T/
+        CBT6d3TZlQs3btxJIJGURg1V2wTcFKFUjQvL1DY1Pkq6kFZlYgKBduUjIUJSCmqhHYuO7wepRtTg4+uc
+        C7oIDTRdfHfOnHN+35x7Z4YVCgUGgPl8PkER/lECMcTyxev13gsGg1BirnK5jGq1inq9zkUx5agmSRIC
+        gQAUZnlh4PF4VuLxOIrFIjqdDgconhtSTDmqlUoliKIIhdEuDJxO5346nUa32+UNc/DmlWrUk0qloDDv
+        FgZ2u72Yz+cxGAwWo/7NhLZBPblcDsRwA5vNdt/tdvOnNhoNjEYjPqosy4tJKKYc1ZrNJs8To7DLzGq1
+        robD4UVzpVJBv9/nzZPJhItiylFtPhkxCrvCDAbDfiKRuHXft50HnQOxTK/X1+hVtVqtO4kYhS0znU6H
+        SCTyXyKWabVaDtPNXUQMsUyj0UB4u4fMhR9fM15kj18iG36BfquD2Uz5YKczjK+uMGyeoysfoC350Su6
+        8Frwg1imVqvh3HmF32UPGj8EXMpR9Np5jKdjTDHDTDFo/izhW8CBrPgcF58dyKd24HAJIJapVCphff0R
+        vhwFMRqWMJsMMBxd41ethpNzCR+Oa9jz5xHdFZHZ9UIKuRF948Tq2hqI5X/i6ekZ27JuGyJR8brZbqPc
+        vkSl3YJc7eHsex+fkkN8jHVw5D9EyOkaW7afbR3EDznLl5NkmiVTaWY1m5eemE0PjAbje5PJIJmMG7LZ
+        9Lhq3dyQLBZjyPLU8tBk2VyKiTHOkf4AbxcUDWwy79AAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="navBarItem13.Caption" xml:space="preserve">
+    <value>Cấu hình</value>
+  </data>
+  <data name="navBarItem13.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAC+UlEQVQ4T6WQ2U8TURTG54/w
+        iUdMDC4xQY3iVhIX3IJIBcQFq6LiBi4NVZFogyylKgpK1CIR4hYCLqQFLKUrFNpO6TK0FVBLi61toa3i
+        8mbyeWcgBE188ia/nMnc833fOZcCQP0PlMPhyAyHP8u+f43+kx9TMdmPqegsP7/FZLHohMxms+2h/L4x
+        YyDyBR3mADpZLEF00QRS2e9Oc5C7U5gCkA98QrtxHK97/QhMTMHjdjHU12hI/UwzhqxbDgjuuZBXN4R9
+        tQxya5zIvmkHv9qGjEordpTR2Co2Y72oD0nHelD7agQB3wcrFZ/8rH7c/RGCehdONnhw/KEbR++7cLh+
+        CII6BgduO5BLjLKrB5FRbsHGy0Ykn9ZA+tyNT2Pvac6gses9l3iEiA7dZXCw1skJ996yI0dqw26JlRNv
+        KjGCV2zA0oIeVD9lMD42Om3QIB/GbjJq3h0n9s8I99ywIUsyiMxKGullFmy+0o9UUS/WnNdjcb4SVc32
+        GYOJoPrBazfSy2mwohzpICfkk73Z1O3XTFxyanEv1l7QY1WhGkkHO1DRaIWfm4AY1Lcx2HrVxIl2VdDY
+        SRJZYVppPzZc6uPGZpNZ8YoTSizY246yhxb4vSM0FSMGdS/s4JHX3UZMtpQOcImskB15ndCA1ed0WHWG
+        iAuUWJbfgflZLyGu74ePNYhPBtU3mixYmK/CyrN6rCjUYfkZLZJPabjHWnK0G4sOdyEpT4EFuW+IuA3z
+        NjajpEY1vUJ0MtLv8ATJTjZInzAckmYnyhsHp3lE47rMggpSKx+RKjPhWp0WVsYHv887RLW0tFzs7FSY
+        9RqlRad+a2YxGtTMiMeJYbeDY/Qdg4E+7bBOozTptd1mg05l7lEp6aamZjHF4/Govw+fz89XKBRobW3l
+        kMvlEAqFVX/3JSYmUlRKSsof/9PS0tK9Xu8vn88HUmcJBoMoKioSzm1OSEigKIlEQgkEgllIck48Hq8M
+        hULiSCTCEQ6HxbFY7DrDMIVze0UiEfUbZ5ikleAzqAIAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="navBarGroup3.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -1116,68 +1208,6 @@
         8Hn98Pl8CAQCWFhYQPRL/h/+A2nfNYg+ULinAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="nBI_Log.Caption" xml:space="preserve">
-    <value>Nhật ký hệ thống</value>
-  </data>
-  <data name="nBI_Log.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAArpAAAK6QH9dc7TAAAAGHRFWHRTb2Z0d2FyZQBBZG9i
-        ZSBGaXJld29ya3NPsx9OAAACdklEQVQ4T6WTS0wTURSGLxCEQhUasNRWjTHRGF0YY9yYuDNxTXwt3BkW
-        EHHBWm1sjAsIRKJxgSFEwSAGNxoepbw0aTGgwUhLpJpANx06LcPtDNOZ0kJ/71xgBGGlJ/lnztzzn+/O
-        nJkhAMj/aM9m7S3JT0+4LqUDztp0wFGfnjh8OT1KLHtttAugf3Jd18bK5/XxSmj+U0j5T0P/aIc2Viay
-        Wv3fkB0AbcTZoA1ZkZ6+gVxyEtmMhsyqjtxKEKvBOmi+A0iNHHq6HWIC1EHnea3PAjp1F1nmMGJmJgi/
-        P8DzdSYabIbWVwJ1wHFtC2IClHeWftV3YcO8nkM2m8XgwABed3XyfG1tjdc0/1UovYVz6rcTvJcf5DdV
-        luRLomTCz7lJURSkUikO6Onuhq7rSCbpBlwYhvyKQO6pPGYCkp32I7SNgIbfc1M8HockSZgNhTDsGwKl
-        FLIsI2fAhe+g7ftAO0ovmgDa4aqQWklW/9nLAbFYDNFolIFEDHm98LjdGB8b5bWMOA3pWQGW22xnTYCR
-        JJryfqx4b3OTqqpYWJhHJLIAURQRCgXR0tQI7/gU1mdakWgkyvKL4/y7MIeYaC6/s9RYCjUywSduzGBx
-        UYAgRHluxHI0DKnVwQBW81X+ATBa/JHVLzy2Q//l4w3bIyNMI9ZyEqLHEkk8Obff2H3HHfCF2eoi6in7
-        kLhfArn9Cmj/PUj9D6B0VmPJXQbJbf2MjjOOrWYTUECIlclJCHExVXXdtDVM1hQF5mrzo+G6/MWvNYVf
-        em/ZHhJSdJTVHYbX6NkOKGYLNqaDBoDJylTCVEFIXiU7l25e2w3Pprd49yP8w6/9Gxx9wV5wnweMAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
-  <data name="navBarItem13.Caption" xml:space="preserve">
-    <value>Cấu hình</value>
-  </data>
-  <data name="navBarItem13.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAC+UlEQVQ4T6WQ2U8TURTG54/w
-        iUdMDC4xQY3iVhIX3IJIBcQFq6LiBi4NVZFogyylKgpK1CIR4hYCLqQFLKUrFNpO6TK0FVBLi61toa3i
-        8mbyeWcgBE188ia/nMnc833fOZcCQP0PlMPhyAyHP8u+f43+kx9TMdmPqegsP7/FZLHohMxms+2h/L4x
-        YyDyBR3mADpZLEF00QRS2e9Oc5C7U5gCkA98QrtxHK97/QhMTMHjdjHU12hI/UwzhqxbDgjuuZBXN4R9
-        tQxya5zIvmkHv9qGjEordpTR2Co2Y72oD0nHelD7agQB3wcrFZ/8rH7c/RGCehdONnhw/KEbR++7cLh+
-        CII6BgduO5BLjLKrB5FRbsHGy0Ykn9ZA+tyNT2Pvac6gses9l3iEiA7dZXCw1skJ996yI0dqw26JlRNv
-        KjGCV2zA0oIeVD9lMD42Om3QIB/GbjJq3h0n9s8I99ywIUsyiMxKGullFmy+0o9UUS/WnNdjcb4SVc32
-        GYOJoPrBazfSy2mwohzpICfkk73Z1O3XTFxyanEv1l7QY1WhGkkHO1DRaIWfm4AY1Lcx2HrVxIl2VdDY
-        SRJZYVppPzZc6uPGZpNZ8YoTSizY246yhxb4vSM0FSMGdS/s4JHX3UZMtpQOcImskB15ndCA1ed0WHWG
-        iAuUWJbfgflZLyGu74ePNYhPBtU3mixYmK/CyrN6rCjUYfkZLZJPabjHWnK0G4sOdyEpT4EFuW+IuA3z
-        NjajpEY1vUJ0MtLv8ATJTjZInzAckmYnyhsHp3lE47rMggpSKx+RKjPhWp0WVsYHv887RLW0tFzs7FSY
-        9RqlRad+a2YxGtTMiMeJYbeDY/Qdg4E+7bBOozTptd1mg05l7lEp6aamZjHF4/Govw+fz89XKBRobW3l
-        kMvlEAqFVX/3JSYmUlRKSsof/9PS0tK9Xu8vn88HUmcJBoMoKioSzm1OSEigKIlEQgkEgllIck48Hq8M
-        hULiSCTCEQ6HxbFY7DrDMIVze0UiEfUbZ5ikleAzqAIAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="navBarItem14.Caption" xml:space="preserve">
-    <value>Sao lưu &amp; Phục hồi</value>
-  </data>
-  <data name="navBarItem14.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAACRUlEQVQ4T52Ty2saURTGL+T/
-        CBT6d3TZlQs3btxJIJGURg1V2wTcFKFUjQvL1DY1Pkq6kFZlYgKBduUjIUJSCmqhHYuO7wepRtTg4+uc
-        C7oIDTRdfHfOnHN+35x7Z4YVCgUGgPl8PkER/lECMcTyxev13gsGg1BirnK5jGq1inq9zkUx5agmSRIC
-        gQAUZnlh4PF4VuLxOIrFIjqdDgconhtSTDmqlUoliKIIhdEuDJxO5346nUa32+UNc/DmlWrUk0qloDDv
-        FgZ2u72Yz+cxGAwWo/7NhLZBPblcDsRwA5vNdt/tdvOnNhoNjEYjPqosy4tJKKYc1ZrNJs8To7DLzGq1
-        robD4UVzpVJBv9/nzZPJhItiylFtPhkxCrvCDAbDfiKRuHXft50HnQOxTK/X1+hVtVqtO4kYhS0znU6H
-        SCTyXyKWabVaDtPNXUQMsUyj0UB4u4fMhR9fM15kj18iG36BfquD2Uz5YKczjK+uMGyeoysfoC350Su6
-        8Frwg1imVqvh3HmF32UPGj8EXMpR9Np5jKdjTDHDTDFo/izhW8CBrPgcF58dyKd24HAJIJapVCphff0R
-        vhwFMRqWMJsMMBxd41ethpNzCR+Oa9jz5xHdFZHZ9UIKuRF948Tq2hqI5X/i6ekZ27JuGyJR8brZbqPc
-        vkSl3YJc7eHsex+fkkN8jHVw5D9EyOkaW7afbR3EDznLl5NkmiVTaWY1m5eemE0PjAbje5PJIJmMG7LZ
-        9Lhq3dyQLBZjyPLU8tBk2VyKiTHOkf4AbxcUDWwy79AAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="nBI_ThiSinh.Caption" xml:space="preserve">
     <value>Thí sinh dự thi</value>
   </data>
@@ -1246,38 +1276,8 @@
   <data name="navBarItem3.Caption" xml:space="preserve">
     <value>-----------------------------------------</value>
   </data>
-  <data name="btnMaPhach.Caption" xml:space="preserve">
-    <value>Đánh mã phách</value>
-  </data>
-  <data name="btnMaPhach.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAACxSURBVDhPnZM9CsQgEEa9vXYeYVtbG1sbC5s9wd7EH2bzCS5udEKMMAghPt98g4KIhHOOYoxT
-        4bv3no79JbjVAcc+LQBSShRC4CFnwLbNCrBlswMAeGppF9AhaLXlOgL8+4OwVh1MEzLGzACc5ABnqlLq
-        2gA2XAEmpZwBtdbbBkvAmMEjg5zzzwA2XLEtjCFuGVhrSWvdgulTgM2qSiltIH8ZjA/t7hhZwGiDn64K
-        F38B2gIILIrvWJYAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="tbnInMaPhach.Caption" xml:space="preserve">
     <value>In danh sách mã phách</value>
-  </data>
-  <data name="navBarItemChiaHoiDong.Caption" xml:space="preserve">
-    <value>Chia hội đồng thi</value>
-  </data>
-  <data name="navBarItem4.Caption" xml:space="preserve">
-    <value>SBD &amp; chia phòng thi</value>
-  </data>
-  <data name="navBarItem5.Caption" xml:space="preserve">
-    <value>Điểm danh &amp; sửa điểm</value>
-  </data>
-  <data name="navBarItem5.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAADHSURBVDhPY2AgA9xftyLhUWfT++MRQfNJ1r5nz56EGzdu/L8wqff/PjfH9yQZsH7f+oRr1679
-        P3/2zP/6+rr/2zNSEog2IOd4TkLnpc7/209v/V9fV/d/+pTJpGluvtj8P+FQwn/zSeb/G/prydNsOMnw
-        v3yH/KhmfPEGiipYaNM3wG7tS1FYfL7+PSieSbYZ5KWX5+vX79iS9t+93fg9SfEM0nxgfXXA5a2F/ycX
-        m88vjNQWIDptwxSqqaquj/HWdiBZI1QDAJ8qnyK+FymGAAAAAElFTkSuQmCC
-</value>
   </data>
   <data name="navBarControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 52</value>
@@ -1805,7 +1805,7 @@
 </value>
   </data>
   <data name="phóngToToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="phóngToToolStripMenuItem.Text" xml:space="preserve">
     <value>Phóng to cửa sổ</value>
@@ -1826,7 +1826,7 @@
 </value>
   </data>
   <data name="cửaSổBìnhThườngToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="cửaSổBìnhThườngToolStripMenuItem.Text" xml:space="preserve">
     <value>Cửa sổ bình thường</value>
@@ -1846,13 +1846,13 @@
 </value>
   </data>
   <data name="thuNhỏCửaSổToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="thuNhỏCửaSổToolStripMenuItem.Text" xml:space="preserve">
     <value>Thu nhỏ cửa sổ</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 6</value>
+    <value>166, 6</value>
   </data>
   <data name="đăngXuấtToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2055,7 +2055,7 @@
 </value>
   </data>
   <data name="đăngXuấtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="đăngXuấtToolStripMenuItem.Text" xml:space="preserve">
     <value>Đăng xuất</value>
@@ -2138,7 +2138,7 @@
 </value>
   </data>
   <data name="đóngChươngTrìnhToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="đóngChươngTrìnhToolStripMenuItem.Text" xml:space="preserve">
     <value>Đóng chương trình</value>
@@ -2147,7 +2147,7 @@
     <value>456, 17</value>
   </metadata>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 120</value>
+    <value>170, 120</value>
   </data>
   <data name="&gt;&gt;contextMenuStrip1.Name" xml:space="preserve">
     <value>contextMenuStrip1</value>
