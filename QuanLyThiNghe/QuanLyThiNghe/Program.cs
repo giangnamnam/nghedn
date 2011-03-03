@@ -16,17 +16,17 @@ namespace QuanLyThiNghe
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            try
-            {
-                //Application.Run(new Forms.frmMain());
+            //try
+            //{
+                Application.Run(new Forms.frmMain());
                 //Application.Run(new Forms.frmGioiThieu());
-                Application.Run(new Forms.frmChiaHoiDongThi());
+                //Application.Run(new Forms.frmChiaHoiDongThi());
                 //Application.Run(new Forms.XtraForm1());
 
-            }
-            catch (Exception)
-            {
-            }
+            //}
+            //catch (Exception)
+            //{
+            //}
             
         }
     }
