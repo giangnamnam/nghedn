@@ -22,7 +22,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("QuanLyThiNghe", "FK_TaiKhoan_PhanQuyen", "PhanQuyen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyThiNghe.PhanQuyen), "TaiKhoan", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyThiNghe.TaiKhoan))]
 
 // Original file name:
-// Generation date: 2/11/2011 5:19:55 PM
+// Generation date: 3/3/2011 5:08:11 PM
 namespace QuanLyThiNghe
 {
     
@@ -663,6 +663,52 @@ namespace QuanLyThiNghe
         private global::System.Nullable<int> _KyThiHienTai;
         partial void OnKyThiHienTaiChanging(global::System.Nullable<int> value);
         partial void OnKyThiHienTaiChanged();
+        /// <summary>
+        /// There are no comments for Property SoThiSinhTrenPhong in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<int> SoThiSinhTrenPhong
+        {
+            get
+            {
+                return this._SoThiSinhTrenPhong;
+            }
+            set
+            {
+                this.OnSoThiSinhTrenPhongChanging(value);
+                this.ReportPropertyChanging("SoThiSinhTrenPhong");
+                this._SoThiSinhTrenPhong = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("SoThiSinhTrenPhong");
+                this.OnSoThiSinhTrenPhongChanged();
+            }
+        }
+        private global::System.Nullable<int> _SoThiSinhTrenPhong;
+        partial void OnSoThiSinhTrenPhongChanging(global::System.Nullable<int> value);
+        partial void OnSoThiSinhTrenPhongChanged();
+        /// <summary>
+        /// There are no comments for Property ApDungSTSTPT in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<bool> ApDungSTSTPT
+        {
+            get
+            {
+                return this._ApDungSTSTPT;
+            }
+            set
+            {
+                this.OnApDungSTSTPTChanging(value);
+                this.ReportPropertyChanging("ApDungSTSTPT");
+                this._ApDungSTSTPT = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ApDungSTSTPT");
+                this.OnApDungSTSTPTChanged();
+            }
+        }
+        private global::System.Nullable<bool> _ApDungSTSTPT;
+        partial void OnApDungSTSTPTChanging(global::System.Nullable<bool> value);
+        partial void OnApDungSTSTPTChanged();
     }
     /// <summary>
     /// There are no comments for QuanLyThiNghe.DMHuyen in the schema.
@@ -2260,6 +2306,29 @@ namespace QuanLyThiNghe
         private string _Alias;
         partial void OnAliasChanging(string value);
         partial void OnAliasChanged();
+        /// <summary>
+        /// There are no comments for Property SoLuongThiSinhTrenMotPhongThi in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<int> SoLuongThiSinhTrenMotPhongThi
+        {
+            get
+            {
+                return this._SoLuongThiSinhTrenMotPhongThi;
+            }
+            set
+            {
+                this.OnSoLuongThiSinhTrenMotPhongThiChanging(value);
+                this.ReportPropertyChanging("SoLuongThiSinhTrenMotPhongThi");
+                this._SoLuongThiSinhTrenMotPhongThi = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("SoLuongThiSinhTrenMotPhongThi");
+                this.OnSoLuongThiSinhTrenMotPhongThiChanged();
+            }
+        }
+        private global::System.Nullable<int> _SoLuongThiSinhTrenMotPhongThi;
+        partial void OnSoLuongThiSinhTrenMotPhongThiChanging(global::System.Nullable<int> value);
+        partial void OnSoLuongThiSinhTrenMotPhongThiChanged();
         /// <summary>
         /// There are no comments for DMKyThi in the schema.
         /// </summary>

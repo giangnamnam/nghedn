@@ -51,7 +51,7 @@ namespace QuanLyThiNghe.Forms
 
             lookUpHuyen.EditValue = HDT.DMTruong.DMHuyen.MaHuyen;
             lookUpTruong.EditValue = HDT.DMTruong.MaTruong;
-            
+            spinEdit1.Value = HDT.SoLuongThiSinhTrenMotPhongThi.GetValueOrDefault(0);
 
             txtSoPhong.Value = (decimal)HDT.SoLuongPhongDuTinh.GetValueOrDefault(0);
             txtSoThiSinh.Value = (decimal)HDT.SoThiSinhDuTinh.GetValueOrDefault(0);
@@ -82,6 +82,7 @@ namespace QuanLyThiNghe.Forms
 
                     hdt.SoLuongPhongDuTinh = (int)txtSoPhong.Value;
                     hdt.SoThiSinhDuTinh = (int)txtSoThiSinh.Value;
+                    hdt.SoLuongThiSinhTrenMotPhongThi = (int)spinEdit1.Value;
                     hdt.DaXoa = false;
 
                     _Entities.SaveChanges();
@@ -107,6 +108,7 @@ namespace QuanLyThiNghe.Forms
 
                     HDT.SoLuongPhongDuTinh = (int)txtSoPhong.Value;
                     HDT.SoThiSinhDuTinh = (int)txtSoThiSinh.Value;
+                    HDT.SoLuongThiSinhTrenMotPhongThi = (int)spinEdit1.Value;
 
                     _Entities.AddToHoiDongThi(HDT);
                     _Entities.SaveChanges();

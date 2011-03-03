@@ -41,6 +41,8 @@ namespace QuanLyThiNghe.Forms
             checkEdit4.Checked = (cf.ChoHoiDongNhanKetQua == true ? true : false);
             checkEdit5.Checked = (cf.ChoThuKyNhapDiem == true ? true : false);
             checkEdit6.Checked = (cf.ChoLoginWeb == true ? true : false);
+            checkEdit7.Checked = (cf.ApDungSTSTPT == true ? true : false);
+            spinEdit1.Value = cf.SoThiSinhTrenPhong.GetValueOrDefault(24);
             chkNLD.Checked = (cf.ChoThuKyQuayLaiKhiNhapDiem == true ? true : false);
             memoEdit1.Text = cf.NoiDungThongBaoTrenWeb;
             DMKyThi kt = (from k in en.DMKyThi where k.MaKyThi == cf.KyThiHienTai select k).First();
@@ -67,6 +69,9 @@ namespace QuanLyThiNghe.Forms
                 cf.ChoLoginWeb = checkEdit6.Checked;
                 cf.NoiDungThongBaoTrenWeb = memoEdit1.Text;
                 cf.ChoThuKyQuayLaiKhiNhapDiem = chkNLD.Checked;
+                cf.ApDungSTSTPT = checkEdit7.Checked;
+                cf.SoThiSinhTrenPhong = int.Parse(spinEdit1.Value.ToString());
+
                 if (comboBoxEdit1.SelectedItem != null)
                 {
                     string kythi = comboBoxEdit1.SelectedItem.ToString();
@@ -105,6 +110,11 @@ namespace QuanLyThiNghe.Forms
                 DMKyThi kt = (from k in en.DMKyThi where k.TenKyThi == kythi select k).First();
                 chkKetThuc.Checked = kt.DaKetThuc == true ? true : false;
             }
+        }
+
+        private void checkEdit7_CheckedChanged(object sender, EventArgs e)
+        {
+            spinEdit1.Enabled = checkEdit7.Checked;
         }
 
         

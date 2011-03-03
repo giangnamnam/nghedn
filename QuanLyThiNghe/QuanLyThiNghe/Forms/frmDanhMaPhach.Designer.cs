@@ -204,7 +204,6 @@
             // chk
             // 
             this.chk.EditValue = true;
-            this.chk.Enabled = false;
             this.chk.Location = new System.Drawing.Point(468, 57);
             this.chk.Name = "chk";
             this.chk.Properties.Caption = "Đánh mã phách ngẫu nhiên";

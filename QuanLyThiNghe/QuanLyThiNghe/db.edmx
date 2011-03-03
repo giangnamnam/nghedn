@@ -85,6 +85,8 @@
           <Property Name="ChoThuKyNhapDiem" Type="bit" />
           <Property Name="ChoThuKyQuayLaiKhiNhapDiem" Type="bit" />
           <Property Name="KyThiHienTai" Type="int" />
+          <Property Name="SoThiSinhTrenPhong" Type="int" />
+          <Property Name="ApDungSTSTPT" Type="bit" />
         </EntityType>
         <EntityType Name="DMHuyen">
           <Key>
@@ -168,6 +170,7 @@
           <Property Name="Alias" Type="nvarchar" MaxLength="50" />
           <Property Name="MaTruong" Type="int" />
           <Property Name="MaKyThi" Type="int" />
+          <Property Name="SoLuongThiSinhTrenMotPhongThi" Type="int" />
           <Property Name="SoLuongPhongDuTinh" Type="int" />
           <Property Name="SoThiSinhDuTinh" Type="int" />
           <Property Name="NgayTao" Type="datetime" />
@@ -475,7 +478,8 @@
           <Property Name="ChoThuKyNhapDiem" Type="Boolean" />
           <Property Name="ChoThuKyQuayLaiKhiNhapDiem" Type="Boolean" />
           <Property Name="KyThiHienTai" Type="Int32" />
-        </EntityType>
+          <Property Name="SoThiSinhTrenPhong" Type="Int32" Nullable="true" />
+          <Property Name="ApDungSTSTPT" Type="Boolean" Nullable="true" /></EntityType>
         <EntityType Name="DMHuyen">
           <Key>
             <PropertyRef Name="MaHuyen" />
@@ -573,7 +577,8 @@
           <NavigationProperty Name="DMKyThi" Relationship="QuanLyThiNghe.FK_HoiDongThi_DMKyThi" FromRole="HoiDongThi" ToRole="DMKyThi" />
           <NavigationProperty Name="DMTruong" Relationship="QuanLyThiNghe.FK_HoiDongThi_DMTruong1" FromRole="HoiDongThi" ToRole="DMTruong" />
           <NavigationProperty Name="ThiSinh" Relationship="QuanLyThiNghe.FK_ThiSinh_HoiDongThi" FromRole="HoiDongThi" ToRole="ThiSinh" />
-          <Property Name="Alias" Type="String" Nullable="true" /></EntityType>
+          <Property Name="Alias" Type="String" Nullable="true" />
+          <Property Name="SoLuongThiSinhTrenMotPhongThi" Type="Int32" Nullable="true" /></EntityType>
         <EntityType Name="NhatKy">
           <Key>
             <PropertyRef Name="MaNhatKy" />
@@ -712,6 +717,8 @@
           <EntitySetMapping Name="Config">
             <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.Config)">
               <MappingFragment StoreEntitySet="Config">
+                <ScalarProperty Name="ApDungSTSTPT" ColumnName="ApDungSTSTPT" />
+                <ScalarProperty Name="SoThiSinhTrenPhong" ColumnName="SoThiSinhTrenPhong" />
                 <ScalarProperty Name="ConfigID" ColumnName="ConfigID" />
                 <ScalarProperty Name="CheckMac" ColumnName="CheckMac" />
                 <ScalarProperty Name="ChoLoginWeb" ColumnName="ChoLoginWeb" />
@@ -807,6 +814,7 @@
           <EntitySetMapping Name="HoiDongThi">
             <EntityTypeMapping TypeName="IsTypeOf(QuanLyThiNghe.HoiDongThi)">
               <MappingFragment StoreEntitySet="HoiDongThi">
+                <ScalarProperty Name="SoLuongThiSinhTrenMotPhongThi" ColumnName="SoLuongThiSinhTrenMotPhongThi" />
                 <ScalarProperty Name="Alias" ColumnName="Alias" />
                 <ScalarProperty Name="MaHoiDong" ColumnName="MaHoiDong" />
                 <ScalarProperty Name="SoLuongPhongDuTinh" ColumnName="SoLuongPhongDuTinh" />
