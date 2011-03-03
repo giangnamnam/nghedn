@@ -114,38 +114,53 @@ namespace QuanLyThiNghe.Forms
 
         void ChiaPhongThiVaDanhSoBaoDanh()
         {
+            Config cf = (from c in en.Config select c).First();
+            bool apDungSTSTMPT = cf.ApDungSTSTPT.GetValueOrDefault(false);
+            int SoThiSinhTrenMotPhongThi = cf.SoThiSinhTrenPhong.GetValueOrDefault(24);
+
             int MaKyThiHienTai = KyThiHienTai.MaKyThi;
-            var HDTs = en.ThiSinh.Where(t => t.MaKyThi == MaKyThiHienTai && (t.DaXoa == false || t.DaXoa == null) && t.HoiDongThi!=null).Select(t => new { t.HoiDongThi.MaHoiDong }).Distinct().ToList();
+            var HDTs = en.ThiSinh.Where(t => t.MaKyThi == MaKyThiHienTai && (t.DaXoa == false || t.DaXoa == null) && t.HoiDongThi!=null).Select(t => new { t.HoiDongThi.MaHoiDong, t.HoiDongThi.SoLuongThiSinhTrenMotPhongThi }).Distinct().ToList();
             for (int i = 0; i < HDTs.Count; i++)
             {
                 int MaHDT = HDTs[i].MaHoiDong;
                 int phong = 1;
                 int phongtmp = 1;
-                var MTs = en.ThiSinh.Where(t => t.MaKyThi == MaKyThiHienTai && (t.DaXoa==false || t.DaXoa==null) && t.HoiDongThi.MaHoiDong == MaHDT).Select(t => new { t.DMMonThi.MaMonThi }).Distinct().ToList();
-                for (int j = 0; j < MTs.Count; j++)
+                var Khois = en.ThiSinh.Where(t => t.MaKyThi == MaKyThiHienTai && (t.DaXoa == false || t.DaXoa == null) && t.HoiDongThi.MaHoiDong == MaHDT).Select(t => new { t.DMTruong.DMKhoi.MaKhoi }).Distinct().ToList();
+                for (int k = 0; k < Khois.Count; k++)
                 {
-                    int MaMonThi = MTs[j].MaMonThi;
-                    List<ThiSinh> TSs = en.ThiSinh.Where(t => t.MaKyThi == MaKyThiHienTai && (t.DaXoa==false || t.DaXoa==null) && t.HoiDongThi.MaHoiDong == MaHDT && t.DMMonThi.MaMonThi == MaMonThi).OrderBy(t => t.Ten).ThenBy(t => t.NgaySinh).ToList();
-                    if (phongtmp!=1)
-                    {
-                        phong++;
-                        phongtmp = 1;
-                    }
-                    int sbd = 1;
+                    int MaKhoi = Khois[k].MaKhoi;
 
-
-                    foreach (ThiSinh ts in TSs)
+                    var MTs = en.ThiSinh.Where(t => t.MaKyThi == MaKyThiHienTai && (t.DaXoa == false || t.DaXoa == null) && t.HoiDongThi.MaHoiDong == MaHDT && t.DMTruong.DMKhoi.MaKhoi == MaKhoi).Select(t => new { t.DMMonThi.MaMonThi }).Distinct().ToList();
+                    for (int j = 0; j < MTs.Count; j++)
                     {
-                        ts.SBD = sbd;
-                        ts.PhongThi = phong;
-                        
-                        if (phongtmp==20) //20 thi sinh mot phong
+                        int MaMonThi = MTs[j].MaMonThi;
+                        List<ThiSinh> TSs = en.ThiSinh.Where(t => t.MaKyThi == MaKyThiHienTai && (t.DaXoa == false || t.DaXoa == null) && t.HoiDongThi.MaHoiDong == MaHDT && t.DMMonThi.MaMonThi == MaMonThi && t.DMTruong.DMKhoi.MaKhoi == MaKhoi).OrderBy(t => t.Ten).ThenBy(t => t.NgaySinh).ToList();
+                        if (phongtmp != 1)
                         {
                             phong++;
-                            phongtmp = 0;
+                            phongtmp = 1;
                         }
-                        phongtmp++;
-                        sbd++;
+                        int sbd = 1;
+
+
+                        foreach (ThiSinh ts in TSs)
+                        {
+                            ts.SBD = sbd;
+                            ts.PhongThi = phong;
+
+                            if (apDungSTSTMPT==false)
+                            {
+                                SoThiSinhTrenMotPhongThi = HDTs[i].SoLuongThiSinhTrenMotPhongThi.GetValueOrDefault(24);
+                            }
+
+                            if (phongtmp == SoThiSinhTrenMotPhongThi)
+                            {
+                                phong++;
+                                phongtmp = 0;
+                            }
+                            phongtmp++;
+                            sbd++;
+                        }
                     }
                 }
             }

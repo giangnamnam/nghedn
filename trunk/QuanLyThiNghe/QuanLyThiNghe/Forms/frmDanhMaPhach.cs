@@ -30,127 +30,168 @@ namespace QuanLyThiNghe.Forms
         }
         public void DanhMaPhach()
         {
-            if (InvokeRequired)
+            List<ThiSinh> TSDT = en.ThiSinh.Where(t => t.MaKyThi == KyThiHienTai.MaKyThi && (t.DaXoa == false || t.DaXoa == null)).ToList();
+            var DMKs = en.ThiSinh.Where( t => t.MaKyThi == KyThiHienTai.MaKyThi && (t.DaXoa == false || t.DaXoa == null))
+                .Select(t => new { t.DMTruong.DMKhoi.MaKhoi, t.DMTruong.DMKhoi.TenKhoi }).Distinct().ToList();
+            int soLuongHoanThanh = 0;
+            int Tong = TSDT.Count;
+            bool MaNgauNhien = chk.Checked;
+            bool BatDauBangDauPhach = radioButton1.Checked;
+            string pHONGfORMAT = textEdit1.Text;
+            string sTTfORMAT = textEdit2.Text;
+            try
             {
-                // after we've done all the processing, 
-                this.Invoke(new MethodInvoker(delegate
+                for (int i = 0; i < DMKs.Count(); i++)
                 {
-                    // load the control with the appropriate data
-                    lib.DanhMaPhach MP = new QuanLyThiNghe.lib.DanhMaPhach();
-                    
-                    DataTable Khoi = MP.LayDanhSachKhoiThi();
-                    int soLuongHoanThanh = 0;
-                    int Tong = MP.LayTongSoThiSinhCanDanhMaPhach();
-                    bool MaNgauNhien = chk.Checked;
-                    bool BatDauBangDauPhach = radioButton1.Checked;
-                    string pHONGfORMAT = textEdit1.Text;
-                    string sTTfORMAT = textEdit2.Text;
+                    int maKhoiThi = DMKs[i].MaKhoi;
+                    var DMMTs = en.ThiSinh.Where(t => 
+                        t.MaKyThi == KyThiHienTai.MaKyThi && 
+                        (t.DaXoa == false || t.DaXoa == null) && 
+                        t.DMTruong.DMKhoi.MaKhoi == maKhoiThi)
+                        .Select(t => new { t.DMMonThi.MaMonThi, t.DMMonThi.TenMonThi }).Distinct().ToList();
 
-                    SqlConnection con = new SqlConnection(MP.StrConnection);
-                    SqlCommand com = new SqlCommand("chuTich_CapNhatMaPhach", con);
-                    com.CommandType = CommandType.StoredProcedure;
-                    con.Open();
-                    try
+                    #region Lap mon thi
+                    for (int j = 0; j < DMMTs.Count; j++)
                     {
-                        foreach (DataRow drkhoithi in Khoi.Rows)
+                        int intmamonthi = DMMTs[j].MaMonThi;
+                        DMMonThi monthien = en.DMMonThi.Include("DMPhach").Where(m => m.MaMonThi == intmamonthi).First();
+                        string TDN = monthien.DMPhach.First().GiaTri;
+                        var HDTs = en.ThiSinh.Where(t => 
+                            t.MaKyThi == KyThiHienTai.MaKyThi && 
+                            (t.DaXoa == false || t.DaXoa == null) && 
+                            t.DMMonThi.MaMonThi == intmamonthi &&
+                            t.HoiDongThi!=null)
+                            .Select(t => new { t.HoiDongThi.MaHoiDong }).Distinct().ToList();
+                        int P = 0;
+                        int countSoPhongTheoMon = en.ThiSinh.Where(t =>
+                            t.MaKyThi == KyThiHienTai.MaKyThi &&
+                            (t.DaXoa == false || t.DaXoa == null) &&
+                            t.DMTruong.DMKhoi.MaKhoi == maKhoiThi && 
+                            t.DMMonThi.MaMonThi == intmamonthi &&
+                            t.HoiDongThi != null)
+                            .Select(t => new { t.HoiDongThi.MaHoiDong, t.PhongThi }).Distinct().Count();
+                        System.Collections.ArrayList arr = new System.Collections.ArrayList();
+                        for (int k = 1; k <= countSoPhongTheoMon; k++)
+                            arr.Add(k);
+
+
+                        #region Lap hoi dong thi
+                        for (int l = 0; l < HDTs.Count; l++)
                         {
-                            int maKhoiThi = int.Parse(drkhoithi["MaKhoi"].ToString());
-                            MP.LayDanhSach_MonThi_HoiDong_PhongThi_TheoKhoi(maKhoiThi);
-                            DataTable MonThi = MP.DS_MonThi_HoiDongThi_PhongThi.DefaultView.ToTable(true, "GiaTri", "MaMonThi");
+                            int mahoidong = HDTs[l].MaHoiDong;
+                            var PhongThis = en.ThiSinh.Where(t =>
+                                t.MaKyThi == KyThiHienTai.MaKyThi &&
+                                (t.DaXoa == false || t.DaXoa == null) && 
+                                t.DMTruong.DMKhoi.MaKhoi == maKhoiThi && 
+                                t.DMMonThi.MaMonThi == intmamonthi && 
+                                t.HoiDongThi.MaHoiDong == mahoidong &&
+                                t.PhongThi !=null
+                                )
+                                .Select(t => new { t.PhongThi }).Distinct().ToList();
 
-                            #region Lap mon thi
-                            foreach (DataRow MT in MonThi.Rows)
+                            #region Lap phong thi
+                            for (int m = 0; m < PhongThis.Count; m++)
                             {
-                                string TDN = MT["GiaTri"].ToString();
-                                string expression = "(Convert(" + "MaMonThi" + ",'System.String') = " + MT["MaMonThi"].ToString() + ")";
-                                DataTable HDThi = MP.LayTheoDieuKien(expression).DefaultView.ToTable(true, "MaHoiDong");
-                                int intmamonthi = int.Parse(MT["MaMonThi"].ToString());
-                                int P = 0;
-                                int countSoPhongTheoMon = MP.DemSoPhongThiTheoMonThi(intmamonthi);
-                                System.Collections.ArrayList arr = new System.Collections.ArrayList();
-                                for (int i = 1; i <= countSoPhongTheoMon; i++)
-                                    arr.Add(i);
-                                #region Lap hoi dong thi
-                                foreach (DataRow HD in HDThi.Rows)
+                                if (MaNgauNhien)
                                 {
-                                    string expressionHD = "(Convert(" + "MaMonThi" + ",'System.String') = " + MT["MaMonThi"].ToString() + ")";
-                                    expressionHD += "AND (Convert(" + "MaHoiDong" + ",'System.String') = " + HD["MaHoiDong"].ToString() + ")";
-                                    DataTable PhongThi = MP.LayTheoDieuKien(expressionHD).DefaultView.ToTable(true, "PhongThi");
-                                    #region Lap phong thi
-                                    foreach (DataRow PT in PhongThi.Rows)
-                                    {
-                                        if (MaNgauNhien)
-                                        {
-                                            Random r = new Random();
-                                            int index = r.Next(0, arr.Count - 1);
-                                            P = (int)arr[index];
-                                            arr.RemoveAt(index);
-                                        }
-                                        else
-                                        {
-                                            P++;
-                                        }
-                                        int mamonthi = int.Parse(MT["MaMonThi"].ToString());
-                                        int mahoidong = int.Parse(HD["MaHoiDong"].ToString());
-                                        int phong = int.Parse(PT["PhongThi"].ToString());
-                                        DataTable DSTS = MP.LayDanhSachThiSinhTheoPhong(maKhoiThi, mamonthi, mahoidong, phong);
+                                    Random r = new Random();
+                                    int index = r.Next(0, arr.Count - 1);
+                                    P = (int)arr[index];
+                                    arr.RemoveAt(index);
+                                }
+                                else
+                                {
+                                    P++;
+                                }
 
+                                int phong = PhongThis[m].PhongThi.Value;
+                                List<ThiSinh> DSTSTheoPhongThi = en.ThiSinh.Where(t =>
+                                    t.MaKyThi == KyThiHienTai.MaKyThi &&
+                                    (t.DaXoa == false || t.DaXoa == null) &&
+                                    t.DMTruong.DMKhoi.MaKhoi == maKhoiThi
+                                    && t.DMMonThi.MaMonThi == intmamonthi
+                                    && t.HoiDongThi.MaHoiDong == mahoidong
+                                    && t.PhongThi == phong
+                                    ).OrderBy(t=>t.SBD).ToList();
 
-                                        int randomNumber = 0;
-                                        #region lapThiSinh
-                                        foreach (DataRow item in DSTS.Rows)
-                                        {
-                                            randomNumber++;
-                                            int mathisinh = int.Parse(item["MaThiSinh"].ToString());
-                                            string strMaPhach = "";
-                                            if (BatDauBangDauPhach)
-                                                strMaPhach = TDN + String.Format(pHONGfORMAT, P) + String.Format(sTTfORMAT, randomNumber);
-                                            else
-                                                strMaPhach = String.Format(pHONGfORMAT, P) + TDN + String.Format(sTTfORMAT, randomNumber);
-                                            //string strMaPhach = TDN + String.Format("{0:0000}", P) + String.Format("{0:00}", randomNumber);
-                                            //string strMaPhach = P.ToString()+ TDN +  randomNumber.ToString();
-                                            soLuongHoanThanh++;
-                                            com.Parameters.Clear();
-                                            com.Parameters.Add("@MaThiSinh", mathisinh);
-                                            com.Parameters.Add("@MaPhach", strMaPhach);
-                                            com.ExecuteNonQuery();
-                                        }
-                                        #endregion
-                                        progressBarControl1.Text = ((soLuongHoanThanh * 100) / Tong).ToString();
-                                        progressBarControl1.Update();
-                                    }
-                                    #endregion
-
-
+                                int randomNumber = 0;
+                                #region lapThiSinh
+                                foreach (ThiSinh item in DSTSTheoPhongThi)
+                                {
+                                    randomNumber++;
+                                    string strMaPhach = "";
+                                    if (BatDauBangDauPhach)
+                                        strMaPhach = TDN + String.Format(pHONGfORMAT, P) + String.Format(sTTfORMAT, randomNumber);
+                                    else
+                                        strMaPhach = String.Format(pHONGfORMAT, P) + TDN + String.Format(sTTfORMAT, randomNumber);
+                                    soLuongHoanThanh++;
+                                    item.MaPhach = strMaPhach;
                                 }
                                 #endregion
+                                progressBarControl1.Text = ((soLuongHoanThanh * 100) / Tong).ToString();
+                                progressBarControl1.Update();
                             }
                             #endregion
-
                         }
-
+                        #endregion
                     }
-                    catch (Exception ex)
-                    {
-                    }
-                    finally
-                    {
-                        XtraMessageBox.Show("Đã đánh mã phách thành công cho " + soLuongHoanThanh.ToString() + " thí sinh", "Đánh mã phách", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        com.Clone();
-                        progressBarControl1.Visible = false;
-                        this.Cursor = Cursors.Default;
-                    }
-                }));
-                return;
+                    #endregion
+                }
+                en.SaveChanges();
             }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                XtraMessageBox.Show("Đã đánh mã phách thành công cho " + soLuongHoanThanh.ToString() + " thí sinh", "Đánh mã phách", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                progressBarControl1.Visible = false;
+                this.Cursor = Cursors.Default;
+            }
+
         }
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             int MaKyThiHienTai = KyThiHienTai.MaKyThi;
+            bool pass = true;
 
-            lib.DanhMaPhach MP = new QuanLyThiNghe.lib.DanhMaPhach();
+            List<ThiSinh> ThiSinhKhongCoHoiDongThi = en.ThiSinh.Where(t => t.MaKyThi == KyThiHienTai.MaKyThi && (t.DaXoa == false || t.DaXoa == null) && t.HoiDongThi == null).ToList();
+            //t.HoiDongThi!=null
+            List<ThiSinh> ThiSinhKhongBietMonThi = en.ThiSinh.Where(t => t.MaKyThi == KyThiHienTai.MaKyThi && (t.DaXoa == false || t.DaXoa == null) && t.DMMonThi == null).ToList();
+            //t.DMMonThi
+            List<ThiSinh> ThiSinhKhongBietTruong = en.ThiSinh.Where(t => t.MaKyThi == KyThiHienTai.MaKyThi && (t.DaXoa == false || t.DaXoa == null) && t.DMTruong == null).ToList();
+            //t.DMTruong
+            List<ThiSinh> ThiSinhKhongBietPhongThi = en.ThiSinh.Where(t => t.MaKyThi == KyThiHienTai.MaKyThi && (t.DaXoa == false || t.DaXoa == null) && t.PhongThi == null).ToList();
+            //t.PhongThi
+
+            if (ThiSinhKhongCoHoiDongThi.Count > 0)
+            {
+                pass = false;
+                XtraMessageBox.Show("Hiện đang có: " + ThiSinhKhongCoHoiDongThi.Count + " thí sinh chưa xếp hội đồng thi.", "Đánh mã phách", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (ThiSinhKhongBietMonThi.Count > 0)
+            {
+                pass = false;
+                XtraMessageBox.Show("Hiện có: " + ThiSinhKhongBietMonThi.Count + " thí sinh không biết môn thi.", "Đánh mã phách", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (ThiSinhKhongBietTruong.Count > 0)
+            {
+                pass = false;
+                XtraMessageBox.Show("Hiện có: " + ThiSinhKhongBietTruong.Count + " thí sinh không biết thuộc trường nào.", "Đánh mã phách", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (ThiSinhKhongBietPhongThi.Count > 0)
+            {
+                pass = false;
+                XtraMessageBox.Show("Hiện có:  " + ThiSinhKhongBietPhongThi.Count + " thí sinh chưa được chia phòng thi.", "Đánh mã phách", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            if (pass == false)
+            {
+                XtraMessageBox.Show("Xin vui lòng kiểm tra lại trước khi đánh mã phách.", "Đánh mã phách", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             int intDaCoMaPhach = en.ThiSinh.Where(t => t.MaKyThi == MaKyThiHienTai && t.MaPhach!=null).Count();
-            //MP.DemSoThiSinhDaCoMaPhach(1) + MP.DemSoThiSinhDaCoMaPhach(2);
             if (intDaCoMaPhach == 0 || XtraMessageBox.Show("Đã có " + intDaCoMaPhach.ToString() + " thí sinh được đánh mã phách rồi, bạn có muốn đánh mã phách lại không?",
                     "Đánh mã phách", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -189,7 +230,8 @@ namespace QuanLyThiNghe.Forms
         {
             this.Cursor = Cursors.WaitCursor;
             progressBarControl1.Visible = true;
-            new Thread(DanhMaPhach).Start();
+            //new Thread(DanhMaPhach).Start();
+            DanhMaPhach();
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

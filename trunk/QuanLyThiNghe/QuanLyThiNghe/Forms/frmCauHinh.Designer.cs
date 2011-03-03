@@ -46,6 +46,8 @@
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.checkEdit6 = new DevExpress.XtraEditors.CheckEdit();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.checkEdit7 = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).BeginInit();
@@ -63,6 +65,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkKetThuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit7.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // checkEdit5
@@ -142,7 +146,7 @@
             this.chkCheckMAC.Location = new System.Drawing.Point(10, 50);
             this.chkCheckMAC.Name = "chkCheckMAC";
             this.chkCheckMAC.Properties.Caption = "Kiểm tra địa chỉ MAC khi đăng nhập";
-            this.chkCheckMAC.Size = new System.Drawing.Size(327, 18);
+            this.chkCheckMAC.Size = new System.Drawing.Size(188, 18);
             this.chkCheckMAC.TabIndex = 0;
             // 
             // memoEdit1
@@ -182,6 +186,8 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.checkEdit7);
+            this.groupControl2.Controls.Add(this.spinEdit1);
             this.groupControl2.Controls.Add(this.chkKetThuc);
             this.groupControl2.Controls.Add(this.labelControl1);
             this.groupControl2.Controls.Add(this.comboBoxEdit1);
@@ -244,6 +250,41 @@
             this.btnLuu.Text = "Lưu các thay đổi";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
+            // spinEdit1
+            // 
+            this.spinEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.spinEdit1.EditValue = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.spinEdit1.Location = new System.Drawing.Point(300, 50);
+            this.spinEdit1.Name = "spinEdit1";
+            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.spinEdit1.Properties.IsFloatValue = false;
+            this.spinEdit1.Properties.Mask.EditMask = "N00";
+            this.spinEdit1.Properties.MaxValue = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.spinEdit1.Properties.NullValuePrompt = "0";
+            this.spinEdit1.Size = new System.Drawing.Size(37, 20);
+            this.spinEdit1.TabIndex = 20;
+            // 
+            // checkEdit7
+            // 
+            this.checkEdit7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkEdit7.Location = new System.Drawing.Point(206, 50);
+            this.checkEdit7.Name = "checkEdit7";
+            this.checkEdit7.Properties.Caption = "Thí sinh/phòng:";
+            this.checkEdit7.Size = new System.Drawing.Size(93, 18);
+            this.checkEdit7.TabIndex = 21;
+            this.checkEdit7.CheckedChanged += new System.EventHandler(this.checkEdit7_CheckedChanged);
+            // 
             // frmCauHinh
             // 
             this.AcceptButton = this.btnLuu;
@@ -281,6 +322,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkKetThuc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit7.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -304,6 +347,8 @@
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.CheckEdit chkKetThuc;
         private DevExpress.XtraEditors.CheckEdit chkNLD;
+        private DevExpress.XtraEditors.SpinEdit spinEdit1;
+        private DevExpress.XtraEditors.CheckEdit checkEdit7;
 
     }
 }
