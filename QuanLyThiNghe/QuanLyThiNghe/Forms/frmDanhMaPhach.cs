@@ -30,6 +30,12 @@ namespace QuanLyThiNghe.Forms
         }
         public void DanhMaPhach()
         {
+            if (InvokeRequired)
+            {
+                // after we've done all the processing, 
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    // load the control with the appropriate data
             List<ThiSinh> TSDT = en.ThiSinh.Where(t => t.MaKyThi == KyThiHienTai.MaKyThi && (t.DaXoa == false || t.DaXoa == null)).ToList();
             var DMKs = en.ThiSinh.Where( t => t.MaKyThi == KyThiHienTai.MaKyThi && (t.DaXoa == false || t.DaXoa == null))
                 .Select(t => new { t.DMTruong.DMKhoi.MaKhoi, t.DMTruong.DMKhoi.TenKhoi }).Distinct().ToList();
@@ -148,6 +154,9 @@ namespace QuanLyThiNghe.Forms
                 progressBarControl1.Visible = false;
                 this.Cursor = Cursors.Default;
             }
+                }));
+                return;
+            }
 
         }
         private void btnCapNhat_Click(object sender, EventArgs e)
@@ -230,8 +239,8 @@ namespace QuanLyThiNghe.Forms
         {
             this.Cursor = Cursors.WaitCursor;
             progressBarControl1.Visible = true;
-            //new Thread(DanhMaPhach).Start();
-            DanhMaPhach();
+            new Thread(DanhMaPhach).Start();
+            //DanhMaPhach();
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

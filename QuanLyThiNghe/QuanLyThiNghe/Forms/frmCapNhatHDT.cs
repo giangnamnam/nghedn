@@ -139,7 +139,7 @@ namespace QuanLyThiNghe.Forms
 
                     HDT.SoLuongPhongDuTinh = (int)txtSoPhong.Value;
                     HDT.SoThiSinhDuTinh = (int)txtSoThiSinh.Value;
-
+                    HDT.SoLuongThiSinhTrenMotPhongThi = (int)spinEdit1.Value;
                     _Entities.SaveChanges();
                     XuLyForm.LuuNhatKy("Cập nhật thông tin hội đồng thi " + HDT.DMTruong.TenTruong);
                     this.DialogResult = DialogResult.OK;
