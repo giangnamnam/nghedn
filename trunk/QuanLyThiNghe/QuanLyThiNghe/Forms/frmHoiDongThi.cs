@@ -147,6 +147,7 @@ namespace QuanLyThiNghe.Forms
                         {
                             ts.SBD = sbd;
                             ts.PhongThi = phong;
+                            ts.MaPhach = null;
 
                             if (apDungSTSTMPT==false)
                             {
