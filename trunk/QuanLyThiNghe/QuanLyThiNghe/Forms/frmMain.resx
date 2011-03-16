@@ -608,6 +608,9 @@
   <data name="navBarGroup3.Caption" xml:space="preserve">
     <value>Xử lý nghiệp vụ</value>
   </data>
+  <data name="navBarItemNhapDanhSachThiSinh.Caption" xml:space="preserve">
+    <value>Nhập danh sách thí sinh</value>
+  </data>
   <data name="navBarItemChiaHoiDong.Caption" xml:space="preserve">
     <value>Chia hội đồng thi</value>
   </data>
@@ -1784,6 +1787,12 @@
   <data name="&gt;&gt;popupMenu1.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.PopupMenu, DevExpress.XtraBars.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;navBarItemNhapDanhSachThiSinh.Name" xml:space="preserve">
+    <value>navBarItemNhapDanhSachThiSinh</value>
+  </data>
+  <data name="&gt;&gt;navBarItemNhapDanhSachThiSinh.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarItem, DevExpress.XtraNavBar.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmMain</value>
   </data>
@@ -1805,7 +1814,7 @@
 </value>
   </data>
   <data name="phóngToToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+    <value>179, 22</value>
   </data>
   <data name="phóngToToolStripMenuItem.Text" xml:space="preserve">
     <value>Phóng to cửa sổ</value>
@@ -1826,7 +1835,7 @@
 </value>
   </data>
   <data name="cửaSổBìnhThườngToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+    <value>179, 22</value>
   </data>
   <data name="cửaSổBìnhThườngToolStripMenuItem.Text" xml:space="preserve">
     <value>Cửa sổ bình thường</value>
@@ -1846,13 +1855,13 @@
 </value>
   </data>
   <data name="thuNhỏCửaSổToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+    <value>179, 22</value>
   </data>
   <data name="thuNhỏCửaSổToolStripMenuItem.Text" xml:space="preserve">
     <value>Thu nhỏ cửa sổ</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 6</value>
+    <value>176, 6</value>
   </data>
   <data name="đăngXuấtToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2055,7 +2064,7 @@
 </value>
   </data>
   <data name="đăngXuấtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+    <value>179, 22</value>
   </data>
   <data name="đăngXuấtToolStripMenuItem.Text" xml:space="preserve">
     <value>Đăng xuất</value>
@@ -2138,7 +2147,7 @@
 </value>
   </data>
   <data name="đóngChươngTrìnhToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+    <value>179, 22</value>
   </data>
   <data name="đóngChươngTrìnhToolStripMenuItem.Text" xml:space="preserve">
     <value>Đóng chương trình</value>
@@ -2147,7 +2156,7 @@
     <value>456, 17</value>
   </metadata>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 120</value>
+    <value>180, 120</value>
   </data>
   <data name="&gt;&gt;contextMenuStrip1.Name" xml:space="preserve">
     <value>contextMenuStrip1</value>

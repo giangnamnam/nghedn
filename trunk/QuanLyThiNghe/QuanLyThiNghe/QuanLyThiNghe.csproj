@@ -60,6 +60,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v9.2.Core, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -236,6 +237,12 @@
     <Compile Include="Forms\frmMonThi.Designer.cs">
       <DependentUpon>frmMonThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmNhapDanhSachThiSinhDuThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNhapDanhSachThiSinhDuThi.Designer.cs">
+      <DependentUpon>frmNhapDanhSachThiSinhDuThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmNhapDiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMonThi.resx">
       <DependentUpon>frmMonThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNhapDanhSachThiSinhDuThi.resx">
+      <DependentUpon>frmNhapDanhSachThiSinhDuThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNhapDiem.resx">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
@@ -591,6 +601,32 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="reports %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
