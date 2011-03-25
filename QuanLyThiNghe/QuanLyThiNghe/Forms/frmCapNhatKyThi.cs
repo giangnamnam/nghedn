@@ -21,6 +21,7 @@ namespace QuanLyThiNghe.Forms
 
         public void LoadChiTietKyThi(int maKyThi)
         {
+            MaKyThi = maKyThi;
             var kyThi = _Entities.DMKyThi.First(t => t.MaKyThi == maKyThi);
 
             txtTenKyThi.Text = kyThi.TenKyThi;
@@ -56,15 +57,14 @@ namespace QuanLyThiNghe.Forms
                     DevExpress.XtraEditors.XtraMessageBox.Show("Có lỗi xảy ra: " + exp.Message);
                     return;
                 }
-                finally
-                {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Đã thêm thành công.");
-                    frmKyThi f = (frmKyThi)Application.OpenForms["frmKyThi"];
-                    f.LoadKyThi();
-                    XuLyForm.LuuNhatKy("Thêm kỳ thi: " + kythi.TenKyThi);
-                    txtTenKyThi.Text = txtGhiChu.Text = txtNgayThi.Text = "";
-                    cbDaKetThuc.Checked = false;
-                }
+
+                DevExpress.XtraEditors.XtraMessageBox.Show("Đã thêm thành công.");
+                frmKyThi f = (frmKyThi)Application.OpenForms["frmKyThi"];
+                f.LoadKyThi();
+                XuLyForm.LuuNhatKy("Thêm kỳ thi: " + kythi.TenKyThi);
+                txtTenKyThi.Text = txtGhiChu.Text = txtNgayThi.Text = "";
+                cbDaKetThuc.Checked = false;
+
             }
             else
             {
@@ -87,13 +87,12 @@ namespace QuanLyThiNghe.Forms
                     DevExpress.XtraEditors.XtraMessageBox.Show("Có lỗi xảy ra: " + exp.Message);
                     return;
                 }
-                finally
-                {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Đã cập nhật thành công.");
-                    frmKyThi f = (frmKyThi)Application.OpenForms["frmKyThi"];
-                    f.LoadKyThi();
-                    XuLyForm.LuuNhatKy("Cập nhật kỳ thi: " + kythi.TenKyThi);
-                }
+
+                DevExpress.XtraEditors.XtraMessageBox.Show("Đã cập nhật thành công.");
+                frmKyThi f = (frmKyThi)Application.OpenForms["frmKyThi"];
+                f.LoadKyThi();
+                XuLyForm.LuuNhatKy("Cập nhật kỳ thi: " + kythi.TenKyThi);
+
             }
         }
     }
