@@ -151,6 +151,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCapNhatKyThi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm/Cập nhật kỳ thi";
             ((System.ComponentModel.ISupportInitialize)(this.txtTenKyThi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayThi.Properties.VistaTimeProperties)).EndInit();

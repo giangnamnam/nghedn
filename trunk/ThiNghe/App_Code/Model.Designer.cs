@@ -22,7 +22,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("ThiNgeModel", "FK_TaiKhoan_PhanQuyen", "PhanQuyen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ThiNgeModel.PhanQuyen), "TaiKhoan", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ThiNgeModel.TaiKhoan))]
 
 // Original file name:
-// Generation date: 3/24/2011 10:38:39 AM
+// Generation date: 3/24/2011 6:41:27 PM
 namespace ThiNgeModel
 {
     
@@ -641,6 +641,52 @@ namespace ThiNgeModel
         private global::System.Nullable<int> _KyThiHienTai;
         partial void OnKyThiHienTaiChanging(global::System.Nullable<int> value);
         partial void OnKyThiHienTaiChanged();
+        /// <summary>
+        /// There are no comments for Property SoThiSinhTrenPhong in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<int> SoThiSinhTrenPhong
+        {
+            get
+            {
+                return this._SoThiSinhTrenPhong;
+            }
+            set
+            {
+                this.OnSoThiSinhTrenPhongChanging(value);
+                this.ReportPropertyChanging("SoThiSinhTrenPhong");
+                this._SoThiSinhTrenPhong = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("SoThiSinhTrenPhong");
+                this.OnSoThiSinhTrenPhongChanged();
+            }
+        }
+        private global::System.Nullable<int> _SoThiSinhTrenPhong;
+        partial void OnSoThiSinhTrenPhongChanging(global::System.Nullable<int> value);
+        partial void OnSoThiSinhTrenPhongChanged();
+        /// <summary>
+        /// There are no comments for Property ApDungSTSTPT in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<bool> ApDungSTSTPT
+        {
+            get
+            {
+                return this._ApDungSTSTPT;
+            }
+            set
+            {
+                this.OnApDungSTSTPTChanging(value);
+                this.ReportPropertyChanging("ApDungSTSTPT");
+                this._ApDungSTSTPT = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ApDungSTSTPT");
+                this.OnApDungSTSTPTChanged();
+            }
+        }
+        private global::System.Nullable<bool> _ApDungSTSTPT;
+        partial void OnApDungSTSTPTChanging(global::System.Nullable<bool> value);
+        partial void OnApDungSTSTPTChanged();
     }
     /// <summary>
     /// There are no comments for ThiNgeModel.DMHuyen in the schema.
@@ -2055,6 +2101,52 @@ namespace ThiNgeModel
         partial void OnMaHoiDongChanging(int value);
         partial void OnMaHoiDongChanged();
         /// <summary>
+        /// There are no comments for Property Alias in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Alias
+        {
+            get
+            {
+                return this._Alias;
+            }
+            set
+            {
+                this.OnAliasChanging(value);
+                this.ReportPropertyChanging("Alias");
+                this._Alias = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("Alias");
+                this.OnAliasChanged();
+            }
+        }
+        private string _Alias;
+        partial void OnAliasChanging(string value);
+        partial void OnAliasChanged();
+        /// <summary>
+        /// There are no comments for Property SoLuongThiSinhTrenMotPhongThi in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<int> SoLuongThiSinhTrenMotPhongThi
+        {
+            get
+            {
+                return this._SoLuongThiSinhTrenMotPhongThi;
+            }
+            set
+            {
+                this.OnSoLuongThiSinhTrenMotPhongThiChanging(value);
+                this.ReportPropertyChanging("SoLuongThiSinhTrenMotPhongThi");
+                this._SoLuongThiSinhTrenMotPhongThi = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("SoLuongThiSinhTrenMotPhongThi");
+                this.OnSoLuongThiSinhTrenMotPhongThiChanged();
+            }
+        }
+        private global::System.Nullable<int> _SoLuongThiSinhTrenMotPhongThi;
+        partial void OnSoLuongThiSinhTrenMotPhongThiChanging(global::System.Nullable<int> value);
+        partial void OnSoLuongThiSinhTrenMotPhongThiChanged();
+        /// <summary>
         /// There are no comments for Property SoLuongPhongDuTinh in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
@@ -3324,7 +3416,7 @@ namespace ThiNgeModel
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string SBD
+        public global::System.Nullable<int> SBD
         {
             get
             {
@@ -3334,13 +3426,13 @@ namespace ThiNgeModel
             {
                 this.OnSBDChanging(value);
                 this.ReportPropertyChanging("SBD");
-                this._SBD = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._SBD = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("SBD");
                 this.OnSBDChanged();
             }
         }
-        private string _SBD;
-        partial void OnSBDChanging(string value);
+        private global::System.Nullable<int> _SBD;
+        partial void OnSBDChanging(global::System.Nullable<int> value);
         partial void OnSBDChanged();
         /// <summary>
         /// There are no comments for Property PhongThi in the schema.
@@ -3595,6 +3687,75 @@ namespace ThiNgeModel
         private global::System.Nullable<int> _ThuKy3;
         partial void OnThuKy3Changing(global::System.Nullable<int> value);
         partial void OnThuKy3Changed();
+        /// <summary>
+        /// There are no comments for Property BoBaiLT in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<bool> BoBaiLT
+        {
+            get
+            {
+                return this._BoBaiLT;
+            }
+            set
+            {
+                this.OnBoBaiLTChanging(value);
+                this.ReportPropertyChanging("BoBaiLT");
+                this._BoBaiLT = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("BoBaiLT");
+                this.OnBoBaiLTChanged();
+            }
+        }
+        private global::System.Nullable<bool> _BoBaiLT;
+        partial void OnBoBaiLTChanging(global::System.Nullable<bool> value);
+        partial void OnBoBaiLTChanged();
+        /// <summary>
+        /// There are no comments for Property BoBaiTH in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<bool> BoBaiTH
+        {
+            get
+            {
+                return this._BoBaiTH;
+            }
+            set
+            {
+                this.OnBoBaiTHChanging(value);
+                this.ReportPropertyChanging("BoBaiTH");
+                this._BoBaiTH = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("BoBaiTH");
+                this.OnBoBaiTHChanged();
+            }
+        }
+        private global::System.Nullable<bool> _BoBaiTH;
+        partial void OnBoBaiTHChanging(global::System.Nullable<bool> value);
+        partial void OnBoBaiTHChanged();
+        /// <summary>
+        /// There are no comments for Property GhiChu in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string GhiChu
+        {
+            get
+            {
+                return this._GhiChu;
+            }
+            set
+            {
+                this.OnGhiChuChanging(value);
+                this.ReportPropertyChanging("GhiChu");
+                this._GhiChu = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("GhiChu");
+                this.OnGhiChuChanged();
+            }
+        }
+        private string _GhiChu;
+        partial void OnGhiChuChanging(string value);
+        partial void OnGhiChuChanged();
         /// <summary>
         /// There are no comments for Property NguoiCapNhat in the schema.
         /// </summary>
