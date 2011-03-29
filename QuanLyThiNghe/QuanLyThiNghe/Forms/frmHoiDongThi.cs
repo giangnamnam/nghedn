@@ -33,7 +33,16 @@ namespace QuanLyThiNghe.Forms
         {
             int MaKyThiHienTai = KyThiHienTai.MaKyThi;
             gcHDT.DataSource = en.HoiDongThi.Where(h => (h.DaXoa == false || h.DaXoa == null) && h.DMKyThi.MaKyThi == MaKyThiHienTai)
-                .Select(h => new { h.SoLuongPhongDuTinh, TenTruong = h.DMTruong.TenTruong, h.MaHoiDong, h.SoThiSinhDuTinh, SoThiSinhHienTai = h.ThiSinh.Count });
+                .Select(h => new { h.SoLuongPhongDuTinh, TenTruong = h.DMTruong.TenTruong, h.MaHoiDong, h.SoThiSinhDuTinh }).ToList()
+                .Select(n => new { n.SoLuongPhongDuTinh, TenTruong = n.TenTruong, n.MaHoiDong, n.SoThiSinhDuTinh,
+                    SoThiSinhHienTai = DemSoLuongThiSinh(n.MaHoiDong) }).ToList();
+        }
+
+        private int DemSoLuongThiSinh(int p)
+        {
+            int c =
+            en.ThiSinh.Where(d => d.HoiDongThi.MaHoiDong==p &&(d.DaXoa == false || d.DaXoa == null)).ToList().Count;
+            return c;
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

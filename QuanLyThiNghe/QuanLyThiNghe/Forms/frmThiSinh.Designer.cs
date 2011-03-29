@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -55,9 +54,7 @@
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbItems = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.cbType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnAddCandidate = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -67,8 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbItems.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemCheckEdit1
@@ -107,14 +102,14 @@
             this.toolStripSeparator1,
             this.xoáHuyệnNàyToolStripMenuItem});
             this.Menu.Name = "contextMenuStrip1";
-            this.Menu.Size = new System.Drawing.Size(138, 76);
+            this.Menu.Size = new System.Drawing.Size(142, 76);
             // 
             // thêmHuyệnMớiToolStripMenuItem
             // 
             this.thêmHuyệnMớiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Add_16x16;
             this.thêmHuyệnMớiToolStripMenuItem.Name = "thêmHuyệnMớiToolStripMenuItem";
             this.thêmHuyệnMớiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.thêmHuyệnMớiToolStripMenuItem.Text = "Thêm";
             this.thêmHuyệnMớiToolStripMenuItem.Click += new System.EventHandler(this.btnAddCandidate_Click);
             // 
@@ -123,21 +118,21 @@
             this.btnEdit.Image = global::QuanLyThiNghe.Properties.Resources.Edit_16x16;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.btnEdit.Size = new System.Drawing.Size(137, 22);
+            this.btnEdit.Size = new System.Drawing.Size(141, 22);
             this.btnEdit.Text = "Cập nhật";
             this.btnEdit.Click += new System.EventHandler(this.btnInpuMark_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(138, 6);
             // 
             // xoáHuyệnNàyToolStripMenuItem
             // 
             this.xoáHuyệnNàyToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
             this.xoáHuyệnNàyToolStripMenuItem.Name = "xoáHuyệnNàyToolStripMenuItem";
             this.xoáHuyệnNàyToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.xoáHuyệnNàyToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.xoáHuyệnNàyToolStripMenuItem.Text = "Xoá";
             // 
             // gridView1
@@ -159,17 +154,12 @@
             this.gridColumn3,
             this.gridColumn15});
             this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.GroupPanelText = "Danh sách huyện trong tỉnh";
+            this.gridView1.GroupPanelText = "Kéo thả để nhóm các trường dữ liệu..";
             this.gridView1.GroupRowHeight = 0;
             this.gridView1.Name = "gridView1";
-            this.gridView1.NewItemRowText = "Nhấn vào đây để nhập hội đồng thi mới";
-            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
-            this.gridView1.OptionsCustomization.AllowGroup = false;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.AnimationType = DevExpress.XtraGrid.Views.Base.GridAnimationType.AnimateAllContent;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // cMaThiSinh
             // 
@@ -324,9 +314,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.cbItems);
             this.panel1.Controls.Add(this.btnPrint);
-            this.panel1.Controls.Add(this.cbType);
             this.panel1.Controls.Add(this.btnAddCandidate);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -335,20 +323,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(3);
             this.panel1.Size = new System.Drawing.Size(795, 30);
             this.panel1.TabIndex = 7;
-            // 
-            // cbItems
-            // 
-            this.cbItems.EditValue = "";
-            this.cbItems.Location = new System.Drawing.Point(273, 5);
-            this.cbItems.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.cbItems.MaximumSize = new System.Drawing.Size(250, 0);
-            this.cbItems.MinimumSize = new System.Drawing.Size(120, 0);
-            this.cbItems.Name = "cbItems";
-            this.cbItems.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.DropDown)});
-            this.cbItems.Size = new System.Drawing.Size(140, 20);
-            this.cbItems.TabIndex = 7;
-            this.cbItems.SelectedIndexChanged += new System.EventHandler(this.cbItems_SelectedIndexChanged);
             // 
             // btnPrint
             // 
@@ -360,26 +334,6 @@
             this.btnPrint.TabIndex = 0;
             this.btnPrint.Text = "In";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // cbType
-            // 
-            this.cbType.EditValue = "Thí sinh theo trường";
-            this.cbType.Location = new System.Drawing.Point(130, 5);
-            this.cbType.Margin = new System.Windows.Forms.Padding(0);
-            this.cbType.MaximumSize = new System.Drawing.Size(250, 0);
-            this.cbType.MinimumSize = new System.Drawing.Size(120, 0);
-            this.cbType.Name = "cbType";
-            this.cbType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.DropDown, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleLeft, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, false)});
-            this.cbType.Properties.DropDownRows = 10;
-            this.cbType.Properties.Items.AddRange(new object[] {
-            "Thí sinh theo trường",
-            "Thí sinh theo huyện",
-            "Thí sinh theo môn thi",
-            "Thí sinh theo hội đồng thi"});
-            this.cbType.Size = new System.Drawing.Size(140, 20);
-            this.cbType.TabIndex = 6;
-            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // btnAddCandidate
             // 
@@ -429,8 +383,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbItems.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbType.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,10 +415,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn cMaThiSinh;
-        public DevExpress.XtraEditors.ComboBoxEdit cbType;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        public DevExpress.XtraEditors.ComboBoxEdit cbItems;
         private DevExpress.XtraBars.Bar bar1;
     }
 }

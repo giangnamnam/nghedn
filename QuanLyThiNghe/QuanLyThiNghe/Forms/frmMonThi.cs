@@ -13,20 +13,26 @@ namespace QuanLyThiNghe.Forms
     {
         QLTN_Entities _entities = new QLTN_Entities();
         int MaMonThi = 0;
+
+
         public frmMonThi()
         {
             InitializeComponent();
-            LoadMonThi();
+            
         }
 
         public void LoadMonThi()
         {
-            gridControl1.DataSource = _entities.DMMonThi.Where(m => m.DaXoa == false || m.DaXoa == null).Select(m => new { m.DaXoa, m.TenMonThi, m.MaMonThi, SoThiSinh = _entities.ThiSinh.Where(t => t.DMMonThi.MaMonThi == m.MaMonThi).Count() }).OrderBy(m => m.TenMonThi);
+            int MaKyThiHienTai = HeThong.KyThiHienTai().MaKyThi;
+            gridControl1.DataSource = _entities.DMMonThi.Where(m => m.DaXoa == false || m.DaXoa == null)
+                .Select(m => new { m.TenMonThi, m.MaMonThi, 
+                    SoThiSinh = _entities.ThiSinh.Where(d => d.DMMonThi.MaMonThi == m.MaMonThi &&(d.DaXoa==false||d.DaXoa==null) && d.MaKyThi==MaKyThiHienTai).Count() 
+                }).OrderBy(m => m.TenMonThi);
         }
 
         private void frmMonThi_Load(object sender, EventArgs e)
         {
-
+            LoadMonThi();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -72,14 +78,6 @@ namespace QuanLyThiNghe.Forms
                 XuLyForm.LuuNhatKy("Xoá môn thi: " + TenHuyens.Substring(0, TenHuyens.Length - 2));
                 LoadMonThi();
             }
-        }
-
-        private void btnView_Click(object sender, EventArgs e)
-        {
-            frmThiSinh frm = new frmThiSinh();
-            frm.cbType.SelectedIndex = 2;
-            frm.cbItems.Text = gridView1.GetRowCellValue(gridView1.GetSelectedRows()[0], "TenMonThi").ToString();
-            frm.ShowDialog();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

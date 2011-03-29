@@ -15,92 +15,16 @@ namespace QuanLyThiNghe.Forms
     {
         QLTN_Entities _Entities = new QLTN_Entities();
         int MaThiSinh = 0;
-
+        public DMKyThi KTHT { get; set; }
         void LoadThiSinh()
         {
-            cbItems.Properties.Items.Clear();
-            cbItems.Text = "";
-            switch (cbType.SelectedIndex)
-            {
-                case 0:
-                    LoadTruong();
-                    break;
-                case 1:
-                    LoadHuyen();
-                    break;
-                case 2:
-                    LoadMonThi();
-                    break;
-                case 3:
-                    LoadHDT();
-                    break;
-                default:
-                    LoadTruong();
-                    break;
-            }
+            
         }
-
         
-        void LoadTruong()
-        {
-            var source = _Entities.ThiSinh.Where(t => t.DaXoa == false || t.DaXoa == null).Select(t => new { t.DMTruong.TenTruong }).Distinct().OrderBy(t1 => t1.TenTruong);
-            for (int i = 0; i < source.ToList().Count; i++)
-                cbItems.Properties.Items.Add(source.ToList()[i].TenTruong);
-        }
-
-        void LoadHuyen()
-        {
-            var source = _Entities.ThiSinh.Where(t => t.DaXoa == false || t.DaXoa == null).Select(t => new { t.DMTruong.DMHuyen.TenHuyen }).Distinct().OrderBy(t => t.TenHuyen);
-            for (int i = 0; i < source.ToList().Count; i++)
-                cbItems.Properties.Items.Add(source.ToList()[i].TenHuyen);
-        }
-
-        void LoadMonThi()
-        {
-            var source = _Entities.ThiSinh.Where(t => t.DaXoa == false || t.DaXoa == null).Select(t => new { t.DMMonThi.TenMonThi }).Distinct().OrderBy(t => t.TenMonThi);
-            for (int i = 0; i < source.ToList().Count; i++)
-                cbItems.Properties.Items.Add(source.ToList()[i].TenMonThi);
-        }
-
-        void LoadHDT()
-        {
-            var source = _Entities.ThiSinh.Where(t => t.DaXoa == false || t.DaXoa == null).Select(t => new { t.HoiDongThi.DMTruong.TenTruong }).Distinct().OrderBy(t => t.TenTruong);
-            for (int i = 0; i < source.ToList().Count; i++)
-                cbItems.Properties.Items.Add(source.ToList()[i].TenTruong);
-        }
-
-        void LoadThiSinhTheoTruong(int MaTruong)
-        {
-            var source = _Entities.ThiSinh.Include("DMMonThi").Include("HoiDongThi").Include("DMTruong").Include("DMTruong.DMHuyen").Where(t => t.DMTruong.MaTruong == MaTruong && (t.DaXoa == false || t.DaXoa == null)).OrderBy(t => t.Ten);
-
-            gridControl1.DataSource = source;
-        }
-
-        void LoadThiSinhTheoHuyen(int MaHuyen)
-        {
-            var source = _Entities.ThiSinh.Include("DMMonThi").Include("HoiDongThi").Include("DMTruong").Include("DMTruong.DMHuyen").Where(t => t.DMTruong.DMHuyen.MaHuyen == MaHuyen && (t.DaXoa == false || t.DaXoa == null)).OrderBy(t => t.Ten);
-
-            gridControl1.DataSource = source;
-        }
-
-        void LoadThiSinhTheoMonThi(int MaMonThi)
-        {
-            var source = _Entities.ThiSinh.Include("DMMonThi").Include("HoiDongThi").Include("DMTruong").Include("DMTruong.DMHuyen").Where(t => t.DMMonThi.MaMonThi == MaMonThi && (t.DaXoa == false || t.DaXoa == null)).OrderBy(t => t.Ten);
-
-            gridControl1.DataSource = source;
-        }
-
-        void LoadThiSinhTheoHDT(int MaHDT)
-        {
-            var source = _Entities.ThiSinh.Include("DMMonThi").Include("HoiDongThi").Include("DMTruong").Include("DMTruong.DMHuyen").Where(t => t.HoiDongThi.MaHoiDong == MaHDT && (t.DaXoa == false || t.DaXoa == null)).OrderBy(t => t.Ten);
-
-            gridControl1.DataSource = source;
-        }
-
         public frmThiSinh()
         {
             InitializeComponent();
-            LoadTruong();
+            KTHT = HeThong.KyThiHienTai();
         }
 
         private void btnAddCandidate_Click(object sender, EventArgs e)
@@ -117,7 +41,7 @@ namespace QuanLyThiNghe.Forms
 
         private void frmThiSinh_Load(object sender, EventArgs e)
         {
-
+            gridControl1.DataSource = _Entities.ThiSinh.Where(d => (d.DaXoa == false || d.DaXoa == null) && d.MaKyThi == KTHT.MaKyThi).ToList();
         }
 
         private void btnDeleteSelecteds_Click(object sender, EventArgs e)
@@ -164,8 +88,6 @@ namespace QuanLyThiNghe.Forms
             frm.ShowDialog();
         }
 
-        
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (gridView1.SelectedRowsCount == 0)
@@ -192,34 +114,6 @@ namespace QuanLyThiNghe.Forms
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Đã xoá thành công.");
                 XuLyForm.LuuNhatKy("Xoá thí sinh: " + tenTS);
-            }
-        }
-
-        private void cbType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadThiSinh();
-        }
-
-        private void cbItems_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string s = cbItems.EditValue.ToString();
-            if (s == "") return;
-            switch (cbType.SelectedIndex)
-            {
-                case 0:
-                    LoadThiSinhTheoTruong(_Entities.DMTruong.Where(t => t.TenTruong == s).FirstOrDefault().MaTruong);
-                    break;
-                case 1:
-                    LoadThiSinhTheoHuyen(_Entities.DMHuyen.Where(t => t.TenHuyen == s).FirstOrDefault().MaHuyen);
-                    break;
-                case 2:
-                    LoadThiSinhTheoMonThi(_Entities.DMMonThi.Where(t => t.TenMonThi == s).FirstOrDefault().MaMonThi);
-                    break;
-                case 3:
-                    LoadThiSinhTheoHDT(_Entities.HoiDongThi.Where(t => t.DMTruong.TenTruong == s).FirstOrDefault().MaHoiDong);
-                    break;
-                default:
-                    break;
             }
         }
 
