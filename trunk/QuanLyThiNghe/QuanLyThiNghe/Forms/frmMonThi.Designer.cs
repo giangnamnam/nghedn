@@ -117,7 +117,7 @@
             this.danhSáchThíSinhDựThiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
             this.danhSáchThíSinhDựThiToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.danhSáchThíSinhDựThiToolStripMenuItem.Text = "Danh sách thí sinh dự thi";
-            this.danhSáchThíSinhDựThiToolStripMenuItem.Click += new System.EventHandler(this.btnView_Click);
+            
             // 
             // toolStripSeparator1
             // 
@@ -140,22 +140,18 @@
             this.gridColumn1,
             this.gridColumn2});
             this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.GroupPanelText = "Danh sách huyện trong tỉnh";
             this.gridView1.GroupRowHeight = 0;
             this.gridView1.Name = "gridView1";
-            this.gridView1.NewItemRowText = "Nhấn vào đây để nhập hội đồng thi mới";
-            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
-            this.gridView1.OptionsCustomization.AllowColumnResizing = false;
-            this.gridView1.OptionsCustomization.AllowGroup = false;
-            this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn2, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // cMaMonThi
             // 
             this.cMaMonThi.Caption = "gridColumn3";
             this.cMaMonThi.FieldName = "MaMonThi";
             this.cMaMonThi.Name = "cMaMonThi";
+            this.cMaMonThi.Width = 71;
             // 
             // gridColumn1
             // 
@@ -164,7 +160,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 432;
+            this.gridColumn1.Width = 501;
             // 
             // gridColumn2
             // 
@@ -183,6 +179,7 @@
             this.gridColumn2.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 321;
             // 
             // panel1
             // 
@@ -208,7 +205,7 @@
             this.btnView.TabIndex = 6;
             this.btnView.Text = "Danh sách thí sinh dự thi";
             this.btnView.ToolTip = "Thêm huyện mới        Ctr + N";
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            
             // 
             // btnDelete
             // 

@@ -12,15 +12,21 @@ namespace QuanLyThiNghe.Forms
     public partial class frmKyThi : DevExpress.XtraEditors.XtraForm
     {
         QLTN_Entities _Entities = new QLTN_Entities();
+
         public frmKyThi()
         {
             InitializeComponent();
-            LoadKyThi();
+            
         }
 
         public void LoadKyThi()
         {
-            gridControl1.DataSource = _Entities.DMKyThi.Where(d => d.DaXoa == false || d.DaXoa == null);
+            gridControl1.DataSource = _Entities.DMKyThi.Where(d => d.DaXoa == false || d.DaXoa == null).ToList().Select(s => new { s.MaKyThi, s.TenKyThi, s.DaKetThuc, s.NgayThi, s.GhiChu, SoThiSinh = TinhTongThiSinh(s.MaKyThi)}).ToList();
+        }
+
+        private int TinhTongThiSinh(int p)
+        {
+            return _Entities.ThiSinh.Where(d => d.MaKyThi == p && (d.DaXoa == false || d.DaXoa == null)).Count(); 
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -82,6 +88,11 @@ namespace QuanLyThiNghe.Forms
             frmCapNhatKyThi frm = new frmCapNhatKyThi();
             frm.LoadChiTietKyThi(MaHD);
             frm.ShowDialog();
+        }
+
+        private void frmKyThi_Load(object sender, EventArgs e)
+        {
+            LoadKyThi();
         }
     }
 }

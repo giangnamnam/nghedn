@@ -33,26 +33,27 @@
             this.frmKyThi_Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.thêmHuyệnMớiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.xoáToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             this.frmKyThi_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -85,14 +86,14 @@
             this.toolStripSeparator1,
             this.xoáToolStripMenuItem});
             this.frmKyThi_Menu.Name = "contextMenuStrip1";
-            this.frmKyThi_Menu.Size = new System.Drawing.Size(153, 98);
+            this.frmKyThi_Menu.Size = new System.Drawing.Size(147, 76);
             // 
             // thêmHuyệnMớiToolStripMenuItem
             // 
             this.thêmHuyệnMớiToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Add_16x16;
             this.thêmHuyệnMớiToolStripMenuItem.Name = "thêmHuyệnMớiToolStripMenuItem";
             this.thêmHuyệnMớiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.thêmHuyệnMớiToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.thêmHuyệnMớiToolStripMenuItem.Text = "Thêm";
             this.thêmHuyệnMớiToolStripMenuItem.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -101,9 +102,23 @@
             this.btnEdit.Image = global::QuanLyThiNghe.Properties.Resources.Edit_16x16;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.btnEdit.Size = new System.Drawing.Size(152, 22);
+            this.btnEdit.Size = new System.Drawing.Size(146, 22);
             this.btnEdit.Text = "Chỉnh sửa";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+            // 
+            // xoáToolStripMenuItem
+            // 
+            this.xoáToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
+            this.xoáToolStripMenuItem.Name = "xoáToolStripMenuItem";
+            this.xoáToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.xoáToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.xoáToolStripMenuItem.Text = "Xoá";
+            this.xoáToolStripMenuItem.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // gridView1
             // 
@@ -112,17 +127,20 @@
             this.gridColumn1,
             this.gridColumn3,
             this.gridColumn5,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn6});
             this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.GroupPanelText = "Danh sách huyện trong tỉnh";
             this.gridView1.GroupRowHeight = 0;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Nhấn vào đây để nhập  kỳ thi mới";
-            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
-            this.gridView1.OptionsCustomization.AllowColumnResizing = false;
-            this.gridView1.OptionsCustomization.AllowGroup = false;
-            this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "gridColumn4";
+            this.gridColumn4.FieldName = "MaKyThi";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Width = 71;
             // 
             // gridColumn1
             // 
@@ -132,7 +150,7 @@
             this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 234;
+            this.gridColumn1.Width = 192;
             // 
             // gridColumn3
             // 
@@ -144,7 +162,24 @@
             this.gridColumn3.FieldName = "NgayThi";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 127;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Đã kết thúc";
+            this.gridColumn5.ColumnEdit = this.repositoryItemCheckEdit2;
+            this.gridColumn5.FieldName = "DeKetThuc";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.Width = 63;
+            // 
+            // repositoryItemCheckEdit2
+            // 
+            this.repositoryItemCheckEdit2.AutoHeight = false;
+            this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
             // 
             // gridColumn2
             // 
@@ -157,8 +192,17 @@
             this.gridColumn2.OptionsColumn.AllowSize = false;
             this.gridColumn2.OptionsColumn.ReadOnly = true;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 3;
-            this.gridColumn2.Width = 226;
+            this.gridColumn2.VisibleIndex = 4;
+            this.gridColumn2.Width = 349;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Số lượng thí sinh";
+            this.gridColumn6.FieldName = "SoThiSinh";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 1;
+            this.gridColumn6.Width = 91;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -178,37 +222,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(3);
             this.panel1.Size = new System.Drawing.Size(592, 30);
             this.panel1.TabIndex = 2;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton1.Image = global::QuanLyThiNghe.Properties.Resources.Print_16x16;
-            this.simpleButton1.Location = new System.Drawing.Point(529, 3);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(60, 24);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "In";
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "gridColumn4";
-            this.gridColumn4.FieldName = "MaKyThi";
-            this.gridColumn4.Name = "gridColumn4";
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Đã kết thúc";
-            this.gridColumn5.ColumnEdit = this.repositoryItemCheckEdit2;
-            this.gridColumn5.FieldName = "DeKetThuc";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 2;
-            // 
-            // repositoryItemCheckEdit2
-            // 
-            this.repositoryItemCheckEdit2.AutoHeight = false;
-            this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
             // 
             // btnDelete
             // 
@@ -232,19 +245,15 @@
             this.btnAdd.ToolTip = "Thêm huyện mới        Ctr + N";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // toolStripSeparator1
+            // simpleButton1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // xoáToolStripMenuItem
-            // 
-            this.xoáToolStripMenuItem.Image = global::QuanLyThiNghe.Properties.Resources.Delete_16x16;
-            this.xoáToolStripMenuItem.Name = "xoáToolStripMenuItem";
-            this.xoáToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.xoáToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.xoáToolStripMenuItem.Text = "Xoá";
-            this.xoáToolStripMenuItem.Click += new System.EventHandler(this.btnDelete_Click);
+            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.simpleButton1.Image = global::QuanLyThiNghe.Properties.Resources.Print_16x16;
+            this.simpleButton1.Location = new System.Drawing.Point(529, 3);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(60, 24);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "In";
             // 
             // frmKyThi
             // 
@@ -255,12 +264,13 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmKyThi";
             this.Text = "Danh sách kỳ thi nghề";
+            this.Load += new System.EventHandler(this.frmKyThi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             this.frmKyThi_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -285,5 +295,6 @@
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem xoáToolStripMenuItem;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }
